@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import BottomNavigationLayout from 'src/layouts/BottomNavigationLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import DashboardStatisticsContent from 'src/content/DashboardPages/statistics';
 
@@ -17,9 +17,9 @@ function DashboardStatistics() {
 }
 
 DashboardStatistics.getLayout = (page) => (
-  <Authenticated>
+  
     <BottomNavigationLayout>{page}</BottomNavigationLayout>
-  </Authenticated>
+  
 );
 
 export default DashboardStatistics;

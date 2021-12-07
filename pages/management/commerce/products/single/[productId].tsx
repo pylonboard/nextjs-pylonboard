@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import Head from 'next/head';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
@@ -64,9 +64,9 @@ function ManagementProductSingle() {
 }
 
 ManagementProductSingle.getLayout = (page) => (
-  <Authenticated>
+  
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default ManagementProductSingle;

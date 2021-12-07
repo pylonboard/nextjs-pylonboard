@@ -5,7 +5,6 @@ import {
   Typography,
   Divider,
   Grid,
-  Avatar,
   Button,
   Menu,
   MenuItem,
@@ -14,7 +13,6 @@ import {
   useTheme
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from 'src/hooks/useAuth';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import { buildStyles } from 'react-circular-progressbar';
 import Gauge from 'src/components/Gauge';
@@ -23,7 +21,6 @@ function ProfileGoals() {
   const { t }: { t: any } = useTranslation();
   const actionRef1 = useRef<any>(null);
   const [openPeriod, setOpenMenuPeriod] = useState<boolean>(false);
-  const { user } = useAuth();
   const theme = useTheme();
 
   const data = {
@@ -86,31 +83,6 @@ function ProfileGoals() {
         p: 3
       }}
     >
-      <Box display="flex" alignItems="center">
-        <Avatar
-          sx={{
-            mr: 2,
-            width: theme.spacing(9),
-            height: theme.spacing(9)
-          }}
-          variant="rounded"
-          alt={user.name}
-          src={user.avatar}
-        />
-        <Box>
-          <Typography
-            variant="h4"
-            sx={{
-              fontSize: `${theme.typography.pxToRem(18)}`
-            }}
-            gutterBottom
-          >
-            {user.name}
-          </Typography>
-          <Typography variant="subtitle2">San Francisco, USA</Typography>
-        </Box>
-      </Box>
-
       <Stack
         sx={{
           mt: 4,

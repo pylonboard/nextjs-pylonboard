@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import AccentHeaderLayout from 'src/layouts/AccentHeaderLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 import DashboardCryptoContent from 'src/content/DashboardPages/crypto';
 
@@ -17,9 +16,7 @@ function DashboardCrypto() {
 }
 
 DashboardCrypto.getLayout = (page) => (
-  <Authenticated>
-    <AccentHeaderLayout>{page}</AccentHeaderLayout>
-  </Authenticated>
+  <AccentHeaderLayout>{page}</AccentHeaderLayout>
 );
 
 export default DashboardCrypto;

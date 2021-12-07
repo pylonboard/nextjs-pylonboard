@@ -13,7 +13,6 @@ import {
   styled
 } from '@mui/material';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import { useAuth } from 'src/hooks/useAuth';
 
 import { formatDistance, subHours, subMinutes } from 'date-fns';
 import { useTranslation } from 'react-i18next';
@@ -64,7 +63,6 @@ const CardWrapper = styled(Card)(
 
 function Block5() {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
 
   return (
     <Card>
@@ -180,15 +178,6 @@ function Block5() {
                   })}
                 </Typography>
               </Box>
-              <Avatar
-                variant="rounded"
-                sx={{
-                  width: 50,
-                  height: 50
-                }}
-                alt={user.name}
-                src={user.avatar}
-              />
             </Box>
 
             <Box
@@ -231,15 +220,6 @@ function Block5() {
                   })}
                 </Typography>
               </Box>
-              <Avatar
-                variant="rounded"
-                sx={{
-                  width: 50,
-                  height: 50
-                }}
-                alt={user.name}
-                src={user.avatar}
-              />
             </Box>
             <Box
               display="flex"
@@ -334,15 +314,6 @@ function Block5() {
                   })}
                 </Typography>
               </Box>
-              <Avatar
-                variant="rounded"
-                sx={{
-                  width: 50,
-                  height: 50
-                }}
-                alt={user.name}
-                src={user.avatar}
-              />
             </Box>
           </Box>
         </Scrollbar>
@@ -380,7 +351,6 @@ function Block5() {
       </CardWrapper>
       <Divider />
       <Box p={2} display="flex" alignItems="center">
-        <Avatar alt={user.name} src={user.avatar} />
         <DividerWrapper orientation="vertical" flexItem />
         <Box
           sx={{

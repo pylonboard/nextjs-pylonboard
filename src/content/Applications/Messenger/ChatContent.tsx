@@ -1,5 +1,4 @@
 import { Box, Avatar, Typography, Card, styled, Divider } from '@mui/material';
-import { useAuth } from 'src/hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import {
   formatDistance,
@@ -48,7 +47,6 @@ const CardWrapperSecondary = styled(Card)(
 
 function ChatContent() {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
 
   return (
     <Box p={3}>
@@ -138,15 +136,6 @@ function ChatContent() {
             })}
           </Typography>
         </Box>
-        <Avatar
-          variant="rounded"
-          sx={{
-            width: 50,
-            height: 50
-          }}
-          alt={user.name}
-          src={user.avatar}
-        />
       </Box>
       <DividerWrapper>
         {format(subDays(new Date(), 5), 'MMMM dd yyyy')}
@@ -192,15 +181,6 @@ function ChatContent() {
             })}
           </Typography>
         </Box>
-        <Avatar
-          variant="rounded"
-          sx={{
-            width: 50,
-            height: 50
-          }}
-          alt={user.name}
-          src={user.avatar}
-        />
       </Box>
       <DividerWrapper>{t('Today')}</DividerWrapper>
       <Box
@@ -296,15 +276,6 @@ function ChatContent() {
             })}
           </Typography>
         </Box>
-        <Avatar
-          variant="rounded"
-          sx={{
-            width: 50,
-            height: 50
-          }}
-          alt={user.name}
-          src={user.avatar}
-        />
       </Box>
     </Box>
   );

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import CollapsedSidebarLayout from 'src/layouts/CollapsedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import DashboardMonitoringContent from 'src/content/DashboardPages/monitoring';
 
@@ -17,9 +17,9 @@ function DashboardMonitoring() {
 }
 
 DashboardMonitoring.getLayout = (page) => (
-  <Authenticated>
+  
     <CollapsedSidebarLayout>{page}</CollapsedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default DashboardMonitoring;

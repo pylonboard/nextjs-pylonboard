@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import AccentHeaderLayout from 'src/layouts/AccentHeaderLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 import DashboardLearningContent from 'src/content/DashboardPages/learning';
 
@@ -17,9 +16,7 @@ function DashboardLearning() {
 }
 
 DashboardLearning.getLayout = (page) => (
-  <Authenticated>
-    <AccentHeaderLayout>{page}</AccentHeaderLayout>
-  </Authenticated>
+  <AccentHeaderLayout>{page}</AccentHeaderLayout>
 );
 
 export default DashboardLearning;

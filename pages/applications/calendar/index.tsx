@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 
-import { Authenticated } from 'src/components/Authenticated';
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
 
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
@@ -344,9 +343,7 @@ function ApplicationsCalendar() {
 }
 
 ApplicationsCalendar.getLayout = (page) => (
-  <Authenticated>
-    <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
 );
 
 export default ApplicationsCalendar;

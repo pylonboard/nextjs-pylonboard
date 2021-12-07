@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 import Head from 'next/head';
 import PageHeader from 'src/content/Applications/JobsPlatform/PageHeader';
@@ -230,9 +229,7 @@ function ApplicationsJobsPlatform() {
 }
 
 ApplicationsJobsPlatform.getLayout = (page) => (
-  <Authenticated>
-    <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
 );
 
 export default ApplicationsJobsPlatform;

@@ -20,7 +20,6 @@ import AllFolders from 'src/content/Applications/FileManager/AllFolders';
 
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 const DrawerWrapper = styled(Drawer)(
   ({ theme }) => `
@@ -165,9 +164,7 @@ function ApplicationsFileManager() {
 }
 
 ApplicationsFileManager.getLayout = (page) => (
-  <Authenticated>
-    <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
 );
 
 export default ApplicationsFileManager;

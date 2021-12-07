@@ -21,7 +21,6 @@ import {
   lighten,
   styled
 } from '@mui/material';
-import { useAuth } from 'src/hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import { formatDistance, subMinutes, subHours } from 'date-fns';
 import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
@@ -96,7 +95,6 @@ const TabsContainerWrapper = styled(Box)(
 
 function SidebarContent() {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
 
   const [state, setState] = useState({
     invisible: true
@@ -124,7 +122,6 @@ function SidebarContent() {
   return (
     <RootWrapper>
       <Box display="flex" alignItems="flex-start">
-        <Avatar alt={user.name} src={user.avatar} />
         <Box
           sx={{
             ml: 1.5,
@@ -136,14 +133,6 @@ function SidebarContent() {
             alignItems="flex-start"
             justifyContent="space-between"
           >
-            <Box>
-              <Typography variant="h5" noWrap>
-                {user.name}
-              </Typography>
-              <Typography variant="subtitle1" noWrap>
-                {user.jobtitle}
-              </Typography>
-            </Box>
             <IconButton
               sx={{
                 p: 1

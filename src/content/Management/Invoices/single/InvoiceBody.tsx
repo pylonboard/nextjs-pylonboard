@@ -21,7 +21,6 @@ import {
 } from '@mui/material';
 import { format } from 'date-fns';
 import numeral from 'numeral';
-import { useAuth } from 'src/hooks/useAuth';
 import Logo from 'src/components/LogoSign';
 import { useTranslation } from 'react-i18next';
 import DownloadTwoToneIcon from '@mui/icons-material/DownloadTwoTone';
@@ -62,7 +61,6 @@ interface Item {
 
 const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
 
   const itemsList: Item[] = [
     {
@@ -108,14 +106,6 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
             <LogoWrapper>
               <Logo />
             </LogoWrapper>
-            <Typography
-              sx={{
-                py: 2
-              }}
-              variant="h4"
-            >
-              {user.name}
-            </Typography>
             <Typography variant="h5" fontWeight="normal">
               83 Laurel Lane
             </Typography>

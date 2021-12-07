@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Tooltip,
   IconButton,
   Box,
@@ -8,7 +7,6 @@ import {
   InputBase,
   useTheme
 } from '@mui/material';
-import { useAuth } from 'src/hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import AttachFileTwoToneIcon from '@mui/icons-material/AttachFileTwoTone';
 import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
@@ -27,7 +25,6 @@ const Input = styled('input')({
 
 function BottomBarContent() {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
   const theme = useTheme();
 
   return (
@@ -40,11 +37,6 @@ function BottomBarContent() {
       }}
     >
       <Box flexGrow={1} display="flex" alignItems="center">
-        <Avatar
-          sx={{ display: { xs: 'none', sm: 'flex' }, mr: 1 }}
-          alt={user.name}
-          src={user.avatar}
-        />
         <MessageInputWrapper
           autoFocus
           placeholder={t('Write your message here...')}

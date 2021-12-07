@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import { Authenticated } from 'src/components/Authenticated';
 import AccentHeaderLayout from 'src/layouts/AccentHeaderLayout';
 
 import DashboardAutomationContent from 'src/content/DashboardPages/automation';
@@ -17,9 +16,7 @@ function DashboardAutomation() {
 }
 
 DashboardAutomation.getLayout = (page) => (
-  <Authenticated>
-    <AccentHeaderLayout>{page}</AccentHeaderLayout>
-  </Authenticated>
+  <AccentHeaderLayout>{page}</AccentHeaderLayout>
 );
 
 export default DashboardAutomation;

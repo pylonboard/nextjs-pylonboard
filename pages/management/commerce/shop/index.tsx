@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState, useEffect, useCallback } from 'react';
 
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import Footer from 'src/components/Footer';
 import PageHeader from 'src/content/Management/Commerce/shop/PageHeader';
@@ -135,9 +135,9 @@ function ManagementProductsShop() {
 }
 
 ManagementProductsShop.getLayout = (page) => (
-  <Authenticated>
+  
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default ManagementProductsShop;

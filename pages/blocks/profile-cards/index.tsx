@@ -3,7 +3,7 @@ import Footer from 'src/components/Footer';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import Head from 'next/head';
 
-import { Authenticated } from 'src/components/Authenticated';
+
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
 
 import Block1 from 'src/content/Blocks/ProfileCards/Block1';
@@ -90,9 +90,9 @@ function DataDisplayProfileCards() {
 }
 
 DataDisplayProfileCards.getLayout = (page) => (
-  <Authenticated>
+  
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default DataDisplayProfileCards;

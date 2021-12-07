@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import AccentHeaderLayout from 'src/layouts/AccentHeaderLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 import DashboardProductsContent from 'src/content/DashboardPages/products';
 
@@ -17,9 +16,7 @@ function DashboardProducts() {
 }
 
 DashboardProducts.getLayout = (page) => (
-  <Authenticated>
-    <AccentHeaderLayout>{page}</AccentHeaderLayout>
-  </Authenticated>
+  <AccentHeaderLayout>{page}</AccentHeaderLayout>
 );
 
 export default DashboardProducts;

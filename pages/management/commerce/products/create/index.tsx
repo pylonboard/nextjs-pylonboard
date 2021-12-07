@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import Head from 'next/head';
 import PageHeader from 'src/content/Management/Commerce/create/PageHeader';
@@ -148,9 +148,9 @@ function ManagementProductCreate() {
 }
 
 ManagementProductCreate.getLayout = (page) => (
-  <Authenticated>
+  
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default ManagementProductCreate;
