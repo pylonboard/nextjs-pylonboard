@@ -16,7 +16,6 @@ import {
   styled
 } from '@mui/material';
 
-import { useAuth } from 'src/hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
@@ -84,7 +83,6 @@ const ButtonPeriod = styled(Button)(
 
 function PageHeader() {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -248,22 +246,6 @@ function PageHeader() {
       <Grid container alignItems="center">
         <Grid item>
           <Box display="inline-flex" mr={2} position="relative">
-            <Box
-              sx={{
-                animationDuration: '550ms',
-                position: 'absolute',
-                left: 0,
-                top: 0
-              }}
-            >
-              <Avatar
-                sx={{
-                  width: 134,
-                  height: 134
-                }}
-                src={user.avatar}
-              />
-            </Box>
             <CircularProgress
               variant="determinate"
               sx={{

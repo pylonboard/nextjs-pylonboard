@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import Head from 'next/head';
 import PageHeader from 'src/content/Management/Invoices/PageHeader';
@@ -65,9 +65,9 @@ function ManagementInvoices() {
 }
 
 ManagementInvoices.getLayout = (page) => (
-  <Authenticated>
+  
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default ManagementInvoices;

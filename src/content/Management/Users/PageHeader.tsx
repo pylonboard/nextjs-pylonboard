@@ -3,7 +3,6 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { wait } from 'src/utils/wait';
-import { useAuth } from 'src/hooks/useAuth';
 
 import {
   styled,
@@ -19,7 +18,6 @@ import {
   TextField,
   CircularProgress,
   Switch,
-  Avatar,
   Autocomplete,
   IconButton,
   Button
@@ -78,7 +76,6 @@ function PageHeader() {
   const { t }: { t: any } = useTranslation();
   const [open, setOpen] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-  const { user } = useAuth();
 
   const [publicProfile, setPublicProfile] = useState({
     public: true
@@ -317,11 +314,6 @@ function PageHeader() {
                       mt={3}
                     >
                       <AvatarWrapper>
-                        <Avatar
-                          variant="rounded"
-                          alt={user.name}
-                          src={user.avatar}
-                        />
                         <ButtonUploadWrapper>
                           <Input
                             accept="image/*"

@@ -22,7 +22,6 @@ import NextLink from 'next/link';
 
 import { useDispatch, useSelector } from 'src/store';
 import { getMail } from 'src/slices/mailbox';
-import { useAuth } from 'src/hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveTwoTone';
@@ -77,7 +76,6 @@ const BoxReply = styled(Box)(
 export const MailboxSingle: FC<MailboxSingleProps> = (props) => {
   const { mailId, tag } = props;
   const dispatch = useDispatch();
-  const { user } = useAuth();
   const { t }: { t: any } = useTranslation();
   const mailbox = useSelector((state) => state.mailbox.mails.byId[mailId]);
   const [onMenuOpen, menuOpen] = useState<boolean>(false);
@@ -235,7 +233,6 @@ export const MailboxSingle: FC<MailboxSingleProps> = (props) => {
       </BoxContent>
       <Divider />
       <BoxReply px={3} py={4} display="flex" alignItems="flex-start">
-        <Avatar alt={user.name} src={user.avatar} />
         <Box ml={2} flexGrow={1}>
           <Card>
             <Box px={3} pt={2}>

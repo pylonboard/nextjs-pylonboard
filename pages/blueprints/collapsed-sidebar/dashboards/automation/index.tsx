@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import { Authenticated } from 'src/components/Authenticated';
 import CollapsedSidebarLayout from 'src/layouts/CollapsedSidebarLayout';
 
 import DashboardAutomationContent from 'src/content/DashboardPages/automation';
@@ -17,9 +16,7 @@ function DashboardAutomation() {
 }
 
 DashboardAutomation.getLayout = (page) => (
-  <Authenticated>
-    <CollapsedSidebarLayout>{page}</CollapsedSidebarLayout>
-  </Authenticated>
+  <CollapsedSidebarLayout>{page}</CollapsedSidebarLayout>
 );
 
 export default DashboardAutomation;

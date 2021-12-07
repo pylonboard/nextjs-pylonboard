@@ -1,10 +1,8 @@
 import { useRef, useState } from 'react';
-import { useAuth } from 'src/hooks/useAuth';
 
 import {
   Avatar,
   Box,
-  Button,
   Divider,
   alpha,
   List,
@@ -16,13 +14,11 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useRouter } from 'next/router';
 
 import { useTranslation } from 'react-i18next';
 import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
-import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 
 const MenuUserBox = styled(Box)(
@@ -64,9 +60,6 @@ const UserBoxDescription = styled(Typography)(
 function SidebarTopSection() {
   const { t }: { t: any } = useTranslation();
   const theme = useTheme();
-  const router = useRouter();
-
-  const { logout } = useAuth();
 
   const user = {
     avatar: '/static/images/avatars/1.jpg',
@@ -83,16 +76,6 @@ function SidebarTopSection() {
 
   const handleClose = (): void => {
     setOpen(false);
-  };
-
-  const handleLogout = async (): Promise<void> => {
-    try {
-      handleClose();
-      await logout();
-      router.push('/');
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (
@@ -219,17 +202,6 @@ function SidebarTopSection() {
             <ListItemText primary={t('Projects')} />
           </ListItem>
         </List>
-        <Divider />
-        <Box m={1}>
-          <Button color="primary" fullWidth onClick={handleLogout}>
-            <LockOpenTwoToneIcon
-              sx={{
-                mr: 1
-              }}
-            />
-            {t('Sign out')}
-          </Button>
-        </Box>
       </Popover>
     </Box>
   );

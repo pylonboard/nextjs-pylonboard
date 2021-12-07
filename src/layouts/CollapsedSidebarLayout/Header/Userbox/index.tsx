@@ -1,6 +1,4 @@
 import { useRef, useState } from 'react';
-import { useAuth } from 'src/hooks/useAuth';
-import { useRouter } from 'next/router';
 
 import {
   Avatar,
@@ -18,7 +16,6 @@ import { useTranslation } from 'react-i18next';
 import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
-import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 
 const UserBoxButton = styled(Button)(
@@ -59,9 +56,6 @@ const UserBoxDescription = styled(Typography)(
 function HeaderUserbox() {
   const { t }: { t: any } = useTranslation();
 
-  const router = useRouter();
-  const { logout } = useAuth();
-
   const user = {
     avatar: '/static/images/avatars/1.jpg',
     name: 'Rachael Simons',
@@ -77,16 +71,6 @@ function HeaderUserbox() {
 
   const handleClose = (): void => {
     setOpen(false);
-  };
-
-  const handleLogout = async (): Promise<void> => {
-    try {
-      handleClose();
-      await logout();
-      router.push('/');
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (
@@ -186,17 +170,6 @@ function HeaderUserbox() {
             <ListItemText primary={t('Projects')} />
           </ListItem>
         </List>
-        <Divider />
-        <Box m={1}>
-          <Button color="primary" fullWidth onClick={handleLogout}>
-            <LockOpenTwoToneIcon
-              sx={{
-                mr: 1
-              }}
-            />
-            {t('Sign out')}
-          </Button>
-        </Box>
       </Popover>
     </>
   );

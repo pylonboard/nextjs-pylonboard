@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import AccentSidebarLayout from 'src/layouts/AccentSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import DashboardHospitalViewContent from 'src/content/DashboardPages/healthcare/hospital';
 
@@ -17,9 +17,9 @@ function DashboardHospitalView() {
 }
 
 DashboardHospitalView.getLayout = (page) => (
-  <Authenticated>
+  
     <AccentSidebarLayout>{page}</AccentSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default DashboardHospitalView;

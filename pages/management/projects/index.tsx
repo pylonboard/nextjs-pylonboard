@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useState, useEffect, useCallback } from 'react';
 
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 import PageHeader from 'src/content/Management/Projects/PageHeader';
 import Footer from 'src/components/Footer';
@@ -62,9 +61,9 @@ function ManagementProjects() {
 }
 
 ManagementProjects.getLayout = (page) => (
-  <Authenticated>
+  
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  
 );
 
 export default ManagementProjects;

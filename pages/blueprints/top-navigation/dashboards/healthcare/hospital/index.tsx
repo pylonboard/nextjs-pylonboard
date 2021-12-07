@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import TopNavigationLayout from 'src/layouts/TopNavigationLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import DashboardHospitalViewContent from 'src/content/DashboardPages/healthcare/hospital';
 
@@ -17,9 +17,9 @@ function DashboardHospitalView() {
 }
 
 DashboardHospitalView.getLayout = (page) => (
-  <Authenticated>
+
     <TopNavigationLayout>{page}</TopNavigationLayout>
-  </Authenticated>
+
 );
 
 export default DashboardHospitalView;

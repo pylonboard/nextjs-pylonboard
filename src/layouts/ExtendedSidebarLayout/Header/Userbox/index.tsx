@@ -1,11 +1,8 @@
 import { useRef, useState } from 'react';
-import { useAuth } from 'src/hooks/useAuth';
-import { useRouter } from 'next/router';
 
 import {
   Avatar,
   Box,
-  Button,
   Divider,
   MenuList,
   alpha,
@@ -18,7 +15,6 @@ import {
   useTheme
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -114,9 +110,6 @@ const UserBoxDescription = styled(Typography)(
 function HeaderUserbox() {
   const { t }: { t: any } = useTranslation();
   const theme = useTheme();
-  const router = useRouter();
-
-  const { logout } = useAuth();
 
   const user = {
     avatar: '/static/images/avatars/1.jpg',
@@ -133,16 +126,6 @@ function HeaderUserbox() {
 
   const handleClose = (): void => {
     setOpen(false);
-  };
-
-  const handleLogout = async (): Promise<void> => {
-    try {
-      handleClose();
-      await logout();
-      router.push('/');
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   const Box1Options: ApexOptions = {
@@ -322,17 +305,6 @@ function HeaderUserbox() {
             type="line"
             height={60}
           />
-        </Box>
-        <Divider />
-        <Box m={1}>
-          <Button color="primary" fullWidth onClick={handleLogout}>
-            <LockOpenTwoToneIcon
-              sx={{
-                mr: 1
-              }}
-            />
-            {t('Sign out')}
-          </Button>
         </Box>
       </Popover>
     </>

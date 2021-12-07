@@ -17,7 +17,6 @@ import {
   styled
 } from '@mui/material';
 import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone';
-import { useAuth } from 'src/hooks/useAuth';
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import LightbulbTwoToneIcon from '@mui/icons-material/LightbulbTwoTone';
 import RouterTwoToneIcon from '@mui/icons-material/RouterTwoTone';
@@ -140,12 +139,11 @@ const IconWrapper = styled(Box)(
 
 function Devices() {
   const { t }: { t: any } = useTranslation();
-  const { user } = useAuth();
 
   const locations = [
     {
       value: 'all',
-      text: user.name + t("'s Home")
+      text: t("'s Home")
     },
     {
       value: 'living_room',

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState, useCallback, useEffect } from 'react';
 
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
+
 
 import Footer from 'src/components/Footer';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
@@ -67,9 +67,9 @@ function ManagementInvoicesView() {
 }
 
 ManagementInvoicesView.getLayout = (page) => (
-  <Authenticated>
+
     <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+
 );
 
 export default ManagementInvoicesView;

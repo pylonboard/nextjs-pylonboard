@@ -13,7 +13,6 @@ import Results from 'src/content/Applications/ProjectsBoard/Results';
 import Label from 'src/components/Label';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
-import { Authenticated } from 'src/components/Authenticated';
 
 import {
   styled,
@@ -467,9 +466,7 @@ function ApplicationsProjectsBoard() {
 }
 
 ApplicationsProjectsBoard.getLayout = (page) => (
-  <Authenticated>
-    <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
-  </Authenticated>
+  <ExtendedSidebarLayout>{page}</ExtendedSidebarLayout>
 );
 
 export default ApplicationsProjectsBoard;
