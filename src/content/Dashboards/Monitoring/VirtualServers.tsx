@@ -16,7 +16,7 @@ import {
   alpha,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import RouterTwoToneIcon from '@mui/icons-material/RouterTwoTone';
 import DnsTwoToneIcon from '@mui/icons-material/DnsTwoTone';
@@ -64,7 +64,7 @@ const SwitchSuccess = styled(Switch)(
 );
 
 function VirtualServers() {
-  const { t }: { t: any } = useTranslation();
+
 
   const [state1, setState1] = useState({
     server: true
@@ -96,7 +96,7 @@ function VirtualServers() {
           pb: 3
         }}
       >
-        {t('Virtual Servers')}
+        {'Virtual Servers'}
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
@@ -112,7 +112,7 @@ function VirtualServers() {
               </Typography>
               <Label color="success">
                 <DotSuccess />
-                {t('active')}
+                {'active'}
               </Label>
             </Box>
             <Box
@@ -131,7 +131,7 @@ function VirtualServers() {
                   >
                     <RouterTwoToneIcon />
                   </ListItemAvatar>
-                  <ListItemText primary={t('IP Address')} />
+                  <ListItemText primary={'IP Address'} />
                   <Typography variant="subtitle2">192.168.1.4</Typography>
                 </ListItem>
                 <Divider component="li" />
@@ -143,7 +143,7 @@ function VirtualServers() {
                   >
                     <DnsTwoToneIcon />
                   </ListItemAvatar>
-                  <ListItemText primary={t('CPU')} />
+                  <ListItemText primary={'CPU'} />
                   <Typography variant="subtitle2">12 cores</Typography>
                 </ListItem>
                 <Divider component="li" />
@@ -155,7 +155,7 @@ function VirtualServers() {
                   >
                     <MemoryTwoToneIcon />
                   </ListItemAvatar>
-                  <ListItemText primary={t('RAM')} />
+                  <ListItemText primary={'RAM'} />
                   <Typography variant="subtitle2">32.568 MB</Typography>
                 </ListItem>
                 <Divider component="li" />
@@ -167,10 +167,10 @@ function VirtualServers() {
                 justifyContent="space-between"
               >
                 <Box>
-                  <Button variant="text">{t('More information')}</Button>
+                  <Button variant="text">{'More information'}</Button>
                 </Box>
                 <Box display="flex" alignItems="center">
-                  <Tooltip arrow title={t('Share')}>
+                  <Tooltip arrow title={'Share'}>
                     <IconButton
                       sx={{
                         ml: 1
@@ -181,7 +181,7 @@ function VirtualServers() {
                       <ShareTwoToneIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
-                  <Tooltip arrow title={t('Refresh')}>
+                  <Tooltip arrow title={'Refresh'}>
                     <IconButton
                       sx={{
                         ml: 1
@@ -223,7 +223,7 @@ function VirtualServers() {
               </Typography>
               <Label color="error">
                 <DotError />
-                {t('inactive')}
+                {'inactive'}
               </Label>
             </Box>
             <Box
@@ -242,7 +242,7 @@ function VirtualServers() {
                   >
                     <RouterTwoToneIcon />
                   </ListItemAvatar>
-                  <ListItemText primary={t('IP Address')} />
+                  <ListItemText primary={'IP Address'} />
                   <Typography variant="subtitle2">185.155.188.53</Typography>
                 </ListItem>
                 <Divider component="li" />
@@ -254,7 +254,7 @@ function VirtualServers() {
                   >
                     <DnsTwoToneIcon />
                   </ListItemAvatar>
-                  <ListItemText primary={t('CPU')} />
+                  <ListItemText primary={'CPU'} />
                   <Typography variant="subtitle2">8 cores</Typography>
                 </ListItem>
                 <Divider component="li" />
@@ -266,7 +266,7 @@ function VirtualServers() {
                   >
                     <MemoryTwoToneIcon />
                   </ListItemAvatar>
-                  <ListItemText primary={t('RAM')} />
+                  <ListItemText primary={'RAM'} />
                   <Typography variant="subtitle2">16.586 MB</Typography>
                 </ListItem>
                 <Divider component="li" />
@@ -278,10 +278,10 @@ function VirtualServers() {
                 justifyContent="space-between"
               >
                 <Box>
-                  <Button variant="text">{t('More information')}</Button>
+                  <Button variant="text">{'More information'}</Button>
                 </Box>
                 <Box display="flex" alignItems="center">
-                  <Tooltip arrow title={t('Share')}>
+                  <Tooltip arrow title={'Share'}>
                     <IconButton
                       sx={{
                         ml: 1
@@ -292,7 +292,7 @@ function VirtualServers() {
                       <ShareTwoToneIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
-                  <Tooltip arrow title={t('Refresh')}>
+                  <Tooltip arrow title={'Refresh'}>
                     <IconButton
                       sx={{
                         ml: 1

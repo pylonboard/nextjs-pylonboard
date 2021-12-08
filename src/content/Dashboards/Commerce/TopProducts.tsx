@@ -21,13 +21,13 @@ import {
 import { useRefMounted } from 'src/hooks/useRefMounted';
 import { TopProduct } from 'src/models/top_products';
 import { topProductsApi } from 'src/mocks/top_products';
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
 function TopProducts() {
   const isMountedRef = useRefMounted();
   const [products, setProducts] = useState<TopProduct[]>([]);
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const getTopProducts = useCallback(async () => {
@@ -49,14 +49,14 @@ function TopProducts() {
   return (
     <Card>
       <CardHeader
-        title={t('Top Products')}
+        title={'Top Products'}
         action={
           <Button
             variant="contained"
             size="small"
             endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
           >
-            {t('Create Product')}
+            {'Create Product'}
           </Button>
         }
       />
@@ -65,9 +65,9 @@ function TopProducts() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>{t('Product')}</TableCell>
-              <TableCell align="right">{t('Orders')}</TableCell>
-              <TableCell align="right">{t('Revenue')}</TableCell>
+              <TableCell>{'Product'}</TableCell>
+              <TableCell align="right">{'Orders'}</TableCell>
+              <TableCell align="right">{'Revenue'}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -99,7 +99,7 @@ function TopProducts() {
                 <TableCell align="right">
                   <Typography variant="h4">{product.orders}</Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {product.inventory} {t('units')}
+                    {product.inventory} {'units'}
                   </Typography>
                 </TableCell>
                 <TableCell align="right">
@@ -110,7 +110,7 @@ function TopProducts() {
                   </Typography>
                   <Typography variant="subtitle2" noWrap>
                     {product.revenuePercent}
-                    {t('% of sales')}
+                    {'% of sales'}
                   </Typography>
                 </TableCell>
               </TableRow>
@@ -119,7 +119,7 @@ function TopProducts() {
         </Table>
       </TableContainer>
       <Box p={2} display="flex" justifyContent="center">
-        <Button variant="outlined">{t('View all Products')}</Button>
+        <Button variant="outlined">{'View all Products'}</Button>
       </Box>
     </Card>
   );

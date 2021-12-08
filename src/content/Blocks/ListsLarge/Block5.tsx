@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import Scrollbar from 'src/components/Scrollbar';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import { format, subHours, subDays } from 'date-fns';
@@ -47,7 +47,7 @@ const LinkHover = styled('a')(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const items = [
@@ -110,9 +110,9 @@ function Block5() {
               fontSize: `${theme.typography.pxToRem(12)}`
             }}
           >
-            {t('Targets')}
+            {'Targets'}
           </Typography>
-          <Typography variant="h4">{t('Monthly Stats')}</Typography>
+          <Typography variant="h4">{'Monthly Stats'}</Typography>
         </Box>
         <Button
           size="small"
@@ -130,7 +130,7 @@ function Block5() {
             }
           }}
         >
-          {t('View all')}
+          {'View all'}
         </Button>
       </Box>
       <Divider />
@@ -219,7 +219,7 @@ function Block5() {
           endIcon={<ArrowForwardTwoToneIcon />}
           size="small"
         >
-          {t('View all employees')}
+          {'View all employees'}
         </Button>
       </Box>
     </Card>

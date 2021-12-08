@@ -11,7 +11,7 @@ import {
   IconButton,
   alpha
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import { Chart } from 'src/components/Chart';
@@ -78,7 +78,7 @@ const DividerError = styled(Divider)(
 );
 
 function UpgradeAccount() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chart3Options: ApexOptions = {
@@ -153,7 +153,7 @@ function UpgradeAccount() {
                 pb: 1
               }}
             >
-              {t('Upgrade Your Account to PRO')}
+              {'Upgrade Your Account to PRO'}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -161,7 +161,7 @@ function UpgradeAccount() {
                 pb: 2
               }}
             >
-              {t('You get a lot more features when upgrading to a PRO plan.')}
+              {'You get a lot more features when upgrading to a PRO plan.'}
             </Typography>
             <Typography
               variant="h4"
@@ -172,10 +172,10 @@ function UpgradeAccount() {
               color="primary"
               component="p"
             >
-              {t('Manage your finances in style!')}
+              {'Manage your finances in style!'}
             </Typography>
             <Button variant="contained" color="secondary">
-              {t('Get started today')}
+              {'Get started today'}
             </Button>
           </Box>
           <Box
@@ -219,7 +219,7 @@ function UpgradeAccount() {
                     fontWeight: 'bold'
                   }}
                 >
-                  {t('Growth')}
+                  {'Growth'}
                 </Typography>
                 <Typography
                   variant="h2"
@@ -284,7 +284,7 @@ function UpgradeAccount() {
                       textTransform: 'uppercase'
                     }}
                   >
-                    {t('Requests sent')}
+                    {'Requests sent'}
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon fontSize="large" />

@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
 import { Chart } from 'src/components/Chart';
@@ -58,7 +58,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function EnergySaving() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chart1Options: ApexOptions = {
@@ -131,8 +131,8 @@ function EnergySaving() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography variant="h3">{t('Energy')}</Typography>
-        <Tooltip placement="top" title={t('Add new scene')} arrow>
+        <Typography variant="h3">{'Energy'}</Typography>
+        <Tooltip placement="top" title={'Add new scene'} arrow>
           <IconButton size="large" color="primary">
             <KeyboardArrowRightTwoToneIcon fontSize="small" />
           </IconButton>
@@ -151,14 +151,14 @@ function EnergySaving() {
             <Tooltip
               placement="top"
               arrow
-              title={t('Add a description here, if needed')}
+              title={'Add a description here, if needed'}
             >
               <IconButtonWrapper size="small" color="primary">
                 <MoreHorizTwoToneIcon />
               </IconButtonWrapper>
             </Tooltip>
           }
-          title={t('2021 Energy Status')}
+          title={'2021 Energy Status'}
         />
         <Box
           sx={{

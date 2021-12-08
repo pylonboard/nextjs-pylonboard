@@ -1,10 +1,10 @@
 import { Card, Box, Grid, Typography, useTheme } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function VisitorsOverview() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -145,19 +145,19 @@ function VisitorsOverview() {
           <Grid spacing={3} container>
             <Grid item md={4}>
               <Typography variant="caption" gutterBottom>
-                {t('Visitors')}
+                {'Visitors'}
               </Typography>
               <Typography variant="h3">{data.visitors}</Typography>
             </Grid>
             <Grid item md={4}>
               <Typography variant="caption" gutterBottom>
-                {t('Conversion')}
+                {'Conversion'}
               </Typography>
               <Typography variant="h3">{data.conversion}</Typography>
             </Grid>
             <Grid item md={4}>
               <Typography variant="caption" gutterBottom>
-                {t('Revenue/Visitor')}
+                {'Revenue/Visitor'}
               </Typography>
               <Typography variant="h3">{data.revenue}</Typography>
             </Grid>

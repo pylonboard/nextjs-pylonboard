@@ -8,7 +8,7 @@ import {
   Box,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -38,7 +38,7 @@ const AvatarWrapperSuccess = styled(Avatar)(
 );
 
 function Budget() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -47,11 +47,11 @@ function Budget() {
       }}
     >
       <CardHeader
-        title={t('Budget')}
+        title={'Budget'}
         subheader={
           <>
-            {t('You had')} <b>258</b> {t('expense transactions this month')},{' '}
-            <b>43</b> {t('more than previous month')}.
+            {'You had'} <b>258</b> {'expense transactions this month'},{' '}
+            <b>43</b> {'more than previous month'}.
           </>
         }
         subheaderTypographyProps={{
@@ -108,7 +108,7 @@ function Budget() {
             }}
           >
             <Typography variant="subtitle1" gutterBottom color="text.secondary">
-              {t('Expenses')}
+              {'Expenses'}
             </Typography>
             <Box
               display="flex"
@@ -129,7 +129,7 @@ function Budget() {
           </Box>
         </Box>
         <Typography variant="body2" color="text.secondary">
-          {t('Minimum credit payment due in 15 days')}:{' '}
+          {'Minimum credit payment due in 15 days'}:{' '}
           <Typography
             variant="body2"
             component="span"
@@ -157,7 +157,7 @@ function Budget() {
             }}
           >
             <Typography variant="subtitle1" gutterBottom color="text.secondary">
-              {t('Savings')}
+              {'Savings'}
             </Typography>
             <Box
               display="flex"
@@ -179,7 +179,7 @@ function Budget() {
         </Box>
         <Typography variant="body2" color="text.secondary">
           <Text color="success">
-            {t('You have almost reached your target goal!!!')}
+            {'You have almost reached your target goal!!!'}
           </Text>
         </Typography>
       </Box>

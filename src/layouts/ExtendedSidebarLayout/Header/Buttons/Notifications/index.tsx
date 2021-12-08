@@ -32,7 +32,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import Text from 'src/components/Text';
 
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import BusinessCenterTwoToneIcon from '@mui/icons-material/BusinessCenterTwoTone';
 import AssignmentIndTwoToneIcon from '@mui/icons-material/AssignmentIndTwoTone';
@@ -157,15 +157,15 @@ const IconButtonWrapper = styled(IconButton)(
 function HeaderNotifications() {
   const ref = useRef<any>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const [currentTab, setCurrentTab] = useState<string>('timeline');
 
   const tabs = [
-    { value: 'timeline', label: t('Timeline') },
-    { value: 'tasks', label: t('Tasks') },
-    { value: 'reports', label: t('Reports') }
+    { value: 'timeline', label: 'Timeline' },
+    { value: 'tasks', label: 'Tasks' },
+    { value: 'reports', label: 'Reports' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -257,7 +257,7 @@ function HeaderNotifications() {
 
   return (
     <>
-      <Tooltip arrow title={t('Notifications')}>
+      <Tooltip arrow title={'Notifications'}>
         <Badge
           variant="dot"
           anchorOrigin={{
@@ -333,7 +333,7 @@ function HeaderNotifications() {
                 }}
                 variant="h4"
               >
-                {t('Notifications')}
+                {'Notifications'}
               </Typography>
               <Typography textAlign="center" variant="subtitle2">
                 You have{' '}
@@ -587,7 +587,7 @@ function HeaderNotifications() {
                     </Typography>
                     <Box display="flex" mt={1} alignItems="flex-start">
                       <Button size="small" variant="contained">
-                        {t('Submit report')}
+                        {'Submit report'}
                       </Button>
                     </Box>
                   </TimelineContent>
@@ -612,7 +612,7 @@ function HeaderNotifications() {
                   variant="caption"
                   fontWeight="bold"
                 >
-                  {t('Tasks for today')}
+                  {'Tasks for today'}
                 </Typography>
                 <Card
                   sx={{
@@ -632,7 +632,7 @@ function HeaderNotifications() {
                     Presentation site design
                   </Link>
                   <Box mt={1.5} display="flex" alignItems="center">
-                    <LabelPrimary>{t('On hold')}</LabelPrimary>
+                    <LabelPrimary>{'On hold'}</LabelPrimary>
                     <Text flex color="error">
                       <AccessTimeTwoToneIcon
                         sx={{
@@ -654,7 +654,7 @@ function HeaderNotifications() {
                   variant="caption"
                   fontWeight="bold"
                 >
-                  {t("Tomorrow's schedule")}
+                  {"Tomorrow's schedule"}
                 </Typography>
                 <Box
                   sx={{
@@ -665,10 +665,10 @@ function HeaderNotifications() {
                     <CheckTwoToneIcon />
                   </AvatarSuccess>
                   <Typography gutterBottom variant="h4">
-                    {t('Nothing to report')}
+                    {'Nothing to report'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t("You don't have any other pending tasks in progress")}!
+                    {"You don't have any other pending tasks in progress"}!
                   </Typography>
                 </Box>
               </Box>
@@ -688,10 +688,10 @@ function HeaderNotifications() {
                 }}
               >
                 <Typography gutterBottom variant="h4">
-                  {t('Total Sales')}
+                  {'Total Sales'}
                 </Typography>
                 <Typography variant="subtitle2">
-                  {t('Total sales performance for last week')}
+                  {'Total sales performance for last week'}
                 </Typography>
               </Box>
               <Chart
@@ -748,7 +748,7 @@ function HeaderNotifications() {
             endIcon={<ArrowForwardTwoToneIcon />}
             color="primary"
           >
-            {t('View all')}
+            {'View all'}
           </Button>
         </Box>
       </Popover>

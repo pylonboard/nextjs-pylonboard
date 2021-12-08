@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import Text from 'src/components/Text';
@@ -144,7 +144,7 @@ const DotLegend = styled('span')(
 );
 
 function HeaderMenu() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const ref = useRef<any>(null);
@@ -207,7 +207,7 @@ function HeaderMenu() {
             }
           }}
         >
-          {t('Mega menu')}
+          {'Mega menu'}
         </Button>
         <Button
           ref={ref2}
@@ -239,7 +239,7 @@ function HeaderMenu() {
             }
           }}
         >
-          {t('Dashboards')}
+          {'Dashboards'}
         </Button>
       </Box>
       <Popover
@@ -272,10 +272,10 @@ function HeaderMenu() {
               }}
               variant="h4"
             >
-              {t('Mega Menus')}
+              {'Mega Menus'}
             </Typography>
             <Typography noWrap variant="subtitle2">
-              {t('This is an example for custom menus')}
+              {'This is an example for custom menus'}
             </Typography>
           </Box>
           <Link
@@ -286,7 +286,7 @@ function HeaderMenu() {
               display: { xs: 'none', lg: 'inline-block' }
             }}
           >
-            {t('View all')}
+            {'View all'}
           </Link>
         </Box>
         <Divider />
@@ -303,7 +303,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Automation')}
+                primary={'Automation'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -317,7 +317,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Analytics')}
+                primary={'Analytics'}
               />
               <Box display="flex" alignItems="center">
                 <DotLegend
@@ -339,7 +339,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Banking')}
+                primary={'Banking'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -353,7 +353,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Commerce')}
+                primary={'Commerce'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -367,7 +367,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Crypto')}
+                primary={'Crypto'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -383,7 +383,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Finance')}
+                primary={'Finance'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -397,7 +397,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Fitness')}
+                primary={'Fitness'}
               />
               <Box display="flex" alignItems="center">
                 <LabelWrapper
@@ -409,7 +409,7 @@ function HeaderMenu() {
                     )}`
                   }}
                 >
-                  {t('Hot')}
+                  {'Hot'}
                 </LabelWrapper>
                 <ChevronRightTwoToneIcon
                   sx={{
@@ -425,7 +425,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Healthcare')}
+                primary={'Healthcare'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -439,7 +439,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Helpdesk')}
+                primary={'Helpdesk'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -453,7 +453,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Learning')}
+                primary={'Learning'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -469,7 +469,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Calendar')}
+                primary={'Calendar'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -483,7 +483,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('File Manager')}
+                primary={'File Manager'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -498,7 +498,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Jobs Platform')}
+                primary={'Jobs Platform'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -512,7 +512,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Messenger')}
+                primary={'Messenger'}
               />
               <Box display="flex" alignItems="center">
                 <DotLegend
@@ -533,7 +533,7 @@ function HeaderMenu() {
                 primaryTypographyProps={{
                   variant: 'h5'
                 }}
-                primary={t('Projects Board')}
+                primary={'Projects Board'}
               />
               <ChevronRightTwoToneIcon
                 sx={{
@@ -552,7 +552,7 @@ function HeaderMenu() {
           }}
         >
           <Button size="small" color="primary">
-            {t('View more examples')}
+            {'View more examples'}
           </Button>
         </Box>
       </Popover>
@@ -590,7 +590,7 @@ function HeaderMenu() {
               fontSize: theme.typography.pxToRem(18)
             }}
           >
-            {t('Dashboards')}
+            {'Dashboards'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -599,7 +599,7 @@ function HeaderMenu() {
               color: theme.colors.alpha.trueWhite[70]
             }}
           >
-            {t("This is just a menu example we've created")}
+            {"This is just a menu example we've created"}
           </Typography>
           <Grid container mt={1} spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -616,7 +616,7 @@ function HeaderMenu() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Projects')}</Typography>
+                  <Typography variant="h4">{'Projects'}</Typography>
                 </CardActionAreaWrapper>
               </Card>
             </Grid>
@@ -634,7 +634,7 @@ function HeaderMenu() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Helpdesk')}</Typography>
+                  <Typography variant="h4">{'Helpdesk'}</Typography>
                 </CardActionAreaWrapper>
               </Card>
             </Grid>
@@ -652,7 +652,7 @@ function HeaderMenu() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Dashboard')}</Typography>
+                  <Typography variant="h4">{'Dashboard'}</Typography>
                 </CardActionAreaWrapper>
               </Card>
             </Grid>
@@ -670,7 +670,7 @@ function HeaderMenu() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Customers')}</Typography>
+                  <Typography variant="h4">{'Customers'}</Typography>
                 </CardActionAreaWrapper>
               </Card>
             </Grid>

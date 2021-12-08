@@ -9,7 +9,7 @@ import {
   Stack,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { format } from 'date-fns';
 import CloudTwoToneIcon from '@mui/icons-material/CloudTwoTone';
 import AirTwoToneIcon from '@mui/icons-material/AirTwoTone';
@@ -159,7 +159,7 @@ const ButtonTransparent = styled(Button)(
 );
 
 function Weather() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const user = {
@@ -188,7 +188,7 @@ function Weather() {
               }}
               gutterBottom
             >
-              {t('Hello')}, {user.name}!
+              {'Hello'}, {user.name}!
             </Typography>
             <Typography
               sx={{
@@ -198,9 +198,9 @@ function Weather() {
               }}
               variant="h4"
             >
-              {t(
+              {
                 'Partly cloudy conditions from 3PM to 6PM, with mostly cloudy conditions expected at 6PM'
-              )}
+              }
               .
             </Typography>
             <Grid container spacing={3}>
@@ -222,7 +222,7 @@ function Weather() {
                     <b>
                       27<sup>°</sup>
                     </b>{' '}
-                    {t('set for')} <b>3 hours</b>
+                    {'set for'} <b>3 hours</b>
                   </Typography>
                 </BoxWeather>
               </Grid>
@@ -230,7 +230,7 @@ function Weather() {
                 <BoxWeatherSmall>
                   <Typography variant="caption">
                     <WbSunnyTwoToneIcon />
-                    {t('UV Index')}
+                    {'UV Index'}
                   </Typography>
                   <Box
                     display="flex"
@@ -242,7 +242,7 @@ function Weather() {
                   >
                     <Box mb={2}>
                       <Typography variant="h2">2</Typography>
-                      <Typography variant="h4">{t('Low')}</Typography>
+                      <Typography variant="h4">{'Low'}</Typography>
                     </Box>
                     <LinearUv />
                   </Box>
@@ -257,7 +257,7 @@ function Weather() {
                 <BoxWeatherSmall>
                   <Typography variant="caption">
                     <WaterTwoToneIcon />
-                    {t('Humidity')}
+                    {'Humidity'}
                   </Typography>
                   <Box
                     display="flex"
@@ -283,7 +283,7 @@ function Weather() {
                 <BoxWeatherSmall>
                   <Typography variant="caption">
                     <OpacityTwoToneIcon />
-                    {t('Rainfall')}
+                    {'Rainfall'}
                   </Typography>
                   <Box
                     display="flex"
@@ -295,7 +295,7 @@ function Weather() {
                   >
                     <Box mb={2}>
                       <Typography variant="h2">1.15"</Typography>
-                      <Typography variant="h4">{t('in last 6h')}</Typography>
+                      <Typography variant="h4">{'in last 6h'}</Typography>
                     </Box>
                   </Box>
                   <Typography variant="body2">
@@ -308,7 +308,7 @@ function Weather() {
                 <BoxWeatherSmall>
                   <Typography variant="caption">
                     <SpeedTwoToneIcon />
-                    {t('Pressure')}
+                    {'Pressure'}
                   </Typography>
                   <Box
                     display="flex"
@@ -375,7 +375,7 @@ function Weather() {
                     }}
                     variant="h4"
                   >
-                    {t('Rain Shower')}
+                    {'Rain Shower'}
                   </Typography>
                   <Typography fontWeight="normal" noWrap variant="h5">
                     Today, {format(new Date(), 'MMM dd yyyy')}
@@ -409,7 +409,7 @@ function Weather() {
                     width: 65
                   }}
                 >
-                  <Typography variant="h5">{t('Today')}</Typography>
+                  <Typography variant="h5">{'Today'}</Typography>
                 </Box>
                 <Box display="flex" alignItems="center" px={2}>
                   <CloudTwoToneIcon />
@@ -675,7 +675,7 @@ function Weather() {
                 }}
               />
               <ButtonTransparent fullWidth>
-                {t('View 10-day forecast')}
+                {'View 10-day forecast'}
               </ButtonTransparent>
             </BoxWeather>
           </Grid>

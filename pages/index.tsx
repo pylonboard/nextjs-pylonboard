@@ -4,11 +4,9 @@ import BaseLayout from 'src/layouts/BaseLayout';
 
 import Link from 'src/components/Link';
 import Head from 'next/head';
-import { useTranslation } from 'react-i18next';
 import Logo from 'src/components/LogoSign';
 import Hero from 'src/content/Overview/Hero';
 import Highlights from 'src/content/Overview/Highlights';
-import LanguageSwitcher from 'src/layouts/BoxedSidebarLayout/Header/Buttons/LanguageSwitcher';
 import Footer from 'src/components/Footer';
 
 const HeaderWrapper = styled(Card)(
@@ -31,8 +29,6 @@ const OverviewWrapper = styled(Box)(
 );
 
 function Overview() {
-  const { t }: { t: any } = useTranslation();
-
   return (
     <OverviewWrapper>
       <Head>
@@ -50,14 +46,13 @@ function Overview() {
             >
               <Box />
               <Box>
-                <LanguageSwitcher />
                 <Button
                   component={Link}
                   href="/dashboards/reports"
                   variant="contained"
                   sx={{ ml: 2 }}
                 >
-                  {t('Live Preview')}
+                  Reports
                 </Button>
               </Box>
             </Box>

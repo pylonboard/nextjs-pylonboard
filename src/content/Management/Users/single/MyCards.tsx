@@ -17,7 +17,7 @@ import {
   Avatar,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { useSnackbar } from 'notistack';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
@@ -87,7 +87,7 @@ const CardCc = styled(Card)(
 );
 
 function MyCards() {
-  const { t }: { t: any } = useTranslation();
+
   const { enqueueSnackbar } = useSnackbar();
 
   const data = {
@@ -101,7 +101,7 @@ function MyCards() {
   };
 
   const handleDelete = () => {
-    enqueueSnackbar(t('The card has been removed successfully'), {
+    enqueueSnackbar('The card has been removed successfully', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -114,8 +114,8 @@ function MyCards() {
   return (
     <Card>
       <CardHeader
-        subheader={data.savedCards + ' ' + t('saved cards')}
-        title={t('Cards')}
+        subheader={data.savedCards + ' ' + 'saved cards'}
+        title={'Cards'}
       />
       <Divider />
       <Box p={3}>
@@ -138,7 +138,7 @@ function MyCards() {
                     •••• 6879
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Expires')}:{' '}
+                    {'Expires'}:{' '}
                     <Typography component="span" color="text.primary">
                       12/24
                     </Typography>
@@ -162,9 +162,9 @@ function MyCards() {
                       name="primary-card"
                     />
                   }
-                  label={t('Primary')}
+                  label={'Primary'}
                 />
-                <Tooltip arrow title={t('Remove this card')}>
+                <Tooltip arrow title={'Remove this card'}>
                   <IconButtonError onClick={() => handleDelete()}>
                     <DeleteTwoToneIcon fontSize="small" />
                   </IconButtonError>
@@ -190,7 +190,7 @@ function MyCards() {
                     •••• 4634
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Expires')}:{' '}
+                    {'Expires'}:{' '}
                     <Typography component="span" color="text.primary">
                       6/22
                     </Typography>
@@ -214,9 +214,9 @@ function MyCards() {
                       name="primary-card"
                     />
                   }
-                  label={t('Primary')}
+                  label={'Primary'}
                 />
-                <Tooltip arrow title={t('Remove this card')}>
+                <Tooltip arrow title={'Remove this card'}>
                   <IconButtonError onClick={() => handleDelete()}>
                     <DeleteTwoToneIcon fontSize="small" />
                   </IconButtonError>
@@ -225,7 +225,7 @@ function MyCards() {
             </CardCc>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Tooltip arrow title={t('Click to add a new card')}>
+            <Tooltip arrow title={'Click to add a new card'}>
               <CardAddAction>
                 <CardActionArea
                   sx={{

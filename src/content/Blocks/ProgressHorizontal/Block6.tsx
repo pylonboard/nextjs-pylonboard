@@ -15,7 +15,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Link from 'src/components/Link';
 import Scrollbar from 'src/components/Scrollbar';
 import AssessmentTwoToneIcon from '@mui/icons-material/AssessmentTwoTone';
@@ -147,7 +147,7 @@ const LabelWrapper = styled(Box)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -163,11 +163,11 @@ function Block6() {
       >
         <Box>
           <Typography gutterBottom variant="caption" fontWeight="bold">
-            {t('Progress')}
+            {'Progress'}
           </Typography>
-          <Typography variant="h4">{t('Users Analytics')}</Typography>
+          <Typography variant="h4">{'Users Analytics'}</Typography>
         </Box>
-        <LabelWrapper>{t('Pending')}</LabelWrapper>
+        <LabelWrapper>{'Pending'}</LabelWrapper>
       </Box>
       <Divider />
       <Box
@@ -213,7 +213,7 @@ function Block6() {
                   }}
                 >
                   <Typography variant="caption" fontWeight="bold">
-                    {t('Total')}
+                    {'Total'}
                   </Typography>
                   <Typography variant="h4">$1,375</Typography>
                 </Box>
@@ -256,7 +256,7 @@ function Block6() {
                   }}
                 >
                   <Typography variant="caption" fontWeight="bold">
-                    {t('Total')}
+                    {'Total'}
                   </Typography>
                   <Typography variant="h4">$786</Typography>
                 </Box>
@@ -299,7 +299,7 @@ function Block6() {
                   }}
                 >
                   <Typography variant="caption" fontWeight="bold">
-                    {t('Total')}
+                    {'Total'}
                   </Typography>
                   <Typography variant="h4">$5,695</Typography>
                 </Box>
@@ -342,7 +342,7 @@ function Block6() {
                   }}
                 >
                   <Typography variant="caption" fontWeight="bold">
-                    {t('Total')}
+                    {'Total'}
                   </Typography>
                   <Typography variant="h4">$2,685</Typography>
                 </Box>
@@ -385,7 +385,7 @@ function Block6() {
                   }}
                 >
                   <Typography variant="caption" fontWeight="bold">
-                    {t('Total')}
+                    {'Total'}
                   </Typography>
                   <Typography variant="h4">$8,684</Typography>
                 </Box>
@@ -404,7 +404,7 @@ function Block6() {
         }}
       >
         <Button size="large" startIcon={<AssessmentTwoToneIcon />}>
-          {t('Generate reports')}
+          {'Generate reports'}
         </Button>
       </CardWrapper>
     </Card>

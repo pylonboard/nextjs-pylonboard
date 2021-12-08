@@ -1,13 +1,13 @@
 import { Box, Stack, Card, Typography, Divider } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <Card>
@@ -28,7 +28,7 @@ function Block1() {
             <MonetizationOnTwoToneIcon fontSize="large" />
           </Text>
           <Typography variant="h3">$9,658</Typography>
-          <Typography variant="subtitle2">{t('revenue')}</Typography>
+          <Typography variant="subtitle2">{'revenue'}</Typography>
         </Box>
         <Box
           p={2}
@@ -40,7 +40,7 @@ function Block1() {
             <PersonTwoToneIcon fontSize="large" />
           </Text>
           <Typography variant="h3">23,594</Typography>
-          <Typography variant="subtitle2">{t('users')}</Typography>
+          <Typography variant="subtitle2">{'users'}</Typography>
         </Box>
         <Box
           p={2}
@@ -52,7 +52,7 @@ function Block1() {
             <SubscriptionsTwoToneIcon fontSize="large" />
           </Text>
           <Typography variant="h3">1,064</Typography>
-          <Typography variant="subtitle2">{t('orders')}</Typography>
+          <Typography variant="subtitle2">{'orders'}</Typography>
         </Box>
       </Stack>
     </Card>

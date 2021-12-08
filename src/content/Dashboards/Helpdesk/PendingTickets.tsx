@@ -22,7 +22,7 @@ import {
   TableContainer,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import Label from 'src/components/Label';
 import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
@@ -48,7 +48,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function PendingTickets() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const [page, setPage] = useState(2);
@@ -71,23 +71,23 @@ function PendingTickets() {
   const periods = [
     {
       value: 'all',
-      text: t('All tickets')
+      text: 'All tickets'
     },
     {
       value: 'new',
-      text: t('Newest')
+      text: 'Newest'
     },
     {
       value: 'updated',
-      text: t('Recently updated')
+      text: 'Recently updated'
     },
     {
       value: 'progress',
-      text: t('In progress')
+      text: 'In progress'
     },
     {
       value: 'closed',
-      text: t('Closed')
+      text: 'Closed'
     }
   ];
 
@@ -142,11 +142,11 @@ function PendingTickets() {
               }}
               variant="contained"
             >
-              {t('View all')}
+              {'View all'}
             </Button>
           </>
         }
-        title={t('Pending Tickets')}
+        title={'Pending Tickets'}
       />
       <Divider />
       <Box>
@@ -154,10 +154,10 @@ function PendingTickets() {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>{t('Details')}</TableCell>
-                <TableCell>{t('Assigned')}</TableCell>
-                <TableCell align="right">{t('Status')}</TableCell>
-                <TableCell align="right">{t('Actions')}</TableCell>
+                <TableCell>{'Details'}</TableCell>
+                <TableCell>{'Assigned'}</TableCell>
+                <TableCell align="right">{'Status'}</TableCell>
+                <TableCell align="right">{'Actions'}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -169,7 +169,7 @@ function PendingTickets() {
                     }}
                   >
                     <Typography variant="h5" noWrap>
-                      {t("Why can't I connect my Stripe account? ")}
+                      {"Why can't I connect my Stripe account? "}
                     </Typography>
                   </Box>
                 </TableCell>
@@ -186,7 +186,7 @@ function PendingTickets() {
                           arrow
                           placement="top"
                           title={
-                            t('Offline since') +
+                            'Offline since' +
                             ' ' +
                             formatDistance(
                               subHours(new Date(), 6),
@@ -219,16 +219,16 @@ function PendingTickets() {
                         Cristofer Aminoff
                       </Typography>
                       <Typography variant="subtitle1" noWrap>
-                        {t('Social Accounts Manager')}
+                        {'Social Accounts Manager'}
                       </Typography>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell align="right">
-                  <Label color="success">{t('Completed')}</Label>
+                  <Label color="success">{'Completed'}</Label>
                 </TableCell>
                 <TableCell align="right">
-                  <Tooltip title={t('Open Ticket')} arrow>
+                  <Tooltip title={'Open Ticket'} arrow>
                     <IconButton
                       sx={{
                         '&:hover': {
@@ -242,7 +242,7 @@ function PendingTickets() {
                       <LaunchTwoToneIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
-                  <Tooltip title={t('Delete Ticket')} arrow>
+                  <Tooltip title={'Delete Ticket'} arrow>
                     <IconButton
                       sx={{
                         '&:hover': { background: theme.colors.error.lighter },
@@ -264,7 +264,7 @@ function PendingTickets() {
                     }}
                   >
                     <Typography variant="h5" noWrap>
-                      {t('Support Questions Regarding Integrations')}
+                      {'Support Questions Regarding Integrations'}
                     </Typography>
                   </Box>
                 </TableCell>
@@ -281,7 +281,7 @@ function PendingTickets() {
                           arrow
                           placement="top"
                           title={
-                            t('Online since') +
+                            'Online since' +
                             ' ' +
                             formatDistance(
                               subMinutes(new Date(), 37),
@@ -314,18 +314,18 @@ function PendingTickets() {
                         Marilyn Stanton
                       </Typography>
                       <Typography variant="subtitle1" noWrap>
-                        {t('Web Development Support Team')}
+                        {'Web Development Support Team'}
                       </Typography>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell align="right">
                   <Typography noWrap>
-                    <Label color="info">{t('In Progress')}</Label>
+                    <Label color="info">{'In Progress'}</Label>
                   </Typography>
                 </TableCell>
                 <TableCell align="right">
-                  <Tooltip title={t('Open Ticket')} arrow>
+                  <Tooltip title={'Open Ticket'} arrow>
                     <IconButton
                       sx={{
                         '&:hover': {
@@ -339,7 +339,7 @@ function PendingTickets() {
                       <LaunchTwoToneIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
-                  <Tooltip title={t('Delete Ticket')} arrow>
+                  <Tooltip title={'Delete Ticket'} arrow>
                     <IconButton
                       sx={{
                         '&:hover': { background: theme.colors.error.lighter },
@@ -361,7 +361,7 @@ function PendingTickets() {
                     }}
                   >
                     <Typography variant="h5" noWrap>
-                      {t('How can I purchase this product?')}
+                      {'How can I purchase this product?'}
                     </Typography>
                   </Box>
                 </TableCell>
@@ -378,7 +378,7 @@ function PendingTickets() {
                           arrow
                           placement="top"
                           title={
-                            t('Idle since') +
+                            'Idle since' +
                             ' ' +
                             formatDistance(
                               subSeconds(new Date(), 77),
@@ -411,16 +411,16 @@ function PendingTickets() {
                         Hanna Siphron
                       </Typography>
                       <Typography variant="subtitle1" noWrap>
-                        {t('Pre-Sales Questions')}
+                        {'Pre-Sales Questions'}
                       </Typography>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell align="right">
-                  <Label color="warning">{t('Pending')}</Label>
+                  <Label color="warning">{'Pending'}</Label>
                 </TableCell>
                 <TableCell align="right">
-                  <Tooltip title={t('Open Ticket')} arrow>
+                  <Tooltip title={'Open Ticket'} arrow>
                     <IconButton
                       sx={{
                         '&:hover': {
@@ -434,7 +434,7 @@ function PendingTickets() {
                       <LaunchTwoToneIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
-                  <Tooltip title={t('Delete Ticket')} arrow>
+                  <Tooltip title={'Delete Ticket'} arrow>
                     <IconButton
                       sx={{
                         '&:hover': { background: theme.colors.error.lighter },

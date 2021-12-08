@@ -20,7 +20,7 @@ import {
   Card,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import HelpOutlineTwoToneIcon from '@mui/icons-material/HelpOutlineTwoTone';
 
 const TabsContainerWrapper = styled(Box)(
@@ -31,14 +31,14 @@ const TabsContainerWrapper = styled(Box)(
 );
 
 function AdditionalInfo() {
-  const { t }: { t: any } = useTranslation();
+
 
   const [currentTab, setCurrentTab] = useState<string>('general');
 
   const tabs = [
-    { value: 'general', label: t('General') },
-    { value: 'inventory', label: t('Inventory') },
-    { value: 'shipping', label: t('Shipping') }
+    { value: 'general', label: 'General' },
+    { value: 'inventory', label: 'Inventory' },
+    { value: 'shipping', label: 'Shipping' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -47,7 +47,7 @@ function AdditionalInfo() {
 
   return (
     <Card>
-      <CardHeader title={t('Additional Informations')}></CardHeader>
+      <CardHeader title={'Additional Informations'}></CardHeader>
       <Divider />
       <TabsContainerWrapper>
         <Tabs
@@ -72,8 +72,8 @@ function AdditionalInfo() {
                 fullWidth
                 name="regular_price"
                 variant="outlined"
-                label={t('Regular price')}
-                placeholder={t('Regular price here ...')}
+                label={'Regular price'}
+                placeholder={'Regular price here ...'}
               />
             </Grid>
             <Grid item xs={12} md={6}>
@@ -81,37 +81,37 @@ function AdditionalInfo() {
                 fullWidth
                 name="sale_price"
                 variant="outlined"
-                label={t('Sale price')}
-                placeholder={t('Sale price here ...')}
+                label={'Sale price'}
+                placeholder={'Sale price here ...'}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <FormControl fullWidth variant="outlined">
-                <InputLabel htmlFor="tax_status">{t('Tax Status')}</InputLabel>
+                <InputLabel htmlFor="tax_status">{'Tax Status'}</InputLabel>
                 <Select
                   native
-                  label={t('Tax Status')}
+                  label={'Tax Status'}
                   inputProps={{
                     name: 'tax_status'
                   }}
                 >
                   <option aria-label="None" value="" />
-                  <option value={1}>{t('Taxable')}</option>
+                  <option value={1}>{'Taxable'}</option>
                 </Select>
               </FormControl>
             </Grid>
             <Grid item xs={12} md={6}>
               <FormControl fullWidth variant="outlined">
-                <InputLabel htmlFor="tax_class">{t('Tax Class')}</InputLabel>
+                <InputLabel htmlFor="tax_class">{'Tax Class'}</InputLabel>
                 <Select
                   native
-                  label={t('Tax Class')}
+                  label={'Tax Class'}
                   inputProps={{
                     name: 'tax_status'
                   }}
                 >
                   <option aria-label="None" value="" />
-                  <option value={1}>{t('Standard')}</option>
+                  <option value={1}>{'Standard'}</option>
                 </Select>
               </FormControl>
             </Grid>
@@ -125,15 +125,15 @@ function AdditionalInfo() {
                   fullWidth
                   name="sku"
                   variant="outlined"
-                  label={t('SKU')}
-                  placeholder={t('Stock quantity here ...')}
+                  label={'SKU'}
+                  placeholder={'Stock quantity here ...'}
                 />
                 <Tooltip
                   arrow
                   placement="top"
-                  title={t(
+                  title={
                     'This field helps identify the current product stocks'
-                  )}
+                  }
                 >
                   <IconButton
                     size="small"
@@ -150,31 +150,31 @@ function AdditionalInfo() {
             <Grid item xs={12} md={6}>
               <FormControl fullWidth variant="outlined">
                 <InputLabel htmlFor="stock_status">
-                  {t('Stock Status')}
+                  {'Stock Status'}
                 </InputLabel>
                 <Select
                   native
-                  label={t('Stock Status')}
+                  label={'Stock Status'}
                   inputProps={{
                     name: 'stock_status'
                   }}
                 >
                   <option aria-label="None" value="" />
-                  <option value={1}>{t('In stock')}</option>
-                  <option value={1}>{t('Out of stock')}</option>
-                  <option value={1}>{t('Back in stock soon')}</option>
+                  <option value={1}>{'In stock'}</option>
+                  <option value={1}>{'Out of stock'}</option>
+                  <option value={1}>{'Back in stock soon'}</option>
                 </Select>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
-                label={t('Sold individually')}
+                label={'Sold individually'}
               />
               <Typography variant="h6" color="text.secondary">
-                {t(
+                {
                   'Enable this to only allow one of this item to be bought in a single order'
-                )}
+                }
               </Typography>
             </Grid>
           </Grid>
@@ -193,15 +193,15 @@ function AdditionalInfo() {
                   name="weight"
                   value={12}
                   variant="outlined"
-                  label={t('Weight')}
-                  placeholder={t('Write weight ...')}
+                  label={'Weight'}
+                  placeholder={'Write weight ...'}
                 />
                 <Tooltip
                   arrow
                   placement="top"
-                  title={t(
+                  title={
                     'Your have the weight units set to kilograms in your app settings'
-                  )}
+                  }
                 >
                   <IconButton
                     size="small"
@@ -225,8 +225,8 @@ function AdditionalInfo() {
                 fullWidth
                 name="length"
                 variant="outlined"
-                label={t('Length')}
-                placeholder={t('Write length ...')}
+                label={'Length'}
+                placeholder={'Write length ...'}
               />
             </Grid>
             <Grid item xs={12} md={6}>
@@ -239,24 +239,24 @@ function AdditionalInfo() {
                 fullWidth
                 name="width"
                 variant="outlined"
-                label={t('Width')}
-                placeholder={t('Write width ...')}
+                label={'Width'}
+                placeholder={'Write width ...'}
               />
             </Grid>
             <Grid item xs={12}>
               <FormControl fullWidth variant="outlined">
                 <InputLabel htmlFor="shipping_class">
-                  {t('Shipping class')}
+                  {'Shipping class'}
                 </InputLabel>
                 <Select
                   native
-                  label={t('Shipping class')}
+                  label={'Shipping class'}
                   inputProps={{
                     name: 'shipping_class'
                   }}
                 >
                   <option aria-label="None" value="" />
-                  <option value={1}>{t('No shipping class')}</option>
+                  <option value={1}>{'No shipping class'}</option>
                 </Select>
               </FormControl>
             </Grid>

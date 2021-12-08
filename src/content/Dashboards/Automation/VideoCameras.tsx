@@ -14,7 +14,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone';
 import MicNoneTwoToneIcon from '@mui/icons-material/MicNoneTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
@@ -158,20 +158,20 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function VideoCameras() {
-  const { t }: { t: any } = useTranslation();
+
 
   const locations = [
     {
       value: 'garden_camera',
-      text: t('Garden camera')
+      text: 'Garden camera'
     },
     {
       value: 'gate_camera',
-      text: t('Gate camera')
+      text: 'Gate camera'
     },
     {
       value: 'terrace_camera',
-      text: t('Terrace camera')
+      text: 'Terrace camera'
     }
   ];
 
@@ -271,7 +271,7 @@ function VideoCameras() {
               onClick={() => setOpenMenuLocation(true)}
               variant="contained"
             >
-              {t('Select camera')}
+              {'Select camera'}
             </Button>
             <Menu
               disableScrollLock
@@ -309,10 +309,10 @@ function VideoCameras() {
               <Box display="flex" justifyContent="space-between">
                 <Box>
                   <ButtonDark startIcon={<Dot />} size="small">
-                    {t('LIVE')}
+                    {'LIVE'}
                   </ButtonDark>
                   <ButtonDark size="small">
-                    {t('Effects')}: {t('On')}
+                    {'Effects'}: {'On'}
                   </ButtonDark>
                 </Box>
                 <Box
@@ -339,7 +339,7 @@ function VideoCameras() {
                   >
                     Mike Dwyer is ringing the doorbell
                   </TypographyShade>
-                  <Tooltip arrow placement="top" title={t('Unlock front door')}>
+                  <Tooltip arrow placement="top" title={'Unlock front door'}>
                     <IconButtonDark>
                       <LockOpenTwoToneIcon />
                     </IconButtonDark>
@@ -362,7 +362,7 @@ function VideoCameras() {
                     color="warning"
                     startIcon={<MicNoneTwoToneIcon />}
                   >
-                    {t('Talk')}
+                    {'Talk'}
                   </TalkButton>
                 </Box>
                 <Box>
@@ -390,7 +390,7 @@ function VideoCameras() {
               45 <small>min</small>
             </Typography>
             <Typography textAlign="center" variant="h5">
-              {t('Last charged to 100%')}
+              {'Last charged to 100%'}
             </Typography>
             <Chart
               options={chartOptions}
@@ -414,7 +414,7 @@ function VideoCameras() {
               82 <small>%</small>
             </Typography>
             <Typography textAlign="center" variant="h5">
-              {t('Remaining battery')}
+              {'Remaining battery'}
             </Typography>
             <Chart
               options={chartOptions}

@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -44,7 +44,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -74,7 +74,7 @@ function Block7() {
               </Avatar>
               <Box ml={2}>
                 <Typography gutterBottom component="div" variant="caption">
-                  {t('User Accounts')}
+                  {'User Accounts'}
                 </Typography>
                 <Typography variant="h2">21,164</Typography>
                 <Box ml={-0.5} mt={1.5} display="flex" alignItems="center">
@@ -96,7 +96,7 @@ function Block7() {
                     <span>65.44%</span>
                   </Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('increase this quarter')}
+                    {'increase this quarter'}
                   </Typography>
                 </Box>
               </Box>
@@ -144,7 +144,7 @@ function Block7() {
                   component="div"
                   variant="caption"
                 >
-                  {t('Total Sales')}
+                  {'Total Sales'}
                 </Typography>
                 <Typography
                   sx={{
@@ -179,7 +179,7 @@ function Block7() {
                     variant="subtitle2"
                     noWrap
                   >
-                    {t('increase this month')}
+                    {'increase this month'}
                   </Typography>
                 </Box>
               </Box>
@@ -230,7 +230,7 @@ function Block7() {
               </Avatar>
               <Box ml={2}>
                 <Typography gutterBottom component="div" variant="caption">
-                  {t('Orders')}
+                  {'Orders'}
                 </Typography>
                 <Typography variant="h2">23,854</Typography>
                 <Box ml={-0.5} mt={1.5} display="flex" alignItems="center">
@@ -252,7 +252,7 @@ function Block7() {
                     <span>5.25%</span>
                   </Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('decrease this month')}
+                    {'decrease this month'}
                   </Typography>
                 </Box>
               </Box>

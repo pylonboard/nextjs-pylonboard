@@ -16,7 +16,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -42,7 +42,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -173,10 +173,10 @@ function Block8() {
             fontSize: `${theme.typography.pxToRem(19)}`
           }}
         >
-          {t('Weekly Sales')}
+          {'Weekly Sales'}
         </Typography>
         <Typography variant="subtitle2">
-          {t('Reports for what we sold this week')}.
+          {'Reports for what we sold this week'}.
         </Typography>
       </Box>
       <Chart options={Box1Options} series={Box1Data} type="area" height={119} />
@@ -228,7 +228,7 @@ function Block8() {
                       }
                     }}
                   >
-                    {t('View')}
+                    {'View'}
                   </Button>
                 </ListItem>
               </Fragment>
@@ -248,7 +248,7 @@ function Block8() {
           endIcon={<ArrowForwardTwoToneIcon />}
           size="small"
         >
-          {t('View all employees')}
+          {'View all employees'}
         </Button>
       </Box>
     </Card>

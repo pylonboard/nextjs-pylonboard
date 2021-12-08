@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import Text from 'src/components/Text';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -92,7 +92,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block12() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -159,13 +159,13 @@ function Block12() {
               color: `${theme.palette.getContrastText(theme.colors.error.dark)}`
             }}
           >
-            {t('Offline')}
+            {'Offline'}
           </LabelWrapper>
         </Box>
         <Typography variant="subtitle2">
-          {t(
+          {
             'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-          )}
+          }
           .
         </Typography>
       </CardWrapper>
@@ -270,9 +270,9 @@ function Block12() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Projects')}</Typography>
+                  <Typography variant="h4">{'Projects'}</Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('Newest tasks')}
+                    {'Newest tasks'}
                   </Typography>
                 </CardActionAreaWrapper>
               </Card>
@@ -291,9 +291,9 @@ function Block12() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Helpdesk')}</Typography>
+                  <Typography variant="h4">{'Helpdesk'}</Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('Tickets overview')}
+                    {'Tickets overview'}
                   </Typography>
                 </CardActionAreaWrapper>
               </Card>
@@ -312,9 +312,9 @@ function Block12() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Dashboard')}</Typography>
+                  <Typography variant="h4">{'Dashboard'}</Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('Daily operations')}
+                    {'Daily operations'}
                   </Typography>
                 </CardActionAreaWrapper>
               </Card>
@@ -333,9 +333,9 @@ function Block12() {
                       }}
                     />
                   </Text>
-                  <Typography variant="h4">{t('Customers')}</Typography>
+                  <Typography variant="h4">{'Customers'}</Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('Manage data')}
+                    {'Manage data'}
                   </Typography>
                 </CardActionAreaWrapper>
               </Card>

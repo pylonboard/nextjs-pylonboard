@@ -22,7 +22,7 @@ import {
 import { format } from 'date-fns';
 import numeral from 'numeral';
 import Logo from 'src/components/LogoSign';
-import { useTranslation } from 'react-i18next';
+
 import DownloadTwoToneIcon from '@mui/icons-material/DownloadTwoTone';
 import PictureAsPdfTwoToneIcon from '@mui/icons-material/PictureAsPdfTwoTone';
 
@@ -60,7 +60,7 @@ interface Item {
 }
 
 const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
-  const { t }: { t: any } = useTranslation();
+  
 
   const itemsList: Item[] = [
     {
@@ -96,7 +96,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
         >
           <Box>
             <Typography variant="h1" gutterBottom>
-              {t('Invoice')}
+              {'Invoice'}
             </Typography>
             <Typography variant="h3" color="text.secondary">
               #{invoice.number}
@@ -125,7 +125,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <Typography variant="subtitle2" gutterBottom>
-              {t('Invoice for')}:
+              {'Invoice for'}:
             </Typography>
             <Typography
               sx={{
@@ -153,7 +153,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
             >
               <Grid item>
                 <Typography variant="subtitle2" gutterBottom>
-                  {t('Issued on')}:
+                  {'Issued on'}:
                 </Typography>
                 <Typography
                   sx={{
@@ -166,7 +166,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
               </Grid>
               <Grid item>
                 <Typography variant="subtitle2" gutterBottom>
-                  {t('Due on')}:
+                  {'Due on'}:
                 </Typography>
                 <Typography
                   sx={{
@@ -180,7 +180,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
             </Grid>
             <BoxWrapper textAlign="right" mt={1} p={3}>
               <Typography component="span" variant="h4" fontWeight="normal">
-                {t('Balance due')}:{' '}
+                {'Balance due'}:{' '}
               </Typography>
               <Typography component="span" variant="h4">
                 {numeral(invoice.amount).format(`${invoice.currency}0,0.00`)}
@@ -194,10 +194,10 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>{t('Item')}</TableCell>
-                  <TableCell>{t('Qty')}</TableCell>
-                  <TableCell>{t('Price')}</TableCell>
-                  <TableCell>{t('Total')}</TableCell>
+                  <TableCell>{'Item'}</TableCell>
+                  <TableCell>{'Qty'}</TableCell>
+                  <TableCell>{'Price'}</TableCell>
+                  <TableCell>{'Total'}</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -226,7 +226,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
                       color="text.secondary"
                       fontWeight="bold"
                     >
-                      {t('Total')}:
+                      {'Total'}:
                     </Typography>
                     <Typography variant="h3" fontWeight="bold">
                       {numeral(9458).format(`$0,0.00`)}
@@ -238,7 +238,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
           </TableContainer>
         </TableWrapper>
         <Typography variant="subtitle2" gutterBottom>
-          {t('Additional informations')}
+          {'Additional informations'}
         </Typography>
         <Typography variant="body2">
           These projects were completed between January and February of 2021.
@@ -262,7 +262,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
               }}
               startIcon={<DownloadTwoToneIcon />}
             >
-              {t('Download PDF')}
+              {'Download PDF'}
             </Button>
             <Button
               disabled
@@ -272,7 +272,7 @@ const InvoiceBody: FC<InvoiceBodyProps> = ({ invoice }) => {
               }}
               startIcon={<PictureAsPdfTwoToneIcon />}
             >
-              {t('Preview PDF')}
+              {'Preview PDF'}
             </Button>
           </Box>
         </Tooltip>

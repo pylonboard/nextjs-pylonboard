@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import ElectricalServicesTwoToneIcon from '@mui/icons-material/ElectricalServicesTwoTone';
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
@@ -28,7 +28,7 @@ const ElectricalServicesTwoToneIconWrapper = styled(
 );
 
 function PowerConsumption() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const powerDaily = [
@@ -58,15 +58,15 @@ function PowerConsumption() {
   const locations = [
     {
       value: 'daily',
-      text: t('Daily')
+      text: 'Daily'
     },
     {
       value: 'weekly',
-      text: t('Weekly')
+      text: 'Weekly'
     },
     {
       value: 'monthly',
-      text: t('Monthly')
+      text: 'Monthly'
     }
   ];
 
@@ -287,7 +287,7 @@ function PowerConsumption() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography variant="h3">{t('Power consumption')}</Typography>
+        <Typography variant="h3">{'Power consumption'}</Typography>
         <Box>
           <Button
             color="primary"
@@ -298,7 +298,7 @@ function PowerConsumption() {
           >
             {location}
           </Button>
-          <Tooltip title={t('Advanced statistics')} arrow>
+          <Tooltip title={'Advanced statistics'} arrow>
             <IconButton
               sx={{
                 ml: 0.5
@@ -345,9 +345,9 @@ function PowerConsumption() {
         >
           <Box display="flex" alignItems="center">
             <ElectricalServicesTwoToneIconWrapper />
-            <Typography variant="h4">{t('Total energy saving')}</Typography>
+            <Typography variant="h4">{'Total energy saving'}</Typography>
           </Box>
-          <Typography fontWeight="bold">{t('65% capacity')}</Typography>
+          <Typography fontWeight="bold">{'65% capacity'}</Typography>
         </Box>
         {location === 'Daily' && (
           <Chart

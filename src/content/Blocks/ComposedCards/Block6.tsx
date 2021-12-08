@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import Text from 'src/components/Text';
@@ -78,7 +78,7 @@ const LinearProgressSuccess = styled(LinearProgress)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -164,7 +164,7 @@ function Block6() {
             textTransform: 'uppercase'
           }}
         >
-          {t('Inventory')}
+          {'Inventory'}
         </Typography>
       </Box>
       <CardWrapper
@@ -189,7 +189,7 @@ function Block6() {
             >
               2,345
             </Typography>
-            <Typography variant="subtitle2">{t('users')}</Typography>
+            <Typography variant="subtitle2">{'users'}</Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Text color="success">
@@ -203,7 +203,7 @@ function Block6() {
             >
               $3,586
             </Typography>
-            <Typography variant="subtitle2">{t('sales')}</Typography>
+            <Typography variant="subtitle2">{'sales'}</Typography>
           </Grid>
         </Grid>
       </CardWrapper>
@@ -215,7 +215,7 @@ function Block6() {
             textTransform: 'uppercase'
           }}
         >
-          {t('Activity')}
+          {'Activity'}
         </Typography>
       </Box>
       <Box px={5} py={1} display="flex" alignItems="center">
@@ -327,7 +327,7 @@ function Block6() {
           textAlign: 'center'
         }}
       >
-        <Tooltip placement="top" arrow title={t('Refresh view')}>
+        <Tooltip placement="top" arrow title={'Refresh view'}>
           <IconButton color="error">
             <LoopTwoToneIcon />
           </IconButton>

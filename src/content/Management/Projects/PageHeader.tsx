@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+
 import { wait } from 'src/utils/wait';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
@@ -13,15 +13,10 @@ import {
   Grid,
   Dialog,
   DialogTitle,
-  Divider,
-  Alert,
   Chip,
   DialogContent,
   Box,
   Zoom,
-  ListItem,
-  List,
-  ListItemText,
   Typography,
   TextField,
   CircularProgress,
@@ -31,32 +26,8 @@ import {
   useTheme
 } from '@mui/material';
 import DatePicker from '@mui/lab/DatePicker';
-import { useDropzone } from 'react-dropzone';
 import { useSnackbar } from 'notistack';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
-import CloudUploadTwoToneIcon from '@mui/icons-material/CloudUploadTwoTone';
-import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
-import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
-
-const BoxUploadWrapper = styled(Box)(
-  ({ theme }) => `
-    border-radius: ${theme.general.borderRadius};
-    padding: ${theme.spacing(3)};
-    background: ${theme.colors.alpha.black[5]};
-    border: 1px dashed ${theme.colors.alpha.black[30]};
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: ${theme.transitions.create(['border', 'background'])};
-
-    &:hover {
-      background: ${theme.colors.alpha.white[100]};
-      border-color: ${theme.colors.primary.main};
-    }
-`
-);
 
 const EditorWrapper = styled(Box)(
   ({ theme }) => `
@@ -89,31 +60,6 @@ const EditorWrapper = styled(Box)(
 `
 );
 
-const AvatarWrapper = styled(Avatar)(
-  ({ theme }) => `
-    background: ${theme.colors.primary.lighter};
-    color: ${theme.colors.primary.main};
-    width: ${theme.spacing(7)};
-    height: ${theme.spacing(7)};
-`
-);
-
-const AvatarSuccess = styled(Avatar)(
-  ({ theme }) => `
-    background: ${theme.colors.success.light};
-    width: ${theme.spacing(7)};
-    height: ${theme.spacing(7)};
-`
-);
-
-const AvatarDanger = styled(Avatar)(
-  ({ theme }) => `
-    background: ${theme.colors.error.light};
-    width: ${theme.spacing(7)};
-    height: ${theme.spacing(7)};
-`
-);
-
 const projectTags = [
   { title: 'Development' },
   { title: 'Design Project' },
@@ -122,7 +68,7 @@ const projectTags = [
 ];
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const [open, setOpen] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const theme = useTheme();
@@ -150,24 +96,6 @@ function PageHeader() {
     }
   ];
 
-  const {
-    acceptedFiles,
-    isDragActive,
-    isDragAccept,
-    isDragReject,
-    getRootProps,
-    getInputProps
-  } = useDropzone({
-    accept: 'image/jpeg, image/png'
-  });
-
-  const files = acceptedFiles.map((file, index) => (
-    <ListItem disableGutters component="div" key={index}>
-      <ListItemText primary={file.name} />
-      <b>{file.size} bytes</b>
-      <Divider />
-    </ListItem>
-  ));
 
   const [value, setValue] = useState<Date | null>(null);
 
@@ -180,7 +108,7 @@ function PageHeader() {
   };
 
   const handleCreateProjectSuccess = () => {
-    enqueueSnackbar(t('A new project has been created successfully'), {
+    enqueueSnackbar('A new project has been created successfully', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -197,10 +125,10 @@ function PageHeader() {
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Projects')}
+            {'Projects'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('These are your active projects')}
+            {'These are your active projects'}
           </Typography>
         </Grid>
         <Grid item>
@@ -212,7 +140,7 @@ function PageHeader() {
             variant="contained"
             startIcon={<AddTwoToneIcon fontSize="small" />}
           >
-            {t('Create new project')}
+            {'Create new project'}
           </Button>
         </Grid>
       </Grid>
@@ -228,10 +156,10 @@ function PageHeader() {
           }}
         >
           <Typography variant="h4" gutterBottom>
-            {t('Create new project')}
+            {'Create new project'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Use this dialog window to add a new project')}
+            {'Use this dialog window to add a new project'}
           </Typography>
         </DialogTitle>
         <Formik
@@ -242,7 +170,7 @@ function PageHeader() {
           validationSchema={Yup.object().shape({
             title: Yup.string()
               .max(255)
-              .required(t('The title field is required'))
+              .required('The title field is required')
           })}
           onSubmit={async (
             _values,
@@ -295,7 +223,7 @@ function PageHeader() {
                       }}
                       alignSelf="center"
                     >
-                      <b>{t('Project title')}:</b>
+                      <b>{'Project title'}:</b>
                     </Box>
                   </Grid>
                   <Grid
@@ -312,7 +240,7 @@ function PageHeader() {
                       fullWidth
                       helperText={touched.title && errors.title}
                       name="title"
-                      placeholder={t('Project title here...')}
+                      placeholder={'Project title here...'}
                       onBlur={handleBlur}
                       onChange={handleChange}
                       value={values.title}
@@ -326,7 +254,7 @@ function PageHeader() {
                         pb: { xs: 1, md: 0 }
                       }}
                     >
-                      <b>{t('Description')}:</b>
+                      <b>{'Description'}:</b>
                     </Box>
                   </Grid>
                   <Grid
@@ -358,7 +286,7 @@ function PageHeader() {
                       }}
                       alignSelf="center"
                     >
-                      <b>{t('Tags')}:</b>
+                      <b>{'Tags'}:</b>
                     </Box>
                   </Grid>
                   <Grid
@@ -383,7 +311,7 @@ function PageHeader() {
                           {...params}
                           fullWidth
                           variant="outlined"
-                          placeholder={t('Select project tags...')}
+                          placeholder={'Select project tags...'}
                         />
                       )}
                     />
@@ -395,85 +323,8 @@ function PageHeader() {
                         pb: { xs: 1, md: 0 }
                       }}
                     >
-                      <b>{t('Upload files')}:</b>
+                      <b>{'Upload files'}:</b>
                     </Box>
-                  </Grid>
-                  <Grid
-                    sx={{
-                      mb: `${theme.spacing(3)}`
-                    }}
-                    item
-                    xs={12}
-                    sm={8}
-                    md={9}
-                  >
-                    <BoxUploadWrapper {...getRootProps()}>
-                      <input {...getInputProps()} />
-                      {isDragAccept && (
-                        <>
-                          <AvatarSuccess variant="rounded">
-                            <CheckTwoToneIcon />
-                          </AvatarSuccess>
-                          <Typography
-                            sx={{
-                              mt: 2
-                            }}
-                          >
-                            {t('Drop the files to start uploading')}
-                          </Typography>
-                        </>
-                      )}
-                      {isDragReject && (
-                        <>
-                          <AvatarDanger variant="rounded">
-                            <CloseTwoToneIcon />
-                          </AvatarDanger>
-                          <Typography
-                            sx={{
-                              mt: 2
-                            }}
-                          >
-                            {t('You cannot upload these file types')}
-                          </Typography>
-                        </>
-                      )}
-                      {!isDragActive && (
-                        <>
-                          <AvatarWrapper variant="rounded">
-                            <CloudUploadTwoToneIcon />
-                          </AvatarWrapper>
-                          <Typography
-                            sx={{
-                              mt: 2
-                            }}
-                          >
-                            {t('Drag & drop files here')}
-                          </Typography>
-                        </>
-                      )}
-                    </BoxUploadWrapper>
-                    {files.length > 0 && (
-                      <>
-                        <Alert
-                          sx={{
-                            py: 0,
-                            mt: 2
-                          }}
-                          severity="success"
-                        >
-                          {t('You have uploaded')} <b>{files.length}</b>{' '}
-                          {t('files')}!
-                        </Alert>
-                        <Divider
-                          sx={{
-                            mt: 2
-                          }}
-                        />
-                        <List disablePadding component="div">
-                          {files}
-                        </List>
-                      </>
-                    )}
                   </Grid>
                   <Grid
                     item
@@ -491,7 +342,7 @@ function PageHeader() {
                       }}
                       alignSelf="center"
                     >
-                      <b>{t('Members')}:</b>
+                      <b>{'Members'}:</b>
                     </Box>
                   </Grid>
                   <Grid
@@ -530,7 +381,7 @@ function PageHeader() {
                           InputLabelProps={{
                             shrink: true
                           }}
-                          placeholder={t('Select project members...')}
+                          placeholder={'Select project members...'}
                         />
                       )}
                       renderTags={(members, getTagProps) =>
@@ -561,7 +412,7 @@ function PageHeader() {
                       }}
                       alignSelf="center"
                     >
-                      <b>{t('Due Date')}:</b>
+                      <b>{'Due Date'}:</b>
                     </Box>
                   </Grid>
                   <Grid
@@ -580,20 +431,12 @@ function PageHeader() {
                       }}
                       renderInput={(params) => (
                         <TextField
-                          placeholder={t('Select due date...')}
+                          placeholder={'Select due date...'}
                           {...params}
                         />
                       )}
                     />
                   </Grid>
-
-                  <Grid
-                    item
-                    xs={12}
-                    sm={4}
-                    md={3}
-                    textAlign={{ sm: 'right' }}
-                  ></Grid>
                   <Grid
                     sx={{
                       mb: `${theme.spacing(3)}`
@@ -615,7 +458,7 @@ function PageHeader() {
                       variant="contained"
                       size="large"
                     >
-                      {t('Create project')}
+                      {'Create project'}
                     </Button>
                     <Button
                       color="secondary"
@@ -623,7 +466,7 @@ function PageHeader() {
                       variant="outlined"
                       onClick={handleCreateProjectClose}
                     >
-                      {t('Cancel')}
+                      {'Cancel'}
                     </Button>
                   </Grid>
                 </Grid>

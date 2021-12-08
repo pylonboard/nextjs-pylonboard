@@ -9,7 +9,7 @@ import {
   Box,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -28,7 +28,7 @@ const AvatarLabelSecondary = styled(Avatar)(
 );
 
 function UpcomingConsults() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -38,10 +38,10 @@ function UpcomingConsults() {
       }}
     >
       <CardHeader
-        title={t('Upcoming Consults')}
+        title={'Upcoming Consults'}
         action={
           <Button variant="outlined" size="small">
-            {t('View all')}
+            {'View all'}
           </Button>
         }
       />
@@ -71,7 +71,7 @@ function UpcomingConsults() {
                   09:30 AM
                 </Typography>
                 <Typography variant="body2" color="text.secondary" noWrap>
-                  {t('room')} 11
+                  {'room'} 11
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center">
@@ -86,7 +86,7 @@ function UpcomingConsults() {
                     Makenna Arcand
                   </Typography>
                   <Typography variant="body2" color="text.secondary" noWrap>
-                    {t('Doctor (Pediatrician)')}
+                    {'Doctor (Pediatrician)'}
                   </Typography>
                 </Box>
               </Box>
@@ -115,7 +115,7 @@ function UpcomingConsults() {
                   10:00 AM
                 </Typography>
                 <Typography variant="body2" color="text.secondary" noWrap>
-                  {t('room')} 15
+                  {'room'} 15
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center">
@@ -130,7 +130,7 @@ function UpcomingConsults() {
                     Kaiya Westervelt
                   </Typography>
                   <Typography variant="body2" color="text.secondary" noWrap>
-                    {t('Doctor (Orthopedics)')}
+                    {'Doctor (Orthopedics)'}
                   </Typography>
                 </Box>
               </Box>
@@ -159,7 +159,7 @@ function UpcomingConsults() {
                   11:30 AM
                 </Typography>
                 <Typography variant="body2" color="text.secondary" noWrap>
-                  {t('room')} 9
+                  {'room'} 9
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center">
@@ -174,7 +174,7 @@ function UpcomingConsults() {
                     Jakob Torff
                   </Typography>
                   <Typography variant="body2" color="text.secondary" noWrap>
-                    {t('Doctor (Cardiology)')}
+                    {'Doctor (Cardiology)'}
                   </Typography>
                 </Box>
               </Box>
@@ -203,7 +203,7 @@ function UpcomingConsults() {
                   10:30 AM
                 </Typography>
                 <Typography variant="body2" color="text.secondary" noWrap>
-                  {t('room')} 8
+                  {'room'} 8
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center">
@@ -221,7 +221,7 @@ function UpcomingConsults() {
                     Hanna Baptista
                   </Typography>
                   <Typography variant="body2" color="text.secondary" noWrap>
-                    {t('Doctor (Cardiology)')}
+                    {'Doctor (Cardiology)'}
                   </Typography>
                 </Box>
               </Box>

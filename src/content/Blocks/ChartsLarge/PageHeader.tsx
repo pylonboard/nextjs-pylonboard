@@ -10,7 +10,7 @@ import {
   useTheme,
   Card
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import InsertChartTwoToneIcon from '@mui/icons-material/InsertChartTwoTone';
 
 const AvatarPageTitle = styled(Avatar)(
@@ -49,7 +49,7 @@ const DotLegend = styled('span')(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -65,12 +65,12 @@ function PageHeader() {
         </AvatarPageTitle>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Large Charts')}
+            {'Large Charts'}
           </Typography>
           <Typography variant="subtitle2">
-            {t(
+            {
               'Take advantage of these extensive, easy to customize large charts component blocks'
-            )}
+            }
           </Typography>
         </Box>
       </Box>
@@ -99,7 +99,7 @@ function PageHeader() {
               Tokyo
             </Typography>
             <Typography color="text.secondary" variant="h5">
-              {t('Version 3.0')}
+              {'Version 3.0'}
             </Typography>
           </Box>
           <Box px={3} py={2} textAlign="center">
@@ -109,7 +109,7 @@ function PageHeader() {
               color="text.secondary"
               gutterBottom
             >
-              {t('Components')}
+              {'Components'}
             </Typography>
             <Box display="flex" alignItems="center" justifyContent="center">
               <DotLegend

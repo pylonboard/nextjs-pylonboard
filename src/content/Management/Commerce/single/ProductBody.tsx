@@ -26,7 +26,7 @@ import {
   useTheme
 } from '@mui/material';
 import AddShoppingCartTwoToneIcon from '@mui/icons-material/AddShoppingCartTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import SwiperCore, { Navigation, Thumbs } from 'swiper/core';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import ChevronLeftTwoToneIcon from '@mui/icons-material/ChevronLeftTwoTone';
@@ -136,7 +136,7 @@ const TabsContainerWrapper = styled(Box)(
 );
 
 const ProductBody: FC<ProductBodyProps> = ({ product }) => {
-  const { t }: { t: any } = useTranslation();
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const theme = useTheme();
   const { enqueueSnackbar } = useSnackbar();
@@ -156,8 +156,8 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
   const [currentTab, setCurrentTab] = useState<string>('reviews');
 
   const tabs = [
-    { value: 'reviews', label: t('Reviews') },
-    { value: 'additional_info', label: t('Additional Informations') }
+    { value: 'reviews', label: 'Reviews' },
+    { value: 'additional_info', label: 'Additional Informations' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -165,7 +165,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
   };
 
   const handleCart = () => {
-    enqueueSnackbar(t('You added a product to cart'), {
+    enqueueSnackbar('You added a product to cart', {
       variant: 'success',
       preventDuplicate: false,
       anchorOrigin: {
@@ -308,7 +308,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                         }}
                         alignSelf="center"
                       >
-                        <b>{t('Option 1')}:</b>
+                        <b>{'Option 1'}:</b>
                       </Box>
                     </Grid>
                     <Grid
@@ -321,16 +321,16 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                       md={6}
                     >
                       <FormControl
-                        placeholder={t('Select ...')}
+                        placeholder={'Select ...'}
                         size="small"
                         fullWidth
                         variant="outlined"
                       >
                         <Select value={option1} onChange={handleChange1}>
-                          <MenuItem value={10}>{t('Option')} 1</MenuItem>
-                          <MenuItem value={20}>{t('Option')} 2</MenuItem>
-                          <MenuItem value={30}>{t('Option')} 3</MenuItem>
-                          <MenuItem value={30}>{t('Option')} 4</MenuItem>
+                          <MenuItem value={10}>{'Option'} 1</MenuItem>
+                          <MenuItem value={20}>{'Option'} 2</MenuItem>
+                          <MenuItem value={30}>{'Option'} 3</MenuItem>
+                          <MenuItem value={30}>{'Option'} 4</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -343,7 +343,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                         }}
                         alignSelf="center"
                       >
-                        <b>{t('Option 2')}:</b>
+                        <b>{'Option 2'}:</b>
                       </Box>
                     </Grid>
                     <Grid
@@ -356,16 +356,16 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                       md={6}
                     >
                       <FormControl
-                        placeholder={t('Select ...')}
+                        placeholder={'Select ...'}
                         size="small"
                         fullWidth
                         variant="outlined"
                       >
                         <Select value={option2} onChange={handleChange2}>
-                          <MenuItem value={10}>{t('Option')} 1</MenuItem>
-                          <MenuItem value={20}>{t('Option')} 2</MenuItem>
-                          <MenuItem value={30}>{t('Option')} 3</MenuItem>
-                          <MenuItem value={30}>{t('Option')} 4</MenuItem>
+                          <MenuItem value={10}>{'Option'} 1</MenuItem>
+                          <MenuItem value={20}>{'Option'} 2</MenuItem>
+                          <MenuItem value={30}>{'Option'} 3</MenuItem>
+                          <MenuItem value={30}>{'Option'} 4</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -378,7 +378,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                         }}
                         alignSelf="center"
                       >
-                        <b>{t('Quantity')}:</b>
+                        <b>{'Quantity'}:</b>
                       </Box>
                     </Grid>
                     <Grid
@@ -414,7 +414,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                 >
                   <Box>
                     <Typography component="div" variant="caption" gutterBottom>
-                      {t('Price')}
+                      {'Price'}
                     </Typography>
 
                     <Typography
@@ -443,7 +443,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                       onClick={handleCart}
                       size="large"
                     >
-                      {t('Add to card')}
+                      {'Add to card'}
                     </Button>
                   </Box>
                 </Box>
@@ -458,7 +458,7 @@ const ProductBody: FC<ProductBodyProps> = ({ product }) => {
                     pb: 1
                   }}
                 >
-                  {t('Share')}
+                  {'Share'}
                 </Typography>
                 <Button
                   sx={{

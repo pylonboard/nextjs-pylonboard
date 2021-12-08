@@ -1,10 +1,10 @@
 import { Card, Typography, useTheme, alpha } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function StorageUsage() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const data = {
@@ -12,17 +12,17 @@ function StorageUsage() {
       {
         bg: alpha(theme.colors.primary.main, 0.2),
         data: 40,
-        title: t('Free')
+        title: 'Free'
       },
       {
         bg: alpha(theme.colors.primary.main, 0.9),
         data: 25,
-        title: t('Used')
+        title: 'Used'
       },
       {
         bg: alpha(theme.colors.primary.main, 0.5),
         data: 35,
-        title: t('Available')
+        title: 'Available'
       }
     ]
   };
@@ -85,9 +85,9 @@ function StorageUsage() {
         type="radialBar"
       />
       <Typography variant="h1">
-        {t('Storage')}
+        {'Storage'}
         <br />
-        {t('Usage')}
+        {'Usage'}
       </Typography>
     </Card>
   );

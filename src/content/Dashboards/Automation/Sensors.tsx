@@ -15,7 +15,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import OpacityTwoToneIcon from '@mui/icons-material/OpacityTwoTone';
 import DeviceThermostatTwoToneIcon from '@mui/icons-material/DeviceThermostatTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -93,7 +93,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Sensors() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
   const duration = 200; // seconds
   const [position, setPosition] = useState(32);
@@ -312,7 +312,7 @@ function Sensors() {
                   noWrap
                   fontWeight="bold"
                 >
-                  {t('Master bedroom')}
+                  {'Master bedroom'}
                 </Typography>
               </Box>
               <AvatarWrapperSuccess variant="rounded">
@@ -374,7 +374,7 @@ function Sensors() {
                   color="text.secondary"
                   fontWeight="bold"
                 >
-                  {t('Humidity')}
+                  {'Humidity'}
                 </Typography>
               </Box>
               <AvatarWrapperError variant="rounded">

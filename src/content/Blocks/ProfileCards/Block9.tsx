@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 
@@ -24,7 +24,7 @@ const CardActions = styled(Box)(
 );
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -70,9 +70,9 @@ function Block9() {
         }}
         variant="subtitle2"
       >
-        {t(
+        {
           'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-        )}
+        }
         .
       </Typography>
       <Divider
@@ -94,19 +94,19 @@ function Block9() {
           <Typography gutterBottom variant="h4">
             86%
           </Typography>
-          <Typography variant="subtitle2">{t('Profile completion')}</Typography>
+          <Typography variant="subtitle2">{'Profile completion'}</Typography>
         </Box>
         <Box>
           <Typography gutterBottom variant="h4">
             $19,495
           </Typography>
-          <Typography variant="subtitle2">{t('Lifetime earnings')}</Typography>
+          <Typography variant="subtitle2">{'Lifetime earnings'}</Typography>
         </Box>
         <Box>
           <Typography gutterBottom variant="h4">
             174
           </Typography>
-          <Typography variant="subtitle2">{t('Projects completed')}</Typography>
+          <Typography variant="subtitle2">{'Projects completed'}</Typography>
         </Box>
       </Stack>
     </Card>

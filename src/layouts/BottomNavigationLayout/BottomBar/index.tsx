@@ -4,7 +4,6 @@ import { Box, Card, Tooltip, IconButton, alpha, styled } from '@mui/material';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 import Logo from './Logo';
 import NavigationMenu from './NavigationMenu';
-import LanguageSwitcher from './LanguageSwitcher';
 import Notifications from './Notifications';
 import Userbox from './Userbox';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
@@ -112,7 +111,6 @@ function BottomBar() {
           <NavigationMenu />
         </NavigationMenuWrapper>
         <Box>
-          <LanguageSwitcher />
           <Userbox />
           <Box
             component="span"

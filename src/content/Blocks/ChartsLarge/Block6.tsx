@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import Block6Chart from './Block6Chart';
 import Gauge from 'src/components/Gauge';
@@ -61,7 +61,7 @@ const CardWhite = styled(Card)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const status = {
@@ -135,7 +135,7 @@ function Block6() {
               color: `${theme.colors.alpha.trueWhite[70]}`
             }}
           >
-            {t('Returning Users')}
+            {'Returning Users'}
           </Typography>
           <Gauge
             circleRatio={1}
@@ -157,7 +157,7 @@ function Block6() {
               color: `${theme.colors.alpha.trueWhite[70]}`
             }}
           >
-            {t('New Customers')}
+            {'New Customers'}
           </Typography>
           <Gauge
             circleRatio={1}
@@ -191,7 +191,7 @@ function Block6() {
                         arrow
                         placement="top"
                         title={
-                          t('Online since') +
+                          'Online since' +
                           ' ' +
                           formatDistance(
                             subMinutes(new Date(), 37),
@@ -226,7 +226,7 @@ function Block6() {
                       fontWeight="bold"
                       noWrap
                     >
-                      {t('Customer')}
+                      {'Customer'}
                     </Typography>
                     <Typography variant="h4" noWrap>
                       Leonardo D.
@@ -242,7 +242,7 @@ function Block6() {
               </Typography>
               <Typography variant="h6" component="span" color="text.secondary">
                 {' '}
-                {t('purchases')}
+                {'purchases'}
               </Typography>
             </CardWhite>
           </Grid>
@@ -266,7 +266,7 @@ function Block6() {
                         arrow
                         placement="top"
                         title={
-                          t('Online since') +
+                          'Online since' +
                           ' ' +
                           formatDistance(
                             subMinutes(new Date(), 37),
@@ -301,7 +301,7 @@ function Block6() {
                       fontWeight="bold"
                       noWrap
                     >
-                      {t('Client')}
+                      {'Client'}
                     </Typography>
                     <Typography variant="h4" noWrap>
                       Brynn K.
@@ -317,7 +317,7 @@ function Block6() {
               </Typography>
               <Typography variant="h6" component="span" color="text.secondary">
                 {' '}
-                {t('visits today')}
+                {'visits today'}
               </Typography>
             </CardWhite>
           </Grid>

@@ -1,11 +1,11 @@
 import { Box, Card, Grid, Typography, Button, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const chart1Options: ApexOptions = {
@@ -162,7 +162,7 @@ function Block9() {
                   fontSize: `${theme.typography.pxToRem(17)}`
                 }}
               >
-                {t('Total Orders')}
+                {'Total Orders'}
               </Typography>
             </Box>
             <Button
@@ -175,7 +175,7 @@ function Block9() {
                 fontSize: `${theme.typography.pxToRem(11)}`
               }}
             >
-              {t('View all')}
+              {'View all'}
             </Button>
           </Box>
           <Box>
@@ -217,7 +217,7 @@ function Block9() {
                   fontSize: `${theme.typography.pxToRem(17)}`
                 }}
               >
-                {t('Total Visitors')}
+                {'Total Visitors'}
               </Typography>
             </Box>
           </Box>
@@ -260,7 +260,7 @@ function Block9() {
                   fontSize: `${theme.typography.pxToRem(17)}`
                 }}
               >
-                {t('Total Deliveries')}
+                {'Total Deliveries'}
               </Typography>
             </Box>
           </Box>
@@ -303,7 +303,7 @@ function Block9() {
                   fontSize: `${theme.typography.pxToRem(17)}`
                 }}
               >
-                {t('Total Budget')}
+                {'Total Budget'}
               </Typography>
             </Box>
           </Box>

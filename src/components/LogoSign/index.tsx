@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 import Link from 'src/components/Link';
-import { useTranslation } from 'react-i18next';
+
 
 const LogoWrapper = styled(Link)(
   ({ theme }) => `
@@ -96,11 +96,11 @@ const TooltipWrapper = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 function Logo() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
-    <TooltipWrapper title={t('Tokyo Next.js Typescript Admin Dashboard')} arrow>
+    <TooltipWrapper title={'Tokyo Next.js Typescript Admin Dashboard'} arrow>
       <LogoWrapper href="/">
         <Badge
           sx={{

@@ -7,11 +7,11 @@ import {
   Avatar,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import KitchenTwoToneIcon from '@mui/icons-material/KitchenTwoTone';
 
 function CaloriesAlt() {
-  const { t }: { t: any } = useTranslation();
+
 
   const AvatarPrimary = styled(Avatar)(
     ({ theme }) => `
@@ -45,7 +45,7 @@ function CaloriesAlt() {
               variant="subtitle2"
               color="text.secondary"
             >
-              {t('kCal')}
+              {'kCal'}
             </Typography>
           </>
         }
@@ -61,7 +61,7 @@ function CaloriesAlt() {
             pb: 3
           }}
         >
-          {t('Calories')}
+          {'Calories'}
         </Typography>
         <LinearProgress value={34} color="primary" variant="determinate" />
       </CardContent>

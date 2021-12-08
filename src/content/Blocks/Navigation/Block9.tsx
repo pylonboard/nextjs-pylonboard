@@ -14,7 +14,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -70,7 +70,7 @@ const MenuListWrapperRounded = styled(MenuList)(
 );
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -81,7 +81,7 @@ function Block9() {
       }}
     >
       <CardActions>
-        <Tooltip arrow placement="top" title={t('Get in touch via email')}>
+        <Tooltip arrow placement="top" title={'Get in touch via email'}>
           <IconButton
             color="primary"
             sx={{
@@ -125,7 +125,7 @@ function Block9() {
           Boyd Hardin
         </Typography>
         <Label color="error">
-          <b>{t('Offline')}</b>
+          <b>{'Offline'}</b>
         </Label>
         <Typography
           sx={{
@@ -135,9 +135,9 @@ function Block9() {
           variant="subtitle2"
           textAlign="center"
         >
-          {t(
+          {
             'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-          )}
+          }
           .
         </Typography>
         <Box mt={3} mx={3}>
@@ -225,7 +225,7 @@ function Block9() {
             primaryTypographyProps={{
               variant: 'h5'
             }}
-            primary={t('Analytics')}
+            primary={'Analytics'}
           />
           <ChevronRightTwoToneIcon
             sx={{
@@ -252,7 +252,7 @@ function Block9() {
             primaryTypographyProps={{
               variant: 'h5'
             }}
-            primary={t('Server Status')}
+            primary={'Server Status'}
           />
           <Box display="flex" alignItems="center">
             <LabelWrapper
@@ -293,7 +293,7 @@ function Block9() {
             primaryTypographyProps={{
               variant: 'h5'
             }}
-            primary={t('Reports Management')}
+            primary={'Reports Management'}
           />
           <ChevronRightTwoToneIcon
             sx={{
@@ -320,7 +320,7 @@ function Block9() {
             primaryTypographyProps={{
               variant: 'h5'
             }}
-            primary={t('Real Estate')}
+            primary={'Real Estate'}
           />
           <ChevronRightTwoToneIcon
             sx={{

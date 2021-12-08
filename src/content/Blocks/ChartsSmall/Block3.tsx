@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
 import AssignmentIndTwoToneIcon from '@mui/icons-material/AssignmentIndTwoTone';
@@ -46,7 +46,7 @@ const AvatarInfo = styled(Avatar)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -86,7 +86,7 @@ function Block3() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('Laptops sales')}
+              {'Laptops sales'}
             </Typography>
             <Divider
               flexItem
@@ -95,7 +95,7 @@ function Block3() {
               }}
             />
             <Button color="error" variant="outlined">
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Card>
@@ -135,7 +135,7 @@ function Block3() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('Total sales')}
+              {'Total sales'}
             </Typography>
             <Divider
               flexItem
@@ -144,7 +144,7 @@ function Block3() {
               }}
             />
             <Button color="primary" variant="outlined">
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Card>
@@ -184,7 +184,7 @@ function Block3() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('New accounts')}
+              {'New accounts'}
             </Typography>
             <Divider
               flexItem
@@ -193,7 +193,7 @@ function Block3() {
               }}
             />
             <Button color="info" variant="outlined">
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Card>

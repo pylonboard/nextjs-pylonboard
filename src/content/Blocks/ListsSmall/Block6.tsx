@@ -15,7 +15,7 @@ import {
   alpha
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonOutlineTwoToneIcon from '@mui/icons-material/PersonOutlineTwoTone';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
@@ -71,7 +71,7 @@ const ListItemWrapper = styled(ListItem)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -89,7 +89,7 @@ function Block6() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Pricing Plans')}
+            {'Pricing Plans'}
           </Typography>
         }
       />
@@ -105,13 +105,13 @@ function Block6() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Purchase a single license')}
+              title={'Purchase a single license'}
             >
               <IconButton color="primary">
                 <ShoppingCartTwoToneIcon fontSize="small" />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Remove existing license')}>
+            <Tooltip arrow placement="top" title={'Remove existing license'}>
               <IconButton color="error">
                 <CloseTwoToneIcon fontSize="small" />
               </IconButton>
@@ -131,7 +131,7 @@ function Block6() {
           <ListItemText
             primary={
               <Typography lineHeight={1} gutterBottom variant="h4">
-                {t('Basic')}
+                {'Basic'}
               </Typography>
             }
             secondary={
@@ -152,7 +152,7 @@ function Block6() {
                   />
                   <b>3487</b>
                   <Box pl={0.5} component="span">
-                    {t('subscribers')}
+                    {'subscribers'}
                   </Box>
                 </Typography>
               </>
@@ -165,7 +165,7 @@ function Block6() {
             alignSelf="center"
           >
             <Typography variant="h5">$176.45</Typography>
-            <Typography variant="subtitle2">{t('per month')}</Typography>
+            <Typography variant="subtitle2">{'per month'}</Typography>
           </Box>
         </ListItemWrapper>
         <Divider />
@@ -179,13 +179,13 @@ function Block6() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Purchase a single license')}
+              title={'Purchase a single license'}
             >
               <IconButton color="primary">
                 <ShoppingCartTwoToneIcon fontSize="small" />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Remove existing license')}>
+            <Tooltip arrow placement="top" title={'Remove existing license'}>
               <IconButton color="error">
                 <CloseTwoToneIcon fontSize="small" />
               </IconButton>
@@ -205,7 +205,7 @@ function Block6() {
           <ListItemText
             primary={
               <Typography lineHeight={1} gutterBottom variant="h4">
-                {t('Premium')}
+                {'Premium'}
               </Typography>
             }
             secondary={
@@ -226,7 +226,7 @@ function Block6() {
                   />
                   <b>985</b>
                   <Box pl={0.5} component="span">
-                    {t('subscribers')}
+                    {'subscribers'}
                   </Box>
                 </Typography>
               </>
@@ -239,7 +239,7 @@ function Block6() {
             alignSelf="center"
           >
             <Typography variant="h5">$567.99</Typography>
-            <Typography variant="subtitle2">{t('per month')}</Typography>
+            <Typography variant="subtitle2">{'per month'}</Typography>
           </Box>
         </ListItemWrapper>
         <Divider />
@@ -253,13 +253,13 @@ function Block6() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Purchase a single license')}
+              title={'Purchase a single license'}
             >
               <IconButton color="primary">
                 <ShoppingCartTwoToneIcon fontSize="small" />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Remove existing license')}>
+            <Tooltip arrow placement="top" title={'Remove existing license'}>
               <IconButton color="error">
                 <CloseTwoToneIcon fontSize="small" />
               </IconButton>
@@ -279,7 +279,7 @@ function Block6() {
           <ListItemText
             primary={
               <Typography lineHeight={1} gutterBottom variant="h4">
-                {t('Ultra')}
+                {'Ultra'}
               </Typography>
             }
             secondary={
@@ -300,7 +300,7 @@ function Block6() {
                   />
                   <b>89</b>
                   <Box pl={0.5} component="span">
-                    {t('subscribers')}
+                    {'subscribers'}
                   </Box>
                 </Typography>
               </>
@@ -313,7 +313,7 @@ function Block6() {
             alignSelf="center"
           >
             <Typography variant="h5">$893.00</Typography>
-            <Typography variant="subtitle2">{t('per month')}</Typography>
+            <Typography variant="subtitle2">{'per month'}</Typography>
           </Box>
         </ListItemWrapper>
       </List>

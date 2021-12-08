@@ -11,7 +11,7 @@ import {
   Typography,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
@@ -30,7 +30,7 @@ const ButtonError = styled(Button)(
 function BulkActions() {
   const [onMenuOpen, menuOpen] = useState<boolean>(false);
   const moreRef = useRef<HTMLButtonElement | null>(null);
-  const { t }: { t: any } = useTranslation();
+
 
   const openMenu = (): void => {
     menuOpen(true);
@@ -45,7 +45,7 @@ function BulkActions() {
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <Box display="flex" alignItems="center">
           <Typography variant="h5" color="text.secondary">
-            {t('Bulk actions')}:
+            {'Bulk actions'}:
           </Typography>
           <ButtonError
             sx={{
@@ -54,7 +54,7 @@ function BulkActions() {
             startIcon={<DeleteTwoToneIcon />}
             variant="contained"
           >
-            {t('Delete')}
+            {'Delete'}
           </ButtonError>
         </Box>
         <IconButton
@@ -92,10 +92,10 @@ function BulkActions() {
           component="nav"
         >
           <ListItem button>
-            <ListItemText primary={t('Bulk delete selected')} />
+            <ListItemText primary={'Bulk delete selected'} />
           </ListItem>
           <ListItem button>
-            <ListItemText primary={t('Reset progress for selected')} />
+            <ListItemText primary={'Reset progress for selected'} />
           </ListItem>
         </List>
       </Menu>

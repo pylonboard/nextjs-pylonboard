@@ -1,10 +1,10 @@
 import { Box, Card, Grid, Typography, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import CountUp from 'react-countup';
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -22,7 +22,7 @@ function Block2() {
               color: `${theme.colors.alpha.trueWhite[100]}`
             }}
           >
-            {t('Income')}
+            {'Income'}
           </Typography>
           <Box
             pt={1.5}
@@ -72,7 +72,7 @@ function Block2() {
               color: `${theme.colors.alpha.trueWhite[100]}`
             }}
           >
-            {t('Spendings')}
+            {'Spendings'}
           </Typography>
           <Box
             pt={1.5}
@@ -122,7 +122,7 @@ function Block2() {
               color: `${theme.colors.alpha.trueWhite[100]}`
             }}
           >
-            {t('Earnings')}
+            {'Earnings'}
           </Typography>
           <Box
             pt={1.5}
@@ -172,7 +172,7 @@ function Block2() {
               color: `${theme.colors.alpha.trueWhite[100]}`
             }}
           >
-            {t('Losses')}
+            {'Losses'}
           </Typography>
           <Box
             pt={1.5}

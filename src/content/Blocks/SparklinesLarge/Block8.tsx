@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import { Chart } from 'src/components/Chart';
@@ -19,7 +19,7 @@ import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -110,9 +110,9 @@ function Block8() {
       >
         <Box>
           <Typography gutterBottom variant="caption" fontWeight="bold">
-            {t('Statistics')}
+            {'Statistics'}
           </Typography>
-          <Typography variant="h4">{t('Last quarter report')}</Typography>
+          <Typography variant="h4">{'Last quarter report'}</Typography>
         </Box>
         <IconButton size="small">
           <MoreHorizTwoToneIcon />
@@ -139,7 +139,7 @@ function Block8() {
             <MonetizationOnTwoToneIcon fontSize="large" />
           </Text>
           <Typography variant="h3">$9,658</Typography>
-          <Typography variant="subtitle2">{t('revenue')}</Typography>
+          <Typography variant="subtitle2">{'revenue'}</Typography>
         </Box>
         <Box
           py={1}
@@ -152,7 +152,7 @@ function Block8() {
             <PersonTwoToneIcon fontSize="large" />
           </Text>
           <Typography variant="h3">23,594</Typography>
-          <Typography variant="subtitle2">{t('users')}</Typography>
+          <Typography variant="subtitle2">{'users'}</Typography>
         </Box>
       </Stack>
       <Chart options={Box1Options} series={Box1Data} type="area" height={100} />
@@ -173,7 +173,7 @@ function Block8() {
           }}
           endIcon={<ChevronRightTwoToneIcon />}
         >
-          {t('View complete report')}
+          {'View complete report'}
         </Button>
       </Box>
     </Card>

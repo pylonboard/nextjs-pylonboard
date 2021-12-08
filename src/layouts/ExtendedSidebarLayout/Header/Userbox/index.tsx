@@ -14,7 +14,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -108,7 +108,7 @@ const UserBoxDescription = styled(Typography)(
 );
 
 function HeaderUserbox() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const user = {
@@ -240,7 +240,7 @@ function HeaderUserbox() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('My account')}
+              primary={'My account'}
             />
             <ChevronRightTwoToneIcon
               sx={{
@@ -254,7 +254,7 @@ function HeaderUserbox() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Profile settings')}
+              primary={'Profile settings'}
             />
             <Box display="flex" alignItems="center">
               <DotLegend
@@ -276,7 +276,7 @@ function HeaderUserbox() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Active tasks')}
+              primary={'Active tasks'}
             />
             <ChevronRightTwoToneIcon
               sx={{
@@ -295,7 +295,7 @@ function HeaderUserbox() {
             <Box ml={1}>
               <Typography variant="h3">$14,264</Typography>
               <Typography noWrap variant="subtitle2">
-                {t('total value')}
+                {'total value'}
               </Typography>
             </Box>
           </Box>

@@ -18,7 +18,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Link from 'src/components/Link';
 
 const LabelWrapper = styled(Box)(
@@ -50,7 +50,7 @@ const LinearProgressPrimary = styled(LinearProgress)(
 );
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const items = [
@@ -115,11 +115,11 @@ function Block8() {
               fontSize: `${theme.typography.pxToRem(12)}`
             }}
           >
-            {t('Progress')}
+            {'Progress'}
           </Typography>
-          <Typography variant="h4">{t('Users Analytics')}</Typography>
+          <Typography variant="h4">{'Users Analytics'}</Typography>
         </Box>
-        <LabelWrapper color="secondary">{t('Pending')}</LabelWrapper>
+        <LabelWrapper color="secondary">{'Pending'}</LabelWrapper>
       </Box>
       <List disablePadding>
         {items.map((item) => (
@@ -164,7 +164,7 @@ function Block8() {
                 secondary={
                   <>
                     <Typography noWrap variant="subtitle2">
-                      {item.jobtitle} {t('at')}{' '}
+                      {item.jobtitle} {'at'}{' '}
                       <Link href="#">
                         <b>{item.company}</b>
                       </Link>
@@ -217,7 +217,7 @@ function Block8() {
                     }
                   }}
                 >
-                  {t('View')}
+                  {'View'}
                 </Button>
               </Box>
             </ListItem>

@@ -7,11 +7,11 @@ import {
   Divider,
   Grid
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { ArrowForwardTwoTone } from '@mui/icons-material';
 
 function Addresses() {
-  const { t }: { t: any } = useTranslation();
+
 
   const addresses = {
     delivery: 12,
@@ -29,13 +29,13 @@ function Addresses() {
       <Grid item xs={12} sm={6}>
         <Card>
           <CardHeader
-            title={t('Delivery Addresses')}
-            subheader={addresses.delivery + t(' saved addresses')}
+            title={'Delivery Addresses'}
+            subheader={addresses.delivery + ' saved addresses'}
           />
           <Divider />
           <Box p={2}>
             <Typography variant="caption" fontWeight="bold">
-              {t('Favourite')}
+              {'Favourite'}
             </Typography>
             <Box
               sx={{
@@ -62,7 +62,7 @@ function Addresses() {
               variant="outlined"
               endIcon={<ArrowForwardTwoTone />}
             >
-              {t('Manage')}
+              {'Manage'}
             </Button>
           </Box>
         </Card>
@@ -70,13 +70,13 @@ function Addresses() {
       <Grid item xs={12} sm={6}>
         <Card>
           <CardHeader
-            title={t('Shipping Addresses')}
-            subheader={addresses.shipping + t(' saved addresses')}
+            title={'Shipping Addresses'}
+            subheader={addresses.shipping + ' saved addresses'}
           />
           <Divider />
           <Box p={2}>
             <Typography variant="caption" fontWeight="bold">
-              {t('Saved Locations')}
+              {'Saved Locations'}
             </Typography>
             <Box
               sx={{
@@ -103,7 +103,7 @@ function Addresses() {
               variant="outlined"
               endIcon={<ArrowForwardTwoTone />}
             >
-              {t('Manage')}
+              {'Manage'}
             </Button>
           </Box>
         </Card>

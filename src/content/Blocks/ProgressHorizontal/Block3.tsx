@@ -10,7 +10,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 
 const LinearProgressError = styled(LinearProgress)(
   ({ theme }) => `
@@ -77,7 +77,7 @@ const LinearProgressPrimary = styled(LinearProgress)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -114,7 +114,7 @@ function Block3() {
             </Box>
           </Box>
           <Typography variant="subtitle2" noWrap>
-            {t('Expenses target')}
+            {'Expenses target'}
           </Typography>
         </Card>
       </Grid>
@@ -150,7 +150,7 @@ function Block3() {
             </Box>
           </Box>
           <Typography variant="subtitle2" noWrap>
-            {t('Sales target')}
+            {'Sales target'}
           </Typography>
         </Card>
       </Grid>
@@ -194,7 +194,7 @@ function Block3() {
             }}
             noWrap
           >
-            {t('Income target')}
+            {'Income target'}
           </Typography>
         </Card>
       </Grid>
@@ -237,7 +237,7 @@ function Block3() {
             }}
             noWrap
           >
-            {t('Spendings target')}
+            {'Spendings target'}
           </Typography>
         </Card>
       </Grid>

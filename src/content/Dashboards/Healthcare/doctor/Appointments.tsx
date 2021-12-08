@@ -15,7 +15,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import Text from 'src/components/Text';
 import Link from 'src/components/Link';
@@ -71,18 +71,18 @@ const BoxItemWrapper = styled(Box)(
 );
 
 function Appointments() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
   const { enqueueSnackbar } = useSnackbar();
 
   const handleDelete = () => {
-    enqueueSnackbar(t('You clicked on delete!'), {
+    enqueueSnackbar('You clicked on delete!', {
       variant: 'error'
     });
   };
 
   const handleClick = () => {
-    enqueueSnackbar(t('You clicked on the chip!'), {
+    enqueueSnackbar('You clicked on the chip!', {
       variant: 'success'
     });
   };
@@ -107,7 +107,7 @@ function Appointments() {
                 mr: 2
               }}
             >
-              <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+              <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                 <Avatar
                   sx={{
                     width: 30,
@@ -119,7 +119,7 @@ function Appointments() {
                   src="/static/images/avatars/1.jpg"
                 />
               </Tooltip>
-              <Tooltip arrow title={t('View profile for') + ' Travis Howard'}>
+              <Tooltip arrow title={'View profile for' + ' Travis Howard'}>
                 <Avatar
                   sx={{
                     width: 30,
@@ -131,7 +131,7 @@ function Appointments() {
                   src="/static/images/avatars/2.jpg"
                 />
               </Tooltip>
-              <Tooltip arrow title={t('View profile for') + ' Cindy Baker'}>
+              <Tooltip arrow title={'View profile for' + ' Cindy Baker'}>
                 <Avatar
                   sx={{
                     width: 30,
@@ -143,7 +143,7 @@ function Appointments() {
                   src="/static/images/avatars/3.jpg"
                 />
               </Tooltip>
-              <Tooltip arrow title={t('View profile for') + ' Agnes Walker'}>
+              <Tooltip arrow title={'View profile for' + ' Agnes Walker'}>
                 <Avatar
                   sx={{
                     width: 30,
@@ -157,7 +157,7 @@ function Appointments() {
               </Tooltip>
               <Tooltip
                 arrow
-                title={t('View profile for') + ' Trevor Henderson'}
+                title={'View profile for' + ' Trevor Henderson'}
               >
                 <Avatar
                   sx={{
@@ -170,7 +170,7 @@ function Appointments() {
                   src="/static/images/avatars/5.jpg"
                 />
               </Tooltip>
-              <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+              <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                 <Avatar
                   sx={{
                     width: 30,
@@ -182,7 +182,7 @@ function Appointments() {
                   src="/static/images/avatars/1.jpg"
                 />
               </Tooltip>
-              <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+              <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                 <Avatar
                   sx={{
                     width: 30,
@@ -196,11 +196,11 @@ function Appointments() {
               </Tooltip>
             </AvatarGroup>
             <Button size="small" variant="contained">
-              {t('View Patients')}
+              {'View Patients'}
             </Button>
           </Box>
         }
-        title={t('Appointments')}
+        title={'Appointments'}
       />
       <Divider />
       <List component="div" disablePadding>
@@ -214,9 +214,9 @@ function Appointments() {
             justifyContent: 'space-between'
           }}
         >
-          <Box>{t('Upcoming Appointments')}</Box>
+          <Box>{'Upcoming Appointments'}</Box>
           <Box>
-            <Label color="warning">{t('Today')}</Label>
+            <Label color="warning">{'Today'}</Label>
           </Box>
         </ListSubheader>
         <Divider />
@@ -239,7 +239,7 @@ function Appointments() {
               <Tooltip
                 arrow
                 placement="top"
-                title={t('Appointment has been confirmed with the Patient.')}
+                title={'Appointment has been confirmed with the Patient.'}
               >
                 <DotLegend
                   style={{ background: `${theme.colors.success.main}` }}
@@ -254,7 +254,7 @@ function Appointments() {
                 >
                   Veronica Culhane
                 </Typography>{' '}
-                - {t('General Checkup')}
+                - {'General Checkup'}
               </span>
             </Typography>
             <Typography
@@ -277,7 +277,7 @@ function Appointments() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Reports')}
+                label={'Reports'}
                 color="primary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -288,7 +288,7 @@ function Appointments() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('High Risk Patient')}
+                label={'High Risk Patient'}
                 color="primary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -315,7 +315,7 @@ function Appointments() {
               <Tooltip
                 arrow
                 placement="top"
-                title={t('Appointment has been canceled!')}
+                title={'Appointment has been canceled!'}
               >
                 <DotLegend
                   style={{ background: `${theme.colors.error.main}` }}
@@ -330,7 +330,7 @@ function Appointments() {
                 >
                   Bonnie Bryan
                 </Typography>{' '}
-                - {t('General Checkup')}
+                - {'General Checkup'}
               </span>
             </Typography>
             <Typography
@@ -353,7 +353,7 @@ function Appointments() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Chronic Patient')}
+                label={'Chronic Patient'}
                 color="primary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -364,7 +364,7 @@ function Appointments() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Medical History')}
+                label={'Medical History'}
                 color="primary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -387,7 +387,7 @@ function Appointments() {
             justifyContent: 'space-between'
           }}
         >
-          <Box>{t('Past Appointments')}</Box>
+          <Box>{'Past Appointments'}</Box>
           <Box>
             <Text color="black">
               {format(subDays(new Date(), 14), 'MMMM dd yyyy')}
@@ -422,7 +422,7 @@ function Appointments() {
                 >
                   Wesley Joyce
                 </Typography>{' '}
-                - {t('Surgery')}
+                - {'Surgery'}
               </span>
             </Typography>
             <Typography
@@ -445,7 +445,7 @@ function Appointments() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Medical History')}
+                label={'Medical History'}
                 color="primary"
                 onClick={handleClick}
                 onDelete={handleDelete}

@@ -8,13 +8,13 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import StarTwoToneIcon from '@mui/icons-material/StarTwoTone';
 import Text from 'src/components/Text';
 import Link from 'src/components/Link';
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -35,7 +35,7 @@ function Block5() {
               gutterBottom
               variant="h3"
             >
-              {t('Revenue progress')}
+              {'Revenue progress'}
             </Typography>
           </>
         }
@@ -48,7 +48,7 @@ function Block5() {
               color="text.secondary"
               variant="h5"
             >
-              {t('Our company revenues, split by progress.')}
+              {'Our company revenues, split by progress.'}
             </Typography>
           </>
         }
@@ -109,7 +109,7 @@ function Block5() {
               component="span"
               variant="subtitle2"
             >
-              | <b>34</b> {t('jobs')}
+              | <b>34</b> {'jobs'}
             </Typography>
           </Box>
         </Box>
@@ -169,7 +169,7 @@ function Block5() {
               component="span"
               variant="subtitle2"
             >
-              | <b>74</b> {t('jobs')}
+              | <b>74</b> {'jobs'}
             </Typography>
           </Box>
         </Box>
@@ -229,7 +229,7 @@ function Block5() {
               component="span"
               variant="subtitle2"
             >
-              | <b>52</b> {t('jobs')}
+              | <b>52</b> {'jobs'}
             </Typography>
           </Box>
         </Box>
@@ -289,7 +289,7 @@ function Block5() {
               component="span"
               variant="subtitle2"
             >
-              | <b>82</b> {t('jobs')}
+              | <b>82</b> {'jobs'}
             </Typography>
           </Box>
         </Box>
@@ -349,7 +349,7 @@ function Block5() {
               component="span"
               variant="subtitle2"
             >
-              | <b>29</b> {t('jobs')}
+              | <b>29</b> {'jobs'}
             </Typography>
           </Box>
         </Box>

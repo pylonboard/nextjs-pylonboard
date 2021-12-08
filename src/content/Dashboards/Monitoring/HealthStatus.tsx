@@ -15,7 +15,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
@@ -79,7 +79,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function HealthStatus() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -154,8 +154,8 @@ function HealthStatus() {
       }}
     >
       <CardHeader
-        action={<Button>{t('Check status')}</Button>}
-        title={t('Health Status')}
+        action={<Button>{'Check status'}</Button>}
+        title={'Health Status'}
       />
       <Box
         sx={{
@@ -231,12 +231,12 @@ function HealthStatus() {
                   }}
                 >
                   <ListItemText
-                    primary={t('High accuracy test run')}
+                    primary={'High accuracy test run'}
                     primaryTypographyProps={{ variant: 'subtitle2' }}
                   />
                   <Box display="flex" alignItems="center">
                     <Text color="success">
-                      <b>{t('Ok')}</b>
+                      <b>{'Ok'}</b>
                     </Text>
                     <AvatarSuccess
                       sx={{
@@ -254,12 +254,12 @@ function HealthStatus() {
                   }}
                 >
                   <ListItemText
-                    primary={t('Storage capacity')}
+                    primary={'Storage capacity'}
                     primaryTypographyProps={{ variant: 'subtitle2' }}
                   />
                   <Box display="flex" alignItems="center">
                     <Text color="success">
-                      <b>{t('Ok')}</b>
+                      <b>{'Ok'}</b>
                     </Text>
                     <AvatarSuccess
                       sx={{
@@ -277,12 +277,12 @@ function HealthStatus() {
                   }}
                 >
                   <ListItemText
-                    primary={t('Performance test')}
+                    primary={'Performance test'}
                     primaryTypographyProps={{ variant: 'subtitle2' }}
                   />
                   <Box display="flex" alignItems="center">
                     <Text color="error">
-                      <b>{t('Failed')}</b>
+                      <b>{'Failed'}</b>
                     </Text>
                     <AvatarError
                       sx={{
@@ -324,7 +324,7 @@ function HealthStatus() {
           variant="contained"
           startIcon={<RotateLeftTwoToneIcon />}
         >
-          {t('Check again')}
+          {'Check again'}
         </Button>
       </Box>
     </Card>

@@ -12,7 +12,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
 import AssessmentTwoToneIcon from '@mui/icons-material/AssessmentTwoTone';
@@ -132,7 +132,7 @@ const ButtonWrapper = styled(Button)(
 );
 
 function Block10() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -162,12 +162,12 @@ function Block10() {
             }}
             variant="h3"
           >
-            {t('The Ultimate UI Design System at your fingertips!')}
+            {'The Ultimate UI Design System at your fingertips!'}
           </Typography>
           <Typography variant="subtitle2">
-            {t(
+            {
               'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-            )}
+            }
             .
           </Typography>
           <LinearProgressWrapper
@@ -199,7 +199,7 @@ function Block10() {
               size="small"
               variant="contained"
             >
-              {t('View project')}
+              {'View project'}
             </ButtonWrapper>
             <Typography
               sx={{
@@ -207,7 +207,7 @@ function Block10() {
               }}
               variant="subtitle2"
             >
-              {t('In progress')}
+              {'In progress'}
             </Typography>
           </Box>
         </Card>
@@ -237,12 +237,12 @@ function Block10() {
             }}
             variant="h3"
           >
-            {t('The Ultimate UI Design System at your fingertips!')}
+            {'The Ultimate UI Design System at your fingertips!'}
           </Typography>
           <Typography variant="subtitle2">
-            {t(
+            {
               'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-            )}
+            }
             .
           </Typography>
           <LinearProgressError
@@ -274,7 +274,7 @@ function Block10() {
               size="small"
               variant="contained"
             >
-              {t('View project')}
+              {'View project'}
             </ButtonWrapper>
             <Typography
               sx={{
@@ -282,7 +282,7 @@ function Block10() {
               }}
               variant="subtitle2"
             >
-              {t('Overdue')}
+              {'Overdue'}
             </Typography>
           </Box>
         </Card>
@@ -314,7 +314,7 @@ function Block10() {
             }}
             variant="h3"
           >
-            {t('The Ultimate UI Design System at your fingertips!')}
+            {'The Ultimate UI Design System at your fingertips!'}
           </Typography>
           <Typography
             sx={{
@@ -322,9 +322,9 @@ function Block10() {
             }}
             variant="subtitle2"
           >
-            {t(
+            {
               'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-            )}
+            }
             .
           </Typography>
           <LinearProgressWhite
@@ -356,7 +356,7 @@ function Block10() {
               size="small"
               variant="contained"
             >
-              {t('View project')}
+              {'View project'}
             </ButtonWrapper>
             <Typography
               sx={{

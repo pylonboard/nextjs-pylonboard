@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import PersonSearchTwoToneIcon from '@mui/icons-material/PersonSearchTwoTone';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
@@ -43,7 +43,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -76,7 +76,7 @@ function Block5() {
             }}
           />
           <Box display="flex" justifyContent="center">
-            <Tooltip arrow placement="top" title={t('View details')}>
+            <Tooltip arrow placement="top" title={'View details'}>
               <IconButton
                 sx={{
                   borderRadius: 50
@@ -90,7 +90,7 @@ function Block5() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 size="large"
                 sx={{
@@ -105,7 +105,7 @@ function Block5() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('View user profile')}>
+            <Tooltip arrow placement="top" title={'View user profile'}>
               <IconButton
                 sx={{
                   borderRadius: 50
@@ -151,7 +151,7 @@ function Block5() {
             }}
           />
           <Box display="flex" justifyContent="center">
-            <Tooltip arrow placement="top" title={t('View details')}>
+            <Tooltip arrow placement="top" title={'View details'}>
               <IconButtonWrapper
                 sx={{
                   boxShadow: `${theme.colors.shadows.primary}`,
@@ -177,7 +177,7 @@ function Block5() {
                 />
               </IconButtonWrapper>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButtonWrapper
                 size="large"
                 sx={{
@@ -204,7 +204,7 @@ function Block5() {
                 />
               </IconButtonWrapper>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('View user profile')}>
+            <Tooltip arrow placement="top" title={'View user profile'}>
               <IconButtonWrapper
                 sx={{
                   boxShadow: `${theme.colors.shadows.primary}`,
@@ -276,7 +276,7 @@ function Block5() {
             }}
           />
           <Box display="flex" justifyContent="center">
-            <Tooltip arrow placement="top" title={t('View details')}>
+            <Tooltip arrow placement="top" title={'View details'}>
               <IconButton
                 sx={{
                   color: `${theme.colors.alpha.trueWhite[100]}`,
@@ -294,7 +294,7 @@ function Block5() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 size="large"
                 sx={{
@@ -313,7 +313,7 @@ function Block5() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('View user profile')}>
+            <Tooltip arrow placement="top" title={'View user profile'}>
               <IconButton
                 sx={{
                   color: `${theme.colors.alpha.trueWhite[100]}`,

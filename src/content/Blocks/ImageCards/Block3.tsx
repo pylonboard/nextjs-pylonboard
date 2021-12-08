@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import { format, subDays } from 'date-fns';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
@@ -82,7 +82,7 @@ const CardContentWrapper = styled(Box)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -103,7 +103,7 @@ function Block3() {
                   color: `${theme.colors.alpha.trueWhite[100]}`
                 }}
               >
-                {t('New')}
+                {'New'}
               </LabelWrapper>
             </CardActions>
             <CardContentWrapper>
@@ -114,7 +114,7 @@ function Block3() {
                 }}
                 variant="h2"
               >
-                {t('The Ultimate UI Design System at your fingertips!')}
+                {'The Ultimate UI Design System at your fingertips!'}
               </Typography>
             </CardContentWrapper>
           </CardActionAreaWrapper>
@@ -172,9 +172,9 @@ function Block3() {
                 py: 2
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Divider
@@ -191,7 +191,7 @@ function Block3() {
                 px: 3
               }}
             >
-              {t('Learn more')}
+              {'Learn more'}
             </Button>
           </Box>
         </Card>
@@ -224,7 +224,7 @@ function Block3() {
                   )}`
                 }}
               >
-                {t('Updated')}
+                {'Updated'}
               </LabelWrapper>
             </CardActions>
             <CardContentWrapper justifyContent="center">
@@ -236,7 +236,7 @@ function Block3() {
                 }}
                 variant="h2"
               >
-                {t('The Ultimate UI Design System at your fingertips!')}
+                {'The Ultimate UI Design System at your fingertips!'}
               </Typography>
             </CardContentWrapper>
           </CardActionAreaWrapper>
@@ -277,9 +277,9 @@ function Block3() {
                 py: 3
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Button
@@ -291,7 +291,7 @@ function Block3() {
                 px: 3
               }}
             >
-              {t('Learn more')}
+              {'Learn more'}
             </Button>
           </Box>
         </Card>

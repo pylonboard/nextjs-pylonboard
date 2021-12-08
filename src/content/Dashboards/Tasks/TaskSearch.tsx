@@ -21,7 +21,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { useSnackbar } from 'notistack';
 import { formatDistance, subMonths, subDays } from 'date-fns';
 import TodayTwoToneIcon from '@mui/icons-material/TodayTwoTone';
@@ -38,18 +38,18 @@ const OutlinedInputWrapper = styled(OutlinedInput)(
 );
 
 function TaskSearch() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
   const { enqueueSnackbar } = useSnackbar();
 
   const handleDelete = () => {
-    enqueueSnackbar(t('You clicked on delete!'), {
+    enqueueSnackbar('You clicked on delete!', {
       variant: 'error'
     });
   };
 
   const handleClick = () => {
-    enqueueSnackbar(t('You clicked on the chip!'), {
+    enqueueSnackbar('You clicked on the chip!', {
       variant: 'success'
     });
   };
@@ -57,19 +57,19 @@ function TaskSearch() {
   const periods = [
     {
       value: 'popular',
-      text: t('Most popular')
+      text: 'Most popular'
     },
     {
       value: 'recent',
-      text: t('Recent tasks')
+      text: 'Recent tasks'
     },
     {
       value: 'updated',
-      text: t('Latest updated tasks')
+      text: 'Latest updated tasks'
     },
     {
       value: 'oldest',
-      text: t('Oldest tasks first')
+      text: 'Oldest tasks first'
     }
   ];
 
@@ -82,11 +82,11 @@ function TaskSearch() {
       <FormControl variant="outlined" fullWidth>
         <OutlinedInputWrapper
           type="text"
-          placeholder={t('Search terms here...')}
+          placeholder={'Search terms here...'}
           endAdornment={
             <InputAdornment position="end">
               <Button variant="contained" size="small">
-                {t('Search')}
+                {'Search'}
               </Button>
             </InputAdornment>
           }
@@ -105,7 +105,7 @@ function TaskSearch() {
       >
         <Box>
           <Typography variant="subtitle2">
-            {t('Showing')}:{' '}
+            {'Showing'}:{' '}
             <Text color="black">
               <b>57 tasks</b>
             </Text>
@@ -118,7 +118,7 @@ function TaskSearch() {
               pr: 1
             }}
           >
-            {t('Sort by')}:
+            {'Sort by'}:
           </Typography>
           <Button
             size="small"
@@ -182,7 +182,7 @@ function TaskSearch() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Website')}
+                label={'Website'}
                 color="secondary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -192,7 +192,7 @@ function TaskSearch() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Integrations')}
+                label={'Integrations'}
                 color="secondary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -209,7 +209,7 @@ function TaskSearch() {
               vitae dicta sunt explicabo.
             </Typography>
             <Button size="small" variant="contained">
-              {t('View task')}
+              {'View task'}
             </Button>
             <Divider
               sx={{
@@ -238,7 +238,7 @@ function TaskSearch() {
                 })}
               </Typography>
               <AvatarGroup>
-                <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+                <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -252,7 +252,7 @@ function TaskSearch() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('View profile for') + ' Trevor Henderson'}
+                  title={'View profile for' + ' Trevor Henderson'}
                 >
                   <Avatar
                     sx={{
@@ -293,7 +293,7 @@ function TaskSearch() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Website')}
+                label={'Website'}
                 color="secondary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -303,7 +303,7 @@ function TaskSearch() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Integrations')}
+                label={'Integrations'}
                 color="secondary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -320,7 +320,7 @@ function TaskSearch() {
               quae ab illo.
             </Typography>
             <Button size="small" variant="contained">
-              {t('View task')}
+              {'View task'}
             </Button>
             <Divider
               sx={{
@@ -349,7 +349,7 @@ function TaskSearch() {
                 })}
               </Typography>
               <AvatarGroup>
-                <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+                <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -361,7 +361,7 @@ function TaskSearch() {
                     src="/static/images/avatars/2.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Travis Howard'}>
+                <Tooltip arrow title={'View profile for' + ' Travis Howard'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -375,7 +375,7 @@ function TaskSearch() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('View profile for') + ' Trevor Henderson'}
+                  title={'View profile for' + ' Trevor Henderson'}
                 >
                   <Avatar
                     sx={{
@@ -416,7 +416,7 @@ function TaskSearch() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Website')}
+                label={'Website'}
                 color="secondary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -426,7 +426,7 @@ function TaskSearch() {
                   mr: 0.5
                 }}
                 size="small"
-                label={t('Integrations')}
+                label={'Integrations'}
                 color="secondary"
                 onClick={handleClick}
                 onDelete={handleDelete}
@@ -443,7 +443,7 @@ function TaskSearch() {
               magni dolores eos qui ratione.
             </Typography>
             <Button size="small" variant="contained">
-              {t('View task')}
+              {'View task'}
             </Button>
             <Divider
               sx={{
@@ -472,7 +472,7 @@ function TaskSearch() {
                 })}
               </Typography>
               <AvatarGroup>
-                <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+                <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -484,7 +484,7 @@ function TaskSearch() {
                     src="/static/images/avatars/1.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Travis Howard'}>
+                <Tooltip arrow title={'View profile for' + ' Travis Howard'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -498,7 +498,7 @@ function TaskSearch() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('View profile for') + ' Trevor Henderson'}
+                  title={'View profile for' + ' Trevor Henderson'}
                 >
                   <Avatar
                     sx={{

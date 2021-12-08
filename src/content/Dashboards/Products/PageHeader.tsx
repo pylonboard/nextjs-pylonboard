@@ -9,7 +9,7 @@ import {
   lighten,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 
 import TrendingDownTwoToneIcon from '@mui/icons-material/TrendingDownTwoTone';
@@ -41,7 +41,7 @@ const AvatarPageTitle = styled(Avatar)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -57,10 +57,10 @@ function PageHeader() {
         </AvatarPageTitle>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Products')}
+            {'Products'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Manage your store overview panel with ease and style')}
+            {'Manage your store overview panel with ease and style'}
           </Typography>
         </Box>
       </Box>
@@ -88,7 +88,7 @@ function PageHeader() {
               $14,264
             </Typography>
             <Typography noWrap variant="subtitle2">
-              {t('gross income')}
+              {'gross income'}
             </Typography>
           </Box>
         </Box>
@@ -106,7 +106,7 @@ function PageHeader() {
               $6,598
             </Typography>
             <Typography noWrap variant="subtitle2">
-              {t('net profit')}
+              {'net profit'}
             </Typography>
           </Box>
         </Box>

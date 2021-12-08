@@ -6,7 +6,7 @@ import {
   LinearProgress,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import LocalDrinkTwoToneIcon from '@mui/icons-material/LocalDrinkTwoTone';
 
 const AvatarWrapperWarning = styled(Avatar)(
@@ -21,7 +21,7 @@ const AvatarWrapperWarning = styled(Avatar)(
 );
 
 function Water() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -38,7 +38,7 @@ function Water() {
           pb: 1
         }}
       >
-        {t('Water')}
+        {'Water'}
       </Typography>
       <Typography
         color="text.primary"

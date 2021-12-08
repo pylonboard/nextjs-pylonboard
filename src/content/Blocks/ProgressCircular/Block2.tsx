@@ -9,14 +9,14 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import InsertChartTwoToneIcon from '@mui/icons-material/InsertChartTwoTone';
 import LiveHelpTwoToneIcon from '@mui/icons-material/LiveHelpTwoTone';
 import PeopleAltTwoToneIcon from '@mui/icons-material/PeopleAltTwoTone';
 import ShowChartTwoToneIcon from '@mui/icons-material/ShowChartTwoTone';
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -80,7 +80,7 @@ function Block2() {
           </Box>
           <Box ml={2}>
             <Typography gutterBottom variant="h4" color="text.secondary">
-              {t('Stocks')}
+              {'Stocks'}
             </Typography>
             <Typography variant="h2">$6,594</Typography>
           </Box>
@@ -145,7 +145,7 @@ function Block2() {
           </Box>
           <Box ml={2}>
             <Typography gutterBottom variant="h4" color="text.secondary">
-              {t('Sales')}
+              {'Sales'}
             </Typography>
             <Typography variant="h2">8,741</Typography>
           </Box>
@@ -218,7 +218,7 @@ function Block2() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('Issues')}
+              {'Issues'}
             </Typography>
             <Typography
               variant="h2"
@@ -297,7 +297,7 @@ function Block2() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('Users')}
+              {'Users'}
             </Typography>
             <Typography
               variant="h2"

@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -71,7 +71,7 @@ const LabelSuccess = styled(Box)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -105,7 +105,7 @@ function Block5() {
               fontSize: `${theme.typography.pxToRem(18)}`
             }}
           >
-            {t('Sales statistics')}
+            {'Sales statistics'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -118,7 +118,7 @@ function Block5() {
             components and elements...
           </Typography>
           <Button variant="outlined" endIcon={<ArrowForwardTwoToneIcon />}>
-            {t('View live preview')}
+            {'View live preview'}
           </Button>
         </Card>
       </Grid>
@@ -131,9 +131,9 @@ function Block5() {
         >
           <CardActions>
             <Box component="span" mr={0.5}>
-              <LabelWarning>{t('Promo')}</LabelWarning>
+              <LabelWarning>{'Promo'}</LabelWarning>
             </Box>
-            <LabelSuccess>{t('Special')}</LabelSuccess>
+            <LabelSuccess>{'Special'}</LabelSuccess>
           </CardActions>
           <Avatar
             variant="rounded"
@@ -154,7 +154,7 @@ function Block5() {
               fontSize: `${theme.typography.pxToRem(18)}`
             }}
           >
-            {t('Generated reports')}
+            {'Generated reports'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -167,7 +167,7 @@ function Block5() {
             components and elements...
           </Typography>
           <Button variant="outlined" endIcon={<ArrowForwardTwoToneIcon />}>
-            {t('View live preview')}
+            {'View live preview'}
           </Button>
         </Card>
       </Grid>
@@ -188,7 +188,7 @@ function Block5() {
                   fontWeight: 'bold'
                 }}
               >
-                {t('Overdue')}
+                {'Overdue'}
               </Box>
             </Label>
           </CardActions>
@@ -211,7 +211,7 @@ function Block5() {
               fontSize: `${theme.typography.pxToRem(18)}`
             }}
           >
-            {t('Pricing plans')}
+            {'Pricing plans'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -224,7 +224,7 @@ function Block5() {
             components and elements...
           </Typography>
           <Button variant="outlined" endIcon={<ArrowForwardTwoToneIcon />}>
-            {t('View live preview')}
+            {'View live preview'}
           </Button>
         </Card>
       </Grid>

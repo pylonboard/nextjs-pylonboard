@@ -15,7 +15,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 
 const ListItemButtonWrapper = styled(ListItemButton)(
@@ -41,7 +41,7 @@ const ListItemButtonWrapper = styled(ListItemButton)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -105,9 +105,9 @@ function Block7() {
             fontSize: `${theme.typography.pxToRem(12)}`
           }}
         >
-          {t('Estimates')}
+          {'Estimates'}
         </Typography>
-        <Typography variant="h4">{t('Products Roadmap')}</Typography>
+        <Typography variant="h4">{'Products Roadmap'}</Typography>
       </Box>
       <List disablePadding>
         {items.map((item) => (

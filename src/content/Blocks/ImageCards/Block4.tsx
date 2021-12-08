@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
@@ -80,7 +80,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -177,7 +177,7 @@ function Block4() {
                 color: `${theme.palette.primary.contrastText}`
               }}
             >
-              {t('Development')}
+              {'Development'}
             </Label>
           </CardActions>
         </Card>
@@ -268,7 +268,7 @@ function Block4() {
               color="info"
               startIcon={<AccountBoxTwoToneIcon />}
             >
-              {t('View profile')}
+              {'View profile'}
             </Button>
           </BgComposed>
           <CardMedia
@@ -296,7 +296,7 @@ function Block4() {
                 color: `${theme.palette.info.contrastText}`
               }}
             >
-              {t('Travel')}
+              {'Travel'}
             </Label>
           </CardActions>
         </Card>
@@ -393,7 +393,7 @@ function Block4() {
                 color: `${theme.palette.success.contrastText}`
               }}
             >
-              {t('Marketing')}
+              {'Marketing'}
             </Label>
           </CardActions>
         </Card>

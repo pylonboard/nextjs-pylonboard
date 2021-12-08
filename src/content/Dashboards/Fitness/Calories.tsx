@@ -6,7 +6,7 @@ import {
   LinearProgress,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import FastfoodTwoToneIcon from '@mui/icons-material/FastfoodTwoTone';
 
 const AvatarWrapperError = styled(Avatar)(
@@ -21,7 +21,7 @@ const AvatarWrapperError = styled(Avatar)(
 );
 
 function Steps() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -38,7 +38,7 @@ function Steps() {
           pb: 1
         }}
       >
-        {t('Calories')}
+        {'Calories'}
       </Typography>
       <Typography
         color="text.primary"

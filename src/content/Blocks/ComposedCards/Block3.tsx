@@ -17,7 +17,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 import Text from 'src/components/Text';
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -63,7 +63,7 @@ const LinearProgressSuccess = styled(LinearProgress)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [tabs, setTab] = useState<string | null>('watch_list_columns');
@@ -164,7 +164,7 @@ function Block3() {
         }
         title={
           <>
-            <Typography variant="h4">{t('Sales Statistics')}</Typography>
+            <Typography variant="h4">{'Sales Statistics'}</Typography>
           </>
         }
       />
@@ -202,7 +202,7 @@ function Block3() {
             disableRipple
             value="watch_list_columns"
           >
-            {t('Last week')}
+            {'Last week'}
           </ToggleButton>
           <ToggleButton
             sx={{
@@ -213,7 +213,7 @@ function Block3() {
             disableRipple
             value="watch_list_rows"
           >
-            {t('Last month')}
+            {'Last month'}
           </ToggleButton>
         </ToggleButtonGroup>
       </CardWrapper>
@@ -223,10 +223,10 @@ function Block3() {
         }}
       >
         <Typography variant="h4" gutterBottom>
-          {t('Performance')}
+          {'Performance'}
         </Typography>
         <Typography variant="subtitle2">
-          {t('Portfolio performance for selected period.')}
+          {'Portfolio performance for selected period.'}
         </Typography>
       </CardContent>
       <Divider />
@@ -242,7 +242,7 @@ function Block3() {
               alignItems="center"
               justifyContent="space-between"
             >
-              <Typography variant="h4">{t('Orders')}</Typography>
+              <Typography variant="h4">{'Orders'}</Typography>
               <Typography variant="h6" fontWeight="bold">
                 <Text color="error">678</Text>
               </Typography>
@@ -260,7 +260,7 @@ function Block3() {
               justifyContent="space-between"
             >
               <Typography variant="body2" color="text.secondary">
-                {t('Target')}
+                {'Target'}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 100%
@@ -273,7 +273,7 @@ function Block3() {
               alignItems="center"
               justifyContent="space-between"
             >
-              <Typography variant="h4">{t('Customers')}</Typography>
+              <Typography variant="h4">{'Customers'}</Typography>
               <Typography variant="h6" fontWeight="bold">
                 <Text color="error">853</Text>
               </Typography>
@@ -291,7 +291,7 @@ function Block3() {
               justifyContent="space-between"
             >
               <Typography variant="body2" color="text.secondary">
-                {t('Target')}
+                {'Target'}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 100%

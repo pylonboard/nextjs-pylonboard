@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 
 const LinearProgressWrapper = styled(LinearProgress)(
   ({ theme }) => `
@@ -34,7 +34,7 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -48,7 +48,7 @@ function Block7() {
       >
         <Box p={3} flexGrow={1}>
           <Typography variant="h4" textAlign="center">
-            {t('Project management')}
+            {'Project management'}
           </Typography>
           <Stack
             sx={{
@@ -63,13 +63,13 @@ function Block7() {
           >
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Projects')}
+                {'Projects'}
               </Typography>
               <Typography variant="h3">381</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Reviews')}
+                {'Reviews'}
               </Typography>
               <Typography
                 sx={{
@@ -82,7 +82,7 @@ function Block7() {
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Revenue')}
+                {'Revenue'}
               </Typography>
               <Typography variant="h3">$685</Typography>
             </Box>
@@ -90,7 +90,7 @@ function Block7() {
         </Box>
         <Box p={3} flexGrow={1}>
           <Typography variant="h4" textAlign="center">
-            {t('Current progress')}
+            {'Current progress'}
           </Typography>
           <Box
             display="flex"

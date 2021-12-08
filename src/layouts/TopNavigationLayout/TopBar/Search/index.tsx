@@ -24,7 +24,7 @@ import Link from 'src/components/Link';
 import { TransitionProps } from '@mui/material/transitions';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import FindInPageTwoToneIcon from '@mui/icons-material/FindInPageTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 
 const Transition = forwardRef(function Transition(
@@ -92,7 +92,7 @@ const DialogTitleWrapper = styled(DialogTitle)(
 );
 
 function HeaderSearch() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const [openSearchResults, setOpenSearchResults] = useState(false);
@@ -133,7 +133,7 @@ function HeaderSearch() {
           </>
         }
       >
-        {t('Search...')}
+        {'Search...'}
       </SearchInputWrapperButton>
 
       <DialogWrapper
@@ -157,9 +157,9 @@ function HeaderSearch() {
                 </InputAdornment>
               )
             }}
-            placeholder={t('Search terms here...')}
+            placeholder={'Search terms here...'}
             fullWidth
-            label={t('Search')}
+            label={'Search'}
           />
         </DialogTitleWrapper>
         <Divider />
@@ -175,10 +175,10 @@ function HeaderSearch() {
                 justifyContent="space-between"
               >
                 <Typography variant="body2" component="span">
-                  {t('Recent searches')}{' '}
+                  {'Recent searches'}{' '}
                 </Typography>
                 <Link href="#" variant="body2">
-                  {t('Clear all')}
+                  {'Clear all'}
                 </Link>
               </Box>
               <Divider
@@ -205,7 +205,7 @@ function HeaderSearch() {
                         }}
                         variant="body2"
                       >
-                        {t('Dashboard for Healthcare Platform')}
+                        {'Dashboard for Healthcare Platform'}
                       </Link>
                     </Box>
                     <Typography
@@ -215,9 +215,9 @@ function HeaderSearch() {
                         color: lighten(theme.palette.secondary.main, 0.5)
                       }}
                     >
-                      {t(
+                      {
                         'This page contains all the necessary information for managing all hospital staff.'
-                      )}
+                      }
                     </Typography>
                   </Box>
                   <ChevronRightTwoToneIcon />
@@ -240,7 +240,7 @@ function HeaderSearch() {
                         }}
                         variant="body2"
                       >
-                        {t('Example Projects Application')}
+                        {'Example Projects Application'}
                       </Link>
                     </Box>
                     <Typography
@@ -250,9 +250,9 @@ function HeaderSearch() {
                         color: lighten(theme.palette.secondary.main, 0.5)
                       }}
                     >
-                      {t(
+                      {
                         'This is yet another search result pointing to a app page.'
-                      )}
+                      }
                     </Typography>
                   </Box>
                   <ChevronRightTwoToneIcon />
@@ -275,7 +275,7 @@ function HeaderSearch() {
                         }}
                         variant="body2"
                       >
-                        {t('Search Results Page')}
+                        {'Search Results Page'}
                       </Link>
                     </Box>
                     <Typography
@@ -285,9 +285,9 @@ function HeaderSearch() {
                         color: lighten(theme.palette.secondary.main, 0.5)
                       }}
                     >
-                      {t(
+                      {
                         'Choose if you would like to show or not this typography section here...'
-                      )}
+                      }
                     </Typography>
                   </Box>
                   <ChevronRightTwoToneIcon />
@@ -305,7 +305,7 @@ function HeaderSearch() {
                   mt: 2
                 }}
               >
-                <Button color="primary">{t('View all recent searches')}</Button>
+                <Button color="primary">{'View all recent searches'}</Button>
               </Box>
             </>
           ) : (
@@ -319,7 +319,7 @@ function HeaderSearch() {
                 justifyContent="space-between"
               >
                 <Typography variant="body2" component="span">
-                  {t('Search results for')}{' '}
+                  {'Search results for'}{' '}
                   <Typography
                     sx={{
                       fontWeight: 'bold'
@@ -331,7 +331,7 @@ function HeaderSearch() {
                   </Typography>
                 </Typography>
                 <Link href="#" variant="body2">
-                  {t('Advanced search')}
+                  {'Advanced search'}
                 </Link>
               </Box>
               <Divider
@@ -371,7 +371,7 @@ function HeaderSearch() {
                         }}
                         variant="body2"
                       >
-                        {t('Dashboard for Healthcare Platform')}
+                        {'Dashboard for Healthcare Platform'}
                       </Link>
                     </Box>
                     <Typography
@@ -381,9 +381,9 @@ function HeaderSearch() {
                         color: lighten(theme.palette.secondary.main, 0.5)
                       }}
                     >
-                      {t(
+                      {
                         'This page contains all the necessary information for managing all hospital staff.'
-                      )}
+                      }
                     </Typography>
                   </Box>
                   <ChevronRightTwoToneIcon />
@@ -425,7 +425,7 @@ function HeaderSearch() {
                         }}
                         variant="body2"
                       >
-                        {t('Example Projects Application')}
+                        {'Example Projects Application'}
                       </Link>
                     </Box>
                     <Typography
@@ -435,9 +435,9 @@ function HeaderSearch() {
                         color: lighten(theme.palette.secondary.main, 0.5)
                       }}
                     >
-                      {t(
+                      {
                         'This is yet another search result pointing to a app page.'
-                      )}
+                      }
                     </Typography>
                   </Box>
                   <ChevronRightTwoToneIcon />
@@ -479,7 +479,7 @@ function HeaderSearch() {
                         }}
                         variant="body2"
                       >
-                        {t('Search Results Page')}
+                        {'Search Results Page'}
                       </Link>
                     </Box>
                     <Typography
@@ -489,9 +489,9 @@ function HeaderSearch() {
                         color: lighten(theme.palette.secondary.main, 0.5)
                       }}
                     >
-                      {t(
+                      {
                         'Choose if you would like to show or not this typography section here...'
-                      )}
+                      }
                     </Typography>
                   </Box>
                   <ChevronRightTwoToneIcon />

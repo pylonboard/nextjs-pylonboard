@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AccessAlarmTwoToneIcon from '@mui/icons-material/AccessAlarmTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveTwoTone';
@@ -31,7 +31,7 @@ const CardBorderTop = styled(Card)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chart1Options: ApexOptions = {
@@ -288,7 +288,7 @@ function Block1() {
             >
               <AccessAlarmTwoToneIcon fontSize="large" />
             </Typography>
-            <Label color="info">{t('New')}</Label>
+            <Label color="info">{'New'}</Label>
           </Box>
           <Box mt={2}>
             <Typography
@@ -302,7 +302,7 @@ function Block1() {
               2,356
             </Typography>
             <Typography component="span" variant="subtitle2">
-              {t('users')}
+              {'users'}
             </Typography>
           </Box>
           <Box>
@@ -344,7 +344,7 @@ function Block1() {
                   fontSize: `${theme.typography.pxToRem(11)}`
                 }}
               >
-                {t('Hot')}
+                {'Hot'}
               </Typography>
             </Label>
           </Box>
@@ -360,7 +360,7 @@ function Block1() {
               $9,685
             </Typography>
             <Typography component="span" variant="subtitle2">
-              {t('revenue')}
+              {'revenue'}
             </Typography>
           </Box>
           <Box>
@@ -410,7 +410,7 @@ function Block1() {
               2,356
             </Typography>
             <Typography component="span" variant="subtitle2">
-              {t('users')}
+              {'users'}
             </Typography>
           </Box>
           <Box>
@@ -460,7 +460,7 @@ function Block1() {
               563
             </Typography>
             <Typography component="span" variant="subtitle2">
-              {t('bugfixes')}
+              {'bugfixes'}
             </Typography>
           </Box>
           <Box>

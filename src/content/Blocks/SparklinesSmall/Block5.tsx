@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
@@ -29,7 +29,7 @@ const CardBorderBottom = styled(Card)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chart1Options: ApexOptions = {
@@ -230,13 +230,13 @@ function Block5() {
                 }
               }}
             >
-              {t('View all')}
+              {'View all'}
             </Button>
           </CardActions>
           <Typography gutterBottom variant="h2">
             <small>$</small>869
           </Typography>
-          <Typography variant="subtitle2">{t('sales last month')}</Typography>
+          <Typography variant="subtitle2">{'sales last month'}</Typography>
           <Box mt={2}>
             <Chart
               options={chart1Options}
@@ -272,13 +272,13 @@ function Block5() {
                 }
               }}
             >
-              {t('View all')}
+              {'View all'}
             </Button>
           </CardActions>
           <Typography gutterBottom variant="h2">
             <small>$</small>98,548
           </Typography>
-          <Typography variant="subtitle2">{t('sales this quarter')}</Typography>
+          <Typography variant="subtitle2">{'sales this quarter'}</Typography>
           <Box mt={2}>
             <Chart
               options={chart2Options}
@@ -314,13 +314,13 @@ function Block5() {
                 }
               }}
             >
-              {t('View all')}
+              {'View all'}
             </Button>
           </CardActions>
           <Typography gutterBottom variant="h2">
             <small>$</small>465.39
           </Typography>
-          <Typography variant="subtitle2">{t('sales made today')}</Typography>
+          <Typography variant="subtitle2">{'sales made today'}</Typography>
           <Box mt={2}>
             <Chart
               options={chart3Options}
@@ -356,13 +356,13 @@ function Block5() {
                 }
               }}
             >
-              {t('View all')}
+              {'View all'}
             </Button>
           </CardActions>
           <Typography gutterBottom variant="h2">
             <small>$</small>4,658
           </Typography>
-          <Typography variant="subtitle2">{t('lifetime sales')}</Typography>
+          <Typography variant="subtitle2">{'lifetime sales'}</Typography>
           <Box mt={2}>
             <Chart
               options={chart4Options}

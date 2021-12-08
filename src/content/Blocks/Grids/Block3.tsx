@@ -1,6 +1,6 @@
 import { Box, Card, Typography } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -10,7 +10,7 @@ import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
 import CountUp from 'react-countup';
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -37,7 +37,7 @@ function Block3() {
         </Typography>
         <Box ml={1}>
           <Typography noWrap gutterBottom variant="subtitle2">
-            {t('Expenses')}
+            {'Expenses'}
           </Typography>
           <Typography color="error" variant="h4">
             $14,264
@@ -61,7 +61,7 @@ function Block3() {
         </Typography>
         <Box ml={1}>
           <Typography noWrap gutterBottom variant="subtitle2">
-            {t('Revenue')}
+            {'Revenue'}
           </Typography>
           <Typography color="primary" variant="h4">
             $54,233
@@ -85,7 +85,7 @@ function Block3() {
         </Typography>
         <Box ml={1}>
           <Typography noWrap gutterBottom variant="subtitle2">
-            {t('Users')}
+            {'Users'}
           </Typography>
           <Typography variant="h4">
             <Text color="success">765</Text>
@@ -109,7 +109,7 @@ function Block3() {
         </Typography>
         <Box ml={1}>
           <Typography noWrap gutterBottom variant="subtitle2">
-            {t('Sales')}
+            {'Sales'}
           </Typography>
           <Typography variant="h4">$1.2M</Typography>
         </Box>
@@ -131,7 +131,7 @@ function Block3() {
         </Typography>
         <Box ml={1}>
           <Typography noWrap gutterBottom variant="subtitle2">
-            {t('Income')}
+            {'Income'}
           </Typography>
           <Typography
             sx={{

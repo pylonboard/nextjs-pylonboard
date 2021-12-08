@@ -8,11 +8,11 @@ import {
   Grid,
   Button
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 
 function Feed() {
-  const { t }: { t: any } = useTranslation();
+
 
   const feed = [
     {
@@ -55,7 +55,7 @@ function Feed() {
 
   return (
     <Card>
-      <CardHeader title={t('Followers Feed')} />
+      <CardHeader title={'Followers Feed'} />
       <Divider />
       <Box p={2}>
         <Grid container spacing={0}>
@@ -83,7 +83,7 @@ function Feed() {
                     size="small"
                     startIcon={<AddTwoToneIcon />}
                   >
-                    {t('Follow')}
+                    {'Follow'}
                   </Button>
                 </Box>
               </Box>

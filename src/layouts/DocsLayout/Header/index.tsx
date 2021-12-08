@@ -1,5 +1,5 @@
 import { Card, Box, Button, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Link from 'src/components/Link';
 
 import Logo from 'src/components/Logo';
@@ -20,7 +20,7 @@ const HeaderWrapper = styled(Card)(
 );
 
 function Header() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <HeaderWrapper>
@@ -32,7 +32,7 @@ function Header() {
           variant="contained"
           sx={{ mx: 2 }}
         >
-          {t('View Live Preview')}
+          {'View Live Preview'}
         </Button>
       </Box>
     </HeaderWrapper>

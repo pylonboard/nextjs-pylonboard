@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import Scrollbar from 'src/components/Scrollbar';
@@ -28,7 +28,7 @@ import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -164,7 +164,7 @@ function Block3() {
             {'View all'}
           </Button>
         }
-        title={t('Top sellers')}
+        title={'Top sellers'}
       />
       <Divider />
       <Box
@@ -188,7 +188,7 @@ function Block3() {
               component="h6"
               variant="caption"
             >
-              {t('New accounts')}
+              {'New accounts'}
             </Typography>
             <Typography
               gutterBottom
@@ -209,7 +209,7 @@ function Block3() {
                 }}
                 variant="subtitle2"
               >
-                <Text color="success">15.4%</Text> {t('increase this month')}
+                <Text color="success">15.4%</Text> {'increase this month'}
               </Typography>
             </Box>
           </Box>
@@ -244,7 +244,7 @@ function Block3() {
         component="h6"
         variant="caption"
       >
-        {t('Top Sellers')}
+        {'Top Sellers'}
       </Typography>
       <Box
         sx={{
@@ -351,7 +351,7 @@ function Block3() {
                         <Label color="secondary">
                           <b>{item.sales}</b>
                         </Label>{' '}
-                        {t('confirmed sales')}
+                        {'confirmed sales'}
                       </Box>
                     </>
                   }

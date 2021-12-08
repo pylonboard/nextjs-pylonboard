@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 
 const LinearProgressSuccess = styled(LinearProgress)(
@@ -45,7 +45,7 @@ const CardActions = styled(Box)(
 );
 
 function Block10() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -124,9 +124,9 @@ function Block10() {
         </Box>
       </Box>
       <Typography variant="subtitle2">
-        {t(
+        {
           'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-        )}
+        }
         .
       </Typography>
       <Card
@@ -143,7 +143,7 @@ function Block10() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Email') + ':'}
+              primary={'Email' + ':'}
             />
             <Typography variant="subtitle1">russotry@russo.com</Typography>
           </ListItem>
@@ -152,7 +152,7 @@ function Block10() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Job Description') + ':'}
+              primary={'Job Description' + ':'}
             />
             <Typography variant="subtitle1">Project Manager</Typography>
           </ListItem>
@@ -161,7 +161,7 @@ function Block10() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Location') + ':'}
+              primary={'Location' + ':'}
             />
             <Typography variant="subtitle1">San Francisco, USA</Typography>
           </ListItem>
@@ -181,7 +181,7 @@ function Block10() {
           }
         }}
       >
-        {t('View complete profile')}
+        {'View complete profile'}
       </Button>
     </Card>
   );

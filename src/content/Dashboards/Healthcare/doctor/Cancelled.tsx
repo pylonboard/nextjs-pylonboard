@@ -1,11 +1,11 @@
 import { Card, Box, Typography, useTheme } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function Cancelled() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -136,7 +136,7 @@ function Cancelled() {
             mr: 1
           }}
         >
-          {t('Cancelled')}
+          {'Cancelled'}
         </Typography>
         <Label color="error">
           <b>-5%</b>
@@ -154,7 +154,7 @@ function Cancelled() {
           3
         </Typography>
         <Typography variant="subtitle2" fontWeight="bold">
-          {t('Today')}
+          {'Today'}
         </Typography>
       </Box>
     </Card>

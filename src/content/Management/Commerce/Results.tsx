@@ -41,7 +41,7 @@ import Link from 'src/components/Link';
 import { TransitionProps } from '@mui/material/transitions';
 import CloseIcon from '@mui/icons-material/Close';
 import type { Product } from 'src/models/product';
-import { useTranslation } from 'react-i18next';
+
 import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
 import Label from 'src/components/Label';
 import BulkActions from './BulkActions';
@@ -134,7 +134,7 @@ const applyPagination = (
 
 const Results: FC<ResultsProps> = ({ products }) => {
   const [selectedItems, setSelectedProducts] = useState<string[]>([]);
-  const { t }: { t: any } = useTranslation();
+
   const { enqueueSnackbar } = useSnackbar();
   const theme = useTheme();
 
@@ -197,7 +197,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
   const handleDeleteCompleted = () => {
     setOpenConfirmDelete(false);
 
-    enqueueSnackbar(t('You successfully deleted the product'), {
+    enqueueSnackbar('You successfully deleted the product', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -241,7 +241,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                       </InputAdornment>
                     )
                   }}
-                  placeholder={t('Search by product name...')}
+                  placeholder={'Search by product name...'}
                 />
               </Box>
               <TablePagination
@@ -268,7 +268,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
             color="text.secondary"
             align="center"
           >
-            {t("We couldn't find any products matching your search criteria")}
+            {"We couldn't find any products matching your search criteria"}
           </Typography>
         ) : (
           <>
@@ -283,13 +283,13 @@ const Results: FC<ResultsProps> = ({ products }) => {
                         onChange={handleSelectAllProducts}
                       />
                     </TableCell>
-                    <TableCell>{t('Product name')}</TableCell>
-                    <TableCell>{t('Price')}</TableCell>
-                    <TableCell align="center">{t('Stock')}</TableCell>
-                    <TableCell align="center">{t('Rating')}</TableCell>
-                    <TableCell align="center">{t('Orders')}</TableCell>
-                    <TableCell>{t('Categories')}</TableCell>
-                    <TableCell align="center">{t('Actions')}</TableCell>
+                    <TableCell>{'Product name'}</TableCell>
+                    <TableCell>{'Price'}</TableCell>
+                    <TableCell align="center">{'Stock'}</TableCell>
+                    <TableCell align="center">{'Rating'}</TableCell>
+                    <TableCell align="center">{'Orders'}</TableCell>
+                    <TableCell>{'Categories'}</TableCell>
+                    <TableCell align="center">{'Actions'}</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -382,7 +382,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                         </TableCell>
                         <TableCell align="center">
                           <Typography noWrap>
-                            <Tooltip title={t('View')} arrow>
+                            <Tooltip title={'View'} arrow>
                               <IconButton
                                 component={Link}
                                 href="/management/commerce/products/single/1"
@@ -391,7 +391,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                                 <LaunchTwoToneIcon fontSize="small" />
                               </IconButton>
                             </Tooltip>
-                            <Tooltip title={t('Delete')} arrow>
+                            <Tooltip title={'Delete'} arrow>
                               <IconButton
                                 onClick={handleConfirmDelete}
                                 color="primary"
@@ -448,7 +448,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
             }}
             variant="h3"
           >
-            {t('Do you really want to delete this product')}?
+            {'Do you really want to delete this product'}?
           </Typography>
 
           <Typography
@@ -462,7 +462,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
             color="text.secondary"
             variant="h4"
           >
-            {t("You won't be able to revert after deletion")}
+            {"You won't be able to revert after deletion"}
           </Typography>
 
           <Box>
@@ -474,7 +474,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
               }}
               onClick={closeConfirmDelete}
             >
-              {t('Cancel')}
+              {'Cancel'}
             </Button>
             <ButtonError
               onClick={handleDeleteCompleted}
@@ -485,7 +485,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
               }}
               variant="contained"
             >
-              {t('Delete')}
+              {'Delete'}
             </ButtonError>
           </Box>
         </Box>

@@ -11,7 +11,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PeopleAltTwoToneIcon from '@mui/icons-material/PeopleAltTwoTone';
 import ShowChartTwoToneIcon from '@mui/icons-material/ShowChartTwoTone';
 import BugReportTwoToneIcon from '@mui/icons-material/BugReportTwoTone';
@@ -74,7 +74,7 @@ const LinearProgressError = styled(LinearProgress)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -113,7 +113,7 @@ function Block4() {
                 $3,495
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Sales')}
+                {'Sales'}
               </Typography>
             </Box>
           </Box>
@@ -126,7 +126,7 @@ function Block4() {
             justifyContent="space-between"
           >
             <Typography variant="h5" fontWeight="normal">
-              {t('Remaining')}
+              {'Remaining'}
             </Typography>
             <Typography
               sx={{
@@ -174,7 +174,7 @@ function Block4() {
                 762
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Reports')}
+                {'Reports'}
               </Typography>
             </Box>
           </Box>
@@ -187,7 +187,7 @@ function Block4() {
             justifyContent="space-between"
           >
             <Typography variant="h5" fontWeight="normal">
-              {t('Remaining')}
+              {'Remaining'}
             </Typography>
             <Typography
               sx={{
@@ -235,7 +235,7 @@ function Block4() {
                 12,543k
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Visitors')}
+                {'Visitors'}
               </Typography>
             </Box>
           </Box>
@@ -248,7 +248,7 @@ function Block4() {
             justifyContent="space-between"
           >
             <Typography variant="h5" fontWeight="normal">
-              {t('Remaining')}
+              {'Remaining'}
             </Typography>
             <Typography
               sx={{

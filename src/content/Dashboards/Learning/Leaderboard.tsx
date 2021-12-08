@@ -19,7 +19,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
@@ -45,7 +45,7 @@ const DotLegend = styled('span')(
 );
 
 function Leaderboard() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const actionRef1 = useRef<any>(null);
@@ -55,19 +55,19 @@ function Leaderboard() {
   const periods = [
     {
       value: '1',
-      text: t('UX Designers')
+      text: 'UX Designers'
     },
     {
       value: '2',
-      text: t('Frontend Developers')
+      text: 'Frontend Developers'
     },
     {
       value: '3',
-      text: t('Team Leaders')
+      text: 'Team Leaders'
     },
     {
       value: '4',
-      text: t('Project Managers')
+      text: 'Project Managers'
     }
   ];
 
@@ -113,15 +113,15 @@ function Leaderboard() {
             </Menu>
           </>
         }
-        title={t('Leaderboard')}
+        title={'Leaderboard'}
       />
       <Divider />
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('Ranking')}</TableCell>
-            <TableCell>{t('Member')}</TableCell>
-            <TableCell align="right">{t('Points')}</TableCell>
+            <TableCell>{'Ranking'}</TableCell>
+            <TableCell>{'Member'}</TableCell>
+            <TableCell align="right">{'Points'}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -258,7 +258,7 @@ function Leaderboard() {
           justifyContent: 'center'
         }}
       >
-        <Button size="small">{t('View all rankings')}</Button>
+        <Button size="small">{'View all rankings'}</Button>
       </CardActions>
     </Card>
   );

@@ -16,7 +16,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import GradeTwoToneIcon from '@mui/icons-material/GradeTwoTone';
 
@@ -54,12 +54,12 @@ const RatingWrapper = styled(Box)(
 );
 
 function Doctors() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
     <Card>
-      <CardHeader title={t('Doctors')} />
+      <CardHeader title={'Doctors'} />
       <Divider />
       <List>
         <ListItem
@@ -76,7 +76,7 @@ function Doctors() {
                 horizontal: 'right'
               }}
               badgeContent={
-                <Tooltip arrow placement="top" title={t('Idle for 5 minutes')}>
+                <Tooltip arrow placement="top" title={'Idle for 5 minutes'}>
                   <DotLegend
                     style={{ background: `${theme.colors.warning.main}` }}
                   />
@@ -106,12 +106,12 @@ function Doctors() {
                 </Typography>
               </>
             }
-            secondary={t('Pediatrician')}
+            secondary={'Pediatrician'}
             secondaryTypographyProps={{ variant: 'subtitle2' }}
           />
           <Box alignSelf="center">
             <Button size="small" variant="outlined">
-              {t('View Profile')}
+              {'View Profile'}
             </Button>
           </Box>
         </ListItem>
@@ -158,12 +158,12 @@ function Doctors() {
                 </Typography>
               </>
             }
-            secondary={t('Neurologist')}
+            secondary={'Neurologist'}
             secondaryTypographyProps={{ variant: 'subtitle2' }}
           />
           <Box alignSelf="center">
             <Button size="small" variant="outlined">
-              {t('View Profile')}
+              {'View Profile'}
             </Button>
           </Box>
         </ListItem>
@@ -197,12 +197,12 @@ function Doctors() {
                 </Typography>
               </>
             }
-            secondary={t('Cardiologist')}
+            secondary={'Cardiologist'}
             secondaryTypographyProps={{ variant: 'subtitle2' }}
           />
           <Box alignSelf="center">
             <Button size="small" variant="outlined">
-              {t('View Profile')}
+              {'View Profile'}
             </Button>
           </Box>
         </ListItem>
@@ -219,7 +219,7 @@ function Doctors() {
           size="small"
           endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
         >
-          {t('View all doctors')}
+          {'View all doctors'}
         </Button>
       </CardActions>
     </Card>

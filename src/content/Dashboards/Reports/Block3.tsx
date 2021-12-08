@@ -13,7 +13,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import CountUp from 'react-countup';
 import { Chart } from 'src/components/Chart';
@@ -69,7 +69,7 @@ const LinearProgressWarning = styled(LinearProgress)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -162,10 +162,10 @@ function Block3() {
             }}
             variant="h4"
           >
-            {t('Weekly sales')}
+            {'Weekly sales'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Reports for what we sold this week')}
+            {'Reports for what we sold this week'}
           </Typography>
         </Box>
         <IconButton color="primary">
@@ -206,7 +206,7 @@ function Block3() {
               value={12}
             />
             <Typography variant="body2" color="text.secondary">
-              {t('Cars')}
+              {'Cars'}
             </Typography>
           </Grid>
           <Grid item xs={12} md={4} sm={6}>
@@ -219,7 +219,7 @@ function Block3() {
               value={46}
             />
             <Typography variant="body2" color="text.secondary">
-              {t('Outdoor')}
+              {'Outdoor'}
             </Typography>
           </Grid>
           <Grid item xs={12} md={4} sm={12}>
@@ -232,7 +232,7 @@ function Block3() {
               value={40}
             />
             <Typography variant="body2" color="text.secondary">
-              {t('Electronics')}
+              {'Electronics'}
             </Typography>
           </Grid>
         </Grid>
@@ -245,7 +245,7 @@ function Block3() {
         }}
       >
         <Button variant="outlined" endIcon={<ArrowForwardTwoToneIcon />}>
-          {t('View complete report')}
+          {'View complete report'}
         </Button>
       </Box>
     </Card>

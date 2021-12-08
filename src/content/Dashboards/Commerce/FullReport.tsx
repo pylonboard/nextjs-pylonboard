@@ -6,7 +6,7 @@ import {
   CardActions,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 const ImgWrapper = styled('img')(
   ({ theme }) => `
@@ -19,7 +19,7 @@ const ImgWrapper = styled('img')(
 );
 
 function FullReport() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -37,8 +37,8 @@ function FullReport() {
           sx={{
             p: 0
           }}
-          title={t('Want full report?')}
-          subheader={t('Get it today by clicking the button below.')}
+          title={'Want full report?'}
+          subheader={'Get it today by clicking the button below.'}
           subheaderTypographyProps={{ variant: 'body1' }}
           titleTypographyProps={{ variant: 'h3', gutterBottom: true }}
         ></CardHeader>
@@ -50,7 +50,7 @@ function FullReport() {
             pt: 3
           }}
         >
-          <Button variant="outlined">{t('Download now')}</Button>
+          <Button variant="outlined">{'Download now'}</Button>
         </CardActions>
       </Box>
     </Card>

@@ -11,13 +11,13 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ContactPhoneTwoToneIcon from '@mui/icons-material/ContactPhoneTwoTone';
 import EvStationTwoToneIcon from '@mui/icons-material/EvStationTwoTone';
 import Text from 'src/components/Text';
 
 function Block12() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -34,7 +34,7 @@ function Block12() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Latest issues')}
+            {'Latest issues'}
           </Typography>
         }
       />
@@ -66,10 +66,10 @@ function Block12() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('Reports')}</Typography>}
+            primary={<Typography variant="h4">{'Reports'}</Typography>}
             secondary={
               <Typography noWrap variant="subtitle2">
-                {t('Monthly sales reports')}
+                {'Monthly sales reports'}
               </Typography>
             }
           />
@@ -102,10 +102,10 @@ function Block12() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('User')}</Typography>}
+            primary={<Typography variant="h4">{'User'}</Typography>}
             secondary={
               <Typography noWrap variant="subtitle2">
-                {t('Visitors last week')}
+                {'Visitors last week'}
               </Typography>
             }
           />

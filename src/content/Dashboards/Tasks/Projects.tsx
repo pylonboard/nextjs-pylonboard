@@ -13,7 +13,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import Link from 'src/components/Link';
 import Text from 'src/components/Text';
@@ -56,7 +56,7 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function Projects() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -69,10 +69,10 @@ function Projects() {
           pb: 3
         }}
       >
-        <Typography variant="h3">{t('Projects')}</Typography>
+        <Typography variant="h3">{'Projects'}</Typography>
         <Box>
           <Button size="small" variant="outlined">
-            {t('View all projects')}
+            {'View all projects'}
           </Button>
         </Box>
       </Box>
@@ -94,7 +94,7 @@ function Projects() {
                   <MoreVertTwoToneIcon />
                 </IconButton>
               }
-              title={t('Fix Urgent Mobile App Bugs')}
+              title={'Fix Urgent Mobile App Bugs'}
               titleTypographyProps={{
                 variant: 'h5',
                 color: 'textPrimary'
@@ -102,11 +102,11 @@ function Projects() {
             />
             <Box>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Tasks done')}:{' '}
+                {'Tasks done'}:{' '}
                 <Text color="black">
                   <b>25</b>
                 </Text>
-                <b> {t('/100')}</b>
+                <b> {'/100'}</b>
               </Typography>
               <LinearProgressWrapper
                 value={25}
@@ -122,7 +122,7 @@ function Projects() {
               }}
             >
               <AvatarGroup>
-                <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+                <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -134,7 +134,7 @@ function Projects() {
                     src="/static/images/avatars/1.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Travis Howard'}>
+                <Tooltip arrow title={'View profile for' + ' Travis Howard'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -146,7 +146,7 @@ function Projects() {
                     src="/static/images/avatars/2.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Cindy Baker'}>
+                <Tooltip arrow title={'View profile for' + ' Cindy Baker'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -158,7 +158,7 @@ function Projects() {
                     src="/static/images/avatars/3.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Agnes Walker'}>
+                <Tooltip arrow title={'View profile for' + ' Agnes Walker'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -172,7 +172,7 @@ function Projects() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('View profile for') + ' Trevor Henderson'}
+                  title={'View profile for' + ' Trevor Henderson'}
                 >
                   <Avatar
                     sx={{
@@ -189,7 +189,7 @@ function Projects() {
               <Box>
                 <Tooltip
                   arrow
-                  title={t('View project calendar')}
+                  title={'View project calendar'}
                   placement="top"
                 >
                   <IconButton
@@ -204,7 +204,7 @@ function Projects() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('Mark project as favourite')}
+                  title={'Mark project as favourite'}
                   placement="top"
                 >
                   <IconButton
@@ -242,7 +242,7 @@ function Projects() {
                   <MoreVertTwoToneIcon />
                 </IconButton>
               }
-              title={t('Replace Placeholder Images')}
+              title={'Replace Placeholder Images'}
               titleTypographyProps={{
                 variant: 'h5',
                 color: 'textPrimary'
@@ -250,11 +250,11 @@ function Projects() {
             />
             <Box>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Tasks done')}:{' '}
+                {'Tasks done'}:{' '}
                 <Text color="black">
                   <b>80</b>
                 </Text>
-                <b> {t('/100')}</b>
+                <b> {'/100'}</b>
               </Typography>
               <LinearProgressWrapper
                 value={80}
@@ -270,7 +270,7 @@ function Projects() {
               }}
             >
               <AvatarGroup>
-                <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+                <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -282,7 +282,7 @@ function Projects() {
                     src="/static/images/avatars/4.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Travis Howard'}>
+                <Tooltip arrow title={'View profile for' + ' Travis Howard'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -296,7 +296,7 @@ function Projects() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('View profile for') + ' Trevor Henderson'}
+                  title={'View profile for' + ' Trevor Henderson'}
                 >
                   <Avatar
                     sx={{
@@ -313,7 +313,7 @@ function Projects() {
               <Box>
                 <Tooltip
                   arrow
-                  title={t('View project calendar')}
+                  title={'View project calendar'}
                   placement="top"
                 >
                   <IconButton
@@ -328,7 +328,7 @@ function Projects() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('Mark project as favourite')}
+                  title={'Mark project as favourite'}
                   placement="top"
                 >
                   <IconButton
@@ -363,7 +363,7 @@ function Projects() {
                     <Tooltip
                       arrow
                       placement="top"
-                      title={t('Online right now')}
+                      title={'Online right now'}
                     >
                       <DotLegend
                         style={{ background: `${theme.colors.success.main}` }}
@@ -379,7 +379,7 @@ function Projects() {
                   <MoreVertTwoToneIcon />
                 </IconButton>
               }
-              title={t('BloomUI Redesign Project')}
+              title={'BloomUI Redesign Project'}
               titleTypographyProps={{
                 variant: 'h5',
                 color: 'textPrimary'
@@ -387,11 +387,11 @@ function Projects() {
             />
             <Box>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Tasks done')}:{' '}
+                {'Tasks done'}:{' '}
                 <Text color="black">
                   <b>87</b>
                 </Text>
-                <b> {t('/100')}</b>
+                <b> {'/100'}</b>
               </Typography>
               <LinearProgressWrapper
                 value={87}
@@ -407,7 +407,7 @@ function Projects() {
               }}
             >
               <AvatarGroup>
-                <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+                <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -419,7 +419,7 @@ function Projects() {
                     src="/static/images/avatars/1.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Cindy Baker'}>
+                <Tooltip arrow title={'View profile for' + ' Cindy Baker'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -431,7 +431,7 @@ function Projects() {
                     src="/static/images/avatars/3.jpg"
                   />
                 </Tooltip>
-                <Tooltip arrow title={t('View profile for') + ' Agnes Walker'}>
+                <Tooltip arrow title={'View profile for' + ' Agnes Walker'}>
                   <Avatar
                     sx={{
                       width: 30,
@@ -445,7 +445,7 @@ function Projects() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('View profile for') + ' Trevor Henderson'}
+                  title={'View profile for' + ' Trevor Henderson'}
                 >
                   <Avatar
                     sx={{
@@ -462,7 +462,7 @@ function Projects() {
               <Box>
                 <Tooltip
                   arrow
-                  title={t('View project calendar')}
+                  title={'View project calendar'}
                   placement="top"
                 >
                   <IconButton
@@ -477,7 +477,7 @@ function Projects() {
                 </Tooltip>
                 <Tooltip
                   arrow
-                  title={t('Mark project as favourite')}
+                  title={'Mark project as favourite'}
                   placement="top"
                 >
                   <IconButton

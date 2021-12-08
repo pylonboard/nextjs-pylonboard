@@ -1,10 +1,10 @@
 import { Box, Card, Grid, Typography, alpha, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import CountUp from 'react-countup';
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -23,7 +23,7 @@ function Block1() {
                     0 0.13rem 0.19rem ${alpha(theme.colors.success.main, 0.04)}`
           }}
         >
-          <Typography variant="subtitle2">{t('Expenses')}</Typography>
+          <Typography variant="subtitle2">{'Expenses'}</Typography>
           <Box
             pt={1.5}
             display="flex"
@@ -73,7 +73,7 @@ function Block1() {
                     0 0.13rem 0.19rem ${alpha(theme.colors.warning.main, 0.04)}`
           }}
         >
-          <Typography variant="subtitle2">{t('Expenses')}</Typography>
+          <Typography variant="subtitle2">{'Expenses'}</Typography>
           <Box
             pt={1.5}
             display="flex"
@@ -120,7 +120,7 @@ function Block1() {
                     0 0.13rem 0.19rem ${alpha(theme.colors.info.main, 0.04)}`
           }}
         >
-          <Typography variant="subtitle2">{t('Income')}</Typography>
+          <Typography variant="subtitle2">{'Income'}</Typography>
           <Box
             pt={1.5}
             display="flex"
@@ -167,7 +167,7 @@ function Block1() {
                     0 0.13rem 0.19rem ${alpha(theme.colors.error.main, 0.04)}`
           }}
         >
-          <Typography variant="subtitle2">{t('Visitors')}</Typography>
+          <Typography variant="subtitle2">{'Visitors'}</Typography>
           <Box
             pt={1.5}
             display="flex"

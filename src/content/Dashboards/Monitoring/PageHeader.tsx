@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Typography, Box } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import LoadingButton from '@mui/lab/LoadingButton';
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
 
   const [pending, setPending] = useState(false);
   function handleClick() {
@@ -26,12 +26,12 @@ function PageHeader() {
             pb: 1
           }}
         >
-          {t('Monitoring')}
+          {'Monitoring'}
         </Typography>
         <Typography variant="h4" color="text.secondary" fontWeight="normal">
-          {t(
+          {
             'This dashboard shows a live status for all your servers and database clusters!'
-          )}
+          }
         </Typography>
       </Box>
       <Box mt={{ xs: 3, md: 0 }}>
@@ -44,7 +44,7 @@ function PageHeader() {
           variant="contained"
           color="primary"
         >
-          {t('Refresh view')}
+          {'Refresh view'}
         </LoadingButton>
       </Box>
     </Box>

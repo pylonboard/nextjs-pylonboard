@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import CountUp from 'react-countup';
 import Label from 'src/components/Label';
@@ -31,7 +31,7 @@ const CardHeaderWrapper = styled(CardHeader)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chart1Options: ApexOptions = {
@@ -135,7 +135,7 @@ function Block5() {
               gutterBottom
               variant="h3"
             >
-              {t('Financial year')}
+              {'Financial year'}
             </Typography>
           </>
         }
@@ -148,7 +148,7 @@ function Block5() {
               color="text.secondary"
               variant="h5"
             >
-              {t('Expenses statistics to date')}
+              {'Expenses statistics to date'}
             </Typography>
           </>
         }
@@ -192,7 +192,7 @@ function Block5() {
             textAlign="center"
             gutterBottom
           >
-            {t('Current month')}
+            {'Current month'}
           </Typography>
           <Typography
             component="h6"
@@ -217,7 +217,7 @@ function Block5() {
             textAlign="center"
             gutterBottom
           >
-            {t('Last year')}
+            {'Last year'}
           </Typography>
           <Typography
             component="h6"
@@ -245,7 +245,7 @@ function Block5() {
         textAlign="center"
         variant="h3"
       >
-        {t('Monthly report')}
+        {'Monthly report'}
       </Typography>
       <CardContent>
         <Chart

@@ -1,10 +1,10 @@
 import { Card, Typography, Divider, Box, useTheme } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import GaugeChart from 'react-gauge-chart';
 import Text from 'src/components/Text';
 
 function CpuUsage() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -28,7 +28,7 @@ function CpuUsage() {
             mb: 2
           }}
         >
-          {t('CPU Usage')}
+          {'CPU Usage'}
         </Typography>
         <Typography
           align="center"
@@ -37,7 +37,7 @@ function CpuUsage() {
           color="text.secondary"
           gutterBottom
         >
-          {t('Today')}
+          {'Today'}
         </Typography>
         <GaugeChart
           style={{ width: '90%', margin: '0 auto' }}
@@ -72,7 +72,7 @@ function CpuUsage() {
           color="text.secondary"
           gutterBottom
         >
-          {t('Yesterday')}
+          {'Yesterday'}
         </Typography>
 
         <GaugeChart
@@ -93,7 +93,7 @@ function CpuUsage() {
         />
 
         <Typography align="center" variant="h2">
-          47% <Text color="success">({t('good')})</Text>
+          47% <Text color="success">({'good'})</Text>
         </Typography>
       </Box>
     </Card>

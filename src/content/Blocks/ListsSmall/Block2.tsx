@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AutoAwesomeMosaicTwoToneIcon from '@mui/icons-material/AutoAwesomeMosaicTwoTone';
 import CardTravelTwoToneIcon from '@mui/icons-material/CardTravelTwoTone';
 import ContactPhoneTwoToneIcon from '@mui/icons-material/ContactPhoneTwoTone';
@@ -21,7 +21,7 @@ import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -96,7 +96,7 @@ function Block2() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Updates')}
+            {'Updates'}
           </Typography>
         }
       />
@@ -124,7 +124,7 @@ function Block2() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('Reports')}</Typography>}
+            primary={<Typography variant="h4">{'Reports'}</Typography>}
           />
           <Box>
             <Typography variant="h4">
@@ -155,7 +155,7 @@ function Block2() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('User')}</Typography>}
+            primary={<Typography variant="h4">{'User'}</Typography>}
           />
           <Box>
             <Typography variant="h4">
@@ -186,7 +186,7 @@ function Block2() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('Sales')}</Typography>}
+            primary={<Typography variant="h4">{'Sales'}</Typography>}
           />
           <Box>
             <Typography variant="h4">
@@ -217,7 +217,7 @@ function Block2() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('Stats')}</Typography>}
+            primary={<Typography variant="h4">{'Stats'}</Typography>}
           />
           <Box>
             <Typography variant="h4">

@@ -11,7 +11,7 @@ import {
   CardActionArea,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 
 const AvatarWrapper = styled(Avatar)(
@@ -76,7 +76,7 @@ const CardAddAction = styled(Card)(
 );
 
 function Wallets() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <>
@@ -88,13 +88,13 @@ function Wallets() {
           pb: 3
         }}
       >
-        <Typography variant="h3">{t('Wallets')}</Typography>
+        <Typography variant="h3">{'Wallets'}</Typography>
         <Button
           size="small"
           variant="outlined"
           startIcon={<AddTwoToneIcon fontSize="small" />}
         >
-          {t('Add new wallet')}
+          {'Add new wallet'}
         </Button>
       </Box>
       <Grid container spacing={3}>
@@ -201,7 +201,7 @@ function Wallets() {
           </Card>
         </Grid>
         <Grid xs={12} sm={6} md={3} item>
-          <Tooltip arrow title={t('Click to add a new wallet')}>
+          <Tooltip arrow title={'Click to add a new wallet'}>
             <CardAddAction>
               <CardActionArea
                 sx={{

@@ -1,7 +1,6 @@
 import {
   Card,
   Box,
-  ListItemAvatar,
   CardHeader,
   ListItemText,
   Typography,
@@ -11,17 +10,7 @@ import {
   LinearProgress,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-import deFlag from 'country-flag-icons/3x2/DE.svg';
-import usFlag from 'country-flag-icons/3x2/US.svg';
-import esFlag from 'country-flag-icons/3x2/ES.svg';
 
-const ImageWrapper = styled('img')(
-  ({ theme }) => `
-        width: 36px;
-        margin-right: ${theme.spacing(1)};
-`
-);
 
 const LinearProgressWrapper = styled(LinearProgress)(
   () => `
@@ -30,11 +19,11 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function SalesByCountry() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <Card>
-      <CardHeader title={t('Sales by Country')} />
+      <CardHeader title={'Sales by Country'} />
       <Divider />
       <List disablePadding component="div">
         <ListItem
@@ -45,15 +34,7 @@ function SalesByCountry() {
           }}
         >
           <Box display="flex" alignItems="center" width="100%">
-            <ListItemAvatar
-              sx={{
-                minWidth: '36px',
-                display: 'flex',
-                alignItems: 'center'
-              }}
-            >
-              <ImageWrapper alt="USA" src={usFlag} />
-            </ListItemAvatar>
+
             <ListItemText
               primary="USA"
               primaryTypographyProps={{
@@ -75,7 +56,7 @@ function SalesByCountry() {
                   noWrap
                   gutterBottom
                 >
-                  {t('Orders')}
+                  {'Orders'}
                 </Typography>
                 <Typography align="right" variant="h5">
                   8
@@ -88,7 +69,7 @@ function SalesByCountry() {
                   noWrap
                   gutterBottom
                 >
-                  {t('Total')}
+                  {'Total'}
                 </Typography>
                 <Typography align="right" variant="h5">
                   $5,493.22
@@ -119,15 +100,6 @@ function SalesByCountry() {
           }}
         >
           <Box display="flex" alignItems="center" width="100%">
-            <ListItemAvatar
-              sx={{
-                minWidth: '36px',
-                display: 'flex',
-                alignItems: 'center'
-              }}
-            >
-              <ImageWrapper alt="ES" src={esFlag} />
-            </ListItemAvatar>
             <ListItemText
               primary="Spain"
               primaryTypographyProps={{
@@ -149,7 +121,7 @@ function SalesByCountry() {
                   noWrap
                   gutterBottom
                 >
-                  {t('Orders')}
+                  {'Orders'}
                 </Typography>
                 <Typography align="right" variant="h5">
                   41
@@ -162,7 +134,7 @@ function SalesByCountry() {
                   noWrap
                   gutterBottom
                 >
-                  {t('Total')}
+                  {'Total'}
                 </Typography>
                 <Typography align="right" variant="h5">
                   $7,489.00
@@ -193,15 +165,6 @@ function SalesByCountry() {
           }}
         >
           <Box display="flex" alignItems="center" width="100%">
-            <ListItemAvatar
-              sx={{
-                minWidth: '36px',
-                display: 'flex',
-                alignItems: 'center'
-              }}
-            >
-              <ImageWrapper alt="DE" src={deFlag} />
-            </ListItemAvatar>
             <ListItemText
               primary="Germany"
               primaryTypographyProps={{
@@ -223,7 +186,7 @@ function SalesByCountry() {
                   noWrap
                   gutterBottom
                 >
-                  {t('Orders')}
+                  {'Orders'}
                 </Typography>
                 <Typography align="right" variant="h5">
                   12
@@ -236,7 +199,7 @@ function SalesByCountry() {
                   noWrap
                   gutterBottom
                 >
-                  {t('Total')}
+                  {'Total'}
                 </Typography>
                 <Typography align="right" variant="h5">
                   $3,589.33

@@ -25,7 +25,7 @@ import {
 } from '@mui/material';
 import Text from 'src/components/Text';
 
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import HelpTwoToneIcon from '@mui/icons-material/HelpTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
@@ -218,15 +218,15 @@ const DividerVertialSuccess = styled(Box)(
 );
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [currentTab, setCurrentTab] = useState<string>('overview');
 
   const tabs = [
-    { value: 'overview', label: t('Overview') },
-    { value: 'signin', label: t('Sign in') },
-    { value: 'recent_activity', label: t('Recent activity') }
+    { value: 'overview', label: 'Overview' },
+    { value: 'signin', label: 'Sign in' },
+    { value: 'recent_activity', label: 'Recent activity' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -269,12 +269,12 @@ function Block9() {
                       textTransform: 'uppercase'
                     }}
                   >
-                    {t('New release')}
+                    {'New release'}
                   </Typography>
                 </Label>
                 <Tooltip
                   arrow
-                  title={t('This is a helper placeholder')}
+                  title={'This is a helper placeholder'}
                   placement="right"
                 >
                   <IconButtonWrapper
@@ -295,12 +295,12 @@ function Block9() {
                 }}
                 variant="h1"
               >
-                {t('The Ultimate UI Design System at your fingertips!')}
+                {'The Ultimate UI Design System at your fingertips!'}
               </Typography>
               <Typography lineHeight="1.5" fontWeight="normal" variant="h4">
-                {t(
+                {
                   'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                )}
+                }
                 .
               </Typography>
               <Button
@@ -311,7 +311,7 @@ function Block9() {
                 endIcon={<ArrowForwardTwoToneIcon />}
                 color="warning"
               >
-                {t('Browse templates')}
+                {'Browse templates'}
               </Button>
 
               <Box
@@ -482,7 +482,7 @@ function Block9() {
                   <Grid item xs={12}>
                     <Box textAlign="center">
                       <Button variant="outlined">
-                        {t('View all open tickets')}
+                        {'View all open tickets'}
                       </Button>
                     </Box>
                   </Grid>
@@ -506,9 +506,9 @@ function Block9() {
                     color="text.secondary"
                     variant="body2"
                   >
-                    {t('Sign in with')}
+                    {'Sign in with'}
                   </Typography>
-                  <Tooltip arrow title={t('Sign in with Google')}>
+                  <Tooltip arrow title={'Sign in with Google'}>
                     <ButtonWrapper size="large" variant="outlined">
                       <img
                         style={{ height: 28 }}
@@ -517,7 +517,7 @@ function Block9() {
                       />
                     </ButtonWrapper>
                   </Tooltip>
-                  <Tooltip arrow title={t('Sign in with Amplify')}>
+                  <Tooltip arrow title={'Sign in with Amplify'}>
                     <ButtonWrapper
                       sx={{
                         mx: 1.5
@@ -532,7 +532,7 @@ function Block9() {
                       />
                     </ButtonWrapper>
                   </Tooltip>
-                  <Tooltip arrow title={t('Sign in with Auth0')}>
+                  <Tooltip arrow title={'Sign in with Auth0'}>
                     <ButtonWrapper size="large" variant="outlined">
                       <img
                         style={{ height: 28 }}
@@ -550,7 +550,7 @@ function Block9() {
                   textAlign="center"
                   variant="body2"
                 >
-                  {t('or sign in with your credentials')}
+                  {'or sign in with your credentials'}
                 </Typography>
                 <TextField
                   sx={{
@@ -595,13 +595,13 @@ function Block9() {
                     label={
                       <>
                         <Typography variant="body2">
-                          {t('Keep me signed in')}
+                          {'Keep me signed in'}
                         </Typography>
                       </>
                     }
                   />
                   <Link href="#">
-                    <b>{t('Lost password?')}</b>
+                    <b>{'Lost password?'}</b>
                   </Link>
                 </Box>
                 <Box
@@ -646,7 +646,7 @@ function Block9() {
                         Presentation site design
                       </Link>
                       <Box mt={1.5} display="flex" alignItems="center">
-                        <LabelPrimary>{t('On hold')}</LabelPrimary>
+                        <LabelPrimary>{'On hold'}</LabelPrimary>
                         <Text flex color="error">
                           <AccessTimeTwoToneIcon
                             sx={{
@@ -679,7 +679,7 @@ function Block9() {
                         Create UI mockups
                       </Link>
                       <Box mt={1.5} display="flex" alignItems="center">
-                        <LabelError>{t('Delayed')}</LabelError>
+                        <LabelError>{'Delayed'}</LabelError>
                         <Text flex color="secondary">
                           <AccessTimeTwoToneIcon
                             sx={{
@@ -918,7 +918,7 @@ function Block9() {
                       </Typography>
                       <Box display="flex" mt={1} alignItems="flex-start">
                         <Button size="small" variant="contained">
-                          {t('Submit report')}
+                          {'Submit report'}
                         </Button>
                       </Box>
                     </TimelineContent>

@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import PieChartTwoToneIcon from '@mui/icons-material/PieChartTwoTone';
@@ -84,7 +84,7 @@ const BoxComposedBg = styled(Box)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -348,7 +348,7 @@ function Block7() {
                           suffix=""
                         />
                       </Typography>
-                      <Typography variant="h3">{t('Income')}</Typography>
+                      <Typography variant="h3">{'Income'}</Typography>
                     </Box>
                     <CardActions>
                       <IconButton size="small" color="primary">
@@ -390,7 +390,7 @@ function Block7() {
                           suffix=""
                         />
                       </Typography>
-                      <Typography variant="h3">{t('Expenses')}</Typography>
+                      <Typography variant="h3">{'Expenses'}</Typography>
                     </Box>
                     <CardActions>
                       <IconButton size="small" color="primary">
@@ -421,7 +421,7 @@ function Block7() {
           <Box p={3}>
             <Box>
               <Typography gutterBottom variant="h3">
-                {t('Monthly Financial Status')}
+                {'Monthly Financial Status'}
               </Typography>
               <Typography
                 variant="subtitle2"
@@ -429,7 +429,7 @@ function Block7() {
                   fontSize: `${theme.typography.pxToRem(15)}`
                 }}
               >
-                {t("Check how you're doing financially for current month")}
+                {"Check how you're doing financially for current month"}
               </Typography>
             </Box>
           </Box>
@@ -470,7 +470,7 @@ function Block7() {
               variant="contained"
               startIcon={<PieChartTwoToneIcon />}
             >
-              {t('Download report')}
+              {'Download report'}
             </Button>
           </Box>
         </Grid>

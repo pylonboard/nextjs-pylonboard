@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import BusinessTwoToneIcon from '@mui/icons-material/BusinessTwoTone';
 
 const AvatarError = styled(Avatar)(
@@ -35,13 +35,13 @@ const CardContentWrapper = styled(CardContent)(
 );
 
 function PendingInvitations() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <Card>
       <CardContentWrapper>
         <Typography variant="overline" color="text.primary">
-          {t('Pending Invitations')}
+          {'Pending Invitations'}
         </Typography>
 
         <ListItem
@@ -80,7 +80,7 @@ function PendingInvitations() {
             primary={
               <>
                 <Link fontWeight="bold" href="#">
-                  {t('See all invitations')}
+                  {'See all invitations'}
                 </Link>
                 <Box
                   component="span"
@@ -88,7 +88,7 @@ function PendingInvitations() {
                     pl: 0.5
                   }}
                 >
-                  {t('not opened yet.')}
+                  {'not opened yet.'}
                 </Box>
               </>
             }

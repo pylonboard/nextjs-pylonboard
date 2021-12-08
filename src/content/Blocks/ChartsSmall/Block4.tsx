@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import Text from 'src/components/Text';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
@@ -34,7 +34,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -184,7 +184,7 @@ function Block4() {
                 Spotify
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('New customer')}
+                {'New customer'}
               </Typography>
             </Box>
           </Box>
@@ -205,10 +205,10 @@ function Block4() {
             justifyContent="space-between"
           >
             <Button variant="outlined" size="small" color="error">
-              {t('Delete')}
+              {'Delete'}
             </Button>
             <Button variant="contained" size="small" color="primary">
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Card>
@@ -229,7 +229,7 @@ function Block4() {
                 Eric Johnson
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Elite pro author')}
+                {'Elite pro author'}
               </Typography>
             </Box>
           </Box>
@@ -250,10 +250,10 @@ function Block4() {
             justifyContent="space-between"
           >
             <Button variant="outlined" size="small" color="error">
-              {t('Delete')}
+              {'Delete'}
             </Button>
             <Button variant="contained" size="small" color="primary">
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Card>
@@ -270,7 +270,7 @@ function Block4() {
                 Slack
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                <Text color="warning">{t('Overdue bills')}</Text>
+                <Text color="warning">{'Overdue bills'}</Text>
               </Typography>
             </Box>
           </Box>
@@ -291,10 +291,10 @@ function Block4() {
             justifyContent="space-between"
           >
             <Button variant="outlined" size="small" color="error">
-              {t('Delete')}
+              {'Delete'}
             </Button>
             <Button variant="contained" size="small" color="primary">
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Card>

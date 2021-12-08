@@ -8,7 +8,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import ReceiptTwoToneIcon from '@mui/icons-material/ReceiptTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -25,7 +25,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -55,7 +55,7 @@ function Block3() {
               variant="subtitle2"
               component="div"
             >
-              {t('Orders')}
+              {'Orders'}
             </Typography>
           </Box>
           <Box
@@ -119,7 +119,7 @@ function Block3() {
               variant="subtitle2"
               component="div"
             >
-              {t('Reports')}
+              {'Reports'}
             </Typography>
           </Box>
           <Box
@@ -183,7 +183,7 @@ function Block3() {
               variant="subtitle2"
               component="div"
             >
-              {t('Customers')}
+              {'Customers'}
             </Typography>
           </Box>
           <Box
@@ -247,7 +247,7 @@ function Block3() {
               variant="subtitle2"
               component="div"
             >
-              {t('Sales')}
+              {'Sales'}
             </Typography>
           </Box>
           <Box

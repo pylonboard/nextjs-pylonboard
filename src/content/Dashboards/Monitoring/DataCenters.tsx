@@ -10,7 +10,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import {
   ComposableMap,
   Geographies,
@@ -46,7 +46,7 @@ const DotLegend = styled('span')(
 );
 
 function DataCenters() {
-  const { t }: { t: any } = useTranslation();
+
   const geoUrl =
     'https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/TopoJSON/europe.topojson';
   const theme = useTheme();
@@ -59,7 +59,7 @@ function DataCenters() {
         height: '100%'
       }}
     >
-      <CardHeader title={t('Europe Data Centers')} />
+      <CardHeader title={'Europe Data Centers'} />
       <Divider />
       <ComposableMap
         projection="geoAzimuthalEqualArea"
@@ -147,7 +147,7 @@ function DataCenters() {
           }}
         >
           <DotLegend style={{ background: theme.colors.error.main }} />
-          {t('Highest downtime')}
+          {'Highest downtime'}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -159,7 +159,7 @@ function DataCenters() {
           }}
         >
           <DotLegend style={{ background: theme.colors.success.main }} />
-          {t('Optimal uptime')}
+          {'Optimal uptime'}
         </Typography>
       </Box>
     </Card>

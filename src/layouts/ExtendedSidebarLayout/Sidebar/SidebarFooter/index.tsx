@@ -9,7 +9,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import EventTwoToneIcon from '@mui/icons-material/EventTwoTone';
 import SmsTwoToneIcon from '@mui/icons-material/SmsTwoTone';
 import Link from 'src/components/Link';
@@ -30,7 +30,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 function SidebarFooter() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -42,7 +42,7 @@ function SidebarFooter() {
       alignItems="center"
       justifyContent="center"
     >
-      <LightTooltip placement="top" arrow title={t('Events Calendar')}>
+      <LightTooltip placement="top" arrow title={'Events Calendar'}>
         <IconButton
           sx={{
             background: `${theme.colors.alpha.trueWhite[10]}`,
@@ -60,7 +60,7 @@ function SidebarFooter() {
           <EventTwoToneIcon fontSize="small" />
         </IconButton>
       </LightTooltip>
-      <LightTooltip placement="top" arrow title={t('Messenger')}>
+      <LightTooltip placement="top" arrow title={'Messenger'}>
         <Badge
           color="success"
           anchorOrigin={{

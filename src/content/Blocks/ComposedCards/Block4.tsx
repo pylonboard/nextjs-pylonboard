@@ -29,7 +29,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -106,15 +106,15 @@ const TabsWrapper = styled(Tabs)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const [currentTab, setCurrentTab] = useState<string>('timeline');
 
   const tabs = [
-    { value: 'timeline', label: t('Timeline') },
-    { value: 'tasks', label: t('Tasks') },
-    { value: 'reports', label: t('Reports') }
+    { value: 'timeline', label: 'Timeline' },
+    { value: 'tasks', label: 'Tasks' },
+    { value: 'reports', label: 'Reports' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -194,12 +194,12 @@ function Block4() {
             variant="outlined"
             size="small"
           >
-            {t('Actions')}
+            {'Actions'}
           </Button>
         }
         title={
           <>
-            <Typography variant="h4">{t('Tasks for today')}</Typography>
+            <Typography variant="h4">{'Tasks for today'}</Typography>
           </>
         }
       />
@@ -228,14 +228,14 @@ function Block4() {
             }}
             variant="h3"
           >
-            {t('Notifications')}
+            {'Notifications'}
           </Typography>
           <Typography textAlign="center" fontWeight="normal" variant="h4">
-            {t('You have')}{' '}
+            {'You have'}{' '}
             <Text color="warning">
               <b>574</b>
             </Text>{' '}
-            {t('notifications')}
+            {'notifications'}
           </Typography>
         </BoxComposedContent>
       </BoxComposed>
@@ -542,7 +542,7 @@ function Block4() {
                   </Typography>
                   <Box display="flex" mt={1} alignItems="flex-start">
                     <Button size="small" variant="outlined">
-                      {t('Submit report')}
+                      {'Submit report'}
                     </Button>
                   </Box>
                 </TimelineContent>
@@ -618,10 +618,10 @@ function Block4() {
                   <CheckTwoToneIcon fontSize="large" />
                 </AvatarSuccess>
                 <Typography variant="h3" gutterBottom>
-                  {t('Incoming messages')}
+                  {'Incoming messages'}
                 </Typography>
                 <Typography variant="subtitle2">
-                  {t("You don't have any pending actions to look at.")}
+                  {"You don't have any pending actions to look at."}
                 </Typography>
               </Box>
             </Scrollbar>
@@ -652,14 +652,14 @@ function Block4() {
                   size="small"
                   variant="outlined"
                 >
-                  <Button variant="contained">{t('Income')}</Button>
-                  <Button>{t('Expenses')}</Button>
+                  <Button variant="contained">{'Income'}</Button>
+                  <Button>{'Expenses'}</Button>
                 </ButtonGroup>
                 <Typography textAlign="center" variant="h3" gutterBottom>
-                  {t('Total Sales')}
+                  {'Total Sales'}
                 </Typography>
                 <Typography textAlign="center" variant="subtitle2">
-                  {t('Total performance for selected period')}
+                  {'Total performance for selected period'}
                 </Typography>
 
                 <Box
@@ -687,7 +687,7 @@ function Block4() {
       >
         <Badge color="success" variant="dot">
           <Button variant="contained" endIcon={<ArrowForwardTwoToneIcon />}>
-            {t('Learn more')}
+            {'Learn more'}
           </Button>
         </Badge>
       </Box>

@@ -1,5 +1,5 @@
 import { Box, Card, Grid, Typography, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import numeral from 'numeral';
 import Text from 'src/components/Text';
 
@@ -26,7 +26,7 @@ const DotPending = styled('span')(
 );
 
 function Statistics() {
-  const { t }: { t: any } = useTranslation();
+
 
   const data = {
     currency: '$',
@@ -64,10 +64,10 @@ function Statistics() {
               color="text.primary"
               gutterBottom
             >
-              {t('Total Received')}
+              {'Total Received'}
             </Typography>
             <Typography variant="subtitle2">
-              <Text color="success">+50%</Text> {t('increase since last month')}
+              <Text color="success">+50%</Text> {'increase since last month'}
             </Typography>
           </Box>
         </Card>
@@ -95,7 +95,7 @@ function Statistics() {
               }}
             >
               <DotInfo />
-              {t('In drafts')}
+              {'In drafts'}
             </Typography>
             <Typography variant="h3">
               {numeral(data.drafts).format(`${data.currency}0,0.00`)}
@@ -126,7 +126,7 @@ function Statistics() {
               }}
             >
               <DotPending />
-              {t('Pending')}
+              {'Pending'}
             </Typography>
             <Typography variant="h3">
               {numeral(data.pending).format(`${data.currency}0,0.00`)}

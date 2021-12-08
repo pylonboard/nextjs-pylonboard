@@ -24,7 +24,7 @@ import Projects from 'src/content/Dashboards/Tasks/Projects';
 import Checklist from 'src/content/Dashboards/Tasks/Checklist';
 import Profile from 'src/content/Dashboards/Tasks/Profile';
 import TaskSearch from 'src/content/Dashboards/Tasks/TaskSearch';
-import { useTranslation } from 'react-i18next';
+
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
 
 const TabsContainerWrapper = styled(Box)(
@@ -124,15 +124,15 @@ const AvatarPrimary = styled(Avatar)(
 );
 
 function DashboardTasksContent() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [currentTab, setCurrentTab] = useState<string>('analytics');
 
   const tabs = [
-    { value: 'analytics', label: t('Analytics Overview') },
-    { value: 'taskSearch', label: t('Task Search') },
-    { value: 'projectsBoard', label: t('Projects Board') }
+    { value: 'analytics', label: 'Analytics Overview' },
+    { value: 'taskSearch', label: 'Task Search' },
+    { value: 'projectsBoard', label: 'Projects Board' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -248,7 +248,7 @@ function DashboardTasksContent() {
                 <AvatarPrimary>
                   <NotificationsActiveTwoToneIcon />
                 </AvatarPrimary>
-                <Typography variant="h2">{t('No boards available')}</Typography>
+                <Typography variant="h2">{'No boards available'}</Typography>
                 <Typography
                   variant="h4"
                   sx={{
@@ -258,9 +258,9 @@ function DashboardTasksContent() {
                   fontWeight="normal"
                   color="text.secondary"
                 >
-                  {t(
+                  {
                     'Browse the projects board application or create a new one right here'
-                  )}
+                  }
                   !
                 </Typography>
                 <Button
@@ -273,7 +273,7 @@ function DashboardTasksContent() {
                     }
                   }}
                 >
-                  {t('Create project board')}
+                  {'Create project board'}
                 </Button>
               </Box>
             </Grid>

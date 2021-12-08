@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Link from 'src/components/Link';
 
 const CardActions = styled(Box)(
@@ -58,7 +58,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -99,7 +99,7 @@ function Block1() {
                 alt="..."
               />
               <CardActions>
-                <LabelWrapper>{t('Updated')}</LabelWrapper>
+                <LabelWrapper>{'Updated'}</LabelWrapper>
               </CardActions>
             </CardActionAreaWrapper>
           </Card>
@@ -125,7 +125,7 @@ function Block1() {
               variant="h3"
               underline="none"
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle2"
@@ -133,9 +133,9 @@ function Block1() {
                 py: 2
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Button
@@ -147,7 +147,7 @@ function Block1() {
                 }
               }}
             >
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Box>
@@ -202,7 +202,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('Hot')}
+                  {'Hot'}
                 </LabelWrapper>
                 <LabelWrapper
                   sx={{
@@ -212,7 +212,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('New')}
+                  {'New'}
                 </LabelWrapper>
               </CardActions>
             </CardActionAreaWrapper>
@@ -239,7 +239,7 @@ function Block1() {
               variant="h3"
               underline="none"
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle2"
@@ -247,9 +247,9 @@ function Block1() {
                 py: 2
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Button
@@ -261,7 +261,7 @@ function Block1() {
                 }
               }}
             >
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Box>
@@ -313,7 +313,7 @@ function Block1() {
                     color: `${theme.colors.alpha.trueWhite[100]}`
                   }}
                 >
-                  {t('New')}
+                  {'New'}
                 </LabelWrapper>
               </CardActions>
             </CardActionAreaWrapper>
@@ -340,7 +340,7 @@ function Block1() {
               variant="h3"
               underline="none"
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle2"
@@ -348,9 +348,9 @@ function Block1() {
                 py: 2
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Button
@@ -362,7 +362,7 @@ function Block1() {
                 }
               }}
             >
-              {t('View details')}
+              {'View details'}
             </Button>
           </Box>
         </Box>

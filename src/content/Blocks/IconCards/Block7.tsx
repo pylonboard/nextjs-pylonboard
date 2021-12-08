@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
 import AssessmentTwoToneIcon from '@mui/icons-material/AssessmentTwoTone';
@@ -58,7 +58,7 @@ const AvatarWarning = styled(Avatar)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -95,7 +95,7 @@ function Block7() {
                 fontSize: `${theme.typography.pxToRem(16)}`
               }}
             >
-              {t("Today's Sales")}
+              {"Today's Sales"}
             </Typography>
             <Divider
               sx={{
@@ -115,7 +115,7 @@ function Block7() {
                 variant="text"
                 color="error"
               >
-                {t('View details')}
+                {'View details'}
               </Button>
             </Box>
           </Box>
@@ -153,7 +153,7 @@ function Block7() {
                 fontSize: `${theme.typography.pxToRem(16)}`
               }}
             >
-              {t('Monthly Income')}
+              {'Monthly Income'}
             </Typography>
             <Divider
               sx={{
@@ -173,7 +173,7 @@ function Block7() {
                 variant="text"
                 color="primary"
               >
-                {t('View details')}
+                {'View details'}
               </Button>
             </Box>
           </Box>
@@ -211,7 +211,7 @@ function Block7() {
                 fontSize: `${theme.typography.pxToRem(16)}`
               }}
             >
-              {t('Total Sales')}
+              {'Total Sales'}
             </Typography>
             <Divider
               sx={{
@@ -231,7 +231,7 @@ function Block7() {
                 variant="text"
                 color="warning"
               >
-                {t('View details')}
+                {'View details'}
               </Button>
             </Box>
           </Box>

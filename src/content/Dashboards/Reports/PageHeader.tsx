@@ -10,7 +10,7 @@ import {
   Menu,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import DocumentScannerTwoToneIcon from '@mui/icons-material/DocumentScannerTwoTone';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import AddAlertTwoToneIcon from '@mui/icons-material/AddAlertTwoTone';
@@ -40,24 +40,24 @@ const AvatarPageTitle = styled(Avatar)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
 
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -78,10 +78,10 @@ function PageHeader() {
         </AvatarPageTitle>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Reports')}
+            {'Reports'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Custom dashboard built using the included components')}
+            {'Custom dashboard built using the included components'}
           </Typography>
         </Box>
       </Box>
@@ -125,7 +125,7 @@ function PageHeader() {
         </Menu>
 
         <Button variant="contained" startIcon={<DocumentScannerTwoToneIcon />}>
-          {t('Export')}
+          {'Export'}
         </Button>
       </Box>
     </Box>

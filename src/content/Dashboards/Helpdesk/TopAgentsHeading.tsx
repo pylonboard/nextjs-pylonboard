@@ -1,8 +1,8 @@
 import { Button, Box, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 function TopAgentsHeading() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Box
@@ -13,9 +13,9 @@ function TopAgentsHeading() {
         pb: 3
       }}
     >
-      <Typography variant="h3">{t('Top Agents')}</Typography>
+      <Typography variant="h3">{'Top Agents'}</Typography>
       <Button color="primary" variant="outlined" size="small">
-        {t('View all')}
+        {'View all'}
       </Button>
     </Box>
   );

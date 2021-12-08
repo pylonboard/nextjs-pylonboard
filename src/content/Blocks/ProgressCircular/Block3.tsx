@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import KeyboardArrowUpTwoToneIcon from '@mui/icons-material/KeyboardArrowUpTwoTone';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
@@ -22,7 +22,7 @@ const CardBorderBottom = styled(Card)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -49,7 +49,7 @@ function Block3() {
               }}
               variant="caption"
             >
-              {t('Accounts')}
+              {'Accounts'}
             </Typography>
             <Typography
               sx={{
@@ -141,7 +141,7 @@ function Block3() {
               }}
               variant="caption"
             >
-              {t('Subscriptions')}
+              {'Subscriptions'}
             </Typography>
             <Typography
               sx={{
@@ -167,7 +167,7 @@ function Block3() {
                 fontWeight="normal"
                 color="text.secondary"
               >
-                {t('new')}
+                {'new'}
               </Typography>
             </Typography>
           </Box>
@@ -244,7 +244,7 @@ function Block3() {
               }}
               variant="caption"
             >
-              {t('Expenses')}
+              {'Expenses'}
             </Typography>
             <Typography
               sx={{
@@ -341,7 +341,7 @@ function Block3() {
               }}
               variant="caption"
             >
-              {t('Income')}
+              {'Income'}
             </Typography>
             <Typography
               sx={{
@@ -367,7 +367,7 @@ function Block3() {
                 fontWeight="normal"
                 color="text.secondary"
               >
-                % {t('down')}
+                % {'down'}
               </Typography>
             </Typography>
           </Box>

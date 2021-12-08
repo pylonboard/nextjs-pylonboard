@@ -15,7 +15,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import Link from 'src/components/Link';
 import Text from 'src/components/Text';
@@ -89,7 +89,7 @@ const LinearProgressSuccess = styled(LinearProgress)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -161,7 +161,7 @@ function Block7() {
                 />
               </Tooltip>
             </AvatarGroup>
-            <Tooltip title={t('Add more participants')} arrow placement="right">
+            <Tooltip title={'Add more participants'} arrow placement="right">
               <IconButtonWrapper>
                 <AddTwoToneIcon />
               </IconButtonWrapper>
@@ -179,13 +179,13 @@ function Block7() {
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
             <Typography gutterBottom variant="h6" color="text.secondary">
-              {t('Users')}
+              {'Users'}
             </Typography>
             <Typography variant="h3">1,685</Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography gutterBottom variant="h6" color="text.secondary">
-              {t('Revenue')}
+              {'Revenue'}
             </Typography>
             <Typography variant="h3">
               <Text color="error">$65,345</Text>
@@ -200,7 +200,7 @@ function Block7() {
           justifyContent="space-between"
         >
           <Typography variant="h5" fontWeight="normal" color="text.secondary">
-            {t('Progress')}:
+            {'Progress'}:
           </Typography>
           <Typography variant="h5">
             <Text color="primary">100%</Text>
@@ -248,7 +248,7 @@ function Block7() {
                 src="/static/images/avatars/4.jpg"
               />
             </Tooltip>
-            <Tooltip title={t('Add more participants')} arrow placement="right">
+            <Tooltip title={'Add more participants'} arrow placement="right">
               <IconButtonWrapper>
                 <AddTwoToneIcon />
               </IconButtonWrapper>
@@ -266,13 +266,13 @@ function Block7() {
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
             <Typography gutterBottom variant="h6" color="text.secondary">
-              {t('Users')}
+              {'Users'}
             </Typography>
             <Typography variant="h3">765</Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography gutterBottom variant="h6" color="text.secondary">
-              {t('Revenue')}
+              {'Revenue'}
             </Typography>
             <Typography variant="h3">$34,654</Typography>
           </Grid>
@@ -285,7 +285,7 @@ function Block7() {
           justifyContent="space-between"
         >
           <Typography variant="h5" fontWeight="normal" color="text.secondary">
-            {t('Progress')}:
+            {'Progress'}:
           </Typography>
           <Typography variant="h5">
             <Text color="primary">100%</Text>
@@ -361,7 +361,7 @@ function Block7() {
                 />
               </Tooltip>
             </AvatarGroup>
-            <Tooltip title={t('Add more participants')} arrow placement="right">
+            <Tooltip title={'Add more participants'} arrow placement="right">
               <IconButtonWrapper>
                 <AddTwoToneIcon />
               </IconButtonWrapper>
@@ -382,7 +382,7 @@ function Block7() {
               value={45}
             />
             <Typography variant="body2" color="text.secondary">
-              {t('Seats')}
+              {'Seats'}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -395,7 +395,7 @@ function Block7() {
               value={87}
             />
             <Typography variant="body2" color="text.secondary">
-              {t('Participants')}
+              {'Participants'}
             </Typography>
           </Grid>
         </Grid>

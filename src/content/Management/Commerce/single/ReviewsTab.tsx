@@ -15,10 +15,8 @@ import {
   lighten,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
-import usFlag from 'country-flag-icons/3x2/US.svg';
-import deFlag from 'country-flag-icons/3x2/DE.svg';
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import ThumbUpTwoToneIcon from '@mui/icons-material/ThumbUpTwoTone';
 import ThumbDownTwoToneIcon from '@mui/icons-material/ThumbDownTwoTone';
@@ -74,15 +72,8 @@ const LinearProgressWrapper = styled(LinearProgress)(
 `
 );
 
-const ImageWrapper = styled('img')(
-  ({ theme }) => `
-        width: 36px;
-        margin-right: ${theme.spacing(1)};
-`
-);
-
 function ReviewsTab() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -115,7 +106,7 @@ function ReviewsTab() {
           </Box>
           <Box p={3}>
             <Typography variant="h2">
-              {t('Customer Reviews')}{' '}
+              {'Customer Reviews'}{' '}
               <Typography component="span" variant="h2" color="text.secondary">
                 (75)
               </Typography>
@@ -137,7 +128,7 @@ function ReviewsTab() {
                     minWidth: 50
                   }}
                 >
-                  <Typography variant="h5">5 {t('stars')}</Typography>
+                  <Typography variant="h5">5 {'stars'}</Typography>
                 </Box>
                 <Box px={2} flexGrow={1}>
                   <LinearProgressWrapper
@@ -165,7 +156,7 @@ function ReviewsTab() {
                     minWidth: 50
                   }}
                 >
-                  <Typography variant="h5">4 {t('stars')}</Typography>
+                  <Typography variant="h5">4 {'stars'}</Typography>
                 </Box>
                 <Box px={2} flexGrow={1}>
                   <LinearProgressWrapper
@@ -193,7 +184,7 @@ function ReviewsTab() {
                     minWidth: 50
                   }}
                 >
-                  <Typography variant="h5">3 {t('stars')}</Typography>
+                  <Typography variant="h5">3 {'stars'}</Typography>
                 </Box>
                 <Box px={2} flexGrow={1}>
                   <LinearProgressWrapper
@@ -221,7 +212,7 @@ function ReviewsTab() {
                     minWidth: 50
                   }}
                 >
-                  <Typography variant="h5">2 {t('stars')}</Typography>
+                  <Typography variant="h5">2 {'stars'}</Typography>
                 </Box>
                 <Box px={2} flexGrow={1}>
                   <LinearProgressWrapper
@@ -249,7 +240,7 @@ function ReviewsTab() {
                     minWidth: 50
                   }}
                 >
-                  <Typography variant="h5">1 {t('star')}</Typography>
+                  <Typography variant="h5">1 {'star'}</Typography>
                 </Box>
                 <Box px={2} flexGrow={1}>
                   <LinearProgressWrapper
@@ -294,7 +285,7 @@ function ReviewsTab() {
             <Tooltip
               placement="top"
               arrow
-              title={t('Only verified customers can write reviews')}
+              title={'Only verified customers can write reviews'}
             >
               <Box component="span">
                 <Button
@@ -303,7 +294,7 @@ function ReviewsTab() {
                   variant="contained"
                   size="large"
                 >
-                  {t('Write review')}
+                  {'Write review'}
                 </Button>
               </Box>
             </Tooltip>
@@ -334,7 +325,6 @@ function ReviewsTab() {
             >
               Brook Holding
             </Typography>
-            <ImageWrapper alt="USA" src={usFlag} />
           </Box>
           <Box flex={1}>
             <Typography
@@ -367,7 +357,7 @@ function ReviewsTab() {
                     mr: 4
                   }}
                 >
-                  {t('Verified purchase')}
+                  {'Verified purchase'}
                 </Typography>
                 <Typography variant="subtitle2" color="text.primary">
                   21 July 2021
@@ -384,7 +374,7 @@ function ReviewsTab() {
                   }}
                   component="span"
                 >
-                  {t('Helpful')}?
+                  {'Helpful'}?
                 </Typography>
                 <IconButtonSuccess>
                   <ThumbUpTwoToneIcon fontSize="small" />
@@ -419,7 +409,6 @@ function ReviewsTab() {
             >
               Emerson Bothman
             </Typography>
-            <ImageWrapper alt="Germany" src={deFlag} />
           </Box>
           <Box flex={1}>
             <Typography
@@ -452,7 +441,7 @@ function ReviewsTab() {
                     mr: 4
                   }}
                 >
-                  {t('Verified purchase')}
+                  {'Verified purchase'}
                 </Typography>
                 <Typography variant="subtitle2" color="text.primary">
                   20 March 2021
@@ -469,7 +458,7 @@ function ReviewsTab() {
                   }}
                   component="span"
                 >
-                  {t('Helpful')}?
+                  {'Helpful'}?
                 </Typography>
                 <IconButtonSuccess>
                   <ThumbUpTwoToneIcon fontSize="small" />

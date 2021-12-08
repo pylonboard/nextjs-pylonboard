@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -17,7 +17,7 @@ import CompareArrowsTwoToneIcon from '@mui/icons-material/CompareArrowsTwoTone';
 import AddAlertTwoToneIcon from '@mui/icons-material/AddAlertTwoTone';
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -44,7 +44,7 @@ function Block6() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('New Accounts')}
+                {'New Accounts'}
               </Typography>
               <Typography
                 variant="h3"
@@ -92,7 +92,7 @@ function Block6() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('increase this month')}
+              {'increase this month'}
             </Typography>
           </Box>
         </Card>
@@ -119,7 +119,7 @@ function Block6() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('Sales')}
+                {'Sales'}
               </Typography>
               <Typography
                 variant="h3"
@@ -167,7 +167,7 @@ function Block6() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('compared to previous month')}
+              {'compared to previous month'}
             </Typography>
           </Box>
         </Card>
@@ -194,7 +194,7 @@ function Block6() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('New Orders')}
+                {'New Orders'}
               </Typography>
               <Typography
                 variant="h3"
@@ -242,7 +242,7 @@ function Block6() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('decrease in orders amounts')}
+              {'decrease in orders amounts'}
             </Typography>
           </Box>
         </Card>

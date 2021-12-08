@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import ChevronLeftTwoToneIcon from '@mui/icons-material/ChevronLeftTwoTone';
@@ -85,7 +85,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function TrainingPrograms() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -101,7 +101,7 @@ function TrainingPrograms() {
             </SwipeIndicator>
           </>
         }
-        title={t('Training programs')}
+        title={'Training programs'}
       />
       <Divider />
       <Box
@@ -172,7 +172,7 @@ function TrainingPrograms() {
                     alt="..."
                   />
                   <CardActions>
-                    <LabelWrapper>{t('Updated')}</LabelWrapper>
+                    <LabelWrapper>{'Updated'}</LabelWrapper>
                   </CardActions>
                 </CardActionAreaWrapper>
               </Card>
@@ -198,7 +198,7 @@ function TrainingPrograms() {
                   variant="h3"
                   underline="none"
                 >
-                  {t('Stretching')}
+                  {'Stretching'}
                 </Link>
                 <Typography
                   variant="subtitle2"
@@ -206,7 +206,7 @@ function TrainingPrograms() {
                     pb: 2
                   }}
                 >
-                  {t('Team activity')}
+                  {'Team activity'}
                 </Typography>
                 <Button
                   endIcon={<ArrowForwardTwoToneIcon />}
@@ -218,7 +218,7 @@ function TrainingPrograms() {
                     }
                   }}
                 >
-                  {t('Start training')}
+                  {'Start training'}
                 </Button>
               </Box>
             </Box>
@@ -282,7 +282,7 @@ function TrainingPrograms() {
                   variant="h3"
                   underline="none"
                 >
-                  {t('Yoga')}
+                  {'Yoga'}
                 </Link>
                 <Typography
                   variant="subtitle2"
@@ -290,7 +290,7 @@ function TrainingPrograms() {
                     pb: 2
                   }}
                 >
-                  {t('Individual')}
+                  {'Individual'}
                 </Typography>
                 <Button
                   endIcon={<ArrowForwardTwoToneIcon />}
@@ -302,7 +302,7 @@ function TrainingPrograms() {
                     }
                   }}
                 >
-                  {t('Start training')}
+                  {'Start training'}
                 </Button>
               </Box>
             </Box>
@@ -366,7 +366,7 @@ function TrainingPrograms() {
                   variant="h3"
                   underline="none"
                 >
-                  {t('Kangoo Jumps')}
+                  {'Kangoo Jumps'}
                 </Link>
                 <Typography
                   variant="subtitle2"
@@ -374,7 +374,7 @@ function TrainingPrograms() {
                     pb: 2
                   }}
                 >
-                  {t('Large Groups')}
+                  {'Large Groups'}
                 </Typography>
                 <Button
                   endIcon={<ArrowForwardTwoToneIcon />}
@@ -386,7 +386,7 @@ function TrainingPrograms() {
                     }
                   }}
                 >
-                  {t('Start training')}
+                  {'Start training'}
                 </Button>
               </Box>
             </Box>
@@ -450,7 +450,7 @@ function TrainingPrograms() {
                   variant="h3"
                   underline="none"
                 >
-                  {t('Rope Jumping')}
+                  {'Rope Jumping'}
                 </Link>
                 <Typography
                   variant="subtitle2"
@@ -458,7 +458,7 @@ function TrainingPrograms() {
                     pb: 2
                   }}
                 >
-                  {t('Small teams')}
+                  {'Small teams'}
                 </Typography>
                 <Button
                   endIcon={<ArrowForwardTwoToneIcon />}
@@ -470,7 +470,7 @@ function TrainingPrograms() {
                     }
                   }}
                 >
-                  {t('Start training')}
+                  {'Start training'}
                 </Button>
               </Box>
             </Box>

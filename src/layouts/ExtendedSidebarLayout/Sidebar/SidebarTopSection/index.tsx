@@ -15,7 +15,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
@@ -58,7 +58,7 @@ const UserBoxDescription = styled(Typography)(
 );
 
 function SidebarTopSection() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const user = {
@@ -181,7 +181,7 @@ function SidebarTopSection() {
             button
           >
             <AccountBoxTwoToneIcon fontSize="small" />
-            <ListItemText primary={t('Profile')} />
+            <ListItemText primary={'Profile'} />
           </ListItem>
           <ListItem
             onClick={() => {
@@ -190,7 +190,7 @@ function SidebarTopSection() {
             button
           >
             <InboxTwoToneIcon fontSize="small" />
-            <ListItemText primary={t('Inbox')} />
+            <ListItemText primary={'Inbox'} />
           </ListItem>
           <ListItem
             onClick={() => {
@@ -199,7 +199,7 @@ function SidebarTopSection() {
             button
           >
             <AccountTreeTwoToneIcon fontSize="small" />
-            <ListItemText primary={t('Projects')} />
+            <ListItemText primary={'Projects'} />
           </ListItem>
         </List>
       </Popover>

@@ -12,7 +12,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import AttachMoneyTwoToneIcon from '@mui/icons-material/AttachMoneyTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -38,7 +38,7 @@ const AvatarLabelWarning = styled(Avatar)(
 );
 
 function Investments() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const data = {
@@ -142,7 +142,7 @@ function Investments() {
 
   return (
     <Card>
-      <CardHeader title={t('Investments')} />
+      <CardHeader title={'Investments'} />
       <Divider />
       <CardContent
         sx={{
@@ -181,7 +181,7 @@ function Investments() {
               textAlign: 'center'
             }}
           >
-            <Typography variant="subtitle2">{t('Interest')}</Typography>
+            <Typography variant="subtitle2">{'Interest'}</Typography>
             <Switch
               checked={state.interest}
               onChange={interestActivate}
@@ -217,7 +217,7 @@ function Investments() {
             </AvatarLabelInfo>
             <Box>
               <Typography variant="subtitle2" noWrap>
-                {t('USD Wallet')}
+                {'USD Wallet'}
               </Typography>
               <Typography variant="h5">{data.wallet}</Typography>
             </Box>
@@ -234,7 +234,7 @@ function Investments() {
             </AvatarLabelWarning>
             <Box>
               <Typography variant="subtitle2" noWrap>
-                {t('Shares')}
+                {'Shares'}
               </Typography>
               <Typography variant="h5">{data.shares}</Typography>
             </Box>
@@ -262,7 +262,7 @@ function Investments() {
             textAlign: 'center'
           }}
         >
-          <Button size="small">{t('View all investments')}</Button>
+          <Button size="small">{'View all investments'}</Button>
         </Box>
       </CardContent>
     </Card>

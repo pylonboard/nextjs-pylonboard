@@ -15,7 +15,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { useTranslation } from 'react-i18next';
+
 import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
 import AssignmentTwoToneIcon from '@mui/icons-material/AssignmentTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
@@ -52,7 +52,7 @@ const CheckboxWrapper = styled(Checkbox)(
 );
 
 function Checklist() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Box>
@@ -62,13 +62,13 @@ function Checklist() {
           pt: 0
         }}
         action={
-          <Tooltip arrow title={t('Refresh list')}>
+          <Tooltip arrow title={'Refresh list'}>
             <IconButton size="small" color="primary">
               <RefreshTwoToneIcon />
             </IconButton>
           </Tooltip>
         }
-        title={t('Checklist')}
+        title={'Checklist'}
       />
       <TimelineWrapper>
         <TimelineItem>
@@ -85,20 +85,20 @@ function Checklist() {
                 pb: 2
               }}
             >
-              {t('Tasks Quick List')}
+              {'Tasks Quick List'}
             </Typography>
             <FormGroup>
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Prepare website launch')}
+                label={'Prepare website launch'}
               />
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Build React Native application')}
+                label={'Build React Native application'}
               />
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Fix remaining bugs for first 4 pages')}
+                label={'Fix remaining bugs for first 4 pages'}
               />
             </FormGroup>
           </TimelineContent>
@@ -117,16 +117,16 @@ function Checklist() {
                 pb: 2
               }}
             >
-              {t('Project Management')}
+              {'Project Management'}
             </Typography>
             <FormGroup>
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Complete sales pitch')}
+                label={'Complete sales pitch'}
               />
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Improve SEO visibility')}
+                label={'Improve SEO visibility'}
               />
             </FormGroup>
           </TimelineContent>
@@ -145,16 +145,16 @@ function Checklist() {
                 pb: 2
               }}
             >
-              {t('Business & Marketing')}
+              {'Business & Marketing'}
             </Typography>
             <FormGroup>
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Create marketing campaign')}
+                label={'Create marketing campaign'}
               />
               <FormControlLabel
                 control={<CheckboxWrapper color="primary" name="checkedC" />}
-                label={t('Sign business contract with partners')}
+                label={'Sign business contract with partners'}
               />
             </FormGroup>
           </TimelineContent>

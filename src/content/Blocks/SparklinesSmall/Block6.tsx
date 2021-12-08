@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
@@ -25,7 +25,7 @@ const ButtonWrapper = styled(Button)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -259,7 +259,7 @@ function Block6() {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Typography variant="h4">{t('Bandwidth allocation')}</Typography>
+            <Typography variant="h4">{'Bandwidth allocation'}</Typography>
             <ButtonWrapper
               sx={{
                 background: `${theme.colors.secondary.lighter}`,
@@ -275,7 +275,7 @@ function Block6() {
               size="small"
               variant="contained"
             >
-              {t('View all')}
+              {'View all'}
             </ButtonWrapper>
           </Box>
           <Box p={2}>
@@ -290,7 +290,7 @@ function Block6() {
               12,54k
             </Typography>
             <Typography variant="subtitle2">
-              {t('Successful deployments')}
+              {'Successful deployments'}
             </Typography>
           </Box>
           <Box>
@@ -313,7 +313,7 @@ function Block6() {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Typography variant="h4">{t('Production servers')}</Typography>
+            <Typography variant="h4">{'Production servers'}</Typography>
             <ButtonWrapper
               sx={{
                 background: `${theme.colors.secondary.lighter}`,
@@ -329,7 +329,7 @@ function Block6() {
               size="small"
               variant="contained"
             >
-              {t('View all')}
+              {'View all'}
             </ButtonWrapper>
           </Box>
           <Box p={2}>
@@ -344,7 +344,7 @@ function Block6() {
               +35.6%
             </Typography>
             <Typography variant="subtitle2">
-              {t('Returning clients reports')}
+              {'Returning clients reports'}
             </Typography>
           </Box>
           <Box>
@@ -367,7 +367,7 @@ function Block6() {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Typography variant="h4">{t('Returning customers')}</Typography>
+            <Typography variant="h4">{'Returning customers'}</Typography>
             <ButtonWrapper
               sx={{
                 background: `${theme.colors.secondary.lighter}`,
@@ -383,7 +383,7 @@ function Block6() {
               size="small"
               variant="contained"
             >
-              {t('View all')}
+              {'View all'}
             </ButtonWrapper>
           </Box>
           <Box p={2}>
@@ -398,7 +398,7 @@ function Block6() {
               +12,45%
             </Typography>
             <Typography variant="subtitle2">
-              {t('Pending services integrations')}
+              {'Pending services integrations'}
             </Typography>
           </Box>
           <Box>

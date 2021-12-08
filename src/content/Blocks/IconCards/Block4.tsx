@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import Text from 'src/components/Text';
@@ -36,7 +36,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -63,7 +63,7 @@ function Block4() {
                     fontSize: `${theme.typography.pxToRem(16)}`
                   }}
                 >
-                  {t('Project management')}
+                  {'Project management'}
                 </Typography>
                 <Typography
                   sx={{
@@ -109,14 +109,14 @@ function Block4() {
                     fontSize: `${theme.typography.pxToRem(16)}`
                   }}
                 >
-                  {t('Analytics statistics')}
+                  {'Analytics statistics'}
                 </Typography>
                 <Typography
                   sx={{
                     fontSize: `${theme.typography.pxToRem(14)}`
                   }}
                 >
-                  <Text color="warning">487 {t('new users')}</Text>
+                  <Text color="warning">487 {'new users'}</Text>
                 </Typography>
               </Box>
             </Box>
@@ -155,7 +155,7 @@ function Block4() {
                     fontSize: `${theme.typography.pxToRem(16)}`
                   }}
                 >
-                  {t('Tasks overview')}
+                  {'Tasks overview'}
                 </Typography>
                 <Typography
                   sx={{
@@ -171,11 +171,11 @@ function Block4() {
                         fontWeight: 'bold'
                       }}
                     >
-                      23 {t('tasks')}
+                      23 {'tasks'}
                     </Box>
                   </Label>
                   <Box component="span" pl={1.5}>
-                    <Text color="error"> {t('due today')}</Text>
+                    <Text color="error"> {'due today'}</Text>
                   </Box>
                 </Typography>
               </Box>

@@ -1,6 +1,6 @@
 import { Grid, Box, Card, Typography, styled, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -14,7 +14,7 @@ const CardBorderBottom = styled(Card)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -35,7 +35,7 @@ function Block6() {
               1,585
             </Typography>{' '}
             <Typography component="span" variant="subtitle2">
-              {t('users')}
+              {'users'}
             </Typography>
           </Box>
         </CardBorderBottom>
@@ -56,7 +56,7 @@ function Block6() {
               32,595
             </Typography>{' '}
             <Typography component="span" variant="subtitle2">
-              {t('clicks')}
+              {'clicks'}
             </Typography>
           </Box>
         </CardBorderBottom>
@@ -77,7 +77,7 @@ function Block6() {
               $12,634
             </Typography>{' '}
             <Typography component="span" variant="subtitle2">
-              {t('revenue')}
+              {'revenue'}
             </Typography>
           </Box>
         </CardBorderBottom>
@@ -98,7 +98,7 @@ function Block6() {
               643
             </Typography>{' '}
             <Typography component="span" variant="subtitle2">
-              {t('sales')}
+              {'sales'}
             </Typography>
           </Box>
         </CardBorderBottom>

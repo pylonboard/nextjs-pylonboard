@@ -15,7 +15,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import InsertDriveFileTwoToneIcon from '@mui/icons-material/InsertDriveFileTwoTone';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
@@ -47,7 +47,7 @@ const ListItemWrapper = styled(ListItem)(
 );
 
 function Block11() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -103,9 +103,9 @@ function Block11() {
               fontSize: `${theme.typography.pxToRem(12)}`
             }}
           >
-            {t('Storage')}
+            {'Storage'}
           </Typography>
-          <Typography variant="h4">{t('Recent Files')}</Typography>
+          <Typography variant="h4">{'Recent Files'}</Typography>
         </Box>
         <IconButton
           size="small"

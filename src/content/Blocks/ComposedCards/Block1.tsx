@@ -18,7 +18,7 @@ import {
 import Text from 'src/components/Text';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import PointOfSaleTwoToneIcon from '@mui/icons-material/PointOfSaleTwoTone';
 import PollTwoToneIcon from '@mui/icons-material/PollTwoTone';
@@ -164,7 +164,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -175,7 +175,7 @@ function Block1() {
         }}
       >
         <CardActions>
-          <Label>{t('New')}</Label>
+          <Label>{'New'}</Label>
         </CardActions>
         <BoxComposedBg
           sx={{
@@ -197,18 +197,18 @@ function Block1() {
             }}
             variant="h3"
           >
-            {t('Technical Support')}
+            {'Technical Support'}
           </Typography>
           <Typography textAlign="center" fontWeight="normal" variant="h4">
-            {t(
+            {
               'If you have questions regarding you order, you can send us a message'
-            )}
+            }
           </Typography>
         </BoxComposedContent>
       </BoxComposed>
       <BoxOverlineButton>
         <Button variant="contained" size="large" color="success">
-          {t('Send message')}
+          {'Send message'}
         </Button>
       </BoxOverlineButton>
       <Box p={3}>
@@ -233,7 +233,7 @@ function Block1() {
               >
                 2,345
               </Typography>
-              <Typography variant="subtitle2">{t('users')}</Typography>
+              <Typography variant="subtitle2">{'users'}</Typography>
             </CardWrapper>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -256,7 +256,7 @@ function Block1() {
               >
                 $3,586
               </Typography>
-              <Typography variant="subtitle2">{t('sales')}</Typography>
+              <Typography variant="subtitle2">{'sales'}</Typography>
             </CardWrapper>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -279,7 +279,7 @@ function Block1() {
               >
                 $9,693
               </Typography>
-              <Typography variant="subtitle2">{t('revenue')}</Typography>
+              <Typography variant="subtitle2">{'revenue'}</Typography>
             </CardWrapper>
           </Grid>
         </Grid>
@@ -313,7 +313,7 @@ function Block1() {
                 </Typography>
               </TableCell>
               <TableCell align="center">
-                <LabelWarning>{t('Pending')}</LabelWarning>
+                <LabelWarning>{'Pending'}</LabelWarning>
               </TableCell>
               <TableCell align="right">
                 <Typography
@@ -367,7 +367,7 @@ function Block1() {
                 </Typography>
               </TableCell>
               <TableCell align="center">
-                <LabelError>{t('Failed')}</LabelError>
+                <LabelError>{'Failed'}</LabelError>
               </TableCell>
               <TableCell align="right">
                 <Typography
@@ -421,7 +421,7 @@ function Block1() {
                 </Typography>
               </TableCell>
               <TableCell align="center">
-                <LabelSuccess>{t('Done')}</LabelSuccess>
+                <LabelSuccess>{'Done'}</LabelSuccess>
               </TableCell>
               <TableCell align="right">
                 <Typography

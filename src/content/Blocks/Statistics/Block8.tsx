@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 
 const DividerPrimary = styled(Divider)(
@@ -88,7 +88,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -125,7 +125,7 @@ function Block5() {
                   textTransform: 'uppercase'
                 }}
               >
-                {t('Completed tasks')}
+                {'Completed tasks'}
               </Typography>
             </Box>
             <ChevronRightTwoToneIcon fontSize="large" />
@@ -164,7 +164,7 @@ function Block5() {
                   textTransform: 'uppercase'
                 }}
               >
-                {t('Requests sent')}
+                {'Requests sent'}
               </Typography>
             </Box>
             <ChevronRightTwoToneIcon fontSize="large" />
@@ -200,7 +200,7 @@ function Block5() {
               textTransform: 'uppercase'
             }}
           >
-            {t('Bugfixes')}
+            {'Bugfixes'}
           </Typography>
         </Card>
       </Grid>
@@ -233,7 +233,7 @@ function Block5() {
               textTransform: 'uppercase'
             }}
           >
-            {t('Tickets')}
+            {'Tickets'}
           </Typography>
         </Card>
       </Grid>

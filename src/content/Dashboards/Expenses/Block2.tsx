@@ -24,7 +24,7 @@ import {
   SparklinesSpots
 } from 'react-sparklines';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
@@ -150,7 +150,7 @@ const TableHeadWrapper = styled(TableHead)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -170,10 +170,10 @@ function Block2() {
             }}
             variant="h4"
           >
-            {t('Weekly sales')}
+            {'Weekly sales'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Reports for what we sold this week')}
+            {'Reports for what we sold this week'}
           </Typography>
         </Box>
         <IconButton color="primary">
@@ -186,12 +186,12 @@ function Block2() {
           <TableWrapper>
             <TableHeadWrapper>
               <TableRow>
-                <TableCell>{t('Employee')}</TableCell>
-                <TableCell align="left">{t('Income')}</TableCell>
-                <TableCell align="left">{t('Expenses')}</TableCell>
-                <TableCell align="center">{t('Status')}</TableCell>
-                <TableCell align="center">{t('Trends')}</TableCell>
-                <TableCell align="right">{t('Totals')}</TableCell>
+                <TableCell>{'Employee'}</TableCell>
+                <TableCell align="left">{'Income'}</TableCell>
+                <TableCell align="left">{'Expenses'}</TableCell>
+                <TableCell align="center">{'Status'}</TableCell>
+                <TableCell align="center">{'Trends'}</TableCell>
+                <TableCell align="right">{'Totals'}</TableCell>
               </TableRow>
             </TableHeadWrapper>
             <TableBody>
@@ -222,7 +222,7 @@ function Block2() {
                 </TableCell>
                 <TableCell align="center">
                   <div>
-                    <LabelError>{t('Overdue')}</LabelError>
+                    <LabelError>{'Overdue'}</LabelError>
                   </div>
                 </TableCell>
                 <TableCell align="center">
@@ -312,7 +312,7 @@ function Block2() {
                 </TableCell>
                 <TableCell align="center">
                   <div>
-                    <LabelWarning>{t('Pending')}</LabelWarning>
+                    <LabelWarning>{'Pending'}</LabelWarning>
                   </div>
                 </TableCell>
                 <TableCell align="center">
@@ -402,7 +402,7 @@ function Block2() {
                 </TableCell>
                 <TableCell align="center">
                   <div>
-                    <LabelSuccess>{t('Done')}</LabelSuccess>
+                    <LabelSuccess>{'Done'}</LabelSuccess>
                   </div>
                 </TableCell>
                 <TableCell align="center">

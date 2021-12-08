@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
@@ -24,7 +24,7 @@ const CardActions = styled(Box)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const data = {
@@ -56,7 +56,7 @@ function Block4() {
                 fontSize: `${theme.typography.pxToRem(16)}`
               }}
             >
-              {t('Customers')}
+              {'Customers'}
             </Typography>
             <IconButton size="small" color="primary">
               <MoreVertTwoToneIcon />
@@ -100,7 +100,7 @@ function Block4() {
               }}
             >
               <Typography variant="h1">564</Typography>
-              <Typography variant="subtitle2">{t('Last week')}</Typography>
+              <Typography variant="subtitle2">{'Last week'}</Typography>
             </Box>
           </Box>
         </Card>
@@ -125,7 +125,7 @@ function Block4() {
                 fontSize: `${theme.typography.pxToRem(16)}`
               }}
             >
-              {t('Orders')}
+              {'Orders'}
             </Typography>
             <IconButton size="small" color="primary">
               <MoreVertTwoToneIcon />
@@ -169,7 +169,7 @@ function Block4() {
               }}
             >
               <Typography variant="h1">456</Typography>
-              <Typography variant="subtitle2">{t('Last month')}</Typography>
+              <Typography variant="subtitle2">{'Last month'}</Typography>
             </Box>
           </Box>
         </Card>
@@ -225,7 +225,7 @@ function Block4() {
               }}
             >
               <Typography variant="subtitle2" noWrap>
-                {t('Project management')}
+                {'Project management'}
               </Typography>
             </Box>
           </Box>
@@ -299,7 +299,7 @@ function Block4() {
                 variant="subtitle2"
                 noWrap
               >
-                {t('Analytics statistics')}
+                {'Analytics statistics'}
               </Typography>
             </Box>
           </Box>

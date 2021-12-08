@@ -49,7 +49,7 @@ import Link from 'src/components/Link';
 import { TransitionProps } from '@mui/material/transitions';
 import CloseIcon from '@mui/icons-material/Close';
 import type { Project, ProjectStatus } from 'src/models/project';
-import { useTranslation } from 'react-i18next';
+
 import clsx from 'clsx';
 import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
 import Label from 'src/components/Label';
@@ -215,7 +215,7 @@ const applyPagination = (
 
 const Results: FC<ResultsProps> = ({ projects }) => {
   const [selectedItems, setSelectedProjects] = useState<string[]>([]);
-  const { t }: { t: any } = useTranslation();
+
   const { enqueueSnackbar } = useSnackbar();
 
   const [page, setPage] = useState<number>(0);
@@ -239,15 +239,15 @@ const Results: FC<ResultsProps> = ({ projects }) => {
     },
     {
       id: 'not_started',
-      name: t('Not started')
+      name: 'Not started'
     },
     {
       id: 'completed',
-      name: t('Completed')
+      name: 'Completed'
     },
     {
       id: 'in_progress',
-      name: t('In Progress')
+      name: 'In Progress'
     }
   ];
 
@@ -327,7 +327,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
   const handleDeleteCompleted = () => {
     setOpenConfirmDelete(false);
 
-    enqueueSnackbar(t('The projects has been deleted successfully'), {
+    enqueueSnackbar('The projects has been deleted successfully', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -360,7 +360,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                   )
                 }}
                 onChange={handleQueryChange}
-                placeholder={t('Search by project name...')}
+                placeholder={'Search by project name...'}
                 value={query}
                 fullWidth
                 variant="outlined"
@@ -382,8 +382,8 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                     {...params}
                     fullWidth
                     variant="outlined"
-                    label={t('Tags')}
-                    placeholder={t('Select tags...')}
+                    label={'Tags'}
+                    placeholder={'Select tags...'}
                   />
                 )}
               />
@@ -392,11 +392,11 @@ const Results: FC<ResultsProps> = ({ projects }) => {
           <Grid item xs={12} sm={6} md={3}>
             <Box p={1}>
               <FormControl fullWidth variant="outlined">
-                <InputLabel>{t('Status')}</InputLabel>
+                <InputLabel>{'Status'}</InputLabel>
                 <Select
                   value={filters.status || 'all'}
                   onChange={handleStatusChange}
-                  label={t('Status')}
+                  label={'Status'}
                 >
                   {statusOptions.map((statusOption) => (
                     <MenuItem key={statusOption.id} value={statusOption.id}>
@@ -448,9 +448,9 @@ const Results: FC<ResultsProps> = ({ projects }) => {
             >
               <Box>
                 <Typography component="span" variant="subtitle1">
-                  {t('Showing')}:
+                  {'Showing'}:
                 </Typography>{' '}
-                <b>{paginatedProjects.length}</b> <b>{t('projects')}</b>
+                <b>{paginatedProjects.length}</b> <b>{'projects'}</b>
               </Box>
               <TablePagination
                 component="div"
@@ -476,9 +476,9 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                 color="text.secondary"
                 align="center"
               >
-                {t(
+                {
                   "We couldn't find any projects matching your search criteria"
-                )}
+                }
               </Typography>
             </>
           ) : (
@@ -494,13 +494,13 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                           onChange={handleSelectAllProjects}
                         />
                       </TableCell>
-                      <TableCell>{t('Name')}</TableCell>
-                      <TableCell>{t('Tags')}</TableCell>
-                      <TableCell>{t('Time Left')}</TableCell>
-                      <TableCell>{t('Members')}</TableCell>
-                      <TableCell>{t('Progress')}</TableCell>
-                      <TableCell>{t('Status')}</TableCell>
-                      <TableCell align="center">{t('Actions')}</TableCell>
+                      <TableCell>{'Name'}</TableCell>
+                      <TableCell>{'Tags'}</TableCell>
+                      <TableCell>{'Time Left'}</TableCell>
+                      <TableCell>{'Members'}</TableCell>
+                      <TableCell>{'Progress'}</TableCell>
+                      <TableCell>{'Status'}</TableCell>
+                      <TableCell align="center">{'Actions'}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -543,7 +543,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                               variant="subtitle1"
                               color="text.primary"
                             >
-                              {t('Due')}
+                              {'Due'}
                               <b>
                                 {' '}
                                 {formatDistance(
@@ -556,7 +556,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                               </b>
                             </Typography>
                             <Typography noWrap color="text.secondary">
-                              {t('Started')}:{' '}
+                              {'Started'}:{' '}
                               {format(project.dueDate, 'MMMM dd yyyy')}
                             </Typography>
                           </TableCell>
@@ -614,12 +614,12 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                           </TableCell>
                           <TableCell align="center">
                             <Typography noWrap>
-                              <Tooltip title={t('View')} arrow>
+                              <Tooltip title={'View'} arrow>
                                 <IconButton color="primary">
                                   <LaunchTwoToneIcon fontSize="small" />
                                 </IconButton>
                               </Tooltip>
-                              <Tooltip title={t('Delete')} arrow>
+                              <Tooltip title={'Delete'} arrow>
                                 <IconButton
                                   onClick={handleConfirmDelete}
                                   color="primary"
@@ -669,7 +669,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                     <Tooltip
                       arrow
                       placement="top"
-                      title={t('Select all projects')}
+                      title={'Select all projects'}
                     >
                       <Checkbox
                         checked={selectedAllProjects}
@@ -708,7 +708,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
               color="text.secondary"
               align="center"
             >
-              {t("We couldn't find any projects matching your search criteria")}
+              {"We couldn't find any projects matching your search criteria"}
             </Typography>
           ) : (
             <>
@@ -739,7 +739,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                           >
                             <Box>
                               <Typography component="span">
-                                <b>{t('Tags')}:</b>{' '}
+                                <b>{'Tags'}:</b>{' '}
                               </Typography>
                               {project.tags.map((value) => {
                                 return (
@@ -790,7 +790,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                           >
                             <Box>
                               <Typography variant="subtitle2">
-                                {t('Started')}:{' '}
+                                {'Started'}:{' '}
                               </Typography>
                               <Typography variant="h5">
                                 {format(project.dueDate, 'MMMM dd yyyy')}
@@ -798,7 +798,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                             </Box>
                             <Box>
                               <Typography variant="subtitle2">
-                                {t('Due in')}:{' '}
+                                {'Due in'}:{' '}
                                 <Text color="black">
                                   {formatDistance(
                                     project.startDate,
@@ -866,9 +866,9 @@ const Results: FC<ResultsProps> = ({ projects }) => {
                                 variant="contained"
                                 color="primary"
                               >
-                                {t('Edit')}
+                                {'Edit'}
                               </Button>
-                              <Tooltip title={t('Delete')} arrow>
+                              <Tooltip title={'Delete'} arrow>
                                 <IconButtonError
                                   onClick={handleConfirmDelete}
                                   color="primary"
@@ -895,10 +895,10 @@ const Results: FC<ResultsProps> = ({ projects }) => {
               >
                 <Box>
                   <Typography component="span" variant="subtitle1">
-                    {t('Showing')}
+                    {'Showing'}
                   </Typography>{' '}
-                  <b>{limit}</b> {t('of')} <b>{filteredProjects.length}</b>{' '}
-                  <b>{t('projects')}</b>
+                  <b>{limit}</b> {'of'} <b>{filteredProjects.length}</b>{' '}
+                  <b>{'projects'}</b>
                 </Box>
                 <TablePagination
                   component="div"
@@ -932,9 +932,9 @@ const Results: FC<ResultsProps> = ({ projects }) => {
             }}
             gutterBottom
           >
-            {t(
+            {
               'Choose between table or grid views for displaying the projects list.'
-            )}
+            }
           </Typography>
         </Card>
       )}
@@ -966,7 +966,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
             }}
             variant="h3"
           >
-            {t('Do you really want to delete this project')}?
+            {'Do you really want to delete this project'}?
           </Typography>
 
           <Typography
@@ -980,7 +980,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
             color="text.secondary"
             variant="h4"
           >
-            {t("You won't be able to revert after deletion")}
+            {"You won't be able to revert after deletion"}
           </Typography>
 
           <Box>
@@ -992,7 +992,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
               }}
               onClick={closeConfirmDelete}
             >
-              {t('Cancel')}
+              {'Cancel'}
             </Button>
             <ButtonError
               onClick={handleDeleteCompleted}
@@ -1003,7 +1003,7 @@ const Results: FC<ResultsProps> = ({ projects }) => {
               }}
               variant="contained"
             >
-              {t('Delete')}
+              {'Delete'}
             </ButtonError>
           </Box>
         </Box>

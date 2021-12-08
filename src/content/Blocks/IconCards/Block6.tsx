@@ -8,14 +8,14 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -44,7 +44,7 @@ function Block6() {
               fontSize: `${theme.typography.pxToRem(21)}`
             }}
           >
-            {t('Starter templates')}
+            {'Starter templates'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -62,7 +62,7 @@ function Block6() {
             }}
           >
             <Button variant="text" endIcon={<ArrowForwardTwoToneIcon />}>
-              {t('Learn more')}
+              {'Learn more'}
             </Button>
           </Box>
         </Card>
@@ -91,7 +91,7 @@ function Block6() {
               fontSize: `${theme.typography.pxToRem(21)}`
             }}
           >
-            {t('Simple to use')}
+            {'Simple to use'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -109,7 +109,7 @@ function Block6() {
             }}
           >
             <Button variant="text" endIcon={<ArrowForwardTwoToneIcon />}>
-              {t('Learn more')}
+              {'Learn more'}
             </Button>
           </Box>
         </Card>
@@ -138,7 +138,7 @@ function Block6() {
               fontSize: `${theme.typography.pxToRem(21)}`
             }}
           >
-            {t('Lightweight')}
+            {'Lightweight'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -156,7 +156,7 @@ function Block6() {
             }}
           >
             <Button variant="text" endIcon={<ArrowForwardTwoToneIcon />}>
-              {t('Learn more')}
+              {'Learn more'}
             </Button>
           </Box>
         </Card>

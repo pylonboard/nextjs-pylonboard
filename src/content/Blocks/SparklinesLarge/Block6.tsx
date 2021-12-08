@@ -12,7 +12,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
@@ -79,7 +79,7 @@ const LinearProgress3 = styled(LinearProgress)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -169,7 +169,7 @@ function Block6() {
               color: `${theme.colors.alpha.trueWhite[100]}`
             }}
           >
-            {t('Event Tickets')}
+            {'Event Tickets'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -177,7 +177,7 @@ function Block6() {
               color: `${theme.colors.alpha.trueWhite[70]}`
             }}
           >
-            {t('See tickets sales progression')}
+            {'See tickets sales progression'}
           </Typography>
         </Box>
         <IconButtonWrapper size="small" color="primary">
@@ -241,7 +241,7 @@ function Block6() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('Sales')}
+              {'Sales'}
             </Typography>
           </Box>
           <Box p={3} flexGrow={1}>
@@ -267,7 +267,7 @@ function Block6() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('Profiles')}
+              {'Profiles'}
             </Typography>
           </Box>
           <Box p={3} flexGrow={1}>
@@ -293,7 +293,7 @@ function Block6() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('Tickets')}
+              {'Tickets'}
             </Typography>
           </Box>
         </Stack>

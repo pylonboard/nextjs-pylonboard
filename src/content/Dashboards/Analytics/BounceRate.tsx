@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import SportsBasketballTwoToneIcon from '@mui/icons-material/SportsBasketballTwoTone';
 
 const AvatarPrimary = styled(Avatar)(
@@ -35,13 +35,13 @@ const CardContentWrapper = styled(CardContent)(
 );
 
 function ActiveReferrals() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
       <CardContentWrapper>
         <Typography variant="overline" color="text.primary">
-          {t('Bounce Rate')}
+          {'Bounce Rate'}
         </Typography>
 
         <ListItem
@@ -80,7 +80,7 @@ function ActiveReferrals() {
             primary={
               <>
                 <Link fontWeight="bold" href="#">
-                  {t('See all links')}
+                  {'See all links'}
                 </Link>
                 <Box
                   component="span"
@@ -88,7 +88,7 @@ function ActiveReferrals() {
                     pl: 0.5
                   }}
                 >
-                  {t('with high bounce rate.')}
+                  {'with high bounce rate.'}
                 </Box>
               </>
             }

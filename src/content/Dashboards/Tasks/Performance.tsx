@@ -8,7 +8,7 @@ import {
   LinearProgress,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import AssignmentTurnedInTwoToneIcon from '@mui/icons-material/AssignmentTurnedInTwoTone';
 import CancelPresentationTwoToneIcon from '@mui/icons-material/CancelPresentationTwoTone';
 
@@ -61,7 +61,7 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function Performance() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -80,7 +80,7 @@ function Performance() {
           color: `${theme.colors.alpha.trueWhite[100]}`
         }}
       >
-        {t('Performance')}
+        {'Performance'}
       </Typography>
       <CardContent>
         <Box
@@ -102,7 +102,7 @@ function Performance() {
           <Box>
             <Typography variant="h1">23</Typography>
             <TypographySecondary variant="subtitle2" noWrap>
-              {t('tasks created')}
+              {'tasks created'}
             </TypographySecondary>
           </Box>
         </Box>
@@ -125,7 +125,7 @@ function Performance() {
           <Box>
             <Typography variant="h1">5</Typography>
             <TypographySecondary variant="subtitle2" noWrap>
-              {t('tasks closed')}
+              {'tasks closed'}
             </TypographySecondary>
           </Box>
         </Box>

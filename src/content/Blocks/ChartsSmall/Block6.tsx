@@ -13,7 +13,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 
@@ -49,7 +49,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -86,10 +86,10 @@ function Block6() {
                 fontSize: `${theme.typography.pxToRem(17)}`
               }}
             >
-              {t('Development')}
+              {'Development'}
             </Typography>
             <Typography noWrap variant="subtitle2">
-              {t('Build React Interface')}
+              {'Build React Interface'}
             </Typography>
             <AvatarGroup
               sx={{
@@ -164,7 +164,7 @@ function Block6() {
                 variant="outlined"
                 color="secondary"
               >
-                {t('Company profile')}
+                {'Company profile'}
               </Button>
             </Box>
           </Box>
@@ -202,10 +202,10 @@ function Block6() {
                 fontSize: `${theme.typography.pxToRem(17)}`
               }}
             >
-              {t('Bugfixes')}
+              {'Bugfixes'}
             </Typography>
             <Typography noWrap variant="subtitle2">
-              {t('Resolve Github Issues')}
+              {'Resolve Github Issues'}
             </Typography>
             <AvatarGroup
               sx={{
@@ -268,7 +268,7 @@ function Block6() {
                 variant="outlined"
                 color="secondary"
               >
-                {t('Company profile')}
+                {'Company profile'}
               </Button>
             </Box>
           </Box>
@@ -306,10 +306,10 @@ function Block6() {
                 fontSize: `${theme.typography.pxToRem(17)}`
               }}
             >
-              {t('Marketing')}
+              {'Marketing'}
             </Typography>
             <Typography noWrap variant="subtitle2">
-              {t('Create UI Designs')}
+              {'Create UI Designs'}
             </Typography>
             <AvatarGroup
               sx={{
@@ -384,7 +384,7 @@ function Block6() {
                 variant="outlined"
                 color="secondary"
               >
-                {t('Company profile')}
+                {'Company profile'}
               </Button>
             </Box>
           </Box>

@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import LocalConvenienceStoreTwoToneIcon from '@mui/icons-material/LocalConvenienceStoreTwoTone';
 
 const AvatarWarning = styled(Avatar)(
@@ -35,13 +35,13 @@ const CardContentWrapper = styled(CardContent)(
 );
 
 function ConversionsAlt() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <Card>
       <CardContentWrapper>
         <Typography variant="overline" color="text.primary">
-          {t('Conversion')}
+          {'Conversion'}
         </Typography>
 
         <ListItem
@@ -80,7 +80,7 @@ function ConversionsAlt() {
             primary={
               <>
                 <Link fontWeight="bold" href="#">
-                  {t('See products')}
+                  {'See products'}
                 </Link>
                 <Box
                   component="span"
@@ -88,7 +88,7 @@ function ConversionsAlt() {
                     pl: 0.5
                   }}
                 >
-                  {t('with the best conversion rates.')}
+                  {'with the best conversion rates.'}
                 </Box>
               </>
             }

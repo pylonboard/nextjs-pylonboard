@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 
 const MenuListWrapperRounded = styled(MenuList)(
@@ -120,7 +120,7 @@ const LabelWrapper = styled(Box)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -162,9 +162,9 @@ function Block5() {
                   variant="subtitle2"
                   textAlign="center"
                 >
-                  {t(
+                  {
                     'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                  )}
+                  }
                   .
                 </Typography>
               </Box>
@@ -180,7 +180,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Analytics')}
+                    primary={'Analytics'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -194,7 +194,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Server Status')}
+                    primary={'Server Status'}
                   />
                   <Box display="flex" alignItems="center">
                     <LabelWrapper
@@ -206,7 +206,7 @@ function Block5() {
                         )}`
                       }}
                     >
-                      {t('Hot')}
+                      {'Hot'}
                     </LabelWrapper>
                     <ChevronRightTwoToneIcon
                       sx={{
@@ -222,7 +222,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Reports Management')}
+                    primary={'Reports Management'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -236,7 +236,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Real Estate')}
+                    primary={'Real Estate'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -287,9 +287,9 @@ function Block5() {
                   variant="subtitle2"
                   textAlign="center"
                 >
-                  {t(
+                  {
                     'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                  )}
+                  }
                   .
                 </Typography>
               </Box>
@@ -305,7 +305,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Analytics')}
+                    primary={'Analytics'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -319,7 +319,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Server Status')}
+                    primary={'Server Status'}
                   />
                   <Box display="flex" alignItems="center">
                     <LabelWrapper
@@ -332,7 +332,7 @@ function Block5() {
                         )}`
                       }}
                     >
-                      {t('New')}
+                      {'New'}
                     </LabelWrapper>
                     <ChevronRightTwoToneIcon
                       sx={{
@@ -348,7 +348,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Reports Management')}
+                    primary={'Reports Management'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -362,7 +362,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Real Estate')}
+                    primary={'Real Estate'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -413,9 +413,9 @@ function Block5() {
                   variant="subtitle2"
                   textAlign="center"
                 >
-                  {t(
+                  {
                     'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                  )}
+                  }
                   .
                 </Typography>
               </Box>
@@ -431,7 +431,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Analytics')}
+                    primary={'Analytics'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -445,7 +445,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Server Status')}
+                    primary={'Server Status'}
                   />
                   <Box display="flex" alignItems="center">
                     <LabelWrapper
@@ -473,7 +473,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Reports Management')}
+                    primary={'Reports Management'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -487,7 +487,7 @@ function Block5() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Real Estate')}
+                    primary={'Real Estate'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{

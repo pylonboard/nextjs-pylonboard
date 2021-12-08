@@ -8,7 +8,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MusicNoteTwoToneIcon from '@mui/icons-material/MusicNoteTwoTone';
 import DirectionsWalkTwoToneIcon from '@mui/icons-material/DirectionsWalkTwoTone';
 import NightlightTwoToneIcon from '@mui/icons-material/NightlightTwoTone';
@@ -65,7 +65,7 @@ const IconWrapper = styled(IconButton)(
 );
 
 function Scenes() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <>
@@ -75,8 +75,8 @@ function Scenes() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography variant="h3">{t('Scenes')}</Typography>
-        <Tooltip placement="top" title={t('Add new scene')} arrow>
+        <Typography variant="h3">{'Scenes'}</Typography>
+        <Tooltip placement="top" title={'Add new scene'} arrow>
           <IconButton size="large" color="primary">
             <AddTwoToneIcon />
           </IconButton>
@@ -103,7 +103,7 @@ function Scenes() {
               lineHeight="1.3"
               color="text.secondary"
             >
-              {t('Start music')}
+              {'Start music'}
             </Typography>
           </Box>
           <Box
@@ -121,7 +121,7 @@ function Scenes() {
               lineHeight="1.3"
               color="text.secondary"
             >
-              {t('Going to sleep')}
+              {'Going to sleep'}
             </Typography>
           </Box>
           <Box
@@ -139,7 +139,7 @@ function Scenes() {
               lineHeight="1.3"
               color="text.secondary"
             >
-              {t('Arriving home')}
+              {'Arriving home'}
             </Typography>
           </Box>
         </Stack>

@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import PersonSearchTwoToneIcon from '@mui/icons-material/PersonSearchTwoTone';
@@ -22,7 +22,7 @@ import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import HourglassTopTwoToneIcon from '@mui/icons-material/HourglassTopTwoTone';
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -97,7 +97,7 @@ function Block4() {
                   color: `${theme.colors.success.main}`
                 }}
               >
-                {t('Profile Verified')}
+                {'Profile Verified'}
               </Typography>
             </Box>
           </Box>
@@ -107,7 +107,7 @@ function Block4() {
             }}
           />
           <Box display="flex" justifyContent="center" py={2}>
-            <Tooltip arrow placement="top" title={t('View details')}>
+            <Tooltip arrow placement="top" title={'View details'}>
               <IconButton color="primary">
                 <VisibilityTwoToneIcon
                   sx={{
@@ -116,7 +116,7 @@ function Block4() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 sx={{
                   mx: 1
@@ -130,7 +130,7 @@ function Block4() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('View user profile')}>
+            <Tooltip arrow placement="top" title={'View user profile'}>
               <IconButton color="primary">
                 <PersonSearchTwoToneIcon
                   sx={{
@@ -153,19 +153,19 @@ function Block4() {
           >
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Projects')}
+                {'Projects'}
               </Typography>
               <Typography variant="h4">381</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Reviews')}
+                {'Reviews'}
               </Typography>
               <Typography variant="h4">198</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Revenue')}
+                {'Revenue'}
               </Typography>
               <Typography variant="h4">$685</Typography>
             </Box>
@@ -237,7 +237,7 @@ function Block4() {
                   color: `${theme.colors.warning.main}`
                 }}
               >
-                {t('Review pending')}
+                {'Review pending'}
               </Typography>
             </Box>
           </Box>
@@ -247,7 +247,7 @@ function Block4() {
             }}
           />
           <Box display="flex" justifyContent="center" py={2}>
-            <Tooltip arrow placement="top" title={t('View details')}>
+            <Tooltip arrow placement="top" title={'View details'}>
               <IconButton color="success">
                 <VisibilityTwoToneIcon
                   sx={{
@@ -256,7 +256,7 @@ function Block4() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 sx={{
                   mx: 1
@@ -270,7 +270,7 @@ function Block4() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('View user profile')}>
+            <Tooltip arrow placement="top" title={'View user profile'}>
               <IconButton color="success">
                 <PersonSearchTwoToneIcon
                   sx={{
@@ -293,19 +293,19 @@ function Block4() {
           >
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Projects')}
+                {'Projects'}
               </Typography>
               <Typography variant="h4">34</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Reviews')}
+                {'Reviews'}
               </Typography>
               <Typography variant="h4">21</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Revenue')}
+                {'Revenue'}
               </Typography>
               <Typography variant="h4">$283</Typography>
             </Box>
@@ -377,7 +377,7 @@ function Block4() {
                   color: `${theme.colors.error.main}`
                 }}
               >
-                {t('Rejected')}
+                {'Rejected'}
               </Typography>
             </Box>
           </Box>
@@ -429,19 +429,19 @@ function Block4() {
           >
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Projects')}
+                {'Projects'}
               </Typography>
               <Typography variant="h4">1</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Reviews')}
+                {'Reviews'}
               </Typography>
               <Typography variant="h4">0</Typography>
             </Box>
             <Box>
               <Typography gutterBottom variant="subtitle2">
-                {t('Revenue')}
+                {'Revenue'}
               </Typography>
               <Typography variant="h4">$87</Typography>
             </Box>

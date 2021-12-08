@@ -9,7 +9,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import Label from 'src/components/Label';
 import TrendingUp from '@mui/icons-material/TrendingUp';
@@ -30,7 +30,7 @@ const ArrowTrendingDownWrapper = styled(TrendingDown)(
 );
 
 function Traffic() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -141,10 +141,10 @@ function Traffic() {
             size="small"
             endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
           >
-            {t('More')}
+            {'More'}
           </Button>
         }
-        title={t('Traffic')}
+        title={'Traffic'}
       />
       <Divider />
       <Grid spacing={0} container>
@@ -165,7 +165,7 @@ function Traffic() {
                 }}
                 component="div"
               >
-                {t('Total Store Visits')}
+                {'Total Store Visits'}
               </Typography>
               <Typography variant="h1" gutterBottom>
                 57.483
@@ -201,7 +201,7 @@ function Traffic() {
                 noWrap
                 component="div"
               >
-                {t('Average Daily Visitors')}
+                {'Average Daily Visitors'}
               </Typography>
               <Typography variant="h1" gutterBottom>
                 7.492

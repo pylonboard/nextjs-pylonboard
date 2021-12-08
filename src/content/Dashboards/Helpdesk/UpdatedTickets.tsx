@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import UpdateTwoToneIcon from '@mui/icons-material/UpdateTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -63,7 +63,7 @@ const BottomWrapper = styled(Box)(
 );
 
 function UpdatedTickets() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -195,14 +195,14 @@ function UpdatedTickets() {
               lineHeight: 1.4
             }}
           >
-            {t('Updated Tickets')}
+            {'Updated Tickets'}
           </Typography>
           <IconWrapper>
             <UpdateTwoToneIcon />
           </IconWrapper>
         </Box>
         <Button variant="contained" size="small">
-          {t('View tickets')}
+          {'View tickets'}
         </Button>
       </CardContent>
       <BottomWrapper
@@ -216,7 +216,7 @@ function UpdatedTickets() {
         <TypographyWrapper variant="h1">51</TypographyWrapper>
         <Box>
           <Typography align="right" variant="subtitle1" noWrap>
-            {t('Previous Period')}
+            {'Previous Period'}
           </Typography>
           <Typography align="right" variant="h3">
             39

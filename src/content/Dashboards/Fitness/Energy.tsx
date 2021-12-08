@@ -6,7 +6,7 @@ import {
   LinearProgress,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import BatteryCharging20TwoToneIcon from '@mui/icons-material/BatteryCharging20TwoTone';
 
 const AvatarWrapperInfo = styled(Avatar)(
@@ -21,7 +21,7 @@ const AvatarWrapperInfo = styled(Avatar)(
 );
 
 function Energy() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -38,7 +38,7 @@ function Energy() {
           pb: 1
         }}
       >
-        {t('Energy')}
+        {'Energy'}
       </Typography>
       <Typography
         color="text.primary"

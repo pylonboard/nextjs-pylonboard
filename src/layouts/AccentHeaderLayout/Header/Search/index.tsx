@@ -29,7 +29,7 @@ import Link from 'src/components/Link';
 
 import { TransitionProps } from '@mui/material/transitions';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import ContactSupportTwoToneIcon from '@mui/icons-material/ContactSupportTwoTone';
 import Scrollbar from 'src/components/Scrollbar';
 import RestoreTwoToneIcon from '@mui/icons-material/RestoreTwoTone';
@@ -163,7 +163,7 @@ const searchTerms = {
 };
 
 function HeaderSearch() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [searchValue, setSearchValue] = useState<string>('');
@@ -218,7 +218,7 @@ function HeaderSearch() {
           </>
         }
       >
-        {t('Search...')}
+        {'Search...'}
       </SearchInputWrapperButton>
 
       <DialogWrapper
@@ -244,7 +244,7 @@ function HeaderSearch() {
                   value={searchValue}
                   onChange={handleSearchChange}
                   autoFocus
-                  placeholder={t('Search terms here...')}
+                  placeholder={'Search terms here...'}
                   fullWidth
                 />
               </Box>
@@ -293,7 +293,7 @@ function HeaderSearch() {
                     fontSize: theme.typography.pxToRem(18)
                   }}
                 />
-                {t('Start typing to see the search results...')}
+                {'Start typing to see the search results...'}
               </Typography>
             )}
           </>
@@ -361,7 +361,7 @@ function HeaderSearch() {
                       }}
                       variant="h5"
                     >
-                      {t('Recent searches')}
+                      {'Recent searches'}
                     </Typography>
                     <ListButton>
                       <Box display="flex" alignItems="center">
@@ -377,7 +377,7 @@ function HeaderSearch() {
                         <Tooltip
                           placement="top"
                           arrow
-                          title={t('Save this search')}
+                          title={'Save this search'}
                         >
                           <IconButton size="small" color="primary">
                             <StarTwoToneIcon fontSize="small" />
@@ -386,7 +386,7 @@ function HeaderSearch() {
                         <Tooltip
                           placement="top"
                           arrow
-                          title={t('Remove this search from history')}
+                          title={'Remove this search from history'}
                         >
                           <IconButton size="small" color="error">
                             <CloseTwoToneIcon fontSize="small" />
@@ -408,7 +408,7 @@ function HeaderSearch() {
                         <Tooltip
                           placement="top"
                           arrow
-                          title={t('Save this search')}
+                          title={'Save this search'}
                         >
                           <IconButton size="small" color="primary">
                             <StarTwoToneIcon fontSize="small" />
@@ -417,7 +417,7 @@ function HeaderSearch() {
                         <Tooltip
                           placement="top"
                           arrow
-                          title={t('Remove this search from history')}
+                          title={'Remove this search from history'}
                         >
                           <IconButton size="small" color="error">
                             <CloseTwoToneIcon fontSize="small" />
@@ -432,7 +432,7 @@ function HeaderSearch() {
                       }}
                       variant="h5"
                     >
-                      {t('Saved searches')}
+                      {'Saved searches'}
                     </Typography>
                     <ListButton>
                       <Box display="flex" alignItems="center">
@@ -448,7 +448,7 @@ function HeaderSearch() {
                         <Tooltip
                           placement="top"
                           arrow
-                          title={t('Remove this search from favourites')}
+                          title={'Remove this search from favourites'}
                         >
                           <IconButton size="small" color="error">
                             <CloseTwoToneIcon fontSize="small" />
@@ -462,7 +462,7 @@ function HeaderSearch() {
                       }}
                     />
                     <Typography variant="h5">
-                      {t('Popular searches')}
+                      {'Popular searches'}
                     </Typography>
                     <Box p={4}>
                       <Grid container spacing={3}>
@@ -480,7 +480,7 @@ function HeaderSearch() {
                                 mr: 1
                               }}
                             />
-                            <b>{t('Dashboards')}</b>
+                            <b>{'Dashboards'}</b>
                           </Box>
                           <List disablePadding>
                             <ListItem
@@ -491,7 +491,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Tasks for today')}
+                                {'Tasks for today'}
                               </Link>
                             </ListItem>
                             <ListItem
@@ -502,7 +502,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Statistics dashboard')}
+                                {'Statistics dashboard'}
                               </Link>
                             </ListItem>
                             <ListItem
@@ -513,7 +513,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Monitoring admin')}
+                                {'Monitoring admin'}
                               </Link>
                             </ListItem>
                             <ListItem
@@ -524,7 +524,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Banking interface')}
+                                {'Banking interface'}
                               </Link>
                             </ListItem>
                           </List>
@@ -543,7 +543,7 @@ function HeaderSearch() {
                                 mr: 1
                               }}
                             />
-                            <b>{t('Management')}</b>
+                            <b>{'Management'}</b>
                           </Box>
                           <List disablePadding>
                             <ListItem
@@ -554,7 +554,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Calendar')}
+                                {'Calendar'}
                               </Link>
                             </ListItem>
                             <ListItem
@@ -565,7 +565,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('File manager')}
+                                {'File manager'}
                               </Link>
                             </ListItem>
                             <ListItem
@@ -576,7 +576,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Products list')}
+                                {'Products list'}
                               </Link>
                             </ListItem>
                             <ListItem
@@ -587,7 +587,7 @@ function HeaderSearch() {
                               disableGutters
                             >
                               <Link href="#" color="primary" fontSize={13}>
-                                {t('Recent orders')}
+                                {'Recent orders'}
                               </Link>
                             </ListItem>
                           </List>

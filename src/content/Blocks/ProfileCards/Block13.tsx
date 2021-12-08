@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import PersonSearchTwoToneIcon from '@mui/icons-material/PersonSearchTwoTone';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
@@ -37,7 +37,7 @@ const CardActions = styled(Box)(
 );
 
 function Block13() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -107,7 +107,7 @@ function Block13() {
             color: `${theme.palette.getContrastText(theme.colors.warning.dark)}`
           }}
         >
-          {t('Pending')}
+          {'Pending'}
         </LabelWrapper>
       </Box>
       <Typography
@@ -118,13 +118,13 @@ function Block13() {
           color: `${theme.colors.alpha.trueWhite[70]}`
         }}
       >
-        {t(
+        {
           'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-        )}
+        }
         .
       </Typography>
       <Box display="flex" justifyContent="center">
-        <Tooltip arrow placement="top" title={t('View details')}>
+        <Tooltip arrow placement="top" title={'View details'}>
           <IconButton
             sx={{
               width: 60,
@@ -147,7 +147,7 @@ function Block13() {
             />
           </IconButton>
         </Tooltip>
-        <Tooltip arrow placement="top" title={t('Add to favourites')}>
+        <Tooltip arrow placement="top" title={'Add to favourites'}>
           <IconButton
             size="large"
             sx={{
@@ -171,7 +171,7 @@ function Block13() {
             />
           </IconButton>
         </Tooltip>
-        <Tooltip arrow placement="top" title={t('View user profile')}>
+        <Tooltip arrow placement="top" title={'View user profile'}>
           <IconButton
             sx={{
               width: 60,

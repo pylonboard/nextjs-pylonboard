@@ -8,7 +8,7 @@ import {
   styled
 } from '@mui/material';
 import { useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+
 
 import Link from 'src/components/Link';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
@@ -65,7 +65,7 @@ const ListWrapper = styled(Box)(
 );
 
 function HeaderMenu() {
-  const { t }: { t: any } = useTranslation();
+
 
   const ref = useRef<any>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -85,13 +85,13 @@ function HeaderMenu() {
           <ListItem classes={{ root: 'MuiListItem-indicators' }} button>
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
-              primary={t('Users')}
+              primary={'Users'}
             />
           </ListItem>
           <ListItem classes={{ root: 'MuiListItem-indicators' }} button>
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
-              primary={t('Banking')}
+              primary={'Banking'}
             />
           </ListItem>
           <ListItem
@@ -104,7 +104,7 @@ function HeaderMenu() {
               primaryTypographyProps={{ noWrap: true }}
               primary={
                 <Box display="flex" alignItems="center">
-                  {t('Help')}
+                  {'Help'}
                   <Box display="flex" alignItems="center" pl={0.3}>
                     <ExpandMoreTwoToneIcon fontSize="small" />
                   </Box>
@@ -121,13 +121,13 @@ function HeaderMenu() {
         open={isOpen}
       >
         <MenuItem component={Link} href="/">
-          {t('Features tour')}
+          {'Features tour'}
         </MenuItem>
         <MenuItem component={Link} href="/docs">
-          {t('Getting started guide')}
+          {'Getting started guide'}
         </MenuItem>
         <MenuItem component={Link} href="/docs/contact-support">
-          {t('Contact support')}
+          {'Contact support'}
         </MenuItem>
       </Menu>
     </>

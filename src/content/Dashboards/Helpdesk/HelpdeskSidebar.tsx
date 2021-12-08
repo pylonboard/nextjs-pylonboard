@@ -7,7 +7,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -86,7 +86,7 @@ const AvatarHappy = styled(Avatar)(
 );
 
 function HelpdeskSidebar() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -126,7 +126,7 @@ function HelpdeskSidebar() {
     fill: {
       opacity: 1
     },
-    labels: [t('Bad'), t('Ok'), t('Great')],
+    labels: ['Bad', 'Ok', 'Great'],
     legend: {
       labels: {
         colors: theme.colors.alpha.trueWhite[100]
@@ -146,10 +146,10 @@ function HelpdeskSidebar() {
   return (
     <Box p={{ xs: 2, md: 4 }}>
       <Typography variant="h4" gutterBottom>
-        {t('Customer Satisfaction')}
+        {'Customer Satisfaction'}
       </Typography>
       <Typography variant="subtitle2">
-        {t('See how satisfied are customers with this helpdesk')}
+        {'See how satisfied are customers with this helpdesk'}
       </Typography>
 
       <BoxChartWrapperText
@@ -160,7 +160,7 @@ function HelpdeskSidebar() {
       >
         <div className="ChartText">
           <span>89%</span>
-          <Typography variant="subtitle1">{t('very satisfied')}</Typography>
+          <Typography variant="subtitle1">{'very satisfied'}</Typography>
         </div>
         <Chart
           height={'100%'}
@@ -181,10 +181,10 @@ function HelpdeskSidebar() {
         <AvatarUnhappy variant="rounded">🙁</AvatarUnhappy>
         <Box>
           <Typography variant="h5">
-            <Text color="error">{t('Bad, bad, bad')}</Text>
+            <Text color="error">{'Bad, bad, bad'}</Text>
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            <b>5</b> {t('customers are unhappy')}
+            <b>5</b> {'customers are unhappy'}
           </Typography>
         </Box>
       </Box>
@@ -198,10 +198,10 @@ function HelpdeskSidebar() {
         <AvatarOk variant="rounded">😐</AvatarOk>
         <Box>
           <Typography variant="h5">
-            <Text color="warning">{t("Meh, it's ok!")}</Text>
+            <Text color="warning">{"Meh, it's ok!"}</Text>
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            <b>232</b> {t('customers could use some improvements')}
+            <b>232</b> {'customers could use some improvements'}
           </Typography>
         </Box>
       </Box>
@@ -215,7 +215,7 @@ function HelpdeskSidebar() {
         <AvatarHappy variant="rounded">😀</AvatarHappy>
         <Box>
           <Typography variant="h5">
-            <Text color="success">{t('Everything is super!')}</Text>
+            <Text color="success">{'Everything is super!'}</Text>
           </Typography>
         </Box>
       </Box>
@@ -227,13 +227,13 @@ function HelpdeskSidebar() {
       />
 
       <Typography variant="h4" gutterBottom>
-        {t('Tickets by Channel')}
+        {'Tickets by Channel'}
       </Typography>
 
       <Box py={2}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography variant="h5">
-            {t('Website')}{' '}
+            {'Website'}{' '}
             <Typography
               variant="subtitle1"
               color="text.secondary"
@@ -253,7 +253,7 @@ function HelpdeskSidebar() {
       <Box py={2}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography variant="h5">
-            {t('Email')}{' '}
+            {'Email'}{' '}
             <Typography
               variant="subtitle1"
               color="text.secondary"
@@ -273,7 +273,7 @@ function HelpdeskSidebar() {
       <Box pt={2}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography variant="h5">
-            {t('Social Accounts')}{' '}
+            {'Social Accounts'}{' '}
             <Typography
               variant="subtitle1"
               color="text.secondary"
@@ -298,13 +298,13 @@ function HelpdeskSidebar() {
       />
 
       <Typography variant="h4" gutterBottom>
-        {t('Tickets by Topics')}
+        {'Tickets by Topics'}
       </Typography>
 
       <Box py={2}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography variant="h5">
-            {t('Shipment')}{' '}
+            {'Shipment'}{' '}
             <Typography
               variant="subtitle1"
               color="text.secondary"
@@ -324,7 +324,7 @@ function HelpdeskSidebar() {
       <Box py={2}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography variant="h5">
-            {t('Troubleshooting')}{' '}
+            {'Troubleshooting'}{' '}
             <Typography
               variant="subtitle1"
               color="text.secondary"
@@ -344,7 +344,7 @@ function HelpdeskSidebar() {
       <Box pt={2}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography variant="h5">
-            {t('eCommerce Issues')}{' '}
+            {'eCommerce Issues'}{' '}
             <Typography
               variant="subtitle1"
               color="text.secondary"

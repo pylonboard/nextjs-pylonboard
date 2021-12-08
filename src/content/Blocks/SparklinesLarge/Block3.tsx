@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -18,7 +18,7 @@ import type { ApexOptions } from 'apexcharts';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -113,7 +113,7 @@ function Block3() {
             >
               $9,658
             </Typography>
-            <Typography variant="subtitle2">{t('revenue')}</Typography>
+            <Typography variant="subtitle2">{'revenue'}</Typography>
           </Box>
           <Box
             sx={{
@@ -131,7 +131,7 @@ function Block3() {
             >
               1,064
             </Typography>
-            <Typography variant="subtitle2">{t('orders')}</Typography>
+            <Typography variant="subtitle2">{'orders'}</Typography>
           </Box>
         </Stack>
       </Box>
@@ -162,7 +162,7 @@ function Block3() {
           }}
           variant="subtitle2"
         >
-          {t('new sales today')}
+          {'new sales today'}
         </Typography>
       </Box>
       <Divider />
@@ -192,7 +192,7 @@ function Block3() {
           variant="contained"
           startIcon={<PieChartTwoToneIcon />}
         >
-          {t('Download report')}
+          {'Download report'}
         </Button>
       </Box>
     </Card>

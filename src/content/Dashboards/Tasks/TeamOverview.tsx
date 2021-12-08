@@ -9,7 +9,7 @@ import {
   LinearProgress,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { formatDistance, subDays, subMinutes, subHours } from 'date-fns';
 import Text from 'src/components/Text';
 
@@ -47,7 +47,7 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function TeamOverview() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -66,7 +66,7 @@ function TeamOverview() {
                   arrow
                   placement="top"
                   title={
-                    t('Offline since') +
+                    'Offline since' +
                     ' ' +
                     formatDistance(subDays(new Date(), 14), new Date(), {
                       addSuffix: true
@@ -93,14 +93,14 @@ function TeamOverview() {
                 Hanna Siphron
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Web Dev Support Team')}
+                {'Web Dev Support Team'}
               </Typography>
             </Box>
           </Box>
 
           <Typography variant="subtitle2" gutterBottom>
-            <Text color="black">4</Text> {t('out of')}{' '}
-            <Text color="black">6</Text> {t('tasks completed')}
+            <Text color="black">4</Text> {'out of'}{' '}
+            <Text color="black">6</Text> {'tasks completed'}
           </Typography>
           <LinearProgressWrapper
             value={65}
@@ -123,7 +123,7 @@ function TeamOverview() {
                   arrow
                   placement="top"
                   title={
-                    t('Online since') +
+                    'Online since' +
                     ' ' +
                     formatDistance(subMinutes(new Date(), 6), new Date(), {
                       addSuffix: true
@@ -150,13 +150,13 @@ function TeamOverview() {
                 Ann Saris
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Senior Book Keeper')}
+                {'Senior Book Keeper'}
               </Typography>
             </Box>
           </Box>
           <Typography variant="subtitle2" gutterBottom>
-            <Text color="black">2</Text> {t('out of')}{' '}
-            <Text color="black">8</Text> {t('tasks completed')}
+            <Text color="black">2</Text> {'out of'}{' '}
+            <Text color="black">8</Text> {'tasks completed'}
           </Typography>
           <LinearProgressWrapper
             value={25}
@@ -179,7 +179,7 @@ function TeamOverview() {
                   arrow
                   placement="top"
                   title={
-                    t('Offline since') +
+                    'Offline since' +
                     ' ' +
                     formatDistance(subHours(new Date(), 7), new Date(), {
                       addSuffix: true
@@ -206,14 +206,14 @@ function TeamOverview() {
                 James Stanton
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Phone Pre-Sales Assistant')}
+                {'Phone Pre-Sales Assistant'}
               </Typography>
             </Box>
           </Box>
 
           <Typography variant="subtitle2" gutterBottom>
-            <Text color="black">10</Text> {t('out of')}{' '}
-            <Text color="black">20</Text> {t('tasks completed')}
+            <Text color="black">10</Text> {'out of'}{' '}
+            <Text color="black">20</Text> {'tasks completed'}
           </Typography>
           <LinearProgressWrapper
             value={50}

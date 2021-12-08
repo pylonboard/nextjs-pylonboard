@@ -16,7 +16,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AccountBalanceWalletTwoToneIcon from '@mui/icons-material/AccountBalanceWalletTwoTone';
 import { formatDistance, subMinutes } from 'date-fns';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
@@ -84,7 +84,7 @@ const ButtonWrapper = styled(Button)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -118,7 +118,7 @@ function Block4() {
               arrow
               placement="top"
               title={
-                t('Online since') +
+                'Online since' +
                 ' ' +
                 formatDistance(subMinutes(new Date(), 65), new Date(), {
                   addSuffix: true
@@ -174,7 +174,7 @@ function Block4() {
             size="small"
             variant="contained"
           >
-            {t('Chat')}
+            {'Chat'}
           </ButtonWrapper>
           <ButtonWrapper
             size="small"
@@ -192,7 +192,7 @@ function Block4() {
               }
             }}
           >
-            {t('View')}
+            {'View'}
           </ButtonWrapper>
         </Box>
       </Box>
@@ -234,7 +234,7 @@ function Block4() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Sales')}
+                {'Sales'}
               </Typography>
             }
             secondary={
@@ -243,7 +243,7 @@ function Block4() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                15.4% {t('increase')}
+                15.4% {'increase'}
               </Typography>
             }
           />
@@ -286,7 +286,7 @@ function Block4() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Income')}
+                {'Income'}
               </Typography>
             }
             secondary={
@@ -295,7 +295,7 @@ function Block4() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                -4.75% {t('decrease')}
+                -4.75% {'decrease'}
               </Typography>
             }
           />
@@ -338,7 +338,7 @@ function Block4() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Expenses')}
+                {'Expenses'}
               </Typography>
             }
             secondary={
@@ -347,7 +347,7 @@ function Block4() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                62.5% {t('down')}
+                62.5% {'down'}
               </Typography>
             }
           />

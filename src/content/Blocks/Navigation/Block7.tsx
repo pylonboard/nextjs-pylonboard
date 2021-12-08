@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -68,7 +68,7 @@ const CardWrapper = styled(Box)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -79,7 +79,7 @@ function Block7() {
       }}
     >
       <CardActions>
-        <Tooltip arrow placement="top" title={t('Get in touch via email')}>
+        <Tooltip arrow placement="top" title={'Get in touch via email'}>
           <IconButton
             color="primary"
             sx={{
@@ -114,7 +114,7 @@ function Block7() {
             color: `${theme.colors.success.main}`
           }}
         >
-          {t('Online')}
+          {'Online'}
         </LabelWrapper>
         <Typography
           gutterBottom
@@ -169,10 +169,10 @@ function Block7() {
                   />
                 </Text>
                 <Typography gutterBottom variant="h4">
-                  {t('Helpdesk')}
+                  {'Helpdesk'}
                 </Typography>
                 <Typography variant="subtitle2" noWrap>
-                  {t('Tickets overview')}
+                  {'Tickets overview'}
                 </Typography>
               </CardActionAreaWrapper>
             </Card>
@@ -192,10 +192,10 @@ function Block7() {
                   />
                 </Text>
                 <Typography gutterBottom variant="h4">
-                  {t('Dashboard')}
+                  {'Dashboard'}
                 </Typography>
                 <Typography variant="subtitle2" noWrap>
-                  {t('Daily operations')}
+                  {'Daily operations'}
                 </Typography>
               </CardActionAreaWrapper>
             </Card>

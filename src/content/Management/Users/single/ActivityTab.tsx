@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import ThumbUpAltTwoToneIcon from '@mui/icons-material/ThumbUpAltTwoTone';
 import CommentTwoToneIcon from '@mui/icons-material/CommentTwoTone';
@@ -28,7 +28,7 @@ const CardActionsWrapper = styled(CardActions)(
 );
 
 function ActivityTab() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
@@ -71,7 +71,7 @@ function ActivityTab() {
           Organizing Your Remote Office for Maximum Productivity
         </Typography>
         <Typography variant="subtitle2">
-          <Link href="#">example.com</Link> • 4 {t('mins read')}
+          <Link href="#">example.com</Link> • 4 {'mins read'}
         </Typography>
       </Box>
       <Divider />
@@ -84,7 +84,7 @@ function ActivityTab() {
       >
         <Box>
           <Button startIcon={<ThumbUpAltTwoToneIcon />} variant="contained">
-            {t('Like')}
+            {'Like'}
           </Button>
           <Button
             startIcon={<CommentTwoToneIcon />}
@@ -93,10 +93,10 @@ function ActivityTab() {
               mx: 2
             }}
           >
-            {t('Comment')}
+            {'Comment'}
           </Button>
           <Button startIcon={<ShareTwoToneIcon />} variant="outlined">
-            {t('Share')}
+            {'Share'}
           </Button>
         </Box>
         <Box
@@ -108,11 +108,11 @@ function ActivityTab() {
             <Text color="black">
               <b>485</b>
             </Text>{' '}
-            {t('reactions')} •{' '}
+            {'reactions'} •{' '}
             <Text color="black">
               <b>63</b>
             </Text>{' '}
-            {t('comments')}
+            {'comments'}
           </Typography>
         </Box>
       </CardActionsWrapper>

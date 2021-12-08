@@ -18,7 +18,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import TrendingDownTwoToneIcon from '@mui/icons-material/TrendingDownTwoTone';
 import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
@@ -97,7 +97,7 @@ const DotLegend = styled('span')(
 );
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -130,7 +130,7 @@ function Block8() {
               borderRadius: 50
             }}
           >
-            {t('Live transations')}
+            {'Live transations'}
           </LabelInfo>
         </CardActions>
       </Box>
@@ -139,9 +139,9 @@ function Block8() {
           <TableWrapper>
             <TableHeadWrapper>
               <TableRow>
-                <TableCell>{t('Order')}</TableCell>
-                <TableCell align="right">{t('Status')}</TableCell>
-                <TableCell align="right">{t('Actions')}</TableCell>
+                <TableCell>{'Order'}</TableCell>
+                <TableCell align="right">{'Status'}</TableCell>
+                <TableCell align="right">{'Actions'}</TableCell>
               </TableRow>
             </TableHeadWrapper>
             <TableBody>
@@ -188,7 +188,7 @@ function Block8() {
                       }}
                       variant="body1"
                     >
-                      <Text color="error">{t('Deposit')}</Text>
+                      <Text color="error">{'Deposit'}</Text>
                     </Typography>
                   </Box>
                 </TableCell>
@@ -196,7 +196,7 @@ function Block8() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('Cancel this transaction')}
+                    title={'Cancel this transaction'}
                   >
                     <IconButtonWrapper size="small" color="error">
                       <CloseTwoToneIcon />
@@ -247,7 +247,7 @@ function Block8() {
                       }}
                       variant="body1"
                     >
-                      <Text color="info">{t('Processing')}</Text>
+                      <Text color="info">{'Processing'}</Text>
                     </Typography>
                   </Box>
                 </TableCell>
@@ -255,7 +255,7 @@ function Block8() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('Cancel this transaction')}
+                    title={'Cancel this transaction'}
                   >
                     <IconButtonWrapper size="small" color="error">
                       <CloseTwoToneIcon />
@@ -309,7 +309,7 @@ function Block8() {
                       }}
                       variant="body1"
                     >
-                      <Text color="warning">{t('Pending')}</Text>
+                      <Text color="warning">{'Pending'}</Text>
                     </Typography>
                   </Box>
                 </TableCell>
@@ -317,7 +317,7 @@ function Block8() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('Cancel this transaction')}
+                    title={'Cancel this transaction'}
                   >
                     <IconButtonWrapper size="small" color="error">
                       <CloseTwoToneIcon />
@@ -371,7 +371,7 @@ function Block8() {
                       }}
                       variant="body1"
                     >
-                      <Text color="success">{t('Withdrawal')}</Text>
+                      <Text color="success">{'Withdrawal'}</Text>
                     </Typography>
                   </Box>
                 </TableCell>
@@ -379,7 +379,7 @@ function Block8() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('Cancel this transaction')}
+                    title={'Cancel this transaction'}
                   >
                     <IconButtonWrapper size="small" color="error">
                       <CloseTwoToneIcon />

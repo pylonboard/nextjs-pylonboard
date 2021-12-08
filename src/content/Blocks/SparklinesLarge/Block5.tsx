@@ -12,7 +12,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
@@ -81,7 +81,7 @@ const LinearProgress3 = styled(LinearProgress)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -161,10 +161,10 @@ function Block5() {
       >
         <Box>
           <Typography gutterBottom variant="h4">
-            {t('Weekly Sales')}
+            {'Weekly Sales'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Reports for what we sold this week')}
+            {'Reports for what we sold this week'}
           </Typography>
         </Box>
         <IconButton size="small" color="secondary">
@@ -207,7 +207,7 @@ function Block5() {
               value={76}
             />
             <Typography gutterBottom variant="subtitle2">
-              {t('Sales')}
+              {'Sales'}
             </Typography>
           </Box>
           <Box p={3} flexGrow={1}>
@@ -227,7 +227,7 @@ function Block5() {
               value={43}
             />
             <Typography gutterBottom variant="subtitle2">
-              {t('Profiles')}
+              {'Profiles'}
             </Typography>
           </Box>
           <Box p={3} flexGrow={1}>
@@ -240,7 +240,7 @@ function Block5() {
               value={59}
             />
             <Typography gutterBottom variant="subtitle2">
-              {t('Tickets')}
+              {'Tickets'}
             </Typography>
           </Box>
         </Stack>

@@ -14,7 +14,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import HelpTwoToneIcon from '@mui/icons-material/HelpTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -152,7 +152,7 @@ const ButtonWrapper = styled(Button)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -185,12 +185,12 @@ function Block1() {
                     textTransform: 'uppercase'
                   }}
                 >
-                  {t('New release')}
+                  {'New release'}
                 </Typography>
               </Label>
               <Tooltip
                 arrow
-                title={t('This is a helper placeholder')}
+                title={'This is a helper placeholder'}
                 placement="right"
               >
                 <IconButtonWrapper
@@ -234,12 +234,12 @@ function Block1() {
                 }}
                 variant="h1"
               >
-                {t('The Ultimate UI Design System at your fingertips!')}
+                {'The Ultimate UI Design System at your fingertips!'}
               </Typography>
               <Typography lineHeight="1.5" fontWeight="normal" variant="h4">
-                {t(
+                {
                   'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                )}
+                }
                 .
               </Typography>
               <Box mt={2}>
@@ -253,7 +253,7 @@ function Block1() {
                   size="large"
                   color="primary"
                 >
-                  {t('Continue reading')}
+                  {'Continue reading'}
                 </ButtonWrapper>
               </Box>
             </BoxComposedContent>
@@ -285,7 +285,7 @@ function Block1() {
               <Tooltip
                 arrow
                 placement="top"
-                title={t('Get in touch via email')}
+                title={'Get in touch via email'}
               >
                 <IconButton
                   color="primary"
@@ -323,7 +323,7 @@ function Block1() {
                   color: `${theme.colors.success.main}`
                 }}
               >
-                {t('Online')}
+                {'Online'}
               </LabelWrapper>
               <Typography
                 gutterBottom
@@ -385,10 +385,10 @@ function Block1() {
                       />
                     </Text>
                     <Typography gutterBottom variant="h4">
-                      {t('Projects')}
+                      {'Projects'}
                     </Typography>
                     <Typography variant="subtitle2" noWrap>
-                      {t('Newest tasks')}
+                      {'Newest tasks'}
                     </Typography>
                   </CardActionAreaWrapper>
                 </Card>
@@ -408,10 +408,10 @@ function Block1() {
                       />
                     </Text>
                     <Typography gutterBottom variant="h4">
-                      {t('Helpdesk')}
+                      {'Helpdesk'}
                     </Typography>
                     <Typography variant="subtitle2" noWrap>
-                      {t('Tickets overview')}
+                      {'Tickets overview'}
                     </Typography>
                   </CardActionAreaWrapper>
                 </Card>
@@ -431,10 +431,10 @@ function Block1() {
                       />
                     </Text>
                     <Typography gutterBottom variant="h4">
-                      {t('Dashboard')}
+                      {'Dashboard'}
                     </Typography>
                     <Typography variant="subtitle2" noWrap>
-                      {t('Daily operations')}
+                      {'Daily operations'}
                     </Typography>
                   </CardActionAreaWrapper>
                 </Card>
@@ -454,10 +454,10 @@ function Block1() {
                       />
                     </Text>
                     <Typography gutterBottom variant="h4">
-                      {t('Customers')}
+                      {'Customers'}
                     </Typography>
                     <Typography variant="subtitle2" noWrap>
-                      {t('Manage data')}
+                      {'Manage data'}
                     </Typography>
                   </CardActionAreaWrapper>
                 </Card>

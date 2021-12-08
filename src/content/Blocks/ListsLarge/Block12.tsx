@@ -1,10 +1,10 @@
 import { Box, Card, Typography, Stack, Divider, Grid } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 
 function Block12() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <>
@@ -29,10 +29,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Reports')}
+                    {'Reports'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Monthly sales reports')}
+                    {'Monthly sales reports'}
                   </Typography>
                 </Box>
                 <Text color="error">
@@ -50,10 +50,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Stats')}
+                    {'Stats'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Last month targets')}
+                    {'Last month targets'}
                   </Typography>
                 </Box>
                 <Text color="warning">
@@ -71,10 +71,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Reports')}
+                    {'Reports'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Monthly sales reports')}
+                    {'Monthly sales reports'}
                   </Typography>
                 </Box>
                 <Text color="error">
@@ -101,10 +101,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Users')}
+                    {'Users'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Visitors last week')}
+                    {'Visitors last week'}
                   </Typography>
                 </Box>
                 <Text color="success">
@@ -122,10 +122,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Payments')}
+                    {'Payments'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t("Week's expenses")}
+                    {"Week's expenses"}
                   </Typography>
                 </Box>
                 <Text color="error">
@@ -143,10 +143,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Users')}
+                    {'Users'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Visitors last week')}
+                    {'Visitors last week'}
                   </Typography>
                 </Box>
                 <Text color="success">
@@ -176,10 +176,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Sales')}
+                    {'Sales'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Total average weekly report')}
+                    {'Total average weekly report'}
                   </Typography>
                 </Box>
                 <Text color="primary">
@@ -197,10 +197,10 @@ function Block12() {
               >
                 <Box>
                   <Typography gutterBottom variant="h4">
-                    {t('Orders')}
+                    {'Orders'}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {t('Total products ordered')}
+                    {'Total products ordered'}
                   </Typography>
                 </Box>
                 <Text color="info">

@@ -18,7 +18,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
@@ -98,47 +98,47 @@ const CardAddAction = styled(Card)(
 );
 
 function DatacenterClusters() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const clusters = [
     {
       value: '1',
       badge: '15',
-      text: t('All clusters')
+      text: 'All clusters'
     },
     {
       value: '2',
       badge: '25',
-      text: t('Oracle')
+      text: 'Oracle'
     },
     {
       value: '3',
       badge: '35',
-      text: t('IBM')
+      text: 'IBM'
     },
     {
       value: '4',
       badge: '45',
-      text: t('Microsoft')
+      text: 'Microsoft'
     }
   ];
   const sorts = [
     {
       value: '1',
-      text: t('Sort by name')
+      text: 'Sort by name'
     },
     {
       value: '2',
-      text: t('Sort by name')
+      text: 'Sort by name'
     },
     {
       value: '3',
-      text: t('Sort by status')
+      text: 'Sort by status'
     },
     {
       value: '4',
-      text: t('Sort by hosts')
+      text: 'Sort by hosts'
     }
   ];
 
@@ -157,7 +157,7 @@ function DatacenterClusters() {
           pb: 3
         }}
       >
-        {t('Datacenter Clusters')}
+        {'Datacenter Clusters'}
       </Typography>
       <Box
         display={{ xs: 'block', md: 'flex' }}
@@ -223,7 +223,7 @@ function DatacenterClusters() {
                   </InputAdornment>
                 )
               }}
-              placeholder={t('Search...')}
+              placeholder={'Search...'}
             />
           </TextfieldWrapper>
         </Box>
@@ -273,7 +273,7 @@ function DatacenterClusters() {
             variant="contained"
             startIcon={<AddCircleTwoToneIcon />}
           >
-            {t('Create new cluster')}
+            {'Create new cluster'}
           </Button>
         </Box>
       </Box>
@@ -311,7 +311,7 @@ function DatacenterClusters() {
                 Mainframe Analytics Cluster for Visitors and Page Views
               </Typography>
               <Typography variant="subtitle2">
-                {t('Maintained for')} Netflix Inc.
+                {'Maintained for'} Netflix Inc.
               </Typography>
               <Button
                 variant="outlined"
@@ -320,7 +320,7 @@ function DatacenterClusters() {
                   mt: 3
                 }}
               >
-                {t('View details')}
+                {'View details'}
               </Button>
             </CardContent>
             <Divider />
@@ -334,7 +334,7 @@ function DatacenterClusters() {
                 <Text color="black">
                   <b>7</b>
                 </Text>{' '}
-                {t('hosts')}
+                {'hosts'}
               </Typography>
               <Typography
                 sx={{
@@ -350,7 +350,7 @@ function DatacenterClusters() {
                 >
                   <CheckTwoToneIcon />
                 </IconWrapper>
-                <Text color="success">{t('available')}</Text>
+                <Text color="success">{'available'}</Text>
               </Typography>
             </CardActionsWrapper>
           </CardIndicatorWrapper>
@@ -387,7 +387,7 @@ function DatacenterClusters() {
                 Main Website Sales Monitoring Cluster Database
               </Typography>
               <Typography variant="subtitle2">
-                {t('Maintained for')} Google Corp.
+                {'Maintained for'} Google Corp.
               </Typography>
               <Button
                 variant="outlined"
@@ -396,7 +396,7 @@ function DatacenterClusters() {
                   mt: 3
                 }}
               >
-                {t('View details')}
+                {'View details'}
               </Button>
             </CardContent>
             <Divider />
@@ -410,7 +410,7 @@ function DatacenterClusters() {
                 <Text color="black">
                   <b>15</b>
                 </Text>{' '}
-                {t('hosts')}
+                {'hosts'}
               </Typography>
               <Typography
                 sx={{
@@ -426,13 +426,13 @@ function DatacenterClusters() {
                 >
                   <RefreshTwoToneIcon />
                 </IconWrapper>
-                <Text color="warning">{t('provisioning')}</Text>
+                <Text color="warning">{'provisioning'}</Text>
               </Typography>
             </CardActionsWrapper>
           </CardIndicatorWrapper>
         </Grid>
         <Grid item xs={12} sm={12} md={2} lg={4}>
-          <Tooltip arrow title={t('Click to add a new cluster')}>
+          <Tooltip arrow title={'Click to add a new cluster'}>
             <CardAddAction>
               <CardActionArea
                 sx={{

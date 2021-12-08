@@ -8,7 +8,7 @@ import {
   alpha,
   lighten
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import AccountBalanceTwoToneIcon from '@mui/icons-material/AccountBalanceTwoTone';
 
@@ -37,7 +37,7 @@ const AvatarPageTitle = styled(Avatar)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <>
@@ -48,15 +48,15 @@ function PageHeader() {
           </AvatarPageTitle>
           <Box>
             <Typography variant="h3" component="h3" gutterBottom>
-              {t('Expenses')}
+              {'Expenses'}
             </Typography>
             <Typography variant="subtitle2">
-              {t('Dashboard to show the company expenses statistics')}
+              {'Dashboard to show the company expenses statistics'}
             </Typography>
           </Box>
         </Box>
         <Box>
-          <Tooltip arrow title={t('View all expenses')}>
+          <Tooltip arrow title={'View all expenses'}>
             <IconButton size="large" color="primary">
               <ArrowForwardTwoToneIcon />
             </IconButton>

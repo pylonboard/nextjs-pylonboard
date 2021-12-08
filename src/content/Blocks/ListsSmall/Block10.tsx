@@ -16,7 +16,7 @@ import { format, subDays } from 'date-fns';
 
 import Text from 'src/components/Text';
 
-import { useTranslation } from 'react-i18next';
+
 import Scrollbar from 'src/components/Scrollbar';
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
 import TrendingDownTwoToneIcon from '@mui/icons-material/TrendingDownTwoTone';
@@ -24,13 +24,13 @@ import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
 import TrendingFlatTwoToneIcon from '@mui/icons-material/TrendingFlatTwoTone';
 
 function Block10() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
     <Card>
       <Box p={2.5}>
-        <Typography variant="h4">{t('All transactions')}</Typography>
+        <Typography variant="h4">{'All transactions'}</Typography>
       </Box>
       <Divider />
       <Box
@@ -77,12 +77,12 @@ function Block10() {
               <ListItemText
                 primary={
                   <Typography gutterBottom variant="h4">
-                    {t('Received Bitcoin')}
+                    {'Received Bitcoin'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('To')} <b>My Bitcoin Wallet</b>
+                    {'To'} <b>My Bitcoin Wallet</b>
                   </Typography>
                 }
               />
@@ -127,12 +127,12 @@ function Block10() {
               <ListItemText
                 primary={
                   <Typography gutterBottom variant="h4">
-                    {t('Sent Ethereum')}
+                    {'Sent Ethereum'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('From')} <b>Ether Wallet</b>
+                    {'From'} <b>Ether Wallet</b>
                   </Typography>
                 }
               />
@@ -185,12 +185,12 @@ function Block10() {
               <ListItemText
                 primary={
                   <Typography gutterBottom variant="h4">
-                    {t('Withdraw to bank account')}
+                    {'Withdraw to bank account'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('From')} <b>Total Balance</b>
+                    {'From'} <b>Total Balance</b>
                   </Typography>
                 }
               />
@@ -234,12 +234,12 @@ function Block10() {
               <ListItemText
                 primary={
                   <Typography gutterBottom variant="h4">
-                    {t('Transferred Ripple')}
+                    {'Transferred Ripple'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('To')} <b>John's XRP Stash</b>
+                    {'To'} <b>John's XRP Stash</b>
                   </Typography>
                 }
               />
@@ -294,12 +294,12 @@ function Block10() {
               <ListItemText
                 primary={
                   <Typography gutterBottom variant="h4">
-                    {t('Received Bitcoin')}
+                    {'Received Bitcoin'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('To')} <b>My Bitcoin Wallet</b>
+                    {'To'} <b>My Bitcoin Wallet</b>
                   </Typography>
                 }
               />
@@ -332,7 +332,7 @@ function Block10() {
           variant="contained"
           endIcon={<KeyboardArrowRightTwoToneIcon />}
         >
-          {t('View all transactions')}
+          {'View all transactions'}
         </Button>
       </Box>
     </Card>

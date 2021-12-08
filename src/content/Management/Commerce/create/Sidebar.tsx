@@ -2,7 +2,6 @@ import { ChangeEvent, useState } from 'react';
 
 import {
   ListItemText,
-  Avatar,
   Box,
   Typography,
   Checkbox,
@@ -15,17 +14,12 @@ import {
   ListItem,
   List,
   CardHeader,
-  Alert,
   Card,
   styled,
   useTheme
 } from '@mui/material';
-import { useDropzone } from 'react-dropzone';
 
-import { useTranslation } from 'react-i18next';
-import CloudUploadTwoToneIcon from '@mui/icons-material/CloudUploadTwoTone';
-import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
-import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
+
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 
 const DotLegend = styled('span')(
@@ -38,50 +32,6 @@ const DotLegend = styled('span')(
 `
 );
 
-const BoxUploadWrapper = styled(Box)(
-  ({ theme }) => `
-    border-radius: ${theme.general.borderRadius};
-    padding: ${theme.spacing(2)};
-    background: ${theme.colors.alpha.black[5]};
-    border: 1px dashed ${theme.colors.alpha.black[30]};
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: ${theme.transitions.create(['border', 'background'])};
-
-    &:hover {
-      background: ${theme.colors.alpha.white[50]};
-      border-color: ${theme.colors.primary.main};
-    }
-`
-);
-
-const AvatarWrapper = styled(Avatar)(
-  ({ theme }) => `
-    background: transparent;
-    color: ${theme.colors.primary.main};
-    width: ${theme.spacing(7)};
-    height: ${theme.spacing(7)};
-`
-);
-
-const AvatarSuccess = styled(Avatar)(
-  ({ theme }) => `
-    background: ${theme.colors.success.light};
-    width: ${theme.spacing(7)};
-    height: ${theme.spacing(7)};
-`
-);
-
-const AvatarDanger = styled(Avatar)(
-  ({ theme }) => `
-    background: ${theme.colors.error.light};
-    width: ${theme.spacing(7)};
-    height: ${theme.spacing(7)};
-`
-);
 
 interface ProductTags {
   key: number;
@@ -89,27 +39,8 @@ interface ProductTags {
 }
 
 function Sidebar() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
-
-  const {
-    acceptedFiles,
-    isDragActive,
-    isDragAccept,
-    isDragReject,
-    getRootProps,
-    getInputProps
-  } = useDropzone({
-    accept: 'image/jpeg, image/png'
-  });
-
-  const files = acceptedFiles.map((file, index) => (
-    <ListItem disableGutters component="div" key={index}>
-      <ListItemText primary={file.name} />
-      <b>{file.size} bytes</b>
-      <Divider />
-    </ListItem>
-  ));
 
   const [checked, setChecked] = useState([true, false]);
 
@@ -174,16 +105,16 @@ function Sidebar() {
               variant="outlined"
               startIcon={<EditTwoToneIcon />}
             >
-              {t('Edit')}
+              {'Edit'}
             </Button>
           }
-          title={t('Publish')}
+          title={'Publish'}
         />
         <Divider />
         <Box p={2}>
           <FormControlLabel
             control={<Switch color="primary" defaultChecked />}
-            label={t('Virtual Product')}
+            label={'Virtual Product'}
           />
         </Box>
         <Divider />
@@ -199,7 +130,7 @@ function Sidebar() {
                 width: 110,
                 flex: 'initial'
               }}
-              primary={t('Status')}
+              primary={'Status'}
             />
             <b>Draft</b>
           </ListItem>
@@ -209,7 +140,7 @@ function Sidebar() {
                 width: 110,
                 flex: 'initial'
               }}
-              primary={t('Visibility')}
+              primary={'Visibility'}
             />
             <b>Visible</b>
           </ListItem>
@@ -232,12 +163,12 @@ function Sidebar() {
                     <DotLegend
                       style={{ background: theme.colors.success.main }}
                     />
-                    {t('SEO Score')}
+                    {'SEO Score'}
                   </Typography>
                 </>
               }
             />
-            <b>{t('Good')}</b>
+            <b>{'Good'}</b>
           </ListItem>
         </List>
         <Divider />
@@ -245,7 +176,7 @@ function Sidebar() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <Button fullWidth variant="outlined" size="small">
-                {t('Preview')}
+                {'Preview'}
               </Button>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -255,12 +186,12 @@ function Sidebar() {
                 size="small"
                 color="secondary"
               >
-                {t('Save draft')}
+                {'Save draft'}
               </Button>
             </Grid>
             <Grid item xs={12}>
               <Button fullWidth variant="contained">
-                {t('Publish now')}
+                {'Publish now'}
               </Button>
             </Grid>
           </Grid>
@@ -274,10 +205,10 @@ function Sidebar() {
         <CardHeader
           action={
             <Button size="small" variant="outlined">
-              {t('Add category')}
+              {'Add category'}
             </Button>
           }
-          title={t('Categories')}
+          title={'Categories'}
         />
         <Divider />
         <Box p={2}>
@@ -305,87 +236,15 @@ function Sidebar() {
           m: 3
         }}
       >
-        <CardHeader title={t('Product Images')} />
+        <CardHeader title={'Product Images'} />
         <Divider />
-        <Box p={2}>
-          <BoxUploadWrapper {...getRootProps()}>
-            <input {...getInputProps()} />
-            {isDragAccept && (
-              <>
-                <AvatarSuccess variant="rounded">
-                  <CheckTwoToneIcon />
-                </AvatarSuccess>
-                <Typography
-                  sx={{
-                    mt: 2
-                  }}
-                >
-                  {t('Drop the files to start uploading')}
-                </Typography>
-              </>
-            )}
-            {isDragReject && (
-              <>
-                <AvatarDanger variant="rounded">
-                  <CloseTwoToneIcon />
-                </AvatarDanger>
-                <Typography
-                  sx={{
-                    mt: 2
-                  }}
-                >
-                  {t('You cannot upload these file types')}
-                </Typography>
-              </>
-            )}
-            {!isDragActive && (
-              <>
-                <AvatarWrapper variant="rounded">
-                  <CloudUploadTwoToneIcon />
-                </AvatarWrapper>
-                <Typography
-                  sx={{
-                    mt: 2
-                  }}
-                >
-                  {t('Drag & drop files here')}
-                </Typography>
-              </>
-            )}
-          </BoxUploadWrapper>
-        </Box>
-
-        {files.length > 0 && (
-          <>
-            <Divider />
-            <Box p={2}>
-              <Alert
-                sx={{
-                  py: 0
-                }}
-                severity="success"
-              >
-                {t('You have uploaded')} <b>{files.length}</b> {t('files')}!
-              </Alert>
-              <List
-                disablePadding
-                sx={{
-                  mt: 2
-                }}
-                component="div"
-              >
-                {files}
-              </List>
-            </Box>
-          </>
-        )}
       </Card>
       <Card
         sx={{
           m: 3
         }}
       >
-        <CardHeader title={t('Product Tags')} />
+        <CardHeader title={'Product Tags'} />
         <Divider />
         <Box p={2}>
           {productTags.map((data) => {
@@ -409,7 +268,7 @@ function Sidebar() {
               variant="subtitle2"
               textAlign="center"
             >
-              {t('There are no product tags')}
+              {'There are no product tags'}
             </Typography>
           )}
         </Box>

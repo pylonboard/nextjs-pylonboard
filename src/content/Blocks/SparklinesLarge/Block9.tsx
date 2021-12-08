@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -17,7 +17,7 @@ import EmojiObjectsTwoToneIcon from '@mui/icons-material/EmojiObjectsTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const Box3Options: ApexOptions = {
@@ -111,9 +111,9 @@ function Block9() {
       >
         <Box>
           <Typography gutterBottom variant="caption" fontWeight="bold">
-            {t('Statistics')}
+            {'Statistics'}
           </Typography>
-          <Typography variant="h4">{t('Users overview')}</Typography>
+          <Typography variant="h4">{'Users overview'}</Typography>
         </Box>
         <IconButton size="small" color="primary">
           <AddTwoToneIcon />
@@ -137,7 +137,7 @@ function Block9() {
             component="h6"
             variant="caption"
           >
-            {t('New accounts')}
+            {'New accounts'}
           </Typography>
           <Typography
             gutterBottom
@@ -158,7 +158,7 @@ function Block9() {
               }}
               variant="subtitle2"
             >
-              <Text color="success">15.4%</Text> {t('increase this month')}
+              <Text color="success">15.4%</Text> {'increase this month'}
             </Typography>
           </Box>
         </Box>

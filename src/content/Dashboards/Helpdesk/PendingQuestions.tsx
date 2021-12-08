@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import QuestionAnswerTwoToneIcon from '@mui/icons-material/QuestionAnswerTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -63,7 +63,7 @@ const BottomWrapper = styled(Box)(
 );
 
 function PendingQuestions() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -195,14 +195,14 @@ function PendingQuestions() {
               lineHeight: 1.4
             }}
           >
-            {t('Pending Questions')}
+            {'Pending Questions'}
           </Typography>
           <IconWrapper>
             <QuestionAnswerTwoToneIcon />
           </IconWrapper>
         </Box>
         <Button variant="contained" size="small">
-          {t('View questions')}
+          {'View questions'}
         </Button>
       </CardContent>
       <BottomWrapper
@@ -216,7 +216,7 @@ function PendingQuestions() {
         <TypographyWrapper variant="h1">7</TypographyWrapper>
         <Box>
           <Typography align="right" variant="subtitle1" noWrap>
-            {t('Previous Period')}
+            {'Previous Period'}
           </Typography>
           <Typography align="right" variant="h3">
             -
