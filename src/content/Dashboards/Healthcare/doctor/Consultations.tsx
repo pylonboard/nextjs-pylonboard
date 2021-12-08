@@ -1,11 +1,11 @@
 import { Card, Box, Typography, useTheme } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function Consultations() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -64,7 +64,7 @@ function Consultations() {
     fill: {
       opacity: 1
     },
-    labels: [t('Yesterday'), t('Today')],
+    labels: ['Yesterday', 'Today'],
     legend: {
       labels: {
         colors: theme.colors.alpha.trueWhite[100]
@@ -119,7 +119,7 @@ function Consultations() {
             mr: 1
           }}
         >
-          {t('Consultations')}
+          {'Consultations'}
         </Typography>
         <Label color="success">
           <b>+10%</b>
@@ -137,7 +137,7 @@ function Consultations() {
           21
         </Typography>
         <Typography variant="subtitle2" fontWeight="bold">
-          {t('Today')}
+          {'Today'}
         </Typography>
       </Box>
     </Card>

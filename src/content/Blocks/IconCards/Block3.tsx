@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import Label from 'src/components/Label';
 
@@ -58,7 +58,7 @@ const Dot = styled(Box)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -157,7 +157,7 @@ function Block3() {
               }}
             />
             <Button variant="contained" color="success">
-              {t('Buy now')}
+              {'Buy now'}
             </Button>
           </CardContent>
         </Card>
@@ -251,7 +251,7 @@ function Block3() {
               }}
             />
             <Button variant="contained" color="success">
-              {t('Buy now')}
+              {'Buy now'}
             </Button>
           </CardContent>
         </Card>
@@ -350,7 +350,7 @@ function Block3() {
               }}
             />
             <Button variant="contained" color="success">
-              {t('Buy now')}
+              {'Buy now'}
             </Button>
           </CardContent>
         </Card>

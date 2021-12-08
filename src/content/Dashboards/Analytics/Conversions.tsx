@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+
 import {
   CardHeader,
   Divider,
@@ -38,7 +38,7 @@ const AvatarWrapperWarning = styled(Avatar)(
 );
 
 function Conversions() {
-  const { t }: { t: any } = useTranslation();
+
 
   const data = {
     percentage: 67,
@@ -49,7 +49,7 @@ function Conversions() {
 
   return (
     <Card>
-      <CardHeader title={t('Conversions')} />
+      <CardHeader title={'Conversions'} />
       <Divider />
       <CardContent>
         <Gauge
@@ -65,7 +65,7 @@ function Conversions() {
         <List disablePadding dense>
           <ListItem>
             <ListItemText
-              primary={t('Sales Today')}
+              primary={'Sales Today'}
               primaryTypographyProps={{
                 variant: 'subtitle2',
                 gutterBottom: true,
@@ -89,7 +89,7 @@ function Conversions() {
           />
           <ListItem>
             <ListItemText
-              primary={t('Customers per month')}
+              primary={'Customers per month'}
               primaryTypographyProps={{
                 variant: 'subtitle2',
                 gutterBottom: true,
@@ -112,7 +112,7 @@ function Conversions() {
           />
           <ListItem>
             <ListItemText
-              primary={t('Earnings Report')}
+              primary={'Earnings Report'}
               primaryTypographyProps={{
                 variant: 'subtitle2',
                 gutterBottom: true,

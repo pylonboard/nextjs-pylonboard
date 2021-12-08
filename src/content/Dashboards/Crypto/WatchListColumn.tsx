@@ -8,7 +8,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import Text from 'src/components/Text';
 import { Chart } from 'src/components/Chart';
@@ -43,7 +43,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function WatchListColumn() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -215,7 +215,7 @@ function WatchListColumn() {
                   pl: 1
                 }}
               >
-                {t('last 24h')}
+                {'last 24h'}
               </Typography>
             </Box>
           </Box>
@@ -290,7 +290,7 @@ function WatchListColumn() {
                   pl: 1
                 }}
               >
-                {t('last 24h')}
+                {'last 24h'}
               </Typography>
             </Box>
           </Box>
@@ -365,7 +365,7 @@ function WatchListColumn() {
                   pl: 1
                 }}
               >
-                {t('last 24h')}
+                {'last 24h'}
               </Typography>
             </Box>
           </Box>

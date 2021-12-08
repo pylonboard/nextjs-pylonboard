@@ -14,7 +14,6 @@ import {
 } from '@mui/material';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 import NavigationMenu from './NavigationMenu';
-import LanguageSwitcher from './LanguageSwitcher';
 import Notifications from './Notifications';
 import Userbox from './Userbox';
 import Search from './Search';
@@ -141,7 +140,6 @@ function TopBar() {
                 display: { xs: 'none', sm: 'inline-flex' }
               }}
             >
-              <LanguageSwitcher />
               <Box mx={1}>
                 <Notifications />
               </Box>

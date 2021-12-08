@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import Scrollbar from 'src/components/Scrollbar';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import KeyboardArrowUpTwoToneIcon from '@mui/icons-material/KeyboardArrowUpTwoTone';
@@ -30,7 +30,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -88,10 +88,10 @@ function Block6() {
     <Card>
       <Box py={2} px={3}>
         <Typography variant="h4" gutterBottom>
-          {t('Recent Customers')}
+          {'Recent Customers'}
         </Typography>
         <Typography variant="subtitle2">
-          {t('These are the latest customer jobtitle')}
+          {'These are the latest customer jobtitle'}
         </Typography>
       </Box>
       <Divider />

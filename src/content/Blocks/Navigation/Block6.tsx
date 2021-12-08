@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import { formatDistance, subMinutes } from 'date-fns';
 import Text from 'src/components/Text';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
@@ -76,7 +76,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -100,7 +100,7 @@ function Block6() {
               arrow
               placement="top"
               title={
-                t('Idle since') +
+                'Idle since' +
                 ' ' +
                 formatDistance(subMinutes(new Date(), 42), new Date(), {
                   addSuffix: true
@@ -135,7 +135,7 @@ function Block6() {
             Project Manager, Apple Inc.
           </Typography>
           <Button size="small" variant="contained" color="primary">
-            {t('Chat')}
+            {'Chat'}
           </Button>
           <Button
             size="small"
@@ -154,7 +154,7 @@ function Block6() {
               }
             }}
           >
-            {t('View')}
+            {'View'}
           </Button>
         </Box>
       </Box>
@@ -171,7 +171,7 @@ function Block6() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Email') + ':'}
+              primary={'Email' + ':'}
             />
             <Typography variant="subtitle1">russotry@russo.com</Typography>
           </ListItem>
@@ -180,7 +180,7 @@ function Block6() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Job Description') + ':'}
+              primary={'Job Description' + ':'}
             />
             <Typography variant="subtitle1">Project Manager</Typography>
           </ListItem>
@@ -189,7 +189,7 @@ function Block6() {
               primaryTypographyProps={{
                 variant: 'h5'
               }}
-              primary={t('Location') + ':'}
+              primary={'Location' + ':'}
             />
             <Typography variant="subtitle1">San Francisco, USA</Typography>
           </ListItem>
@@ -218,7 +218,7 @@ function Block6() {
                   />
                 </Text>
                 <Typography gutterBottom variant="h4">
-                  {t('Projects')}
+                  {'Projects'}
                 </Typography>
                 <Typography
                   variant="subtitle2"
@@ -227,7 +227,7 @@ function Block6() {
                   }}
                   noWrap
                 >
-                  {t('Newest tasks')}
+                  {'Newest tasks'}
                 </Typography>
               </CardActionAreaWrapper>
             </Card>
@@ -253,7 +253,7 @@ function Block6() {
                   />
                 </Text>
                 <Typography gutterBottom variant="h4">
-                  {t('Helpdesk')}
+                  {'Helpdesk'}
                 </Typography>
                 <Typography
                   variant="subtitle2"
@@ -262,7 +262,7 @@ function Block6() {
                   }}
                   noWrap
                 >
-                  {t('Tickets overview')}
+                  {'Tickets overview'}
                 </Typography>
               </CardActionAreaWrapper>
             </Card>
@@ -286,7 +286,7 @@ function Block6() {
                   }}
                 />
                 <Typography gutterBottom variant="h4">
-                  {t('Dashboard')}
+                  {'Dashboard'}
                 </Typography>
                 <Typography
                   variant="subtitle2"
@@ -295,7 +295,7 @@ function Block6() {
                   }}
                   noWrap
                 >
-                  {t('Daily operations')}
+                  {'Daily operations'}
                 </Typography>
               </CardActionAreaWrapper>
             </Card>
@@ -321,7 +321,7 @@ function Block6() {
                   />
                 </Text>
                 <Typography gutterBottom variant="h4">
-                  {t('Customers')}
+                  {'Customers'}
                 </Typography>
                 <Typography
                   variant="subtitle2"
@@ -330,7 +330,7 @@ function Block6() {
                   }}
                   noWrap
                 >
-                  {t('Manage data')}
+                  {'Manage data'}
                 </Typography>
               </CardActionAreaWrapper>
             </Card>

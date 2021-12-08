@@ -11,7 +11,7 @@ import {
   Avatar,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import LockTwoToneIcon from '@mui/icons-material/LockTwoTone';
 import PhoneLockedTwoToneIcon from '@mui/icons-material/PhoneLockedTwoTone';
 import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
@@ -39,7 +39,7 @@ const AvatarWrapperWarning = styled(Avatar)(
 );
 
 function AccountSecurity() {
-  const { t }: { t: any } = useTranslation();
+
 
   const [checked, setChecked] = useState(['phone_verification']);
 
@@ -58,7 +58,7 @@ function AccountSecurity() {
 
   return (
     <Card>
-      <CardHeader title={t('Account Security')} />
+      <CardHeader title={'Account Security'} />
       <Divider />
       <List disablePadding>
         <ListItem
@@ -72,7 +72,7 @@ function AccountSecurity() {
             </AvatarWrapperError>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text color="black">{t('2FA Authentication')}</Text>}
+            primary={<Text color="black">{'2FA Authentication'}</Text>}
             primaryTypographyProps={{
               variant: 'body1',
               fontWeight: 'bold',
@@ -80,7 +80,7 @@ function AccountSecurity() {
               gutterBottom: true,
               noWrap: true
             }}
-            secondary={<Text color="error">{t('Disabled')}</Text>}
+            secondary={<Text color="error">{'Disabled'}</Text>}
             secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
           />
           <Switch
@@ -102,7 +102,7 @@ function AccountSecurity() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text color="black">{t('Phone Verification')}</Text>}
+            primary={<Text color="black">{'Phone Verification'}</Text>}
             primaryTypographyProps={{
               variant: 'body1',
               fontWeight: 'bold',
@@ -110,7 +110,7 @@ function AccountSecurity() {
               gutterBottom: true,
               noWrap: true
             }}
-            secondary={<Text color="success">{t('Active')}</Text>}
+            secondary={<Text color="success">{'Active'}</Text>}
             secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
           />
           <Switch
@@ -132,7 +132,7 @@ function AccountSecurity() {
             </AvatarWrapperWarning>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text color="black">{t('Recovery Email')}</Text>}
+            primary={<Text color="black">{'Recovery Email'}</Text>}
             primaryTypographyProps={{
               variant: 'body1',
               fontWeight: 'bold',
@@ -140,7 +140,7 @@ function AccountSecurity() {
               gutterBottom: true,
               noWrap: true
             }}
-            secondary={<Text color="warning">{t('Not completed')}</Text>}
+            secondary={<Text color="warning">{'Not completed'}</Text>}
             secondaryTypographyProps={{ variant: 'body2', noWrap: true }}
           />
           <Switch

@@ -19,7 +19,7 @@ import {
   TableContainer,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
@@ -49,20 +49,20 @@ const DotWarning = styled('span')(
 );
 
 function RecentPatients() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
     <Card>
       <CardHeader
-        title={t('Recent Patients')}
+        title={'Recent Patients'}
         action={
           <Button
             variant="outlined"
             size="small"
             endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
           >
-            {t('Detailed View')}
+            {'Detailed View'}
           </Button>
         }
       />
@@ -71,12 +71,12 @@ function RecentPatients() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>{t('Patient Name')}</TableCell>
-              <TableCell>{t('Gender')}</TableCell>
-              <TableCell>{t('Doctor')}</TableCell>
-              <TableCell>{t('Weight')}</TableCell>
-              <TableCell>{t('Department')}</TableCell>
-              <TableCell align="right">{t('Actions')}</TableCell>
+              <TableCell>{'Patient Name'}</TableCell>
+              <TableCell>{'Gender'}</TableCell>
+              <TableCell>{'Doctor'}</TableCell>
+              <TableCell>{'Weight'}</TableCell>
+              <TableCell>{'Department'}</TableCell>
+              <TableCell align="right">{'Actions'}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -93,7 +93,7 @@ function RecentPatients() {
                       Marilyn Stanton
                     </Typography>
                     <Typography variant="subtitle1" noWrap>
-                      {t('Admitted')}{' '}
+                      {'Admitted'}{' '}
                       {format(subHours(new Date(), 5), 'MMMM dd yyyy')}
                     </Typography>
                   </Box>
@@ -101,7 +101,7 @@ function RecentPatients() {
               </TableCell>
               <TableCell>
                 <Typography variant="h5" noWrap>
-                  {t('Female')}
+                  {'Female'}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -127,7 +127,7 @@ function RecentPatients() {
                       }}
                     >
                       <DotWarning />
-                      <Text color="warning">{t('On Planned Leave')}</Text>
+                      <Text color="warning">{'On Planned Leave'}</Text>
                     </Typography>
                   </Box>
                 </Box>
@@ -139,11 +139,11 @@ function RecentPatients() {
               </TableCell>
               <TableCell>
                 <Typography variant="h5" noWrap>
-                  {t('Pediatrics')}
+                  {'Pediatrics'}
                 </Typography>
               </TableCell>
               <TableCell align="right">
-                <Tooltip title={t('Edit Patient Details')} arrow>
+                <Tooltip title={'Edit Patient Details'} arrow>
                   <IconButton
                     sx={{
                       '&:hover': { background: theme.colors.primary.lighter },
@@ -155,7 +155,7 @@ function RecentPatients() {
                     <EditTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
-                <Tooltip title={t('Delete Patient Records')} arrow>
+                <Tooltip title={'Delete Patient Records'} arrow>
                   <IconButton
                     sx={{
                       '&:hover': { background: theme.colors.error.lighter },
@@ -182,7 +182,7 @@ function RecentPatients() {
                       Nolan Lubin
                     </Typography>
                     <Typography variant="subtitle1" noWrap>
-                      {t('Admitted')}{' '}
+                      {'Admitted'}{' '}
                       {format(subDays(new Date(), 12), 'MMMM dd yyyy')}
                     </Typography>
                   </Box>
@@ -190,7 +190,7 @@ function RecentPatients() {
               </TableCell>
               <TableCell>
                 <Typography variant="h5" noWrap>
-                  {t('Male')}
+                  {'Male'}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -216,7 +216,7 @@ function RecentPatients() {
                       }}
                     >
                       <DotSuccess />
-                      <Text color="success">{t('On Duty')}</Text>
+                      <Text color="success">{'On Duty'}</Text>
                     </Typography>
                   </Box>
                 </Box>
@@ -228,11 +228,11 @@ function RecentPatients() {
               </TableCell>
               <TableCell>
                 <Typography variant="h5" noWrap>
-                  {t('Cardiology')}
+                  {'Cardiology'}
                 </Typography>
               </TableCell>
               <TableCell align="right">
-                <Tooltip title={t('Edit Patient Details')} arrow>
+                <Tooltip title={'Edit Patient Details'} arrow>
                   <IconButton
                     sx={{
                       '&:hover': { background: theme.colors.primary.lighter },
@@ -244,7 +244,7 @@ function RecentPatients() {
                     <EditTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
-                <Tooltip title={t('Delete Patient Records')} arrow>
+                <Tooltip title={'Delete Patient Records'} arrow>
                   <IconButton
                     sx={{
                       '&:hover': { background: theme.colors.error.lighter },
@@ -271,7 +271,7 @@ function RecentPatients() {
                       Lincoln Torff
                     </Typography>
                     <Typography variant="subtitle1" noWrap>
-                      {t('Admitted')}{' '}
+                      {'Admitted'}{' '}
                       {format(subDays(new Date(), 5), 'MMMM dd yyyy')}
                     </Typography>
                   </Box>
@@ -279,7 +279,7 @@ function RecentPatients() {
               </TableCell>
               <TableCell>
                 <Typography variant="h5" noWrap>
-                  {t('Male')}
+                  {'Male'}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -305,7 +305,7 @@ function RecentPatients() {
                       }}
                     >
                       <DotWarning />
-                      <Text color="warning">{t('On Planned Leave')}</Text>
+                      <Text color="warning">{'On Planned Leave'}</Text>
                     </Typography>
                   </Box>
                 </Box>
@@ -317,11 +317,11 @@ function RecentPatients() {
               </TableCell>
               <TableCell>
                 <Typography variant="h5" noWrap>
-                  {t('Neurology')}
+                  {'Neurology'}
                 </Typography>
               </TableCell>
               <TableCell align="right">
-                <Tooltip title={t('Edit Patient Details')} arrow>
+                <Tooltip title={'Edit Patient Details'} arrow>
                   <IconButton
                     sx={{
                       '&:hover': { background: theme.colors.primary.lighter },
@@ -333,7 +333,7 @@ function RecentPatients() {
                     <EditTwoToneIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>
-                <Tooltip title={t('Delete Patient Records')} arrow>
+                <Tooltip title={'Delete Patient Records'} arrow>
                   <IconButton
                     sx={{
                       '&:hover': { background: theme.colors.error.lighter },

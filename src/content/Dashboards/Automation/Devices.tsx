@@ -21,7 +21,7 @@ import KitchenIcon from '@mui/icons-material/Kitchen';
 import LightbulbTwoToneIcon from '@mui/icons-material/LightbulbTwoTone';
 import RouterTwoToneIcon from '@mui/icons-material/RouterTwoTone';
 import WashTwoToneIcon from '@mui/icons-material/WashTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import SmartButtonTwoToneIcon from '@mui/icons-material/SmartButtonTwoTone';
 
@@ -138,24 +138,24 @@ const IconWrapper = styled(Box)(
 );
 
 function Devices() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const locations = [
     {
       value: 'all',
-      text: t("'s Home")
+      text: "'s Home"
     },
     {
       value: 'living_room',
-      text: t('Living room')
+      text: 'Living room'
     },
     {
       value: 'garden_shed',
-      text: t('Garden shed')
+      text: 'Garden shed'
     },
     {
       value: 'master_bedroom',
-      text: t('Master bedroom')
+      text: 'Master bedroom'
     }
   ];
 
@@ -211,7 +211,7 @@ function Devices() {
           </Menu>
         </Box>
         <Button size="small" variant="contained">
-          {t('Add room')}
+          {'Add room'}
         </Button>
       </Box>
       <Grid container spacing={3}>
@@ -220,13 +220,13 @@ function Devices() {
             <CardActionArea>
               <Switch edge="end" color="primary" />
               <Typography fontWeight="bold" variant="caption" color="primary">
-                {t('off')}
+                {'off'}
               </Typography>
               <IconWrapper>
                 <LightbulbTwoToneIcon fontSize="large" />
               </IconWrapper>
               <Typography variant="h4" noWrap>
-                {t('Main lights')}
+                {'Main lights'}
               </Typography>
             </CardActionArea>
           </CardDevice>
@@ -236,13 +236,13 @@ function Devices() {
             <CardActionArea>
               <Switch edge="end" defaultChecked color="primary" />
               <Typography fontWeight="bold" variant="caption" color="primary">
-                {t('on')}
+                {'on'}
               </Typography>
               <IconWrapper>
                 <KitchenIcon fontSize="large" />
               </IconWrapper>
               <Typography variant="h4" noWrap>
-                {t('Refrigerator')}
+                {'Refrigerator'}
               </Typography>
             </CardActionArea>
           </CardDevice>
@@ -252,13 +252,13 @@ function Devices() {
             <CardActionArea>
               <Switch edge="end" color="primary" />
               <Typography fontWeight="bold" variant="caption" color="primary">
-                {t('off')}
+                {'off'}
               </Typography>
               <IconWrapper>
                 <RouterTwoToneIcon fontSize="large" />
               </IconWrapper>
               <Typography variant="h4" noWrap>
-                {t('Router')}
+                {'Router'}
               </Typography>
             </CardActionArea>
           </CardDevice>
@@ -268,13 +268,13 @@ function Devices() {
             <CardActionArea>
               <Switch edge="end" color="primary" />
               <Typography fontWeight="bold" variant="caption" color="primary">
-                {t('off')}
+                {'off'}
               </Typography>
               <IconWrapper>
                 <WashTwoToneIcon fontSize="large" />
               </IconWrapper>
               <Typography variant="h4" noWrap>
-                {t('LG Washing')}
+                {'LG Washing'}
               </Typography>
             </CardActionArea>
           </CardDevice>
@@ -284,19 +284,19 @@ function Devices() {
             <CardActionArea>
               <Switch edge="end" color="primary" />
               <Typography fontWeight="bold" variant="caption" color="primary">
-                {t('off')}
+                {'off'}
               </Typography>
               <IconWrapper>
                 <SmartButtonTwoToneIcon fontSize="large" />
               </IconWrapper>
               <Typography variant="h4" noWrap>
-                {t('Samsung AC')}
+                {'Samsung AC'}
               </Typography>
             </CardActionArea>
           </CardDevice>
         </Grid>
         <Grid item xs={12} xl={3} md={4} sm={6}>
-          <Tooltip placement="right" arrow title={t('Pair new device')}>
+          <Tooltip placement="right" arrow title={'Pair new device'}>
             <CardAddAction>
               <CardActionArea
                 sx={{

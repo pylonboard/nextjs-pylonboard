@@ -1,6 +1,6 @@
 import { Grid, Box, Card, Typography, Avatar, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -9,7 +9,7 @@ import CompareArrowsTwoToneIcon from '@mui/icons-material/CompareArrowsTwoTone';
 import AddAlertTwoToneIcon from '@mui/icons-material/AddAlertTwoTone';
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -28,7 +28,7 @@ function Block5() {
           >
             <Box>
               <Typography gutterBottom component="div" variant="caption">
-                {t('New Accounts')}
+                {'New Accounts'}
               </Typography>
               <Typography variant="h3">586,356</Typography>
             </Box>
@@ -64,7 +64,7 @@ function Block5() {
               <span>16.5%</span>
             </Typography>
             <Typography variant="subtitle2" noWrap>
-              {t('increase this month')}
+              {'increase this month'}
             </Typography>
           </Box>
         </Card>
@@ -83,7 +83,7 @@ function Block5() {
           >
             <Box>
               <Typography gutterBottom component="div" variant="caption">
-                {t('Sales')}
+                {'Sales'}
               </Typography>
               <Typography variant="h3">23,684</Typography>
             </Box>
@@ -119,7 +119,7 @@ function Block5() {
               <span>0.5%</span>
             </Typography>
             <Typography variant="subtitle2" noWrap>
-              {t('compared to previous month')}
+              {'compared to previous month'}
             </Typography>
           </Box>
         </Card>
@@ -138,7 +138,7 @@ function Block5() {
           >
             <Box>
               <Typography gutterBottom component="div" variant="caption">
-                {t('New Orders')}
+                {'New Orders'}
               </Typography>
               <Typography variant="h3">36,594</Typography>
             </Box>
@@ -174,7 +174,7 @@ function Block5() {
               <span>8.25%</span>
             </Typography>
             <Typography variant="subtitle2" noWrap>
-              {t('decrease in orders amounts')}
+              {'decrease in orders amounts'}
             </Typography>
           </Box>
         </Card>

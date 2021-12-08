@@ -1,5 +1,5 @@
 import { useRef, useState, ChangeEvent } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -45,25 +45,25 @@ const EmptyResultsWrapper = styled('img')(
 );
 
 function TrafficSources() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -83,10 +83,10 @@ function TrafficSources() {
   const [currentTab, setCurrentTab] = useState<string>('referral');
 
   const tabs = [
-    { value: 'direct', label: t('Direct') },
-    { value: 'referral', label: t('Referral') },
-    { value: 'organic', label: t('Organic') },
-    { value: 'social', label: t('Social') }
+    { value: 'direct', label: 'Direct' },
+    { value: 'referral', label: 'Referral' },
+    { value: 'organic', label: 'Organic' },
+    { value: 'social', label: 'Social' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -237,7 +237,7 @@ function TrafficSources() {
             </Menu>
           </>
         }
-        title={t('Traffic Sources')}
+        title={'Traffic Sources'}
       />
       <Divider />
       <TabsContainerWrapper>
@@ -285,7 +285,7 @@ function TrafficSources() {
                 my: 3
               }}
             >
-              {t('Generate Chart')}
+              {'Generate Chart'}
             </Button>
           </Box>
         )}
@@ -323,7 +323,7 @@ function TrafficSources() {
                 my: 3
               }}
             >
-              {t('Generate Chart')}
+              {'Generate Chart'}
             </Button>
           </Box>
         )}
@@ -353,7 +353,7 @@ function TrafficSources() {
                 my: 3
               }}
             >
-              {t('Generate Chart')}
+              {'Generate Chart'}
             </Button>
           </Box>
         )}
@@ -393,7 +393,7 @@ function TrafficSources() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('Users')}
+                    {'Users'}
                   </Typography>
                 </Box>
               </Box>
@@ -430,7 +430,7 @@ function TrafficSources() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('Sessions')}
+                    {'Sessions'}
                   </Typography>
                 </Box>
               </Box>
@@ -467,7 +467,7 @@ function TrafficSources() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('pages/session')}
+                    {'pages/session'}
                   </Typography>
                 </Box>
               </Box>
@@ -504,7 +504,7 @@ function TrafficSources() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('Avg. Session Duration')}
+                    {'Avg. Session Duration'}
                   </Typography>
                 </Box>
               </Box>
@@ -541,7 +541,7 @@ function TrafficSources() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('% New Sessions')}
+                    {'% New Sessions'}
                   </Typography>
                 </Box>
               </Box>
@@ -578,7 +578,7 @@ function TrafficSources() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('Bounce Rate')}
+                    {'Bounce Rate'}
                   </Typography>
                 </Box>
               </Box>

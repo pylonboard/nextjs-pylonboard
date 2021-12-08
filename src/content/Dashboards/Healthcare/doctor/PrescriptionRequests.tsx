@@ -19,14 +19,14 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import FilterAltTwoToneIcon from '@mui/icons-material/FilterAltTwoTone';
 import Text from 'src/components/Text';
 import { format, subDays } from 'date-fns';
 import LockTwoToneIcon from '@mui/icons-material/LockTwoTone';
 
 function PrescriptionRequests() {
-  const { t }: { t: any } = useTranslation();
+
 
   const actionRef1 = useRef<any>(null);
   const [openPeriod, setOpenMenuPeriod] = useState<boolean>(false);
@@ -55,7 +55,7 @@ function PrescriptionRequests() {
               onClick={() => setOpenMenuPeriod(true)}
               endIcon={<FilterAltTwoToneIcon fontSize="small" />}
             >
-              {t('Filters')}
+              {'Filters'}
             </Button>
             <Menu
               disableScrollLock
@@ -81,35 +81,35 @@ function PrescriptionRequests() {
                 <Grid container spacing={3}>
                   <Grid item md={6}>
                     <FormControl fullWidth variant="outlined" size="small">
-                      <InputLabel>{t('Type')}</InputLabel>
+                      <InputLabel>{'Type'}</InputLabel>
                       <Select
-                        label={t('Type')}
+                        label={'Type'}
                         value={type}
                         onChange={handleType}
                       >
-                        <MenuItem value={0}>{t('All types')}</MenuItem>
+                        <MenuItem value={0}>{'All types'}</MenuItem>
                         <MenuItem value={1}>
-                          {t('Prescription-only medicines')}
+                          {'Prescription-only medicines'}
                         </MenuItem>
                         <MenuItem value={2}>
-                          {t('Over-the-Counter Drugs')}
+                          {'Over-the-Counter Drugs'}
                         </MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>
                   <Grid item md={6}>
                     <FormControl fullWidth variant="outlined" size="small">
-                      <InputLabel>{t('Status')}</InputLabel>
+                      <InputLabel>{'Status'}</InputLabel>
                       <Select
                         label="Status"
                         value={status}
                         onChange={handleStatus}
                       >
-                        <MenuItem value={0}>{t('All statuses')}</MenuItem>
+                        <MenuItem value={0}>{'All statuses'}</MenuItem>
                         <MenuItem value={1}>
-                          {t('Active Prescriptions')}
+                          {'Active Prescriptions'}
                         </MenuItem>
-                        <MenuItem value={2}>{t('Refill Requests')}</MenuItem>
+                        <MenuItem value={2}>{'Refill Requests'}</MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>
@@ -131,14 +131,14 @@ function PrescriptionRequests() {
                     variant="contained"
                     size="small"
                   >
-                    {t('Filter results')}
+                    {'Filter results'}
                   </Button>
                 </Box>
               </Box>
             </Menu>
           </>
         }
-        title={t('Prescriptions Requests')}
+        title={'Prescriptions Requests'}
       />
       <Divider />
       <List disablePadding>
@@ -160,7 +160,7 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('Original prescription required!')}
+                    title={'Original prescription required!'}
                   >
                     <LockTwoToneIcon
                       sx={{
@@ -185,7 +185,7 @@ function PrescriptionRequests() {
             }}
             secondary={
               <>
-                {t('Last Prescribed')}:{' '}
+                {'Last Prescribed'}:{' '}
                 <Text color="black">
                   <b>{format(subDays(new Date(), 15), 'MMMM dd yyyy')}</b>
                 </Text>
@@ -205,14 +205,14 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('View') + ' ' + t('active prescriptions')}
+                    title={'View' + ' ' + 'active prescriptions'}
                   >
                     <Link variant="h3" underline="none" gutterBottom href="#">
                       51
                     </Link>
                   </Tooltip>
                   <Typography variant="subtitle2">
-                    {t('active prescriptions')}
+                    {'active prescriptions'}
                   </Typography>
                 </Box>
               </Grid>
@@ -228,14 +228,14 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('View') + ' ' + t('refill requests')}
+                    title={'View' + ' ' + 'refill requests'}
                   >
                     <Link variant="h3" underline="none" gutterBottom href="#">
                       9
                     </Link>
                   </Tooltip>
                   <Typography variant="subtitle2">
-                    {t('refill requests')}
+                    {'refill requests'}
                   </Typography>
                 </Box>
               </Grid>
@@ -261,7 +261,7 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('Original prescription required!')}
+                    title={'Original prescription required!'}
                   >
                     <LockTwoToneIcon
                       sx={{
@@ -286,7 +286,7 @@ function PrescriptionRequests() {
             }}
             secondary={
               <>
-                {t('Last Prescribed')}:{' '}
+                {'Last Prescribed'}:{' '}
                 <Text color="black">
                   <b>{format(subDays(new Date(), 22), 'MMMM dd yyyy')}</b>
                 </Text>
@@ -306,14 +306,14 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('View') + ' ' + t('active prescriptions')}
+                    title={'View' + ' ' + 'active prescriptions'}
                   >
                     <Link variant="h3" underline="none" gutterBottom href="#">
                       14
                     </Link>
                   </Tooltip>
                   <Typography variant="subtitle2">
-                    {t('active prescriptions')}
+                    {'active prescriptions'}
                   </Typography>
                 </Box>
               </Grid>
@@ -329,14 +329,14 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('View') + ' ' + t('refill requests')}
+                    title={'View' + ' ' + 'refill requests'}
                   >
                     <Link variant="h3" underline="none" gutterBottom href="#">
                       2
                     </Link>
                   </Tooltip>
                   <Typography variant="subtitle2">
-                    {t('refill requests')}
+                    {'refill requests'}
                   </Typography>
                 </Box>
               </Grid>
@@ -373,7 +373,7 @@ function PrescriptionRequests() {
             }}
             secondary={
               <>
-                {t('Last Prescribed')}:{' '}
+                {'Last Prescribed'}:{' '}
                 <Text color="black">
                   <b>{format(subDays(new Date(), 34), 'MMMM dd yyyy')}</b>
                 </Text>
@@ -393,14 +393,14 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('View') + ' ' + t('active prescriptions')}
+                    title={'View' + ' ' + 'active prescriptions'}
                   >
                     <Link variant="h3" underline="none" gutterBottom href="#">
                       7
                     </Link>
                   </Tooltip>
                   <Typography variant="subtitle2">
-                    {t('active prescriptions')}
+                    {'active prescriptions'}
                   </Typography>
                 </Box>
               </Grid>
@@ -416,14 +416,14 @@ function PrescriptionRequests() {
                   <Tooltip
                     arrow
                     placement="top"
-                    title={t('View') + ' ' + t('refill requests')}
+                    title={'View' + ' ' + 'refill requests'}
                   >
                     <Link variant="h3" underline="none" gutterBottom href="#">
                       34
                     </Link>
                   </Tooltip>
                   <Typography variant="subtitle2">
-                    {t('refill requests')}
+                    {'refill requests'}
                   </Typography>
                 </Box>
               </Grid>

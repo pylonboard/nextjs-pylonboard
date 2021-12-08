@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -58,7 +58,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -85,7 +85,7 @@ function Block1() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('New Accounts')}
+                {'New Accounts'}
               </Typography>
               <Typography
                 variant="h3"
@@ -133,7 +133,7 @@ function Block1() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('increase this month')}
+              {'increase this month'}
             </Typography>
           </Box>
         </Card>
@@ -160,7 +160,7 @@ function Block1() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('New Orders')}
+                {'New Orders'}
               </Typography>
               <Typography
                 variant="h3"
@@ -208,7 +208,7 @@ function Block1() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('decrease in orders amounts')}
+              {'decrease in orders amounts'}
             </Typography>
           </Box>
         </Card>
@@ -235,7 +235,7 @@ function Block1() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('Sales')}
+                {'Sales'}
               </Typography>
               <Typography
                 variant="h3"
@@ -283,7 +283,7 @@ function Block1() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('compared to previous month')}
+              {'compared to previous month'}
             </Typography>
           </Box>
         </Card>
@@ -310,7 +310,7 @@ function Block1() {
                   color: `${theme.colors.alpha.trueWhite[70]}`
                 }}
               >
-                {t('Sales')}
+                {'Sales'}
               </Typography>
               <Typography
                 variant="h3"
@@ -358,7 +358,7 @@ function Block1() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t('compared to previous month')}
+              {'compared to previous month'}
             </Typography>
           </Box>
         </Card>
@@ -388,7 +388,7 @@ function Block1() {
                   <MonetizationOnTwoToneIcon />
                 </Text>
                 <Typography variant="h3">$9,658</Typography>
-                <Typography variant="subtitle2">{t('revenue')}</Typography>
+                <Typography variant="subtitle2">{'revenue'}</Typography>
               </Box>
               <Box
                 p={3}
@@ -400,7 +400,7 @@ function Block1() {
                   <PersonTwoToneIcon />
                 </Text>
                 <Typography variant="h3">23,594</Typography>
-                <Typography variant="subtitle2">{t('users')}</Typography>
+                <Typography variant="subtitle2">{'users'}</Typography>
               </Box>
             </Box>
             <Box
@@ -419,7 +419,7 @@ function Block1() {
                   <SubscriptionsTwoToneIcon />
                 </Text>
                 <Typography variant="h3">1,064</Typography>
-                <Typography variant="subtitle2">{t('orders')}</Typography>
+                <Typography variant="subtitle2">{'orders'}</Typography>
               </Box>
               <Box
                 p={3}
@@ -448,7 +448,7 @@ function Block1() {
                     suffix="M"
                   />
                 </Typography>
-                <Typography variant="subtitle2">{t('orders')}</Typography>
+                <Typography variant="subtitle2">{'orders'}</Typography>
               </Box>
             </Box>
           </Stack>
@@ -472,7 +472,7 @@ function Block1() {
                   textAlign: 'center'
                 }}
               >
-                <Tooltip arrow title={t('Tooltip for this icon button')}>
+                <Tooltip arrow title={'Tooltip for this icon button'}>
                   <IconButtonWrapper
                     sx={{
                       background: `${theme.colors.primary.main}`,
@@ -482,7 +482,7 @@ function Block1() {
                     <AddCircleTwoToneIcon fontSize="small" />
                   </IconButtonWrapper>
                 </Tooltip>
-                <Tooltip arrow title={t('Tooltip for this icon button')}>
+                <Tooltip arrow title={'Tooltip for this icon button'}>
                   <IconButtonWrapper
                     sx={{
                       mx: 2,
@@ -493,7 +493,7 @@ function Block1() {
                     <AddLocationTwoToneIcon fontSize="small" />
                   </IconButtonWrapper>
                 </Tooltip>
-                <Tooltip arrow title={t('Tooltip for this icon button')}>
+                <Tooltip arrow title={'Tooltip for this icon button'}>
                   <IconButtonWrapper
                     sx={{
                       background: `${theme.colors.warning.main}`,

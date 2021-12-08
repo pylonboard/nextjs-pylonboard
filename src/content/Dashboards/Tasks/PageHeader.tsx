@@ -10,7 +10,7 @@ import {
   Menu,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import DocumentScannerTwoToneIcon from '@mui/icons-material/DocumentScannerTwoTone';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import AddAlertTwoToneIcon from '@mui/icons-material/AddAlertTwoTone';
@@ -40,24 +40,24 @@ const AvatarPageTitle = styled(Avatar)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
 
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -78,12 +78,12 @@ function PageHeader() {
         </AvatarPageTitle>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Welcome')}, Rachael Simons!
+            {'Welcome'}, Rachael Simons!
           </Typography>
           <Typography variant="subtitle2">
-            {t(
+            {
               'Manage your day to day tasks with style! Enjoy a well built UI system.'
-            )}
+            }
           </Typography>
         </Box>
       </Box>
@@ -127,7 +127,7 @@ function PageHeader() {
         </Menu>
 
         <Button variant="contained" startIcon={<DocumentScannerTwoToneIcon />}>
-          {t('Export')}
+          {'Export'}
         </Button>
       </Box>
     </Box>

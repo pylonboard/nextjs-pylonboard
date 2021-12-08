@@ -8,7 +8,7 @@ import {
   Typography,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ViewWeekTwoToneIcon from '@mui/icons-material/ViewWeekTwoTone';
 import TableRowsTwoToneIcon from '@mui/icons-material/TableRowsTwoTone';
 import WatchListColumn from './WatchListColumn';
@@ -23,7 +23,7 @@ const EmptyResultsWrapper = styled('img')(
 );
 
 function WatchList() {
-  const { t }: { t: any } = useTranslation();
+
 
   const [tabs, setTab] = useState<string | null>('watch_list_columns');
 
@@ -44,7 +44,7 @@ function WatchList() {
           pb: 3
         }}
       >
-        <Typography variant="h3">{t('Watch List')}</Typography>
+        <Typography variant="h3">{'Watch List'}</Typography>
         <ToggleButtonGroup
           value={tabs}
           exclusive
@@ -82,7 +82,7 @@ function WatchList() {
             }}
             gutterBottom
           >
-            {t('Click something, anything!')}
+            {'Click something, anything!'}
           </Typography>
           <Button
             variant="contained"

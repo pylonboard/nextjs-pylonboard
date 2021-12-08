@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+
 import { wait } from 'src/utils/wait';
 import numeral from 'numeral';
 
@@ -59,7 +59,7 @@ interface Item {
 }
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const [open, setOpen] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const theme = useTheme();
@@ -120,7 +120,7 @@ function PageHeader() {
   };
 
   const handleCreateInvoiceSuccess = () => {
-    enqueueSnackbar(t('A new invoice has been created successfully'), {
+    enqueueSnackbar('A new invoice has been created successfully', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -137,10 +137,10 @@ function PageHeader() {
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Invoices')}
+            {'Invoices'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('All recent invoices can be found below')}
+            {'All recent invoices can be found below'}
           </Typography>
         </Grid>
         <Grid item>
@@ -152,7 +152,7 @@ function PageHeader() {
             variant="contained"
             startIcon={<AddTwoToneIcon fontSize="small" />}
           >
-            {t('Add new invoice')}
+            {'Add new invoice'}
           </Button>
         </Grid>
       </Grid>
@@ -168,10 +168,10 @@ function PageHeader() {
           }}
         >
           <Typography variant="h4" gutterBottom>
-            {t('Create invoice')}
+            {'Create invoice'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Use this modal dialog to create a new invoice')}
+            {'Use this modal dialog to create a new invoice'}
           </Typography>
         </DialogTitle>
         <Formik
@@ -182,7 +182,7 @@ function PageHeader() {
           validationSchema={Yup.object().shape({
             number: Yup.string()
               .max(255)
-              .required(t('The invoice number field is required'))
+              .required('The invoice number field is required')
           })}
           onSubmit={async (
             _values,
@@ -221,14 +221,14 @@ function PageHeader() {
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <Box pb={1}>
-                      <b>{t('Invoice Number')}:</b>
+                      <b>{'Invoice Number'}:</b>
                     </Box>
                     <TextField
                       error={Boolean(touched.number && errors.number)}
                       fullWidth
                       helperText={touched.number && errors.number}
                       name="number"
-                      placeholder={t('Invoice number here...')}
+                      placeholder={'Invoice number here...'}
                       onBlur={handleBlur}
                       onChange={handleChange}
                       value={values.number}
@@ -237,7 +237,7 @@ function PageHeader() {
                   </Grid>
                   <Grid item xs={12}>
                     <Box pb={1}>
-                      <b>{t('Recipient')}:</b>
+                      <b>{'Recipient'}:</b>
                     </Box>
                     <Autocomplete
                       multiple
@@ -266,7 +266,7 @@ function PageHeader() {
                           InputLabelProps={{
                             shrink: true
                           }}
-                          placeholder={t('Select invoice recipient...')}
+                          placeholder={'Select invoice recipient...'}
                         />
                       )}
                       renderTags={(members, getTagProps) =>
@@ -283,7 +283,7 @@ function PageHeader() {
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Box pb={1}>
-                      <b>{t('Invoice Date')}:</b>
+                      <b>{'Invoice Date'}:</b>
                     </Box>
                     <DatePicker
                       value={value}
@@ -293,7 +293,7 @@ function PageHeader() {
                       renderInput={(params) => (
                         <TextField
                           fullWidth
-                          placeholder={t('Select date...')}
+                          placeholder={'Select date...'}
                           {...params}
                         />
                       )}
@@ -301,7 +301,7 @@ function PageHeader() {
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Box pb={1}>
-                      <b>{t('Due Date')}:</b>
+                      <b>{'Due Date'}:</b>
                     </Box>
                     <DatePicker
                       value={value1}
@@ -311,7 +311,7 @@ function PageHeader() {
                       renderInput={(params) => (
                         <TextField
                           fullWidth
-                          placeholder={t('Select date...')}
+                          placeholder={'Select date...'}
                           {...params}
                         />
                       )}
@@ -323,11 +323,11 @@ function PageHeader() {
                 <Table>
                   <TableHead>
                     <TableRow>
-                      <TableCell>{t('Item')}</TableCell>
-                      <TableCell>{t('Qty')}</TableCell>
-                      <TableCell>{t('Price')}</TableCell>
-                      <TableCell>{t('Total')}</TableCell>
-                      <TableCell align="right">{t('Actions')}</TableCell>
+                      <TableCell>{'Item'}</TableCell>
+                      <TableCell>{'Qty'}</TableCell>
+                      <TableCell>{'Price'}</TableCell>
+                      <TableCell>{'Total'}</TableCell>
+                      <TableCell align="right">{'Actions'}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -344,7 +344,7 @@ function PageHeader() {
                           {numeral(item.price).format(`${item.currency}0,0.00`)}
                         </TableCell>
                         <TableCell align="right">
-                          <Tooltip arrow title={t('Delete')}>
+                          <Tooltip arrow title={'Delete'}>
                             <IconButtonError>
                               <DeleteTwoToneIcon fontSize="small" />
                             </IconButtonError>
@@ -360,7 +360,7 @@ function PageHeader() {
                           startIcon={<AddTwoToneIcon />}
                           variant="outlined"
                         >
-                          {t('Add item')}
+                          {'Add item'}
                         </Button>
                       </TableCell>
                       <TableCell colSpan={4} align="right">
@@ -370,7 +370,7 @@ function PageHeader() {
                           color="text.secondary"
                           fontWeight="bold"
                         >
-                          {t('Total')}:
+                          {'Total'}:
                         </Typography>
                         <Typography variant="h3" fontWeight="bold">
                           {numeral(9458).format(`$0,0.00`)}
@@ -382,11 +382,11 @@ function PageHeader() {
               </TableContainer>
               <Box px={3} pt={3}>
                 <TextField
-                  label={t('Additional informations')}
+                  label={'Additional informations'}
                   multiline
-                  placeholder={t(
+                  placeholder={
                     'Write here any additional informations you might have...'
-                  )}
+                  }
                   fullWidth
                   minRows={3}
                   maxRows={8}
@@ -402,7 +402,7 @@ function PageHeader() {
               >
                 <Box>
                   <Button fullWidth={mobile} variant="outlined">
-                    {t('Preview invoice')}
+                    {'Preview invoice'}
                   </Button>
                 </Box>
                 <Box>
@@ -416,7 +416,7 @@ function PageHeader() {
                     variant="outlined"
                     onClick={handleCreateInvoiceClose}
                   >
-                    {t('Save as draft')}
+                    {'Save as draft'}
                   </Button>
                   <Button
                     fullWidth={mobile}
@@ -428,7 +428,7 @@ function PageHeader() {
                     variant="contained"
                     size="large"
                   >
-                    {t('Create invoice')}
+                    {'Create invoice'}
                   </Button>
                 </Box>
               </Box>

@@ -8,7 +8,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import CalendarTodayTwoToneIcon from '@mui/icons-material/CalendarTodayTwoTone';
@@ -25,7 +25,7 @@ const AvatarSuccess = styled(Avatar)(
 );
 
 function TimeSpent() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -167,12 +167,12 @@ function TimeSpent() {
                 variant="subtitle2"
                 color="text.secondary"
               >
-                {t('total spent')}
+                {'total spent'}
               </Typography>
             </Box>
           </Box>
         }
-        title={t('Time Spent')}
+        title={'Time Spent'}
         titleTypographyProps={{ variant: 'h4' }}
       />
       <CardContent

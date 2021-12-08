@@ -1,8 +1,8 @@
 import { Typography, Card } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 function AdditionalInfoTab() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <Card
@@ -11,7 +11,7 @@ function AdditionalInfoTab() {
       }}
     >
       <Typography variant="h4" gutterBottom>
-        {t('Description')}
+        {'Description'}
       </Typography>
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem

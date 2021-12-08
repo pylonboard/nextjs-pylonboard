@@ -12,7 +12,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 const ListWrapper = styled(List)(
   () => `
@@ -24,7 +24,7 @@ const ListWrapper = styled(List)(
 );
 
 function PopularTags() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -33,7 +33,7 @@ function PopularTags() {
         height: '100%'
       }}
     >
-      <CardHeader title={t('Popular Tags')} />
+      <CardHeader title={'Popular Tags'} />
       <Divider />
       <ListWrapper disablePadding>
         <ListItem
@@ -84,7 +84,7 @@ function PopularTags() {
             variant="h4"
             color="text.primary"
           >
-            {t('Groups')}
+            {'Groups'}
           </Typography>
         </ListSubheader>
         <Divider />

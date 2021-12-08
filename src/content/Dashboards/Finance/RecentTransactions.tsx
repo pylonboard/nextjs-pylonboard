@@ -14,7 +14,7 @@ import {
   Avatar,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import CallReceivedTwoToneIcon from '@mui/icons-material/CallReceivedTwoTone';
 import CallMadeTwoToneIcon from '@mui/icons-material/CallMadeTwoTone';
 import { format, subDays } from 'date-fns';
@@ -35,7 +35,7 @@ const AvatarWrapperSuccess = styled(Avatar)(
 );
 
 function RecentTransactions() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -43,7 +43,7 @@ function RecentTransactions() {
         height: '100%'
       }}
     >
-      <CardHeader title={t('Recent Transactions')} />
+      <CardHeader title={'Recent Transactions'} />
       <List disablePadding>
         <ListSubheader
           color="primary"
@@ -69,7 +69,7 @@ function RecentTransactions() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={t('Money added from') + ' Apple Pay'}
+            primary={'Money added from' + ' Apple Pay'}
             primaryTypographyProps={{
               variant: 'body1',
               color: 'textPrimary',
@@ -122,7 +122,7 @@ function RecentTransactions() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={t('Refund from') + ' Google Inc.'}
+            primary={'Refund from' + ' Google Inc.'}
             primaryTypographyProps={{
               variant: 'body1',
               color: 'textPrimary',
@@ -159,7 +159,7 @@ function RecentTransactions() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={t('Money added from') + ' Apple Pay'}
+            primary={'Money added from' + ' Apple Pay'}
             primaryTypographyProps={{
               variant: 'body1',
               color: 'textPrimary',
@@ -212,7 +212,7 @@ function RecentTransactions() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={t('Refund from') + ' Google Inc.'}
+            primary={'Refund from' + ' Google Inc.'}
             primaryTypographyProps={{
               variant: 'body1',
               color: 'textPrimary',
@@ -240,7 +240,7 @@ function RecentTransactions() {
             </AvatarWrapperSuccess>
           </ListItemAvatar>
           <ListItemText
-            primary={t('Monthly Subscription for ') + ' Spotify'}
+            primary={'Monthly Subscription for ' + ' Spotify'}
             primaryTypographyProps={{
               variant: 'body1',
               color: 'textPrimary',
@@ -263,7 +263,7 @@ function RecentTransactions() {
         }}
       >
         <Button size="small" variant="outlined">
-          {t('View all')}
+          {'View all'}
         </Button>
       </CardActions>
     </Card>

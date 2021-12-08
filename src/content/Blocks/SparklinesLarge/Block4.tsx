@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -19,7 +19,7 @@ import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -114,7 +114,7 @@ function Block4() {
             >
               $9,658
             </Typography>
-            <Typography variant="subtitle2">{t('revenue')}</Typography>
+            <Typography variant="subtitle2">{'revenue'}</Typography>
           </Box>
           <Box
             sx={{
@@ -132,7 +132,7 @@ function Block4() {
             >
               6,598
             </Typography>
-            <Typography variant="subtitle2">{t('new members')}</Typography>
+            <Typography variant="subtitle2">{'new members'}</Typography>
           </Box>
           <Box
             sx={{
@@ -150,7 +150,7 @@ function Block4() {
             >
               1,064
             </Typography>
-            <Typography variant="subtitle2">{t('orders')}</Typography>
+            <Typography variant="subtitle2">{'orders'}</Typography>
           </Box>
         </Stack>
       </Box>
@@ -189,7 +189,7 @@ function Block4() {
           }}
           variant="subtitle2"
         >
-          {t('new subscription sign-ups')}
+          {'new subscription sign-ups'}
         </Typography>
       </Box>
       <Divider />
@@ -219,7 +219,7 @@ function Block4() {
           color="error"
           startIcon={<PieChartTwoToneIcon />}
         >
-          {t('Download report')}
+          {'Download report'}
         </Button>
       </Box>
     </Card>

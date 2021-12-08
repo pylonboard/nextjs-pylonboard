@@ -14,7 +14,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
 const TypographyPrimary = styled(Typography)(
@@ -65,7 +65,7 @@ const BoxUpgrade = styled(Box)(
 );
 
 function HealthcareSidebar() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const user = {
@@ -81,7 +81,7 @@ function HealthcareSidebar() {
         fullWidth
         endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
       >
-        {t('Switch to Hospital')}
+        {'Switch to Hospital'}
       </Button>
 
       <Box
@@ -105,7 +105,7 @@ function HealthcareSidebar() {
           {user.name}
         </Typography>
         <Typography variant="subtitle2" noWrap>
-          {t('Neurosurgeon')}
+          {'Neurosurgeon'}
         </Typography>
       </Box>
       <Divider
@@ -125,7 +125,7 @@ function HealthcareSidebar() {
                 noWrap
                 gutterBottom
               >
-                {t('Overall Rating')}
+                {'Overall Rating'}
               </Typography>
               <Typography variant="h2" noWrap gutterBottom>
                 4.9
@@ -162,7 +162,7 @@ function HealthcareSidebar() {
                 noWrap
                 gutterBottom
               >
-                {t('Total Patients')}
+                {'Total Patients'}
               </Typography>
               <Typography variant="h2" noWrap gutterBottom>
                 275
@@ -177,22 +177,22 @@ function HealthcareSidebar() {
         }}
       />
       <Card variant="outlined">
-        <CardHeader title={t('Revenue')} />
+        <CardHeader title={'Revenue'} />
         <Divider />
         <CardContent>
           <Typography variant="h2">$15,394.58</Typography>
           <IndicatorWrapper />
-          <Typography variant="subtitle2">{t('This month')}</Typography>
+          <Typography variant="subtitle2">{'This month'}</Typography>
         </CardContent>
         <CardContent>
           <Typography variant="h2">$784.34</Typography>
           <IndicatorWrapper />
-          <Typography variant="subtitle2">{t('This week')}</Typography>
+          <Typography variant="subtitle2">{'This week'}</Typography>
         </CardContent>
         <CardActionsWrapper>
           <Box>
             <Typography variant="caption" component="div" gutterBottom>
-              {t('Total')}
+              {'Total'}
             </Typography>
             <Typography variant="h3">$67,384.58</Typography>
           </Box>
@@ -210,7 +210,7 @@ function HealthcareSidebar() {
             pb: 1
           }}
         >
-          {t('Upgrade to PRO Account')}
+          {'Upgrade to PRO Account'}
         </TypographyPrimary>
         <TypographySecondary
           variant="subtitle2"
@@ -218,10 +218,10 @@ function HealthcareSidebar() {
             pb: 3
           }}
         >
-          {t('Start your PRO subscription today for as low as $5/month')}
+          {'Start your PRO subscription today for as low as $5/month'}
         </TypographySecondary>
         <Button variant="contained" size="small">
-          {t('Learn more')}
+          {'Learn more'}
         </Button>
         <img src="/static/images/placeholders/illustrations/6.png" alt="..." />
       </BoxUpgrade>

@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import Label from 'src/components/Label';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
@@ -79,7 +79,7 @@ const AvatarSuccess = styled(Avatar)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -314,7 +314,7 @@ function Block2() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('Laptops sales')}
+              {'Laptops sales'}
             </Typography>
             <Typography fontWeight="bold" variant="h4">
               <Text color="success">+145%</Text>
@@ -359,7 +359,7 @@ function Block2() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('Total sales')}
+              {'Total sales'}
             </Typography>
             <Typography noWrap fontWeight="bold" variant="h4">
               Down by <Text color="error">23%</Text> last quarter
@@ -404,7 +404,7 @@ function Block2() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('New accounts')}
+              {'New accounts'}
             </Typography>
             <Typography fontWeight="bold" variant="h4">
               <Label color="error">24% down</Label>

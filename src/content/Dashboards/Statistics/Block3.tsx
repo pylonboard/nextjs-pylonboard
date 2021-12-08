@@ -19,7 +19,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import Scrollbar from 'src/components/Scrollbar';
@@ -48,7 +48,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -176,7 +176,7 @@ function Block3() {
       }}
     >
       <CardActions>
-        <Tooltip arrow placement="top" title={t('Add new product')}>
+        <Tooltip arrow placement="top" title={'Add new product'}>
           <IconButton
             color="primary"
             sx={{
@@ -203,7 +203,7 @@ function Block3() {
             pb: 4
           }}
         >
-          {t('Top Grossing Products')}
+          {'Top Grossing Products'}
         </Typography>
         <Typography
           fontWeight="bold"
@@ -214,7 +214,7 @@ function Block3() {
           component="h6"
           variant="caption"
         >
-          {t('Monthly sales')}
+          {'Monthly sales'}
         </Typography>
         <Box display="flex" alignItems="center">
           <Text flex color="warning">
@@ -244,7 +244,7 @@ function Block3() {
         component="h6"
         variant="caption"
       >
-        {t('Top Sellers')}
+        {'Top Sellers'}
       </Typography>
       <Box
         sx={{
@@ -355,7 +355,7 @@ function Block3() {
           endIcon={<ArrowForwardTwoToneIcon />}
           size="small"
         >
-          {t('All products')}
+          {'All products'}
         </Button>
       </Box>
     </Card>

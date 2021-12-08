@@ -9,7 +9,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -37,7 +37,7 @@ const DotPrimary = styled('span')(
 );
 
 function TasksAnalytics() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -151,19 +151,19 @@ function TasksAnalytics() {
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -179,7 +179,7 @@ function TasksAnalytics() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography variant="h4">{t('Tasks Analytics')}</Typography>
+        <Typography variant="h4">{'Tasks Analytics'}</Typography>
         <Button
           size="small"
           variant="contained"
@@ -228,7 +228,7 @@ function TasksAnalytics() {
           }}
         >
           <DotPrimary />
-          {t('tasks created')}
+          {'tasks created'}
         </Typography>
         <Typography
           variant="body2"
@@ -239,7 +239,7 @@ function TasksAnalytics() {
           }}
         >
           <DotPrimaryLight />
-          {t('tasks completed')}
+          {'tasks completed'}
         </Typography>
       </Box>
       <Chart

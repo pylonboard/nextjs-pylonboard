@@ -1,9 +1,9 @@
 import { Button, Card, Box, Grid, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 
 function ActiveSubscriptions() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <>
@@ -15,8 +15,8 @@ function ActiveSubscriptions() {
           pb: 3
         }}
       >
-        <Typography variant="h3">{t('Active Subscriptions')}</Typography>
-        <Button size="small">{t('View all subscriptions')}</Button>
+        <Typography variant="h3">{'Active Subscriptions'}</Typography>
+        <Button size="small">{'View all subscriptions'}</Button>
       </Box>
       <Grid container spacing={3}>
         <Grid item md={3} sm={6} xs={12}>
@@ -51,7 +51,7 @@ function ActiveSubscriptions() {
                 }}
               >
                 <Label color="warning">
-                  {t('due in')}&nbsp;<b>17 {t('days')}</b>
+                  {'due in'}&nbsp;<b>17 {'days'}</b>
                 </Label>
               </Box>
             </Box>
@@ -72,7 +72,7 @@ function ActiveSubscriptions() {
                 $32.00
               </Typography>
               <Button size="small" variant="outlined">
-                {t('Pay')}
+                {'Pay'}
               </Button>
             </Box>
           </Card>
@@ -108,7 +108,7 @@ function ActiveSubscriptions() {
                   fontWeight: 'normal'
                 }}
               >
-                <Label color="success">{t('just paid')}</Label>
+                <Label color="success">{'just paid'}</Label>
               </Box>
             </Box>
             <Box
@@ -128,7 +128,7 @@ function ActiveSubscriptions() {
                 $9.99
               </Typography>
               <Button size="small" variant="outlined" color="secondary">
-                {t('View')}
+                {'View'}
               </Button>
             </Box>
           </Card>
@@ -166,7 +166,7 @@ function ActiveSubscriptions() {
                 }}
               >
                 <Label color="error">
-                  {t('due in')}&nbsp;<b>3 {t('days')}</b>
+                  {'due in'}&nbsp;<b>3 {'days'}</b>
                 </Label>
               </Box>
             </Box>
@@ -187,7 +187,7 @@ function ActiveSubscriptions() {
                 $8,695.00
               </Typography>
               <Button size="small" variant="outlined">
-                {t('Pay')}
+                {'Pay'}
               </Button>
             </Box>
           </Card>
@@ -225,7 +225,7 @@ function ActiveSubscriptions() {
                 }}
               >
                 <Label color="success">
-                  {t('due in')}&nbsp;<b>8 {t('months')}</b>
+                  {'due in'}&nbsp;<b>8 {'months'}</b>
                 </Label>
               </Box>
             </Box>
@@ -246,7 +246,7 @@ function ActiveSubscriptions() {
                 $499.00
               </Typography>
               <Button size="small" variant="outlined">
-                {t('View')}
+                {'View'}
               </Button>
             </Box>
           </Card>

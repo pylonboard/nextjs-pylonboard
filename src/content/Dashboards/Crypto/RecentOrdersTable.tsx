@@ -27,7 +27,7 @@ import {
 
 import Label from 'src/components/Label';
 import { CryptoOrder, CryptoOrderStatus } from 'src/models/crypto_order';
-import { useTranslation } from 'react-i18next';
+
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import BulkActions from 'src/content/Management/Commerce/BulkActions';
@@ -86,7 +86,7 @@ const applyPagination = (
 };
 
 const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
-  const { t }: { t: any } = useTranslation();
+
 
   const [selectedCryptoOrders, setSelectedCryptoOrders] = useState<string[]>(
     []
@@ -105,15 +105,15 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
     },
     {
       id: 'completed',
-      name: t('Completed')
+      name: 'Completed'
     },
     {
       id: 'pending',
-      name: t('Pending')
+      name: 'Pending'
     },
     {
       id: 'failed',
-      name: t('Failed')
+      name: 'Failed'
     }
   ];
 
@@ -189,11 +189,11 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
           action={
             <Box width={150}>
               <FormControl fullWidth variant="outlined">
-                <InputLabel>{t('Status')}</InputLabel>
+                <InputLabel>{'Status'}</InputLabel>
                 <Select
                   value={filters.status || 'all'}
                   onChange={handleStatusChange}
-                  label={t('Status')}
+                  label={'Status'}
                   autoWidth
                 >
                   {statusOptions.map((statusOption) => (
@@ -205,7 +205,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
               </FormControl>
             </Box>
           }
-          title={t('Recent Orders')}
+          title={'Recent Orders'}
         />
       )}
       <Divider />
@@ -221,12 +221,12 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                   onChange={handleSelectAllCryptoOrders}
                 />
               </TableCell>
-              <TableCell>{t('Order Details')}</TableCell>
-              <TableCell>{t('Order ID')}</TableCell>
-              <TableCell>{t('Source')}</TableCell>
-              <TableCell align="right">{t('Amount')}</TableCell>
-              <TableCell align="right">{t('Status')}</TableCell>
-              <TableCell align="right">{t('Actions')}</TableCell>
+              <TableCell>{'Order Details'}</TableCell>
+              <TableCell>{'Order ID'}</TableCell>
+              <TableCell>{'Source'}</TableCell>
+              <TableCell align="right">{'Amount'}</TableCell>
+              <TableCell align="right">{'Status'}</TableCell>
+              <TableCell align="right">{'Actions'}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -310,7 +310,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                     {getStatusLabel(cryptoOrder.status)}
                   </TableCell>
                   <TableCell align="right">
-                    <Tooltip title={t('Edit Order')} arrow>
+                    <Tooltip title={'Edit Order'} arrow>
                       <IconButton
                         sx={{
                           '&:hover': {
@@ -324,7 +324,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                         <EditTwoToneIcon fontSize="small" />
                       </IconButton>
                     </Tooltip>
-                    <Tooltip title={t('Delete Order')} arrow>
+                    <Tooltip title={'Delete Order'} arrow>
                       <IconButton
                         sx={{
                           '&:hover': { background: theme.colors.error.lighter },

@@ -12,7 +12,7 @@ import {
   ListItem,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import DateRangeTwoToneIcon from '@mui/icons-material/DateRangeTwoTone';
 import ControlPointTwoToneIcon from '@mui/icons-material/ControlPointTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
@@ -56,7 +56,7 @@ const ListItemWrapper = styled(ListItem)(
 );
 
 function UpcomingEvents() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
@@ -74,9 +74,9 @@ function UpcomingEvents() {
           >
             <DateRangeTwoToneIcon />
           </AvatarPrimary>
-          <Typography variant="h4">{t('Upcoming Events')}</Typography>
+          <Typography variant="h4">{'Upcoming Events'}</Typography>
         </Box>
-        <Tooltip placement="top" arrow title={t('Create new event')}>
+        <Tooltip placement="top" arrow title={'Create new event'}>
           <IconButton
             sx={{
               alignSelf: 'center'
@@ -95,7 +95,7 @@ function UpcomingEvents() {
               <Typography variant="h2" color="text.primary">
                 23
               </Typography>
-              <Typography variant="subtitle2">{t('June')}</Typography>
+              <Typography variant="subtitle2">{'June'}</Typography>
             </Box>
           </BoxWrapper>
           <Box>
@@ -108,12 +108,12 @@ function UpcomingEvents() {
               noWrap
               gutterBottom
             >
-              {t('Healthy Body')}
+              {'Healthy Body'}
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              {t(
+              {
                 'You will learn how to have a healthy body and how to stay fit in this event.'
-              )}
+              }
             </Typography>
           </Box>
         </ListItemWrapper>
@@ -124,7 +124,7 @@ function UpcomingEvents() {
               <Typography variant="h2" color="text.primary">
                 30
               </Typography>
-              <Typography variant="subtitle2">{t('July')}</Typography>
+              <Typography variant="subtitle2">{'July'}</Typography>
             </Box>
           </BoxWrapper>
           <Box>
@@ -137,12 +137,12 @@ function UpcomingEvents() {
               noWrap
               gutterBottom
             >
-              {t('Healthy Nutrition - The Power is in You')}
+              {'Healthy Nutrition - The Power is in You'}
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              {t(
+              {
                 'Three day course that will help you harness your inner power in order to have a healthier life.'
-              )}
+              }
             </Typography>
           </Box>
         </ListItemWrapper>
@@ -153,7 +153,7 @@ function UpcomingEvents() {
               <Typography variant="h2" color="text.primary">
                 14
               </Typography>
-              <Typography variant="subtitle2">{t('August')}</Typography>
+              <Typography variant="subtitle2">{'August'}</Typography>
             </Box>
           </BoxWrapper>
           <Box>
@@ -166,12 +166,12 @@ function UpcomingEvents() {
               noWrap
               gutterBottom
             >
-              {t('Mindfulness Online Course')}
+              {'Mindfulness Online Course'}
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              {t(
+              {
                 'Learn how to better manage the stresses of daily life, improve your overall health.'
-              )}
+              }
             </Typography>
           </Box>
         </ListItemWrapper>
@@ -183,7 +183,7 @@ function UpcomingEvents() {
           size="small"
           endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
         >
-          {t('View all')}
+          {'View all'}
         </Button>
       </Box>
     </Card>

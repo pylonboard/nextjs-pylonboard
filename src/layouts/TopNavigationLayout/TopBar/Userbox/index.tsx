@@ -13,7 +13,7 @@ import {
   styled,
   Typography
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
@@ -97,7 +97,7 @@ const UserBoxLabelMain = styled(Typography)(
 );
 
 function Userbox() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const user = {
     avatar: '/static/images/avatars/1.jpg',
@@ -193,7 +193,7 @@ function Userbox() {
             button
           >
             <AccountBoxTwoToneIcon fontSize="small" />
-            <ListItemText primary={t('Profile')} />
+            <ListItemText primary={'Profile'} />
           </ListItem>
           <ListItem
             onClick={() => {
@@ -202,7 +202,7 @@ function Userbox() {
             button
           >
             <InboxTwoToneIcon fontSize="small" />
-            <ListItemText primary={t('Inbox')} />
+            <ListItemText primary={'Inbox'} />
           </ListItem>
           <ListItem
             onClick={() => {
@@ -211,7 +211,7 @@ function Userbox() {
             button
           >
             <AccountTreeTwoToneIcon fontSize="small" />
-            <ListItemText primary={t('Projects')} />
+            <ListItemText primary={'Projects'} />
           </ListItem>
         </List>
       </Popover>

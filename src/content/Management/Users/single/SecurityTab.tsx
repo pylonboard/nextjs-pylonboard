@@ -25,7 +25,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import DoneTwoToneIcon from '@mui/icons-material/DoneTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { format, subHours, subWeeks, subDays } from 'date-fns';
@@ -57,7 +57,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function SecurityTab() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [page, setPage] = useState(2);
@@ -119,9 +119,9 @@ function SecurityTab() {
     <Grid container spacing={3}>
       <Grid item xs={12}>
         <Box pb={2}>
-          <Typography variant="h3">{t('Social Accounts')}</Typography>
+          <Typography variant="h3">{'Social Accounts'}</Typography>
           <Typography variant="subtitle2">
-            {t('Manage connected social accounts options')}
+            {'Manage connected social accounts options'}
           </Typography>
         </Box>
         <Card>
@@ -144,13 +144,13 @@ function SecurityTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Google')}
-                secondary={t(
+                primary={'Google'}
+                secondary={
                   'A Google account hasn’t been yet added to your account'
-                )}
+                }
               />
               <Button color="secondary" size="large" variant="contained">
-                {t('Connect')}
+                {'Connect'}
               </Button>
             </ListItem>
           </List>
@@ -179,13 +179,13 @@ function SecurityTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Facebook')}
-                secondary={t(
+                primary={'Facebook'}
+                secondary={
                   'Your Facebook account has been successfully connected'
-                )}
+                }
               />
               <ButtonError size="large" variant="contained">
-                {t('Revoke access')}
+                {'Revoke access'}
               </ButtonError>
             </ListItem>
             <Divider component="li" />
@@ -209,13 +209,13 @@ function SecurityTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Twitter')}
-                secondary={t(
+                primary={'Twitter'}
+                secondary={
                   'Your Twitter account was last syncronized 6 days ago'
-                )}
+                }
               />
               <ButtonError size="large" variant="contained">
-                {t('Revoke access')}
+                {'Revoke access'}
               </ButtonError>
             </ListItem>
           </List>
@@ -223,9 +223,9 @@ function SecurityTab() {
       </Grid>
       <Grid item xs={12}>
         <Box pb={2}>
-          <Typography variant="h3">{t('Security')}</Typography>
+          <Typography variant="h3">{'Security'}</Typography>
           <Typography variant="subtitle2">
-            {t('Change your security preferences below')}
+            {'Change your security preferences below'}
           </Typography>
         </Box>
         <Card>
@@ -241,11 +241,11 @@ function SecurityTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Change Password')}
-                secondary={t('You can change your password here')}
+                primary={'Change Password'}
+                secondary={'You can change your password here'}
               />
               <Button size="large" variant="outlined">
-                {t('Change password')}
+                {'Change password'}
               </Button>
             </ListItem>
             <Divider component="li" />
@@ -260,10 +260,10 @@ function SecurityTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Two-Factor Authentication')}
-                secondary={t(
+                primary={'Two-Factor Authentication'}
+                secondary={
                   'Enable PIN verification for all sign in attempts'
-                )}
+                }
               />
               <Switch color="primary" />
             </ListItem>
@@ -275,19 +275,19 @@ function SecurityTab() {
           <CardHeader
             subheaderTypographyProps={{}}
             titleTypographyProps={{}}
-            title={t('Access Logs')}
-            subheader={t('Recent sign in activity logs')}
+            title={'Access Logs'}
+            subheader={'Recent sign in activity logs'}
           />
           <Divider />
           <TableContainer>
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>{t('Browser')}</TableCell>
-                  <TableCell>{t('IP Address')}</TableCell>
-                  <TableCell>{t('Location')}</TableCell>
-                  <TableCell>{t('Date/Time')}</TableCell>
-                  <TableCell align="right">{t('Actions')}</TableCell>
+                  <TableCell>{'Browser'}</TableCell>
+                  <TableCell>{'IP Address'}</TableCell>
+                  <TableCell>{'Location'}</TableCell>
+                  <TableCell>{'Date/Time'}</TableCell>
+                  <TableCell align="right">{'Actions'}</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -300,7 +300,7 @@ function SecurityTab() {
                       {format(log.date, 'dd MMMM, yyyy - h:mm:ss a')}
                     </TableCell>
                     <TableCell align="right">
-                      <Tooltip placement="top" title={t('Delete')} arrow>
+                      <Tooltip placement="top" title={'Delete'} arrow>
                         <IconButton
                           sx={{
                             '&:hover': {

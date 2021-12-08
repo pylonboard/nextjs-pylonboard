@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import Text from 'src/components/Text';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -18,7 +18,7 @@ import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -244,7 +244,7 @@ function Block1() {
                 <MoreVertTwoToneIcon />
               </IconButton>
             }
-            title={t('Monthly sales')}
+            title={'Monthly sales'}
           />
           <CardContent
             sx={{
@@ -296,7 +296,7 @@ function Block1() {
                 <MoreVertTwoToneIcon />
               </IconButton>
             }
-            title={t('Last 10 orders')}
+            title={'Last 10 orders'}
           />
           <CardContent
             sx={{
@@ -348,7 +348,7 @@ function Block1() {
                 <MoreVertTwoToneIcon />
               </IconButton>
             }
-            title={'2021 ' + t('Total sales')}
+            title={'2021 ' + 'Total sales'}
           />
           <CardContent
             sx={{

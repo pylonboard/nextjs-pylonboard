@@ -1,5 +1,5 @@
 import { Box, Typography, Avatar, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { format } from 'date-fns';
 import LiveHelpTwoToneIcon from '@mui/icons-material/LiveHelpTwoTone';
 
@@ -15,7 +15,7 @@ const AvatarPrimary = styled(Avatar)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Box display={{ sm: 'block', md: 'flex' }} alignItems="center">
@@ -29,11 +29,11 @@ function PageHeader() {
       </AvatarPrimary>
       <Box>
         <Typography variant="h3" component="h3" gutterBottom>
-          {t('Helpdesk')}
+          {'Helpdesk'}
         </Typography>
         <Typography variant="subtitle2">
           Rachael Simons,{' '}
-          {t('this is your helpdesk dashboard overview for today')},{' '}
+          {'this is your helpdesk dashboard overview for today'},{' '}
           <b>{format(new Date(), 'MMMM dd yyyy')}</b>
         </Typography>
       </Box>

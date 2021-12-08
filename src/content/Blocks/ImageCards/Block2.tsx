@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import { format, formatDistance, subMinutes, subDays } from 'date-fns';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
@@ -53,7 +53,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -103,7 +103,7 @@ function Block2() {
                   color: `${theme.colors.alpha.trueWhite[100]}`
                 }}
               >
-                {t('Updated')}
+                {'Updated'}
               </LabelWrapper>
             </CardActions>
           </Box>
@@ -131,7 +131,7 @@ function Block2() {
               variant="h3"
               underline="none"
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle1"
@@ -156,9 +156,9 @@ function Block2() {
                 py: 2
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Button
@@ -171,7 +171,7 @@ function Block2() {
                 }
               }}
             >
-              {t('Read more')}
+              {'Read more'}
             </Button>
           </Box>
         </Card>
@@ -228,7 +228,7 @@ function Block2() {
                   color: `${theme.colors.alpha.trueWhite[100]}`
                 }}
               >
-                {t('New & Hot')}
+                {'New & Hot'}
               </LabelWrapper>
             </CardActions>
           </Box>
@@ -263,7 +263,7 @@ function Block2() {
               variant="h3"
               underline="none"
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle1"
@@ -290,9 +290,9 @@ function Block2() {
                 py: 2
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Button
@@ -305,7 +305,7 @@ function Block2() {
                 }
               }}
             >
-              {t('Read more')}
+              {'Read more'}
             </Button>
           </Box>
         </Card>

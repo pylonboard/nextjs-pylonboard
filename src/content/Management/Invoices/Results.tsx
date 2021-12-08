@@ -38,7 +38,7 @@ import Link from 'src/components/Link';
 import { TransitionProps } from '@mui/material/transitions';
 import CloseIcon from '@mui/icons-material/Close';
 import type { Invoice, InvoiceStatus } from 'src/models/invoice';
-import { useTranslation } from 'react-i18next';
+
 import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
 import Label from 'src/components/Label';
 import BulkActions from './BulkActions';
@@ -172,7 +172,7 @@ const applyPagination = (
 
 const Results: FC<ResultsProps> = ({ invoices }) => {
   const [selectedItems, setSelectedInvoices] = useState<string[]>([]);
-  const { t }: { t: any } = useTranslation();
+
   const { enqueueSnackbar } = useSnackbar();
 
   const [page, setPage] = useState<number>(0);
@@ -189,19 +189,19 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
     },
     {
       id: 'pending',
-      name: t('Pending Payment')
+      name: 'Pending Payment'
     },
     {
       id: 'completed',
-      name: t('Completed')
+      name: 'Completed'
     },
     {
       id: 'draft',
-      name: t('Draft')
+      name: 'Draft'
     },
     {
       id: 'progress',
-      name: t('In Progress')
+      name: 'In Progress'
     }
   ];
 
@@ -272,7 +272,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
   const handleDeleteCompleted = () => {
     setOpenConfirmDelete(false);
 
-    enqueueSnackbar(t('Delete action completed successfully'), {
+    enqueueSnackbar('Delete action completed successfully', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -306,7 +306,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
                 m: 0
               }}
               onChange={handleQueryChange}
-              placeholder={t('Search invoices by client name ...')}
+              placeholder={'Search invoices by client name ...'}
               value={query}
               fullWidth
               variant="outlined"
@@ -314,11 +314,11 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
           </Grid>
           <Grid item xs={12} lg={5} md={6}>
             <FormControl fullWidth variant="outlined">
-              <InputLabel>{t('Status')}</InputLabel>
+              <InputLabel>{'Status'}</InputLabel>
               <Select
                 value={filters.status || 'all'}
                 onChange={handleStatusChange}
-                label={t('Status')}
+                label={'Status'}
               >
                 {statusOptions.map((statusOption) => (
                   <MenuItem key={statusOption.id} value={statusOption.id}>
@@ -352,9 +352,9 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
             >
               <Box>
                 <Typography component="span" variant="subtitle1">
-                  {t('Showing')}:
+                  {'Showing'}:
                 </Typography>{' '}
-                <b>{paginatedInvoices.length}</b> <b>{t('invoices')}</b>
+                <b>{paginatedInvoices.length}</b> <b>{'invoices'}</b>
               </Box>
               <TablePagination
                 component="div"
@@ -380,7 +380,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
             color="text.secondary"
             align="center"
           >
-            {t("We couldn't find any invoices matching your search criteria")}
+            {"We couldn't find any invoices matching your search criteria"}
           </Typography>
         ) : (
           <>
@@ -388,12 +388,12 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>{t('#')}</TableCell>
-                    <TableCell>{t('Date')}</TableCell>
-                    <TableCell>{t('Client')}</TableCell>
-                    <TableCell>{t('Amount')}</TableCell>
-                    <TableCell>{t('Status')}</TableCell>
-                    <TableCell align="center">{t('Actions')}</TableCell>
+                    <TableCell>{'#'}</TableCell>
+                    <TableCell>{'Date'}</TableCell>
+                    <TableCell>{'Client'}</TableCell>
+                    <TableCell>{'Amount'}</TableCell>
+                    <TableCell>{'Status'}</TableCell>
+                    <TableCell align="center">{'Actions'}</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -428,7 +428,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
                             {format(invoice.issuedDate, 'MMMM dd yyyy')}
                           </Typography>
                           <Typography noWrap variant="subtitle1">
-                            {t('Due')}{' '}
+                            {'Due'}{' '}
                             <b>
                               {formatDistance(
                                 invoice.dueDate,
@@ -465,7 +465,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
                         </TableCell>
                         <TableCell align="center">
                           <Typography noWrap>
-                            <Tooltip title={t('View')} arrow>
+                            <Tooltip title={'View'} arrow>
                               <IconButton
                                 component={Link}
                                 href="/management/invoices/single/1"
@@ -474,7 +474,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
                                 <LaunchTwoToneIcon fontSize="small" />
                               </IconButton>
                             </Tooltip>
-                            <Tooltip title={t('Delete')} arrow>
+                            <Tooltip title={'Delete'} arrow>
                               <IconButton
                                 onClick={handleConfirmDelete}
                                 color="primary"
@@ -532,7 +532,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
             }}
             variant="h3"
           >
-            {t('Do you really want to delete this invoice')}?
+            {'Do you really want to delete this invoice'}?
           </Typography>
 
           <Typography
@@ -546,7 +546,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
             color="text.secondary"
             variant="h4"
           >
-            {t("You won't be able to revert after deletion")}
+            {"You won't be able to revert after deletion"}
           </Typography>
 
           <Box>
@@ -558,7 +558,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
               }}
               onClick={closeConfirmDelete}
             >
-              {t('Cancel')}
+              {'Cancel'}
             </Button>
             <ButtonError
               onClick={handleDeleteCompleted}
@@ -569,7 +569,7 @@ const Results: FC<ResultsProps> = ({ invoices }) => {
               }}
               variant="contained"
             >
-              {t('Delete')}
+              {'Delete'}
             </ButtonError>
           </Box>
         </Box>

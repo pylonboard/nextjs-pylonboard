@@ -20,7 +20,7 @@ import {
 } from '@mui/material';
 import Scrollbar from 'src/components/Scrollbar';
 
-import { useTranslation } from 'react-i18next';
+
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Text from 'src/components/Text';
@@ -62,7 +62,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const items = [
@@ -148,9 +148,9 @@ function Block2() {
               fontSize: `${theme.typography.pxToRem(12)}`
             }}
           >
-            {t('Messages')}
+            {'Messages'}
           </Typography>
-          <Typography variant="h4">{t('Messenger Window')}</Typography>
+          <Typography variant="h4">{'Messenger Window'}</Typography>
         </Box>
         <Badge
           color="error"
@@ -176,7 +176,7 @@ function Block2() {
         }}
       >
         <Button size="small" color="error">
-          {t('Delete all')}
+          {'Delete all'}
         </Button>
         <Typography variant="body2" fontWeight="bold">
           Emma Taylor
@@ -187,7 +187,7 @@ function Block2() {
         <FormControl variant="outlined" fullWidth>
           <OutlinedInputWrapper
             type="text"
-            placeholder={t('Search messages...')}
+            placeholder={'Search messages...'}
             startAdornment={
               <InputAdornment position="start">
                 <SearchTwoToneIcon />
@@ -232,7 +232,7 @@ function Block2() {
                         }
                       }}
                     >
-                      {t('Add')}
+                      {'Add'}
                     </Button>
                   }
                 >
@@ -283,7 +283,7 @@ function Block2() {
                             }}
                             variant="body1"
                           >
-                            <Text color="success">{t('Online')}</Text>
+                            <Text color="success">{'Online'}</Text>
                           </Typography>
                         </Box>
                       </>
@@ -310,7 +310,7 @@ function Block2() {
           variant="contained"
           endIcon={<ArrowForwardTwoToneIcon />}
         >
-          {t('View all participants')}
+          {'View all participants'}
         </Button>
       </Box>
     </Card>

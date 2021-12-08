@@ -11,7 +11,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 const CardActionsWrapper = styled(CardActions)(
   ({ theme }) => `
@@ -44,7 +44,7 @@ const BankLogoImg = styled('img')(
 );
 
 function MainAccount() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const data = {
     funds: '$98,346.53',
@@ -74,14 +74,14 @@ function MainAccount() {
         action={
           <>
             <Typography variant="subtitle2" align="right">
-              {t('Available')}
+              {'Available'}
             </Typography>
             <TypographySucccess variant="h2" align="right">
               {data.funds}
             </TypographySucccess>
           </>
         }
-        title={t('Main Account')}
+        title={'Main Account'}
       />
       <CardContentWrapper
         sx={{
@@ -147,8 +147,8 @@ function MainAccount() {
           flex: 1
         }}
       >
-        <Button variant="outlined">{t('Transfer money')}</Button>
-        <Button variant="contained">{t('Link accounts')}</Button>
+        <Button variant="outlined">{'Transfer money'}</Button>
+        <Button variant="contained">{'Link accounts'}</Button>
       </CardActionsWrapper>
     </Card>
   );

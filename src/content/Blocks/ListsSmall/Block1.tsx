@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import Scrollbar from 'src/components/Scrollbar';
 import { formatDistance, subMinutes } from 'date-fns';
@@ -47,7 +47,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -67,7 +67,7 @@ function Block1() {
             <MoreVertTwoToneIcon />
           </IconButton>
         }
-        title={<Typography variant="h4">{t('Open tickets')}</Typography>}
+        title={<Typography variant="h4">{'Open tickets'}</Typography>}
       />
       <CardContentWrapper
         sx={{
@@ -116,7 +116,7 @@ function Block1() {
                         }}
                         variant="subtitle2"
                       >
-                        {t('opened')}{' '}
+                        {'opened'}{' '}
                         {formatDistance(
                           subMinutes(new Date(), 43),
                           new Date(),
@@ -138,7 +138,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('Rejected')}
+                  {'Rejected'}
                 </LabelWrapper>
               </Box>
             </ListItem>
@@ -181,7 +181,7 @@ function Block1() {
                         }}
                         variant="subtitle2"
                       >
-                        {t('opened')}{' '}
+                        {'opened'}{' '}
                         {formatDistance(
                           subMinutes(new Date(), 76),
                           new Date(),
@@ -203,7 +203,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('Completed')}
+                  {'Completed'}
                 </LabelWrapper>
               </Box>
             </ListItem>
@@ -246,7 +246,7 @@ function Block1() {
                         }}
                         variant="subtitle2"
                       >
-                        {t('opened')}{' '}
+                        {'opened'}{' '}
                         {formatDistance(
                           subMinutes(new Date(), 90),
                           new Date(),
@@ -268,7 +268,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('On hold')}
+                  {'On hold'}
                 </LabelWrapper>
               </Box>
             </ListItem>
@@ -311,7 +311,7 @@ function Block1() {
                         }}
                         variant="subtitle2"
                       >
-                        {t('opened')}{' '}
+                        {'opened'}{' '}
                         {formatDistance(
                           subMinutes(new Date(), 47),
                           new Date(),
@@ -333,7 +333,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('Pending')}
+                  {'Pending'}
                 </LabelWrapper>
               </Box>
             </ListItem>
@@ -376,7 +376,7 @@ function Block1() {
                         }}
                         variant="subtitle2"
                       >
-                        {t('opened')}{' '}
+                        {'opened'}{' '}
                         {formatDistance(
                           subMinutes(new Date(), 47),
                           new Date(),
@@ -398,7 +398,7 @@ function Block1() {
                     )}`
                   }}
                 >
-                  {t('Failed')}
+                  {'Failed'}
                 </LabelWrapper>
               </Box>
             </ListItem>

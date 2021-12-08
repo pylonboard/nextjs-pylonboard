@@ -6,7 +6,7 @@ import {
   Box,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import MeetingRoomTwoToneIcon from '@mui/icons-material/MeetingRoomTwoTone';
 import Label from 'src/components/Label';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
@@ -30,7 +30,7 @@ const AvatarPrimary = styled(Avatar)(
 );
 
 function AppointmentsAlt() {
-  const { t }: { t: any } = useTranslation();
+
 
   const appointments = {
     month: [1083, 649, 312, 1538, 1404, 630, 1714, 853, 1765, 1067, 696, 538]
@@ -83,7 +83,7 @@ function AppointmentsAlt() {
               variant="subtitle1"
               color="text.secondary"
             >
-              {t('since last month')}
+              {'since last month'}
             </Typography>
           </>
         }
@@ -102,7 +102,7 @@ function AppointmentsAlt() {
                 pb: 1
               }}
             >
-              {t('Appointments')}
+              {'Appointments'}
             </Typography>
             <Typography variant="h2">678</Typography>
           </Box>

@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
@@ -42,7 +42,7 @@ const CardActionAreaWrapper = styled(CardActionArea)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -70,7 +70,7 @@ function Block7() {
                     1,585
                   </Typography>{' '}
                   <Typography component="span" variant="subtitle2">
-                    {t('users')}
+                    {'users'}
                   </Typography>
                 </Box>
               </Box>
@@ -104,7 +104,7 @@ function Block7() {
                     32,595
                   </Typography>{' '}
                   <Typography component="span" variant="subtitle2">
-                    {t('clicks')}
+                    {'clicks'}
                   </Typography>
                 </Box>
               </Box>
@@ -138,7 +138,7 @@ function Block7() {
                     $12,634
                   </Typography>{' '}
                   <Typography component="span" variant="subtitle2">
-                    {t('revenue')}
+                    {'revenue'}
                   </Typography>
                 </Box>
               </Box>
@@ -172,7 +172,7 @@ function Block7() {
                     643
                   </Typography>{' '}
                   <Typography component="span" variant="subtitle2">
-                    {t('sales')}
+                    {'sales'}
                   </Typography>
                 </Box>
               </Box>

@@ -15,7 +15,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 
 const AvatarLight = styled(Avatar)(
@@ -28,7 +28,7 @@ const AvatarLight = styled(Avatar)(
 );
 
 function TopLandingPages() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -38,7 +38,7 @@ function TopLandingPages() {
         flexDirection: 'column'
       }}
     >
-      <CardHeader title={t('Top Landing Pages')} />
+      <CardHeader title={'Top Landing Pages'} />
       <Divider />
       <CardContent>
         <List component="div" disablePadding>
@@ -84,7 +84,7 @@ function TopLandingPages() {
                       gutterBottom
                       color="text.secondary"
                     >
-                      {t('Impressions')}
+                      {'Impressions'}
                     </Typography>
                     <Box display="flex" alignItems="center">
                       <Typography
@@ -106,7 +106,7 @@ function TopLandingPages() {
                       gutterBottom
                       color="text.secondary"
                     >
-                      {t('Clicks')}
+                      {'Clicks'}
                     </Typography>
                     <Box display="flex" alignItems="center">
                       <Typography
@@ -131,7 +131,7 @@ function TopLandingPages() {
               alignSelf="center"
             >
               <Button size="small" href="#">
-                {t('Visit URL')}
+                {'Visit URL'}
               </Button>
             </Box>
           </ListItem>
@@ -182,7 +182,7 @@ function TopLandingPages() {
                       gutterBottom
                       color="text.secondary"
                     >
-                      {t('Impressions')}
+                      {'Impressions'}
                     </Typography>
                     <Box display="flex" alignItems="center">
                       <Typography
@@ -204,7 +204,7 @@ function TopLandingPages() {
                       gutterBottom
                       color="text.secondary"
                     >
-                      {t('Clicks')}
+                      {'Clicks'}
                     </Typography>
                     <Box display="flex" alignItems="center">
                       <Typography
@@ -229,7 +229,7 @@ function TopLandingPages() {
               alignSelf="center"
             >
               <Button size="small" href="#">
-                {t('Visit URL')}
+                {'Visit URL'}
               </Button>
             </Box>
           </ListItem>
@@ -280,7 +280,7 @@ function TopLandingPages() {
                       gutterBottom
                       color="text.secondary"
                     >
-                      {t('Impressions')}
+                      {'Impressions'}
                     </Typography>
                     <Box display="flex" alignItems="center">
                       <Typography
@@ -302,7 +302,7 @@ function TopLandingPages() {
                       gutterBottom
                       color="text.secondary"
                     >
-                      {t('Clicks')}
+                      {'Clicks'}
                     </Typography>
                     <Box display="flex" alignItems="center">
                       <Typography
@@ -327,7 +327,7 @@ function TopLandingPages() {
               alignSelf="center"
             >
               <Button size="small" href="#">
-                {t('Visit URL')}
+                {'Visit URL'}
               </Button>
             </Box>
           </ListItem>
@@ -343,7 +343,7 @@ function TopLandingPages() {
         }}
       >
         <Button size="small" variant="contained" color="primary">
-          {t('Advanced View')}
+          {'Advanced View'}
         </Button>
       </CardActions>
     </Card>

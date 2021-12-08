@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 
 const ButtonWrapper = styled(Button)(
@@ -28,7 +28,7 @@ const ButtonWrapper = styled(Button)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -49,19 +49,19 @@ function Block1() {
                 }}
                 variant="h4"
               >
-                {t('Informations')}
+                {'Informations'}
               </Typography>
               <Typography variant="subtitle2">
-                {t(
+                {
                   'Acccess this page in order to manage and customize all aspects of your profile data and accounts'
-                )}
+                }
                 .
               </Typography>
             </Box>
           </Box>
           <Divider />
           <ButtonWrapper fullWidth endIcon={<ChevronRightTwoToneIcon />}>
-            {t('Manage account')}
+            {'Manage account'}
           </ButtonWrapper>
         </Card>
       </Grid>
@@ -81,19 +81,19 @@ function Block1() {
                 }}
                 variant="h4"
               >
-                {t('Account Settings')}
+                {'Account Settings'}
               </Typography>
               <Typography variant="subtitle2">
-                {t(
+                {
                   'Control everything related to your profile and trading accounts as shown in this page'
-                )}
+                }
                 .
               </Typography>
             </Box>
           </Box>
           <Divider />
           <ButtonWrapper fullWidth endIcon={<ChevronRightTwoToneIcon />}>
-            {t('Manage settings')}
+            {'Manage settings'}
           </ButtonWrapper>
         </Card>
       </Grid>
@@ -113,19 +113,19 @@ function Block1() {
                 }}
                 variant="h4"
               >
-                {t('Crypto Balance')}
+                {'Crypto Balance'}
               </Typography>
               <Typography variant="subtitle2">
-                {t(
+                {
                   'You can view, manage and customize your wallets and balances from this wallets page'
-                )}
+                }
                 .
               </Typography>
             </Box>
           </Box>
           <Divider />
           <ButtonWrapper fullWidth endIcon={<ChevronRightTwoToneIcon />}>
-            {t('Manage wallets')}
+            {'Manage wallets'}
           </ButtonWrapper>
         </Card>
       </Grid>
@@ -145,19 +145,19 @@ function Block1() {
                 }}
                 variant="h4"
               >
-                {t('Profile Verification')}
+                {'Profile Verification'}
               </Typography>
               <Typography variant="subtitle2">
-                {t(
+                {
                   'Complete your profile verifications to take full advantage of your account right away'
-                )}
+                }
                 .
               </Typography>
             </Box>
           </Box>
           <Divider />
           <ButtonWrapper fullWidth endIcon={<ChevronRightTwoToneIcon />}>
-            {t('Complete verifications')}
+            {'Complete verifications'}
           </ButtonWrapper>
         </Card>
       </Grid>

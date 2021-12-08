@@ -12,7 +12,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import Label from 'src/components/Label';
 import { Chart } from 'src/components/Chart';
@@ -31,7 +31,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function Block10() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -124,10 +124,10 @@ function Block10() {
       >
         <Box>
           <Typography gutterBottom variant="h4">
-            {t('Crypto Watchlist')}
+            {'Crypto Watchlist'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('List of all crypto assets you are following')}
+            {'List of all crypto assets you are following'}
           </Typography>
         </Box>
         <ToggleButtonGroup size="small" exclusive>
@@ -371,7 +371,7 @@ function Block10() {
           }}
           variant="outlined"
         >
-          {t('Discover more assets')}
+          {'Discover more assets'}
         </Button>
       </CardActions>
     </Card>

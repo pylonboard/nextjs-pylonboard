@@ -9,7 +9,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
@@ -24,7 +24,7 @@ const DotLegend = styled('span')(
 );
 
 function SalesByCategory() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const sales = {
@@ -38,7 +38,7 @@ function SalesByCategory() {
         ]
       }
     ],
-    labels: [t('Electronics'), t('Furniture'), t('Fashion'), t('Home & Decor')]
+    labels: ['Electronics', 'Furniture', 'Fashion', 'Home & Decor']
   };
 
   const chartOptions: ApexOptions = {
@@ -98,7 +98,7 @@ function SalesByCategory() {
 
   return (
     <Card>
-      <CardHeader title={t('Sales by Category')} />
+      <CardHeader title={'Sales by Category'} />
       <Divider />
       <CardContent>
         <Grid container spacing={3}>

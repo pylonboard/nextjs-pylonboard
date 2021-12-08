@@ -6,7 +6,7 @@ import {
   Typography,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Link from 'src/components/Link';
 
 const TypographyH1 = styled(Typography)(
@@ -144,7 +144,7 @@ const NextJsAvatar = styled(Box)(
 );
 
 function Hero() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Container maxWidth="lg">
@@ -155,14 +155,14 @@ function Hero() {
         container
       >
         <Grid item md={6} pr={{ xs: 0, md: 3 }}>
-          <LabelWrapper color="success">{t('Version') + ' 3.0'}</LabelWrapper>
+          <LabelWrapper color="success">{'Version 3.0'}</LabelWrapper>
           <TypographyH1
             sx={{
               mb: 2
             }}
             variant="h1"
           >
-            {t('Tokyo Next.js Typescript Admin Dashboard')}
+            {'Tokyo Next.js Typescript Admin Dashboard'}
           </TypographyH1>
           <TypographyH2
             sx={{
@@ -173,9 +173,9 @@ function Hero() {
             color="text.secondary"
             fontWeight="normal"
           >
-            {t(
+            {
               'High performance React template built with lots of powerful MUI (Material-UI) components across multiple product niches for fast & perfect apps development processes'
-            )}
+            }
           </TypographyH2>
           <Button
             component={Link}
@@ -183,7 +183,7 @@ function Hero() {
             size="large"
             variant="contained"
           >
-            {t('Browse Live Preview')}
+            {'Browse Live Preview'}
           </Button>
           <Button
             sx={{
@@ -194,7 +194,7 @@ function Hero() {
             size="large"
             variant="text"
           >
-            {t('Key Features')}
+            {'Key Features'}
           </Button>
           <ListItemWrapper sx={{ mt: 5, mb: 2 }}>
             <NextJsAvatar>

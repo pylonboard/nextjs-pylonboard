@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import AccountBalanceWalletTwoToneIcon from '@mui/icons-material/AccountBalanceWalletTwoTone';
 import Text from 'src/components/Text';
 import { formatDistance, subMinutes } from 'date-fns';
@@ -57,7 +57,7 @@ const CardActions = styled(Box)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -81,7 +81,7 @@ function Block3() {
               arrow
               placement="top"
               title={
-                t('Offline since') +
+                'Offline since' +
                 ' ' +
                 formatDistance(subMinutes(new Date(), 12), new Date(), {
                   addSuffix: true
@@ -118,7 +118,7 @@ function Block3() {
             Project Manager, Apple Inc.
           </Typography>
           <Button size="small" variant="contained" color="primary">
-            {t('Chat')}
+            {'Chat'}
           </Button>
           <Button
             size="small"
@@ -137,7 +137,7 @@ function Block3() {
               }
             }}
           >
-            {t('View')}
+            {'View'}
           </Button>
         </Box>
       </Box>
@@ -174,10 +174,10 @@ function Block3() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Sales')}
+                {'Sales'}
               </Typography>
             }
-            secondary={<Text color="success">15.4% {t('increase')}</Text>}
+            secondary={<Text color="success">15.4% {'increase'}</Text>}
           />
           <ChevronRightTwoToneIcon
             sx={{
@@ -217,10 +217,10 @@ function Block3() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Income')}
+                {'Income'}
               </Typography>
             }
-            secondary={<Text color="error">-4.75% {t('decrease')}</Text>}
+            secondary={<Text color="error">-4.75% {'decrease'}</Text>}
           />
           <ChevronRightTwoToneIcon
             sx={{
@@ -260,10 +260,10 @@ function Block3() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Expenses')}
+                {'Expenses'}
               </Typography>
             }
-            secondary={<Text color="warning">62.5% {t('down')}</Text>}
+            secondary={<Text color="warning">62.5% {'down'}</Text>}
           />
           <ChevronRightTwoToneIcon
             sx={{

@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -40,7 +40,7 @@ const Label = styled(Box)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -73,7 +73,7 @@ function Block2() {
           alt="..."
         />
         <CardActions>
-          <Label>{t('New Profile')}</Label>
+          <Label>{'New Profile'}</Label>
         </CardActions>
       </Box>
       <Box p={4}>
@@ -103,9 +103,9 @@ function Block2() {
           variant="subtitle2"
           textAlign="center"
         >
-          {t(
+          {
             'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-          )}
+          }
           .
         </Typography>
         <Box mt={3} mx={3}>

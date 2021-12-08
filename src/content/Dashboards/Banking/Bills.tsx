@@ -7,7 +7,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ArrowDownwardTwoTone from '@mui/icons-material/ArrowDownwardTwoTone';
 import ReceiptTwoToneIcon from '@mui/icons-material/ReceiptTwoTone';
 
@@ -25,7 +25,7 @@ const ArrowDownwardWrapper = styled(ArrowDownwardTwoTone)(
 );
 
 function Bills() {
-  const { t }: { t: any } = useTranslation();
+
 
   const data = {
     value: '$785'
@@ -46,7 +46,7 @@ function Bills() {
             color="text.secondary"
             component="div"
           >
-            {t('Bills')}
+            {'Bills'}
           </Typography>
         </Box>
         <Box

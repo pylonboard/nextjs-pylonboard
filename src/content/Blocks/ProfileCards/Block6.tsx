@@ -15,7 +15,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import HelpTwoToneIcon from '@mui/icons-material/HelpTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
@@ -108,7 +108,7 @@ const ButtonWrapper = styled(Button)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -161,7 +161,7 @@ function Block6() {
               </Box>
 
               <Typography variant="subtitle2">
-                {t('The Ultimate UI Design System at your fingertips!')}
+                {'The Ultimate UI Design System at your fingertips!'}
               </Typography>
               <Divider
                 sx={{
@@ -184,7 +184,7 @@ function Block6() {
                     textAlign="center"
                     gutterBottom
                   >
-                    {t('Current month')}
+                    {'Current month'}
                   </Typography>
                   <Typography
                     component="h6"
@@ -206,7 +206,7 @@ function Block6() {
                     textAlign="center"
                     gutterBottom
                   >
-                    {t('Last year')}
+                    {'Last year'}
                   </Typography>
                   <Typography
                     component="h6"
@@ -232,7 +232,7 @@ function Block6() {
                   textAlign="center"
                   variant="subtitle2"
                 >
-                  {t('Team members')}
+                  {'Team members'}
                 </Typography>
                 <Box mt={2} display="flex" justifyContent="center">
                   <Avatar
@@ -319,7 +319,7 @@ function Block6() {
                   size="large"
                   color="primary"
                 >
-                  {t('View complete profile')}
+                  {'View complete profile'}
                 </Button>
               </Box>
             </Box>
@@ -352,12 +352,12 @@ function Block6() {
                     textTransform: 'uppercase'
                   }}
                 >
-                  {t('New release')}
+                  {'New release'}
                 </Typography>
               </Label>
               <Tooltip
                 arrow
-                title={t('This is a helper placeholder')}
+                title={'This is a helper placeholder'}
                 placement="right"
               >
                 <IconButtonWrapper
@@ -401,12 +401,12 @@ function Block6() {
                 }}
                 variant="h1"
               >
-                {t('The Ultimate UI Design System at your fingertips!')}
+                {'The Ultimate UI Design System at your fingertips!'}
               </Typography>
               <Typography lineHeight="1.5" fontWeight="normal" variant="h4">
-                {t(
+                {
                   'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                )}
+                }
                 .
               </Typography>
               <Box mt={2}>
@@ -420,7 +420,7 @@ function Block6() {
                   size="large"
                   color="primary"
                 >
-                  {t('Continue reading')}
+                  {'Continue reading'}
                 </ButtonWrapper>
               </Box>
             </BoxComposedContent>

@@ -12,7 +12,7 @@ import {
   IconButton,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
@@ -86,12 +86,12 @@ interface ProfileCoverProps {
 }
 
 const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <>
       <Box display="flex" mb={3}>
-        <Tooltip arrow placement="top" title={t('Go back')}>
+        <Tooltip arrow placement="top" title={'Go back'}>
           <IconButton
             href="/management/users"
             color="primary"
@@ -105,10 +105,10 @@ const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
         </Tooltip>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Profile for')} {user.name}
+            {'Profile for'} {user.name}
           </Typography>
           <Typography variant="subtitle2">
-            {t('This is a profile page. Easy to modify, always blazing fast')}
+            {'This is a profile page. Easy to modify, always blazing fast'}
           </Typography>
         </Box>
       </Box>
@@ -122,7 +122,7 @@ const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
               variant="contained"
               component="span"
             >
-              {t('Change cover')}
+              {'Change cover'}
             </Button>
           </label>
         </CardCoverAction>
@@ -155,7 +155,7 @@ const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
           variant="subtitle2"
           color="text.primary"
         >
-          {user.jobtitle} | {user.location} | {user.followers} {t('followers')}
+          {user.jobtitle} | {user.location} | {user.followers} {'followers'}
         </Typography>
         <Box
           display={{ xs: 'block', md: 'flex' }}
@@ -164,7 +164,7 @@ const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
         >
           <Box>
             <Button size="small" variant="contained">
-              {t('Follow')}
+              {'Follow'}
             </Button>
             <Button
               size="small"
@@ -173,7 +173,7 @@ const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
               }}
               variant="outlined"
             >
-              {t('View website')}
+              {'View website'}
             </Button>
             <IconButton
               color="primary"
@@ -192,9 +192,9 @@ const ProfileCover: FC<ProfileCoverProps> = ({ user }) => {
             variant="text"
             endIcon={<ArrowForwardTwoToneIcon />}
           >
-            {t('See all')}
+            {'See all'}
             {' ' + user.followers + ' '}
-            {t('connections')}
+            {'connections'}
           </Button>
         </Box>
       </Box>

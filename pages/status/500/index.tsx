@@ -15,7 +15,7 @@ import Head from 'next/head';
 import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
 import LoadingButton from '@mui/lab/LoadingButton';
 
-import { useTranslation } from 'react-i18next';
+
 
 const GridWrapper = styled(Grid)(
   ({ theme }) => `
@@ -48,7 +48,7 @@ const TypographySecondary = styled(Typography)(
 );
 
 function Status500() {
-  const { t }: { t: any } = useTranslation();
+
 
   const [pending, setPending] = useState(false);
   function handleClick() {
@@ -83,7 +83,7 @@ function Status500() {
                   src="/static/images/status/500.svg"
                 />
                 <Typography variant="h2" sx={{ my: 2 }}>
-                  {t('There was an error, please try again later')}
+                  {'There was an error, please try again later'}
                 </Typography>
                 <Typography
                   variant="h4"
@@ -91,9 +91,9 @@ function Status500() {
                   fontWeight="normal"
                   sx={{ mb: 4 }}
                 >
-                  {t(
+                  {
                     'The server encountered an internal error and was not able to complete your request'
-                  )}
+                  }
                 </Typography>
                 <LoadingButton
                   onClick={handleClick}
@@ -102,10 +102,10 @@ function Status500() {
                   color="primary"
                   startIcon={<RefreshTwoToneIcon />}
                 >
-                  {t('Refresh view')}
+                  {'Refresh view'}
                 </LoadingButton>
                 <Button href="/" variant="contained" sx={{ ml: 1 }}>
-                  {t('Go back')}
+                  {'Go back'}
                 </Button>
               </Box>
             </Container>
@@ -122,19 +122,19 @@ function Status500() {
               <Container maxWidth="sm">
                 <Box textAlign="center">
                   <TypographyPrimary variant="h1" sx={{ my: 2 }}>
-                    {t('Tokyo Black NextJS Typescript Admin Dashboard')}
+                    {'Tokyo Black NextJS Typescript Admin Dashboard'}
                   </TypographyPrimary>
                   <TypographySecondary
                     variant="h4"
                     fontWeight="normal"
                     sx={{ mb: 4 }}
                   >
-                    {t(
+                    {
                       'High performance React template built with lots of powerful Material-UI components across multiple product niches for fast & perfect apps development processes.'
-                    )}
+                    }
                   </TypographySecondary>
                   <Button href="/" size="large" variant="contained">
-                    {t('Overview')}
+                    {'Overview'}
                   </Button>
                 </Box>
               </Container>

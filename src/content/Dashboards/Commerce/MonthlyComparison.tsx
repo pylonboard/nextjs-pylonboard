@@ -8,7 +8,7 @@ import {
   Typography,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import ArrowUpwardTwoTone from '@mui/icons-material/ArrowUpwardTwoTone';
 import ArrowDownwardTwoTone from '@mui/icons-material/ArrowDownwardTwoTone';
@@ -26,7 +26,7 @@ const ArrowDownwardWrapper = styled(ArrowDownwardTwoTone)(
 );
 
 function MonthlyComparison() {
-  const { t }: { t: any } = useTranslation();
+
 
   const data = {
     visitors: '65.485',
@@ -45,14 +45,14 @@ function MonthlyComparison() {
       <CardHeader
         title={
           <>
-            {t('Monthly Comparison')}{' '}
+            {'Monthly Comparison'}{' '}
             <Typography
               variant="body2"
               component="span"
               fontWeight="bold"
               color="text.secondary"
             >
-              (12 {t('weeks')})
+              (12 {'weeks'})
             </Typography>
           </>
         }
@@ -71,7 +71,7 @@ function MonthlyComparison() {
           <Grid spacing={3} container>
             <Grid xs={12} sm item>
               <Typography variant="caption" gutterBottom>
-                {t('Revenue')}
+                {'Revenue'}
               </Typography>
               <Typography variant="h3" gutterBottom>
                 {data.revenue}
@@ -97,7 +97,7 @@ function MonthlyComparison() {
             <Divider orientation="vertical" flexItem />
             <Grid xs={12} sm item>
               <Typography variant="caption" gutterBottom>
-                {t('Visitors')}
+                {'Visitors'}
               </Typography>
               <Typography variant="h3" gutterBottom>
                 {data.visitors}
@@ -123,7 +123,7 @@ function MonthlyComparison() {
             <Divider orientation="vertical" flexItem />
             <Grid xs={12} sm item>
               <Typography variant="caption" gutterBottom>
-                {t('Conversion')}
+                {'Conversion'}
               </Typography>
               <Typography variant="h3" gutterBottom>
                 {data.conversion}

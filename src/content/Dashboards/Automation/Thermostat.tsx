@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import clsx from 'clsx';
 
-import { useTranslation } from 'react-i18next';
+
 import AcUnitTwoToneIcon from '@mui/icons-material/AcUnitTwoTone';
 import { useSwitch, UseSwitchProps } from '@mui/core';
 import AirTwoToneIcon from '@mui/icons-material/AirTwoTone';
@@ -222,7 +222,7 @@ function MUISwitch(props: UseSwitchProps) {
 }
 
 function Thermostat() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [gauge, setGauge] = useState(70);
@@ -255,14 +255,14 @@ function Thermostat() {
                 </AvatarPrimary>
                 <Box pl={1}>
                   <Typography gutterBottom variant="h4">
-                    {t('Thermostat')}
+                    {'Thermostat'}
                   </Typography>
                   <Typography
                     variant="h4"
                     color="text.secondary"
                     fontWeight="normal"
                   >
-                    {t('Set to auto-cooling')}
+                    {'Set to auto-cooling'}
                   </Typography>
                 </Box>
               </Box>
@@ -422,14 +422,14 @@ function Thermostat() {
               </AvatarPrimary>
               <Box mt={3}>
                 <Typography gutterBottom variant="h4">
-                  {t('Philips 4K TV')}
+                  {'Philips 4K TV'}
                 </Typography>
                 <Typography
                   variant="h4"
                   color="text.secondary"
                   fontWeight="normal"
                 >
-                  {t('On')}
+                  {'On'}
                 </Typography>
               </Box>
             </CardActionAreaWrapper>
@@ -449,7 +449,7 @@ function Thermostat() {
                 <Tooltip
                   placement="top"
                   arrow
-                  title={t('This section can have a description!')}
+                  title={'This section can have a description!'}
                 >
                   <IconButton component="span" size="small" color="secondary">
                     <ErrorOutlineTwoToneIcon fontSize="small" />
@@ -458,14 +458,14 @@ function Thermostat() {
               </Box>
               <Box mt={3}>
                 <Typography gutterBottom variant="h4">
-                  {t('Smart Blender')}
+                  {'Smart Blender'}
                 </Typography>
                 <Typography
                   variant="h4"
                   color="text.secondary"
                   fontWeight="normal"
                 >
-                  {t('Off')}
+                  {'Off'}
                 </Typography>
               </Box>
             </CardActionAreaWrapper>

@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import SportsBasketballTwoToneIcon from '@mui/icons-material/SportsBasketballTwoTone';
 import AssessmentTwoToneIcon from '@mui/icons-material/AssessmentTwoTone';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
@@ -71,7 +71,7 @@ const AvatarGradient = styled(Avatar)(
 );
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -114,7 +114,7 @@ function Block8() {
             fullWidth
             endIcon={<ChevronRightTwoToneIcon />}
           >
-            {t('Manage my account')}
+            {'Manage my account'}
           </ButtonWrapper>
         </Card>
       </Grid>
@@ -156,7 +156,7 @@ function Block8() {
             fullWidth
             endIcon={<ChevronRightTwoToneIcon />}
           >
-            {t('Create sales reports')}
+            {'Create sales reports'}
           </ButtonWrapper>
         </Card>
       </Grid>
@@ -198,7 +198,7 @@ function Block8() {
             fullWidth
             endIcon={<ChevronRightTwoToneIcon />}
           >
-            {t('View all profiles')}
+            {'View all profiles'}
           </ButtonWrapper>
         </Card>
       </Grid>

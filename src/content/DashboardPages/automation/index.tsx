@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+
 
 import { Grid, Tooltip, Box, Typography, IconButton } from '@mui/material';
 
@@ -15,7 +15,7 @@ import EnergySaving from 'src/content/Dashboards/Automation/EnergySaving';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 
 function DashboardAutomationContent() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <>
@@ -61,7 +61,7 @@ function DashboardAutomationContent() {
               alignItems="center"
             >
               <Typography variant="h3">Control panel</Typography>
-              <Tooltip arrow placement="top" title={t('Add another sensor')}>
+              <Tooltip arrow placement="top" title={'Add another sensor'}>
                 <IconButton size="large" color="primary">
                   <AddTwoToneIcon fontSize="small" />
                 </IconButton>

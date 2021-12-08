@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import LinkTwoToneIcon from '@mui/icons-material/LinkTwoTone';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
 import ScheduleTwoToneIcon from '@mui/icons-material/ScheduleTwoTone';
@@ -52,7 +52,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -227,7 +227,7 @@ function Block1() {
                 }}
                 fontSize="small"
               />
-              {t('Today')} - 9:45 am
+              {'Today'} - 9:45 am
             </Typography>
           </Box>
         </CardBorderBottom>
@@ -365,7 +365,7 @@ function Block1() {
                 }}
                 fontSize="small"
               />
-              {t('Tomorrow')} - 5:30 pm
+              {'Tomorrow'} - 5:30 pm
             </Typography>
           </Box>
         </CardBorderTop>
@@ -529,7 +529,7 @@ function Block1() {
                 }}
                 fontSize="small"
               />
-              {t('Today')} - 9:45 am
+              {'Today'} - 9:45 am
             </Typography>
           </Box>
         </CardBorderBottom>
@@ -719,7 +719,7 @@ function Block1() {
                 }}
                 fontSize="small"
               />
-              {t('Today')} - 9:45 am
+              {'Today'} - 9:45 am
             </Typography>
           </Box>
         </Card>
@@ -866,7 +866,7 @@ function Block1() {
                 }}
                 fontSize="small"
               />
-              {t('Tomorrow')} - 5:30 pm
+              {'Tomorrow'} - 5:30 pm
             </Typography>
           </Box>
         </Card>
@@ -1047,7 +1047,7 @@ function Block1() {
                 }}
                 fontSize="small"
               />
-              {t('Today')} - 9:45 am
+              {'Today'} - 9:45 am
             </Typography>
           </Box>
         </Card>

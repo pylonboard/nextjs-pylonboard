@@ -6,7 +6,7 @@ import {
   Box,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import AppointmentsAltChart from './AppointmentsAltChart';
@@ -30,7 +30,7 @@ const AvatarPrimary = styled(Avatar)(
 );
 
 function Surgeries() {
-  const { t }: { t: any } = useTranslation();
+
 
   const surgeries = {
     month: [
@@ -85,7 +85,7 @@ function Surgeries() {
               variant="subtitle1"
               color="text.secondary"
             >
-              {t('since last month')}
+              {'since last month'}
             </Typography>
           </>
         }
@@ -104,7 +104,7 @@ function Surgeries() {
                 pb: 1
               }}
             >
-              {t('Surgeries')}
+              {'Surgeries'}
             </Typography>
             <Typography variant="h2">82</Typography>
           </Box>

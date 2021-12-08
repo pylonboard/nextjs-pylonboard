@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Button, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 import Link from 'src/components/Link';
 
@@ -10,7 +10,7 @@ const RootWrapper = styled(Box)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <RootWrapper>
@@ -23,10 +23,10 @@ function PageHeader() {
           >
             <Box>
               <Typography variant="h3" component="h3" gutterBottom>
-                {t('Add new product')}
+                {'Add new product'}
               </Typography>
               <Typography variant="subtitle2">
-                {t('Fill in the fields below to create a new product')}
+                {'Fill in the fields below to create a new product'}
               </Typography>
             </Box>
           </Box>
@@ -41,7 +41,7 @@ function PageHeader() {
             href="/management/commerce/products"
             variant="contained"
           >
-            {t('Go back to all products')}
+            {'Go back to all products'}
           </Button>
         </Grid>
       </Grid>

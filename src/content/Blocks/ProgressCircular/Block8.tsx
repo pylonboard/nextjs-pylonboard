@@ -12,7 +12,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import KeyboardArrowUpTwoToneIcon from '@mui/icons-material/KeyboardArrowUpTwoTone';
@@ -50,7 +50,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [currentPercent1, setCurrentPercent1] = useState<number>();
@@ -89,7 +89,7 @@ function Block7() {
               }}
               variant="h3"
             >
-              {t('Weekly Sales')}
+              {'Weekly Sales'}
             </Typography>
             <Typography variant="h4">
               <Text color="success">$43,346.45</Text>
@@ -155,7 +155,7 @@ function Block7() {
               }}
               variant="h3"
             >
-              {t('Returning Visitors')}
+              {'Returning Visitors'}
             </Typography>
             <Typography variant="h4">
               <Text color="warning">21,585</Text>
@@ -221,7 +221,7 @@ function Block7() {
               }}
               variant="h3"
             >
-              {t('Monthly Expenses')}
+              {'Monthly Expenses'}
             </Typography>
             <Typography variant="h4">
               <LabelErrorAlt>$8,594</LabelErrorAlt>

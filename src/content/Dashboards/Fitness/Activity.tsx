@@ -13,7 +13,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import HourglassTopTwoToneIcon from '@mui/icons-material/HourglassTopTwoTone';
@@ -56,15 +56,15 @@ const AvatarError = styled(Avatar)(
 );
 
 function Activity() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [currentTab, setCurrentTab] = useState<string>('daily');
 
   const tabs = [
-    { value: 'daily', label: t('Daily') },
-    { value: 'weekly', label: t('Weekly') },
-    { value: 'monthly', label: t('Monthly') }
+    { value: 'daily', label: 'Daily' },
+    { value: 'weekly', label: 'Weekly' },
+    { value: 'monthly', label: 'Monthly' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -178,14 +178,14 @@ function Activity() {
       <CardHeader
         title={
           <>
-            {t('Activity')}{' '}
+            {'Activity'}{' '}
             <Typography
               variant="body2"
               component="span"
               fontWeight="bold"
               color="text.secondary"
             >
-              ({t('burned calories')})
+              ({'burned calories'})
             </Typography>
           </>
         }
@@ -232,7 +232,7 @@ function Activity() {
                   }
                 }}
               >
-                {t('View more activity charts')}
+                {'View more activity charts'}
               </Button>
             </Box>
           </>
@@ -247,7 +247,7 @@ function Activity() {
             <AvatarPending>
               <HourglassTopTwoToneIcon />
             </AvatarPending>
-            <Typography variant="h2">{t('No reports, yet')}!</Typography>
+            <Typography variant="h2">{'No reports, yet'}!</Typography>
             <Typography
               variant="h4"
               sx={{
@@ -257,7 +257,7 @@ function Activity() {
               fontWeight="normal"
               color="text.secondary"
             >
-              {t('There is not enough data to generate the weekly report, yet')}
+              {'There is not enough data to generate the weekly report, yet'}
               !
             </Typography>
             <Button
@@ -272,7 +272,7 @@ function Activity() {
                 }
               }}
             >
-              {t('Update settings')}
+              {'Update settings'}
             </Button>
           </Box>
         )}
@@ -286,7 +286,7 @@ function Activity() {
             <AvatarError>
               <VpnLockTwoToneIcon />
             </AvatarError>
-            <Typography variant="h2">{t('Not available')}!</Typography>
+            <Typography variant="h2">{'Not available'}!</Typography>
             <Typography
               variant="h4"
               sx={{
@@ -296,7 +296,7 @@ function Activity() {
               fontWeight="normal"
               color="text.secondary"
             >
-              {t('Share the share health data, in app settings')}!
+              {'Share the share health data, in app settings'}!
             </Typography>
             <Button
               size="small"
@@ -310,7 +310,7 @@ function Activity() {
                 }
               }}
             >
-              {t('Modify privacy settings')}
+              {'Modify privacy settings'}
             </Button>
           </Box>
         )}

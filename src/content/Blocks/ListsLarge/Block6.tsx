@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import Scrollbar from 'src/components/Scrollbar';
 import Label from 'src/components/Label';
@@ -72,7 +72,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -130,14 +130,14 @@ function Block6() {
               variant="h3"
               textAlign="center"
             >
-              {t('Shopping Cart')}
+              {'Shopping Cart'}
             </Typography>
           </>
         }
         subheader={
           <>
             <Typography variant="subtitle2" textAlign="center">
-              {t('Checkout is almost done')}
+              {'Checkout is almost done'}
             </Typography>
           </>
         }
@@ -261,7 +261,7 @@ function Block6() {
         }}
       >
         <Typography variant="caption" fontWeight="bold">
-          {t('Total')}
+          {'Total'}
           <Typography
             sx={{
               pl: 1
@@ -291,7 +291,7 @@ function Block6() {
             textTransform: 'uppercase'
           }}
         >
-          {t('Proceed to checkout')}
+          {'Proceed to checkout'}
         </Button>
       </Box>
     </Card>

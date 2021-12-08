@@ -16,7 +16,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import PageviewTwoToneIcon from '@mui/icons-material/PageviewTwoTone';
 import Scrollbar from 'src/components/Scrollbar';
@@ -57,7 +57,7 @@ const ListWrapper = styled(List)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -103,10 +103,10 @@ function Block5() {
       >
         <Box>
           <Typography gutterBottom variant="h4">
-            {t('Monthly targets')}
+            {'Monthly targets'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('These are your performance indicators')}
+            {'These are your performance indicators'}
           </Typography>
         </Box>
         <IconButton size="small" color="secondary">
@@ -136,7 +136,7 @@ function Block5() {
                     alignItems="center"
                     justifyContent="space-between"
                   >
-                    <Typography variant="h4">{t(item.title)}</Typography>
+                    <Typography variant="h4">{item.title}</Typography>
                     <Typography
                       sx={{
                         color: `${theme.colors.primary.main}`
@@ -177,7 +177,7 @@ function Block5() {
         }}
       >
         <Button startIcon={<PageviewTwoToneIcon />} variant="outlined">
-          {t('View details')}
+          {'View details'}
         </Button>
       </CardWrapper>
     </Card>

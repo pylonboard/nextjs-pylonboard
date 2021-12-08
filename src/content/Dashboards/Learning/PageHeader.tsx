@@ -16,7 +16,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import { Chart } from 'src/components/Chart';
@@ -82,7 +82,7 @@ const ButtonPeriod = styled(Button)(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -188,15 +188,15 @@ function PageHeader() {
   const periods = [
     {
       value: 'this_week',
-      text: t('This week')
+      text: 'This week'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -310,7 +310,7 @@ function PageHeader() {
                     fontSize: `${theme.typography.pxToRem(21)}`
                   }}
                 >
-                  {t('learning points earned')}
+                  {'learning points earned'}
                 </TypographySecondary>
                 <TypographyPrimary
                   variant="h3"
@@ -318,7 +318,7 @@ function PageHeader() {
                     fontSize: `${theme.typography.pxToRem(24)}`
                   }}
                 >
-                  Chris Melton, {t('you did a great job last week!')}
+                  Chris Melton, {'you did a great job last week!'}
                 </TypographyPrimary>
               </Box>
             </Box>
@@ -359,7 +359,7 @@ function PageHeader() {
                       3.5h
                     </TypographyPrimary>
                     <TypographySecondary variant="h5" fontWeight="normal">
-                      {t('last week')}
+                      {'last week'}
                     </TypographySecondary>
                   </Box>
                   <AvatarWrapper>
@@ -392,7 +392,7 @@ function PageHeader() {
                       317h
                     </TypographyPrimary>
                     <TypographySecondary variant="h5" fontWeight="normal">
-                      {t('all semester')}
+                      {'all semester'}
                     </TypographySecondary>
                   </Box>
                   <AvatarWrapper>
@@ -442,7 +442,7 @@ function PageHeader() {
               fontWeight="normal"
               color="text.secondary"
             >
-              {t('certificates earned')}
+              {'certificates earned'}
             </TypographyWrapper>
           </Card>
         </Grid>
@@ -470,7 +470,7 @@ function PageHeader() {
                 fontSize: `${theme.typography.pxToRem(21)}`
               }}
             >
-              {t('reward points')}
+              {'reward points'}
             </TypographyWrapper>
           </Card>
         </Grid>
@@ -498,7 +498,7 @@ function PageHeader() {
               fontWeight="normal"
               color="text.secondary"
             >
-              {t('courses completed')}
+              {'courses completed'}
             </TypographyWrapper>
           </Card>
         </Grid>
@@ -526,7 +526,7 @@ function PageHeader() {
               fontWeight="normal"
               color="text.secondary"
             >
-              {t('forum discussions')}
+              {'forum discussions'}
             </TypographyWrapper>
           </Card>
         </Grid>

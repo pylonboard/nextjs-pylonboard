@@ -11,7 +11,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import CameraAltTwoToneIcon from '@mui/icons-material/CameraAltTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
@@ -49,7 +49,7 @@ const AvatarGradient3 = styled(Avatar)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -75,7 +75,7 @@ function Block5() {
                 pt: 3
               }}
             >
-              {t('Recent Visitors')}
+              {'Recent Visitors'}
             </Typography>
             <Typography
               noWrap
@@ -84,7 +84,7 @@ function Block5() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t("Today's analytics")}
+              {"Today's analytics"}
             </Typography>
             <AvatarGroup
               sx={{
@@ -155,12 +155,12 @@ function Block5() {
               alignItems="center"
               justifyContent="space-evenly"
             >
-              <Tooltip title={t('View profile')}>
+              <Tooltip title={'View profile'}>
                 <IconButton color="secondary">
                   <VisibilityTwoToneIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={t('Add to favourites')}>
+              <Tooltip title={'Add to favourites'}>
                 <IconButton
                   sx={{
                     mx: 1
@@ -170,7 +170,7 @@ function Block5() {
                   <FavoriteTwoToneIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={t('Start voice call')}>
+              <Tooltip title={'Start voice call'}>
                 <IconButton color="secondary">
                   <MicTwoToneIcon fontSize="small" />
                 </IconButton>
@@ -200,7 +200,7 @@ function Block5() {
                 pt: 3
               }}
             >
-              {t('New Customers')}
+              {'New Customers'}
             </Typography>
             <Typography
               noWrap
@@ -209,7 +209,7 @@ function Block5() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('Latest statistics')}
+              {'Latest statistics'}
             </Typography>
             <AvatarGroup
               sx={{
@@ -268,12 +268,12 @@ function Block5() {
               alignItems="center"
               justifyContent="space-evenly"
             >
-              <Tooltip title={t('View profile')}>
+              <Tooltip title={'View profile'}>
                 <IconButton color="secondary">
                   <VisibilityTwoToneIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={t('Add to favourites')}>
+              <Tooltip title={'Add to favourites'}>
                 <IconButton
                   sx={{
                     mx: 1
@@ -283,7 +283,7 @@ function Block5() {
                   <FavoriteTwoToneIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={t('Start voice call')}>
+              <Tooltip title={'Start voice call'}>
                 <IconButton color="secondary">
                   <MicTwoToneIcon fontSize="small" />
                 </IconButton>
@@ -313,7 +313,7 @@ function Block5() {
                 pt: 3
               }}
             >
-              {t("Today's Revenue")}
+              {"Today's Revenue"}
             </Typography>
             <Typography
               noWrap
@@ -322,7 +322,7 @@ function Block5() {
                 fontSize: `${theme.typography.pxToRem(15)}`
               }}
             >
-              {t('Successful orders')}
+              {'Successful orders'}
             </Typography>
             <AvatarGroup
               sx={{
@@ -393,12 +393,12 @@ function Block5() {
               alignItems="center"
               justifyContent="space-evenly"
             >
-              <Tooltip title={t('View profile')}>
+              <Tooltip title={'View profile'}>
                 <IconButton color="secondary">
                   <VisibilityTwoToneIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={t('Add to favourites')}>
+              <Tooltip title={'Add to favourites'}>
                 <IconButton
                   sx={{
                     mx: 1
@@ -408,7 +408,7 @@ function Block5() {
                   <FavoriteTwoToneIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={t('Start voice call')}>
+              <Tooltip title={'Start voice call'}>
                 <IconButton color="secondary">
                   <MicTwoToneIcon fontSize="small" />
                 </IconButton>

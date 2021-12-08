@@ -44,7 +44,7 @@ import Link from 'src/components/Link';
 import { TransitionProps } from '@mui/material/transitions';
 import CloseIcon from '@mui/icons-material/Close';
 import type { User } from 'src/models/user';
-import { useTranslation } from 'react-i18next';
+
 import clsx from 'clsx';
 import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
 import Label from 'src/components/Label';
@@ -211,25 +211,25 @@ const applyPagination = (
 
 const Results: FC<ResultsProps> = ({ users }) => {
   const [selectedItems, setSelectedUsers] = useState<string[]>([]);
-  const { t }: { t: any } = useTranslation();
+
   const { enqueueSnackbar } = useSnackbar();
 
   const tabs = [
     {
       value: 'all',
-      label: t('All users')
+      label: 'All users'
     },
     {
       value: 'customer',
-      label: t('Customers')
+      label: 'Customers'
     },
     {
       value: 'admin',
-      label: t('Administrators')
+      label: 'Administrators'
     },
     {
       value: 'subscriber',
-      label: t('Subscribers')
+      label: 'Subscribers'
     }
   ];
 
@@ -313,7 +313,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
   const handleDeleteCompleted = () => {
     setOpenConfirmDelete(false);
 
-    enqueueSnackbar(t('The user account has been removed'), {
+    enqueueSnackbar('The user account has been removed', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -375,7 +375,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                   )
                 }}
                 onChange={handleQueryChange}
-                placeholder={t('Search by name, email or username...')}
+                placeholder={'Search by name, email or username...'}
                 value={query}
                 size="small"
                 fullWidth
@@ -399,7 +399,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                 color="text.secondary"
                 align="center"
               >
-                {t("We couldn't find any users matching your search criteria")}
+                {"We couldn't find any users matching your search criteria"}
               </Typography>
             </>
           ) : (
@@ -415,13 +415,13 @@ const Results: FC<ResultsProps> = ({ users }) => {
                           onChange={handleSelectAllUsers}
                         />
                       </TableCell>
-                      <TableCell>{t('Username')}</TableCell>
-                      <TableCell>{t('Name')}</TableCell>
-                      <TableCell>{t('Email')}</TableCell>
-                      <TableCell align="center">{t('Posts')}</TableCell>
-                      <TableCell>{t('Location')}</TableCell>
-                      <TableCell>{t('Role')}</TableCell>
-                      <TableCell align="center">{t('Actions')}</TableCell>
+                      <TableCell>{'Username'}</TableCell>
+                      <TableCell>{'Name'}</TableCell>
+                      <TableCell>{'Email'}</TableCell>
+                      <TableCell align="center">{'Posts'}</TableCell>
+                      <TableCell>{'Location'}</TableCell>
+                      <TableCell>{'Role'}</TableCell>
+                      <TableCell align="center">{'Actions'}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -479,7 +479,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                           <TableCell>{getUserRoleLabel(user.role)}</TableCell>
                           <TableCell align="center">
                             <Typography noWrap>
-                              <Tooltip title={t('View')} arrow>
+                              <Tooltip title={'View'} arrow>
                                 <IconButton
                                   href={'/management/users/single/' + user.id}
                                   color="primary"
@@ -487,7 +487,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                                   <LaunchTwoToneIcon fontSize="small" />
                                 </IconButton>
                               </Tooltip>
-                              <Tooltip title={t('Delete')} arrow>
+                              <Tooltip title={'Delete'} arrow>
                                 <IconButton
                                   onClick={handleConfirmDelete}
                                   color="primary"
@@ -537,7 +537,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                     <Tooltip
                       arrow
                       placement="top"
-                      title={t('Select all users')}
+                      title={'Select all users'}
                     >
                       <Checkbox
                         checked={selectedAllUsers}
@@ -568,7 +568,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                     )
                   }}
                   onChange={handleQueryChange}
-                  placeholder={t('Search by name, email or username...')}
+                  placeholder={'Search by name, email or username...'}
                   value={query}
                   size="small"
                   margin="normal"
@@ -587,7 +587,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
               color="text.secondary"
               align="center"
             >
-              {t("We couldn't find any users matching your search criteria")}
+              {"We couldn't find any users matching your search criteria"}
             </Typography>
           ) : (
             <>
@@ -678,7 +678,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
                             justifyContent="space-between"
                           >
                             <Typography>
-                              <b>{user.posts}</b> {t('posts')}
+                              <b>{user.posts}</b> {'posts'}
                             </Typography>
                             <Checkbox
                               checked={isUserSelected}
@@ -705,10 +705,10 @@ const Results: FC<ResultsProps> = ({ users }) => {
               >
                 <Box>
                   <Typography component="span" variant="subtitle1">
-                    {t('Showing')}
+                    {'Showing'}
                   </Typography>{' '}
-                  <b>{limit}</b> {t('of')} <b>{filteredUsers.length}</b>{' '}
-                  <b>{t('users')}</b>
+                  <b>{limit}</b> {'of'} <b>{filteredUsers.length}</b>{' '}
+                  <b>{'users'}</b>
                 </Box>
                 <TablePagination
                   component="div"
@@ -742,9 +742,9 @@ const Results: FC<ResultsProps> = ({ users }) => {
             }}
             gutterBottom
           >
-            {t(
+            {
               'Choose between table or grid views for displaying the users list.'
-            )}
+            }
           </Typography>
         </Card>
       )}
@@ -776,7 +776,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
             }}
             variant="h3"
           >
-            {t('Are you sure you want to permanently delete this user account')}
+            {'Are you sure you want to permanently delete this user account'}
             ?
           </Typography>
 
@@ -789,7 +789,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
               }}
               onClick={closeConfirmDelete}
             >
-              {t('Cancel')}
+              {'Cancel'}
             </Button>
             <ButtonError
               onClick={handleDeleteCompleted}
@@ -800,7 +800,7 @@ const Results: FC<ResultsProps> = ({ users }) => {
               }}
               variant="contained"
             >
-              {t('Delete')}
+              {'Delete'}
             </ButtonError>
           </Box>
         </Box>

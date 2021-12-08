@@ -15,7 +15,7 @@ import {
   TooltipProps,
   tooltipClasses
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
 import KeyboardArrowLeftTwoToneIcon from '@mui/icons-material/KeyboardArrowLeftTwoTone';
 const IndicatorWrapper = styled(Box)(
@@ -110,7 +110,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
   name,
   ...rest
 }) => {
-  const { t }: { t: any } = useTranslation();
+
   const { closeSidebar } = useContext(SidebarContext);
   const [menuToggle] = useState<boolean>(openParent);
 
@@ -130,7 +130,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
     return (
       <ListItem component="div" className="Mui-children" key={name} {...rest}>
         <TooltipWrapper
-          title={t(name)}
+          title={name}
           disableInteractive
           placement="right"
           arrow

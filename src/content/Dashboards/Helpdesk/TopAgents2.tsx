@@ -9,7 +9,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import WorkTwoToneIcon from '@mui/icons-material/WorkTwoTone';
 
 const AvatarWrapper = styled(Avatar)(
@@ -56,7 +56,7 @@ const LinearProgressWrapper = styled(LinearProgress)(
 );
 
 function TopAgents2() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -75,7 +75,7 @@ function TopAgents2() {
         />
         <Typography variant="h3">Zain Vetrovs</Typography>
         <Typography variant="subtitle2" gutterBottom>
-          {t('Technical Support Team')}
+          {'Technical Support Team'}
         </Typography>
 
         <Typography
@@ -87,7 +87,7 @@ function TopAgents2() {
           }}
         >
           <DotLegend style={{ background: theme.colors.warning.main }} />
-          {t('idle')}
+          {'idle'}
           <Typography variant="body1" color="text.secondary" component="span">
             &nbsp; - 0:58
           </Typography>
@@ -108,7 +108,7 @@ function TopAgents2() {
               }}
               component="div"
             >
-              {t('Capacity')}
+              {'Capacity'}
             </Typography>
             <Box>
               <Typography
@@ -146,7 +146,7 @@ function TopAgents2() {
               }}
               component="div"
             >
-              {t('Productivity')}
+              {'Productivity'}
             </Typography>
             <Box display="flex" alignItems="center">
               <AvatarPrimary>

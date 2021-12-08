@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 
 const LinearProgress1 = styled(LinearProgress)(
   ({ theme }) => `
@@ -71,7 +71,7 @@ const LinearProgress3 = styled(LinearProgress)(
 );
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -114,7 +114,7 @@ function Block9() {
               color: `${theme.colors.alpha.trueWhite[70]}`
             }}
           >
-            {t('Sales')}
+            {'Sales'}
           </Typography>
         </Box>
         <Box p={3} flexGrow={1}>
@@ -141,7 +141,7 @@ function Block9() {
               color: `${theme.colors.alpha.trueWhite[70]}`
             }}
           >
-            {t('Profiles')}
+            {'Profiles'}
           </Typography>
         </Box>
         <Box p={3} flexGrow={1}>
@@ -168,7 +168,7 @@ function Block9() {
               color: `${theme.colors.alpha.trueWhite[70]}`
             }}
           >
-            {t('Tickets')}
+            {'Tickets'}
           </Typography>
         </Box>
       </Stack>

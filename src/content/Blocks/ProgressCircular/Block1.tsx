@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import { buildStyles } from 'react-circular-progressbar';
@@ -47,7 +47,7 @@ const LabelError = styled(Box)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const data = {
@@ -72,7 +72,7 @@ function Block1() {
             variant="h4"
             textAlign="center"
           >
-            {t('Storage Status')}
+            {'Storage Status'}
           </Typography>
           <CardActions>
             <IconButton size="small" color="secondary">
@@ -132,7 +132,7 @@ function Block1() {
                 variant="subtitle2"
                 color="text.primary"
               >
-                {t('Available')}
+                {'Available'}
               </Typography>
             </Box>
             <Box
@@ -154,7 +154,7 @@ function Block1() {
                 variant="subtitle2"
                 color="text.primary"
               >
-                {t('Total')}
+                {'Total'}
               </Typography>
             </Box>
           </Box>
@@ -176,7 +176,7 @@ function Block1() {
                 }
               }}
             >
-              {t('Increase storage')}
+              {'Increase storage'}
             </Button>
           </Box>
         </Card>
@@ -195,7 +195,7 @@ function Block1() {
             variant="h4"
             textAlign="center"
           >
-            {t('Active Issues')}
+            {'Active Issues'}
           </Typography>
           <CardActions>
             <IconButton size="small" color="secondary">
@@ -230,7 +230,7 @@ function Block1() {
           </Box>
           <Box my={2}>
             <Typography textAlign="center" variant="subtitle2">
-              {t('These issues require immediate action')} !
+              {'These issues require immediate action'} !
             </Typography>
           </Box>
           <Box mx={3} pt={1} mb={3}>
@@ -251,7 +251,7 @@ function Block1() {
                 }
               }}
             >
-              {t('View all issues')}
+              {'View all issues'}
             </Button>
           </Box>
         </Card>
@@ -270,7 +270,7 @@ function Block1() {
             variant="h4"
             textAlign="center"
           >
-            {t('Email Marketing')}
+            {'Email Marketing'}
           </Typography>
           <CardActions>
             <IconButton size="small" color="secondary">
@@ -325,7 +325,7 @@ function Block1() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('successful')}
+                    {'successful'}
                   </Typography>
                 </Box>
               </Grid>
@@ -343,7 +343,7 @@ function Block1() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('failed')}
+                    {'failed'}
                   </Typography>
                 </Box>
               </Grid>
@@ -361,7 +361,7 @@ function Block1() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('opened')}
+                    {'opened'}
                   </Typography>
                 </Box>
               </Grid>
@@ -379,7 +379,7 @@ function Block1() {
                     variant="body1"
                     color="text.secondary"
                   >
-                    {t('reported')}
+                    {'reported'}
                   </Typography>
                 </Box>
               </Grid>
@@ -403,7 +403,7 @@ function Block1() {
                 }
               }}
             >
-              {t('Generate report')}
+              {'Generate report'}
             </Button>
           </Box>
         </Card>

@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import PersonSearchTwoToneIcon from '@mui/icons-material/PersonSearchTwoTone';
 import NotificationImportantTwoToneIcon from '@mui/icons-material/NotificationImportantTwoTone';
@@ -29,7 +29,7 @@ const CardActions = styled(Box)(
 );
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -45,7 +45,7 @@ function Block9() {
           }}
         >
           <CardActions>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 sx={{
                   mr: 0.5
@@ -60,7 +60,7 @@ function Block9() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Users search')}>
+            <Tooltip arrow placement="top" title={'Users search'}>
               <IconButton size="small" color="secondary">
                 <PersonSearchTwoToneIcon
                   sx={{
@@ -103,14 +103,14 @@ function Block9() {
                 />
               </Avatar>
               <Typography variant="body1" color="text.secondary">
-                {t('Target achieved')}
+                {'Target achieved'}
               </Typography>
             </Box>
           </Box>
           <Typography variant="h3" gutterBottom>
-            {t('Recent Visitors')}
+            {'Recent Visitors'}
           </Typography>
-          <Typography variant="subtitle2">{t("Today's analytics")}</Typography>
+          <Typography variant="subtitle2">{"Today's analytics"}</Typography>
         </Card>
       </Grid>
       <Grid item xs={12} md={4}>
@@ -124,7 +124,7 @@ function Block9() {
           }}
         >
           <CardActions>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 sx={{
                   mr: 0.5
@@ -139,7 +139,7 @@ function Block9() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Users search')}>
+            <Tooltip arrow placement="top" title={'Users search'}>
               <IconButton size="small" color="secondary">
                 <PersonSearchTwoToneIcon
                   sx={{
@@ -182,14 +182,14 @@ function Block9() {
                 />
               </Avatar>
               <Typography variant="body1" color="text.secondary">
-                {t('Target achieved')}
+                {'Target achieved'}
               </Typography>
             </Box>
           </Box>
           <Typography variant="h3" gutterBottom>
-            {t("Today's Revenue")}
+            {"Today's Revenue"}
           </Typography>
-          <Typography variant="subtitle2">{t('Successful orders')}</Typography>
+          <Typography variant="subtitle2">{'Successful orders'}</Typography>
         </Card>
       </Grid>
       <Grid item xs={12} md={4}>
@@ -203,7 +203,7 @@ function Block9() {
           }}
         >
           <CardActions>
-            <Tooltip arrow placement="top" title={t('Add to favourites')}>
+            <Tooltip arrow placement="top" title={'Add to favourites'}>
               <IconButton
                 sx={{
                   mr: 0.5
@@ -218,7 +218,7 @@ function Block9() {
                 />
               </IconButton>
             </Tooltip>
-            <Tooltip arrow placement="top" title={t('Users search')}>
+            <Tooltip arrow placement="top" title={'Users search'}>
               <IconButton size="small" color="secondary">
                 <PersonSearchTwoToneIcon
                   sx={{
@@ -266,14 +266,14 @@ function Block9() {
                   color: `${theme.colors.error.main}`
                 }}
               >
-                {t('Target failed')}
+                {'Target failed'}
               </Typography>
             </Box>
           </Box>
           <Typography variant="h3" gutterBottom>
-            {t('New Customers')}
+            {'New Customers'}
           </Typography>
-          <Typography variant="subtitle2">{t('Latest statistics')}</Typography>
+          <Typography variant="subtitle2">{'Latest statistics'}</Typography>
         </Card>
       </Grid>
     </Grid>

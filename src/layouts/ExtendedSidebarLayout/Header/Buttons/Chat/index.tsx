@@ -28,7 +28,7 @@ import Scrollbar from 'src/components/Scrollbar';
 import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
 import MarkChatReadTwoToneIcon from '@mui/icons-material/MarkChatReadTwoTone';
 
-import { useTranslation } from 'react-i18next';
+
 
 const AvatarGradient = styled(Avatar)(
   ({ theme }) => `
@@ -74,7 +74,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Chat() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const ref = useRef<any>(null);
@@ -133,7 +133,7 @@ function Chat() {
 
   return (
     <>
-      <Tooltip arrow title={t('Messenger')}>
+      <Tooltip arrow title={'Messenger'}>
         <Badge
           variant="dot"
           overlap="circular"
@@ -197,7 +197,7 @@ function Chat() {
                 fontSize: theme.typography.pxToRem(12)
               }}
             >
-              {t('Mark all as seen')}
+              {'Mark all as seen'}
             </Button>
             <Badge
               color="error"
@@ -223,7 +223,7 @@ function Chat() {
             <FormControl variant="outlined" fullWidth>
               <OutlinedInputWrapper
                 type="text"
-                placeholder={t('Search messages...')}
+                placeholder={'Search messages...'}
                 startAdornment={
                   <InputAdornment position="start">
                     <SearchTwoToneIcon />
@@ -268,7 +268,7 @@ function Chat() {
                             }
                           }}
                         >
-                          {t('Chat')}
+                          {'Chat'}
                         </Button>
                       }
                     >
@@ -320,7 +320,7 @@ function Chat() {
                                 }}
                                 variant="body1"
                               >
-                                <Text color="success">{t('Online')}</Text>
+                                <Text color="success">{'Online'}</Text>
                               </Typography>
                             </Box>
                           </>
@@ -347,7 +347,7 @@ function Chat() {
               variant="contained"
               endIcon={<ArrowForwardTwoToneIcon />}
             >
-              {t('View all participants')}
+              {'View all participants'}
             </Button>
           </Box>
         </Box>

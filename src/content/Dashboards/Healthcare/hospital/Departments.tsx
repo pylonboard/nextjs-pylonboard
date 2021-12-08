@@ -9,7 +9,7 @@ import {
   Grid,
   Box
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
 import DepartmentsChart from './DepartmentsChart';
@@ -53,7 +53,7 @@ const BoxChartWrapperText = styled(Box)(
 );
 
 function Departments() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const beds = {
     og: {
@@ -62,7 +62,7 @@ function Departments() {
           data: [20, 10]
         }
       ],
-      labels: [t('Free Beds'), t('Occupied Beds')]
+      labels: ['Free Beds', 'Occupied Beds']
     },
     mg: {
       datasets: [
@@ -70,7 +70,7 @@ function Departments() {
           data: [20, 10]
         }
       ],
-      labels: [t('Free Beds'), t('Occupied Beds')]
+      labels: ['Free Beds', 'Occupied Beds']
     }
   };
 
@@ -81,7 +81,7 @@ function Departments() {
           data: [67, 33]
         }
       ],
-      labels: [t('Free Doctors'), t('Occupied Doctors')]
+      labels: ['Free Doctors', 'Occupied Doctors']
     },
     mg: {
       datasets: [
@@ -89,7 +89,7 @@ function Departments() {
           data: [50, 50]
         }
       ],
-      labels: [t('Free Doctors'), t('Occupied Doctors')]
+      labels: ['Free Doctors', 'Occupied Doctors']
     }
   };
 
@@ -99,7 +99,7 @@ function Departments() {
         height: '100%'
       }}
     >
-      <CardHeader title={t('Departments')} />
+      <CardHeader title={'Departments'} />
       <Divider />
       <Box py={3}>
         <Grid container spacing={0} justifyContent="center" alignItems="center">
@@ -117,7 +117,7 @@ function Departments() {
               }}
             >
               <Typography align="center" variant="h4">
-                {t('Obstetrics and Gynaecology')}
+                {'Obstetrics and Gynaecology'}
               </Typography>
             </Box>
           </Grid>
@@ -139,7 +139,7 @@ function Departments() {
             </Box>
             <BoxChartWrapper>
               <Typography align="center" variant="subtitle2" gutterBottom>
-                {t('Available Beds')}
+                {'Available Beds'}
               </Typography>
               <BoxChartWrapperText>
                 <div className="ChartText">
@@ -167,7 +167,7 @@ function Departments() {
             </Box>
             <BoxChartWrapper>
               <Typography align="center" variant="subtitle2" gutterBottom>
-                {t('Free Doctors')}
+                {'Free Doctors'}
               </Typography>
               <BoxChartWrapperText>
                 <div className="ChartText">
@@ -196,7 +196,7 @@ function Departments() {
               }}
             >
               <Typography align="center" variant="h4">
-                {t('Medical Gastroenterology')}
+                {'Medical Gastroenterology'}
               </Typography>
             </Box>
           </Grid>
@@ -218,7 +218,7 @@ function Departments() {
             </Box>
             <BoxChartWrapper>
               <Typography align="center" variant="subtitle2" gutterBottom>
-                {t('Available Beds')}
+                {'Available Beds'}
               </Typography>
               <BoxChartWrapperText>
                 <div className="ChartText">
@@ -246,7 +246,7 @@ function Departments() {
             </Box>
             <BoxChartWrapper>
               <Typography align="center" variant="subtitle2" gutterBottom>
-                {t('Free Doctors')}
+                {'Free Doctors'}
               </Typography>
               <BoxChartWrapperText>
                 <div className="ChartText">
@@ -270,7 +270,7 @@ function Departments() {
           size="small"
           endIcon={<ArrowForwardTwoToneIcon fontSize="small" />}
         >
-          {t('View all departments')}
+          {'View all departments'}
         </Button>
       </CardActions>
     </Card>

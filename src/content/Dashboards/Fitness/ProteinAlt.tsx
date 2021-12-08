@@ -7,11 +7,11 @@ import {
   Avatar,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import FastfoodTwoToneIcon from '@mui/icons-material/FastfoodTwoTone';
 
 function ProteinAlt() {
-  const { t }: { t: any } = useTranslation();
+
 
   const AvatarPrimary = styled(Avatar)(
     ({ theme }) => `
@@ -45,7 +45,7 @@ function ProteinAlt() {
               variant="subtitle2"
               color="text.secondary"
             >
-              {t('grams')}
+              {'grams'}
             </Typography>
           </>
         }
@@ -61,7 +61,7 @@ function ProteinAlt() {
             pb: 3
           }}
         >
-          {t('Protein')}
+          {'Protein'}
         </Typography>
         <LinearProgress value={49} color="primary" variant="determinate" />
       </CardContent>

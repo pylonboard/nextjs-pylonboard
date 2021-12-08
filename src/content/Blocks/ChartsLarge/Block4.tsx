@@ -13,7 +13,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import Block4Chart from './Block4Chart';
 
@@ -88,7 +88,7 @@ const LinearProgressSuccess = styled(LinearProgress)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const visitors = {
     orders: [1008, 940, 1010, 821, 1035],
@@ -115,10 +115,10 @@ function Block4() {
             variant="outlined"
             endIcon={<ExpandMoreTwoToneIcon />}
           >
-            {t('Actions')}
+            {'Actions'}
           </Button>
         }
-        title={t('Users list')}
+        title={'Users list'}
       />
       <Divider />
       <CardContent
@@ -144,7 +144,7 @@ function Block4() {
                 pb: 1
               }}
             >
-              {t('Orders')}
+              {'Orders'}
             </Typography>
             <LinearProgressPrimary variant="determinate" value={35.76} />
             <Box
@@ -172,7 +172,7 @@ function Block4() {
                 pb: 1
               }}
             >
-              {t('Sales')}
+              {'Sales'}
             </Typography>
             <LinearProgressSuccess variant="determinate" value={83.12} />
             <Box
@@ -200,7 +200,7 @@ function Block4() {
                 pb: 1
               }}
             >
-              {t('Users')}
+              {'Users'}
             </Typography>
             <LinearProgressWarning variant="determinate" value={17.98} />
             <Box
@@ -228,7 +228,7 @@ function Block4() {
                 pb: 1
               }}
             >
-              {t('Customers')}
+              {'Customers'}
             </Typography>
             <LinearProgressError variant="determinate" value={65.34} />
             <Box

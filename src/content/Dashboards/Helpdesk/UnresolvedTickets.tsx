@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import BugReportTwoToneIcon from '@mui/icons-material/BugReportTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -63,7 +63,7 @@ const BottomWrapper = styled(Box)(
 );
 
 function UnresolvedTickets() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -195,14 +195,14 @@ function UnresolvedTickets() {
               lineHeight: 1.4
             }}
           >
-            {t('Unresolved Tickets')}
+            {'Unresolved Tickets'}
           </Typography>
           <IconWrapper>
             <BugReportTwoToneIcon />
           </IconWrapper>
         </Box>
         <Button variant="contained" size="small">
-          {t('View tickets')}
+          {'View tickets'}
         </Button>
       </CardContent>
       <BottomWrapper
@@ -216,7 +216,7 @@ function UnresolvedTickets() {
         <TypographyWrapper variant="h1">27</TypographyWrapper>
         <Box>
           <Typography align="right" variant="subtitle1" noWrap>
-            {t('Previous Period')}
+            {'Previous Period'}
           </Typography>
           <Typography align="right" variant="h3">
             43

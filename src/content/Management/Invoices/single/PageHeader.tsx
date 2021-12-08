@@ -9,7 +9,7 @@ import {
   Container,
   IconButton
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Link from 'src/components/Link';
 
 import type { Invoice } from 'src/models/invoice';
@@ -21,7 +21,7 @@ interface PageHeaderProps {
 }
 
 const PageHeader: FC<PageHeaderProps> = ({ invoice }) => {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Container maxWidth="lg">
@@ -32,7 +32,7 @@ const PageHeader: FC<PageHeaderProps> = ({ invoice }) => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Tooltip arrow placement="top" title={t('Go back')}>
+            <Tooltip arrow placement="top" title={'Go back'}>
               <IconButton
                 href="/management/invoices"
                 color="primary"
@@ -50,19 +50,19 @@ const PageHeader: FC<PageHeaderProps> = ({ invoice }) => {
               </Typography>
               <Breadcrumbs maxItems={2} aria-label="breadcrumb">
                 <Link color="inherit" href="#">
-                  {t('Home')}
+                  {'Home'}
                 </Link>
                 <Link color="inherit" href="#">
-                  {t('Management')}
+                  {'Management'}
                 </Link>
                 <Link color="inherit" href="#">
-                  {t('Commerce')}
+                  {'Commerce'}
                 </Link>
                 <Link color="inherit" href="#">
-                  {t('Invoices')}
+                  {'Invoices'}
                 </Link>
                 <Typography color="text.primary">
-                  {t('Invoice')} #{invoice.number}
+                  {'Invoice'} #{invoice.number}
                 </Typography>
               </Breadcrumbs>
             </Box>
@@ -76,7 +76,7 @@ const PageHeader: FC<PageHeaderProps> = ({ invoice }) => {
             href="/management/invoices"
             variant="contained"
           >
-            {t('View all invoices')}
+            {'View all invoices'}
           </Button>
         </Grid>
       </Grid>

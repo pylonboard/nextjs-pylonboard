@@ -2,7 +2,7 @@ import { TextField, InputAdornment, IconButton, styled } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import MicTwoToneIcon from '@mui/icons-material/MicTwoTone';
 
-import { useTranslation } from 'react-i18next';
+
 
 const SearchInputWrapper = styled(TextField)(
   ({ theme }) => `
@@ -26,7 +26,7 @@ const SearchInputWrapper = styled(TextField)(
 );
 
 function Search() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <SearchInputWrapper
@@ -44,7 +44,7 @@ function Search() {
           </InputAdornment>
         )
       }}
-      placeholder={t('Search...')}
+      placeholder={'Search...'}
       fullWidth
     />
   );

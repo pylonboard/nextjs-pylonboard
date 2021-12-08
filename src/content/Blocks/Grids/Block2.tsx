@@ -1,13 +1,13 @@
 import { Box, Stack, Card, Typography, Divider } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
@@ -25,7 +25,7 @@ function Block2() {
           <Box ml={1}>
             <Typography variant="h3">$14,264</Typography>
             <Typography noWrap variant="subtitle2">
-              {t('total value')}
+              {'total value'}
             </Typography>
           </Box>
         </Box>
@@ -36,7 +36,7 @@ function Block2() {
           <Box ml={1}>
             <Typography variant="h3">6,598</Typography>
             <Typography noWrap variant="subtitle2">
-              {t('new members')}
+              {'new members'}
             </Typography>
           </Box>
         </Box>

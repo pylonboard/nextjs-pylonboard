@@ -13,7 +13,7 @@ import {
   useTheme,
   Grid
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 
 import { Chart } from 'src/components/Chart';
@@ -42,7 +42,7 @@ const DotPrimary = styled('span')(
 );
 
 function TransactionsStatistics() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -142,15 +142,15 @@ function TransactionsStatistics() {
   const periods = [
     {
       value: 'current_year',
-      text: t('Current Year')
+      text: 'Current Year'
     },
     {
       value: 'last_year',
-      text: t('Last Year')
+      text: 'Last Year'
     },
     {
       value: 'all_time',
-      text: t('All time')
+      text: 'All time'
     }
   ];
 
@@ -166,7 +166,7 @@ function TransactionsStatistics() {
 
   return (
     <Card>
-      <CardHeader title={t('Transactions Statistics')} />
+      <CardHeader title={'Transactions Statistics'} />
       <Divider />
       <CardContent>
         <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -190,7 +190,7 @@ function TransactionsStatistics() {
               }}
             >
               <DotPrimary />
-              {t('income')}
+              {'income'}
             </Typography>
             <Typography
               variant="body2"
@@ -201,7 +201,7 @@ function TransactionsStatistics() {
               }}
             >
               <DotPrimaryLight />
-              {t('expenses')}
+              {'expenses'}
             </Typography>
           </Box>
         </Box>
@@ -255,25 +255,25 @@ function TransactionsStatistics() {
           <Grid spacing={4} container>
             <Grid item sm={6}>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Income')}
+                {'Income'}
               </Typography>
               <Typography variant="h3">{data.income}</Typography>
             </Grid>
             <Grid item sm={6}>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Expenses')}
+                {'Expenses'}
               </Typography>
               <Typography variant="h3">{data.expenses}</Typography>
             </Grid>
             <Grid item sm={6}>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Taxes')}
+                {'Taxes'}
               </Typography>
               <Typography variant="h3">{data.taxes}</Typography>
             </Grid>
             <Grid item sm={6}>
               <Typography variant="subtitle2" gutterBottom>
-                {t('Bills')}
+                {'Bills'}
               </Typography>
               <Typography variant="h3">{data.bills}</Typography>
             </Grid>

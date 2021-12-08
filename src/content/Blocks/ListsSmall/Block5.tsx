@@ -12,14 +12,14 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AutoAwesomeMosaicTwoToneIcon from '@mui/icons-material/AutoAwesomeMosaicTwoTone';
 import ContactPhoneTwoToneIcon from '@mui/icons-material/ContactPhoneTwoTone';
 import EvStationTwoToneIcon from '@mui/icons-material/EvStationTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -37,7 +37,7 @@ function Block5() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Latest actions')}
+            {'Latest actions'}
           </Typography>
         }
         action={
@@ -47,7 +47,7 @@ function Block5() {
             endIcon={<ExpandMoreTwoToneIcon />}
             color="primary"
           >
-            {t('Export')}
+            {'Export'}
           </Button>
         }
       />
@@ -81,12 +81,12 @@ function Block5() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Customers')}
+                {'Customers'}
               </Typography>
             }
             secondary={
               <Typography variant="subtitle2">
-                {t('On the other hand, we denounce with righteous indignation')}
+                {'On the other hand, we denounce with righteous indignation'}
                 .
               </Typography>
             }
@@ -121,14 +121,14 @@ function Block5() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('New articles')}
+                {'New articles'}
               </Typography>
             }
             secondary={
               <Typography variant="subtitle2">
-                {t(
+                {
                   'Dislike men who are so beguiled and demoralized by the charms'
-                )}
+                }
                 .
               </Typography>
             }
@@ -163,14 +163,14 @@ function Block5() {
           <ListItemText
             primary={
               <Typography gutterBottom variant="h4">
-                {t('Blog posts')}
+                {'Blog posts'}
               </Typography>
             }
             secondary={
               <Typography variant="subtitle2">
-                {t(
+                {
                   'Pleasure of the moment, so blinded by desire, that they foresee'
-                )}
+                }
                 .
               </Typography>
             }

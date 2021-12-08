@@ -23,7 +23,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import LaunchTwoToneIcon from '@mui/icons-material/LaunchTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
@@ -166,7 +166,7 @@ const SearchInputWrapper = styled(TextField)(
 );
 
 function Block6() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [page, setPage] = useState(2);
@@ -202,7 +202,7 @@ function Block6() {
               </InputAdornment>
             )
           }}
-          placeholder={t('Search orders...')}
+          placeholder={'Search orders...'}
           fullWidth
         />
       </Box>
@@ -212,12 +212,12 @@ function Block6() {
           <TableWrapper>
             <TableHeadWrapper>
               <TableRow>
-                <TableCell>{t('Order')}</TableCell>
-                <TableCell align="left">{t('Client')}</TableCell>
-                <TableCell align="left">{t('Product')}</TableCell>
-                <TableCell align="center">{t('Status')}</TableCell>
-                <TableCell align="center">{t('Total')}</TableCell>
-                <TableCell align="right">{t('Actions')}</TableCell>
+                <TableCell>{'Order'}</TableCell>
+                <TableCell align="left">{'Client'}</TableCell>
+                <TableCell align="left">{'Product'}</TableCell>
+                <TableCell align="center">{'Status'}</TableCell>
+                <TableCell align="center">{'Total'}</TableCell>
+                <TableCell align="right">{'Actions'}</TableCell>
               </TableRow>
             </TableHeadWrapper>
             <TableBody>
@@ -256,7 +256,7 @@ function Block6() {
                         Shanelle Wynn
                       </Link>
                       <Typography variant="subtitle2" noWrap>
-                        {t('Customer since')} 2019
+                        {'Customer since'} 2019
                       </Typography>
                     </Box>
                   </Box>
@@ -287,14 +287,14 @@ function Block6() {
                         Apple Macbook PRO 16
                       </Link>
                       <Typography variant="subtitle2" noWrap>
-                        {t('In stock')}: <b>985</b>
+                        {'In stock'}: <b>985</b>
                       </Typography>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell align="center">
                   <div>
-                    <LabelSuccess>{t('Completed')}</LabelSuccess>
+                    <LabelSuccess>{'Completed'}</LabelSuccess>
                   </div>
                 </TableCell>
                 <TableCell align="center">
@@ -318,7 +318,7 @@ function Block6() {
                   align="right"
                 >
                   <Box>
-                    <Tooltip title={t('View')} arrow>
+                    <Tooltip title={'View'} arrow>
                       <IconButtonWrapper
                         sx={{
                           backgroundColor: `${theme.colors.primary.lighter}`,
@@ -336,7 +336,7 @@ function Block6() {
                         <LaunchTwoToneIcon fontSize="small" />
                       </IconButtonWrapper>
                     </Tooltip>
-                    <Tooltip title={t('Delete')} arrow>
+                    <Tooltip title={'Delete'} arrow>
                       <IconButtonWrapper
                         sx={{
                           ml: 1,
@@ -394,7 +394,7 @@ function Block6() {
                         Brax Childs
                       </Link>
                       <Typography variant="subtitle2" noWrap>
-                        {t('Customer since')} 2020
+                        {'Customer since'} 2020
                       </Typography>
                     </Box>
                   </Box>
@@ -425,14 +425,14 @@ function Block6() {
                         iPhone 13 PRO Max
                       </Link>
                       <Typography variant="subtitle2" noWrap>
-                        {t('In stock')}: <b>65</b>
+                        {'In stock'}: <b>65</b>
                       </Typography>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell align="center">
                   <div>
-                    <LabelWarning>{t('Pending')}</LabelWarning>
+                    <LabelWarning>{'Pending'}</LabelWarning>
                   </div>
                 </TableCell>
                 <TableCell align="center">
@@ -451,7 +451,7 @@ function Block6() {
                 </TableCell>
                 <TableCell align="right">
                   <Box>
-                    <Tooltip title={t('View')} arrow>
+                    <Tooltip title={'View'} arrow>
                       <IconButtonWrapper
                         sx={{
                           backgroundColor: `${theme.colors.primary.lighter}`,
@@ -469,7 +469,7 @@ function Block6() {
                         <LaunchTwoToneIcon fontSize="small" />
                       </IconButtonWrapper>
                     </Tooltip>
-                    <Tooltip title={t('Delete')} arrow>
+                    <Tooltip title={'Delete'} arrow>
                       <IconButtonWrapper
                         sx={{
                           ml: 1,
@@ -527,7 +527,7 @@ function Block6() {
                         Amin Waller
                       </Link>
                       <Typography variant="subtitle2" noWrap>
-                        {t('Customer since')} 2017
+                        {'Customer since'} 2017
                       </Typography>
                     </Box>
                   </Box>
@@ -558,14 +558,14 @@ function Block6() {
                         Apple TV Gen. 5
                       </Link>
                       <Typography variant="subtitle2" noWrap>
-                        {t('In stock')}: <b>3</b>
+                        {'In stock'}: <b>3</b>
                       </Typography>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell align="center">
                   <div>
-                    <LabelError>{t('Failed')}</LabelError>
+                    <LabelError>{'Failed'}</LabelError>
                   </div>
                 </TableCell>
                 <TableCell align="center">
@@ -584,7 +584,7 @@ function Block6() {
                 </TableCell>
                 <TableCell align="right">
                   <Box>
-                    <Tooltip title={t('View')} arrow>
+                    <Tooltip title={'View'} arrow>
                       <IconButtonWrapper
                         sx={{
                           backgroundColor: `${theme.colors.primary.lighter}`,
@@ -602,7 +602,7 @@ function Block6() {
                         <LaunchTwoToneIcon fontSize="small" />
                       </IconButtonWrapper>
                     </Tooltip>
-                    <Tooltip title={t('Delete')} arrow>
+                    <Tooltip title={'Delete'} arrow>
                       <IconButtonWrapper
                         sx={{
                           ml: 1,

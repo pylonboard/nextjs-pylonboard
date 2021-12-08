@@ -19,7 +19,7 @@ import BaseLayout from 'src/layouts/BaseLayout';
 import Head from 'next/head';
 import Logo from 'src/components/LogoSign';
 
-import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -70,7 +70,7 @@ const ButtonNotify = styled(Button)(
 );
 
 function StatusComingSoon() {
-  const { t }: { t: any } = useTranslation();
+
 
   const calculateTimeLeft = () => {
     const difference = +new Date(`2022`) - +new Date();
@@ -123,7 +123,7 @@ function StatusComingSoon() {
             <Box textAlign="center" mb={3}>
               <Container maxWidth="xs">
                 <Typography variant="h1" sx={{ mt: 4, mb: 2 }}>
-                  {t('Coming Soon')}
+                  {'Coming Soon'}
                 </Typography>
                 <Typography
                   variant="h3"
@@ -131,9 +131,7 @@ function StatusComingSoon() {
                   fontWeight="normal"
                   sx={{ mb: 4 }}
                 >
-                  {t(
-                    "We're working on implementing the last features before our launch!"
-                  )}
+                  {"We're working on implementing the last features before our launch!"}
                 </Typography>
               </Container>
               <img
@@ -152,11 +150,11 @@ function StatusComingSoon() {
                 <FormControl variant="outlined" fullWidth>
                   <OutlinedInputWrapper
                     type="text"
-                    placeholder={t('Enter your email address here...')}
+                    placeholder={'Enter your email address here...'}
                     endAdornment={
                       <InputAdornment position="end">
                         <ButtonNotify variant="contained" size="small">
-                          {t('Notify Me')}
+                          {'Notify Me'}
                         </ButtonNotify>
                       </InputAdornment>
                     }
@@ -167,7 +165,7 @@ function StatusComingSoon() {
                     }
                   />
                   <FormHelperText>
-                    {t("We'll email you once our website is launched!")}
+                    {"We'll email you once our website is launched!"}
                   </FormHelperText>
                 </FormControl>
                 <Divider sx={{ my: 4 }} />

@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import AssignmentTurnedInTwoToneIcon from '@mui/icons-material/AssignmentTurnedInTwoTone';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -63,7 +63,7 @@ const BottomWrapper = styled(Box)(
 );
 
 function AssignedTasks() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -192,14 +192,14 @@ function AssignedTasks() {
               lineHeight: 1.4
             }}
           >
-            {t('Assigned Tasks')}
+            {'Assigned Tasks'}
           </Typography>
           <IconWrapper>
             <AssignmentTurnedInTwoToneIcon />
           </IconWrapper>
         </Box>
         <Button variant="contained" size="small">
-          {t('View tasks')}
+          {'View tasks'}
         </Button>
       </CardContent>
       <BottomWrapper
@@ -213,7 +213,7 @@ function AssignedTasks() {
         <TypographyWrapper variant="h1">91</TypographyWrapper>
         <Box>
           <Typography align="right" variant="subtitle1" noWrap>
-            {t('Previous Period')}
+            {'Previous Period'}
           </Typography>
           <Typography align="right" variant="h3">
             76

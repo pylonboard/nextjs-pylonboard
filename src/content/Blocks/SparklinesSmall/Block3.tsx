@@ -1,13 +1,13 @@
 import { Box, Card, Grid, Typography, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import KeyboardArrowUpTwoToneIcon from '@mui/icons-material/KeyboardArrowUpTwoTone';
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chart1Options: ApexOptions = {
@@ -247,7 +247,7 @@ function Block3() {
                 fontWeight: 'bold'
               }}
             >
-              {t('Customers')}
+              {'Customers'}
             </Typography>
             <Typography
               variant="h2"
@@ -296,7 +296,7 @@ function Block3() {
                 fontWeight: 'bold'
               }}
             >
-              {t('Orders')}
+              {'Orders'}
             </Typography>
             <Typography
               variant="h2"
@@ -345,7 +345,7 @@ function Block3() {
                 fontWeight: 'bold'
               }}
             >
-              {t('Growth')}
+              {'Growth'}
             </Typography>
             <Typography
               variant="h2"
@@ -394,7 +394,7 @@ function Block3() {
                 fontWeight: 'bold'
               }}
             >
-              {t('Expenses')}
+              {'Expenses'}
             </Typography>
             <Typography
               variant="h2"

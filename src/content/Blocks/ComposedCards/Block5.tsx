@@ -15,7 +15,7 @@ import {
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 
 import { formatDistance, subHours, subMinutes } from 'date-fns';
-import { useTranslation } from 'react-i18next';
+
 import Scrollbar from 'src/components/Scrollbar';
 import AttachFileTwoToneIcon from '@mui/icons-material/AttachFileTwoTone';
 import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
@@ -62,7 +62,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
@@ -80,9 +80,9 @@ function Block5() {
             variant="caption"
             fontWeight="bold"
           >
-            {t('Messenger')}
+            {'Messenger'}
           </Typography>
-          <Typography variant="h4">{t('Talking to Kate')}</Typography>
+          <Typography variant="h4">{'Talking to Kate'}</Typography>
         </Box>
         <IconButton color="primary">
           <AddCircleTwoToneIcon />
@@ -336,14 +336,14 @@ function Block5() {
             }}
             size="small"
           >
-            {t('Create Post')}
+            {'Create Post'}
           </Button>
           <Button variant="outlined" color="secondary" size="small">
-            {t('Event')}
+            {'Event'}
           </Button>
         </Box>
         <Typography variant="subtitle2">
-          {t('Posting as')}{' '}
+          {'Posting as'}{' '}
           <Typography component="span" color="text.primary">
             <b>Emma Taylor</b>
           </Typography>
@@ -361,10 +361,10 @@ function Block5() {
           <TextField
             hiddenLabel
             fullWidth
-            placeholder={t('Write here your message...')}
+            placeholder={'Write here your message...'}
           />
         </Box>
-        <Tooltip arrow placement="top" title={t('Attach a file')}>
+        <Tooltip arrow placement="top" title={'Attach a file'}>
           <label htmlFor="messenger-upload-file">
             <IconButton color="primary" component="span">
               <AttachFileTwoToneIcon />
@@ -381,7 +381,7 @@ function Block5() {
           variant="dot"
         >
           <Button variant="contained" startIcon={<SendTwoToneIcon />}>
-            {t('Send')}
+            {'Send'}
           </Button>
         </Badge>
       </Box>

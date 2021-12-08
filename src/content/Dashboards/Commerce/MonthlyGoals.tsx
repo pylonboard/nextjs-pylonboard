@@ -7,10 +7,10 @@ import {
   Button,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 function MonthlyGoals() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -23,18 +23,18 @@ function MonthlyGoals() {
       <CardHeader
         title={
           <>
-            {t('Monthly Goals')}{' '}
+            {'Monthly Goals'}{' '}
             <Typography
               variant="body2"
               component="span"
               fontWeight="bold"
               color="text.secondary"
             >
-              ({t('manual')})
+              ({'manual'})
             </Typography>
           </>
         }
-        action={<Button size="small">{t('Setup')}</Button>}
+        action={<Button size="small">{'Setup'}</Button>}
       />
       <Box mt={1.4}>
         <Grid container spacing={3}>
@@ -64,10 +64,10 @@ function MonthlyGoals() {
                   }}
                   gutterBottom
                 >
-                  {t('Achieved')}
+                  {'Achieved'}
                 </Typography>
                 <Typography variant="subtitle2" noWrap>
-                  {t('30% of $5000 manual set goal')}
+                  {'30% of $5000 manual set goal'}
                 </Typography>
               </Box>
               <Box
@@ -82,10 +82,10 @@ function MonthlyGoals() {
                   }}
                   gutterBottom
                 >
-                  {t('Forecasted')}
+                  {'Forecasted'}
                 </Typography>
                 <Typography variant="subtitle2" noWrap>
-                  {t('February Sales:')} $32,594.00
+                  {'February Sales:'} $32,594.00
                 </Typography>
               </Box>
             </Box>

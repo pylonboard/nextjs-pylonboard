@@ -1,9 +1,9 @@
 import { Grid, Typography, Avatar, useTheme } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { format } from 'date-fns';
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const user = {
@@ -28,10 +28,10 @@ function PageHeader() {
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          {t('Welcome')}, {user.name}!
+          {'Welcome'}, {user.name}!
         </Typography>
         <Typography variant="subtitle2">
-          {t('These are your analytics stats for today')},{' '}
+          {'These are your analytics stats for today'},{' '}
           <b>{format(new Date(), 'MMMM dd yyyy')}</b>
         </Typography>
       </Grid>

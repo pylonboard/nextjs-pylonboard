@@ -14,14 +14,14 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -38,7 +38,7 @@ function Block4() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Users list')}
+            {'Users list'}
           </Typography>
         }
         action={
@@ -57,7 +57,7 @@ function Block4() {
               }
             }}
           >
-            {t('Export')}
+            {'Export'}
           </Button>
         }
       />
@@ -84,7 +84,7 @@ function Block4() {
           <ListItemText
             primary={
               <Link href="#" color="text.primary" variant="h5">
-                {t('Isaiah Ruiz')}
+                {'Isaiah Ruiz'}
               </Link>
             }
             secondary={
@@ -126,10 +126,10 @@ function Block4() {
             <Avatar src="/static/images/avatars/2.jpg" />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h5">{t('Inez Conley')}</Typography>}
+            primary={<Typography variant="h5">{'Inez Conley'}</Typography>}
             secondary={
               <Typography variant="subtitle2" noWrap>
-                {t('Project Manager')}
+                {'Project Manager'}
               </Typography>
             }
           />
@@ -166,10 +166,10 @@ function Block4() {
             <Avatar src="/static/images/avatars/3.jpg" />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h5">{t('Adyan Sosa')}</Typography>}
+            primary={<Typography variant="h5">{'Adyan Sosa'}</Typography>}
             secondary={
               <Typography variant="subtitle2" noWrap>
-                {t('User Experience Designer')}
+                {'User Experience Designer'}
               </Typography>
             }
           />
@@ -206,10 +206,10 @@ function Block4() {
             <Avatar src="/static/images/avatars/4.jpg" />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h5">{t('Beck Simpson')}</Typography>}
+            primary={<Typography variant="h5">{'Beck Simpson'}</Typography>}
             secondary={
               <Typography variant="subtitle2" noWrap>
-                {t('Senior Consultant')}
+                {'Senior Consultant'}
               </Typography>
             }
           />

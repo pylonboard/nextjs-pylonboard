@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 import ScreenSearchDesktopTwoToneIcon from '@mui/icons-material/ScreenSearchDesktopTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import Block8Chart from './Block8Chart';
 
 const Block8ChartWrapper = styled(Block8Chart)(
@@ -37,7 +37,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const visitors = {
@@ -82,7 +82,7 @@ function Block8() {
             gutterBottom
             variant="h3"
           >
-            {t('Sales')}
+            {'Sales'}
           </Typography>
           <Typography
             component="div"
@@ -90,7 +90,7 @@ function Block8() {
             color="text.secondary"
             variant="h5"
           >
-            {t('Last 7 days sales statistics report')}
+            {'Last 7 days sales statistics report'}
           </Typography>
         </Box>
         <Button
@@ -98,7 +98,7 @@ function Block8() {
           variant="outlined"
           startIcon={<ScreenSearchDesktopTwoToneIcon />}
         >
-          {t('Advanced search')}
+          {'Advanced search'}
         </Button>
       </Box>
       <CardWrapper
@@ -129,7 +129,7 @@ function Block8() {
               color="text.secondary"
               gutterBottom
             >
-              {t("Today's Earnings")}
+              {"Today's Earnings"}
             </Typography>
             <Box display="flex" alignItems="center" justifyContent="center">
               <DotLegend
@@ -149,7 +149,7 @@ function Block8() {
               color="text.secondary"
               gutterBottom
             >
-              {t('Current Week')}
+              {'Current Week'}
             </Typography>
             <Box display="flex" alignItems="center" justifyContent="center">
               <DotLegend
@@ -169,7 +169,7 @@ function Block8() {
               color="text.secondary"
               gutterBottom
             >
-              {t('Previous Week')}
+              {'Previous Week'}
             </Typography>
             <Box display="flex" alignItems="center" justifyContent="center">
               <DotLegend

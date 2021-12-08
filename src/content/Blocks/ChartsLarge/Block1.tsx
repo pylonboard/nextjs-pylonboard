@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import Block1Chart from './Block1Chart';
 import Gauge from 'src/components/Gauge';
@@ -23,7 +23,7 @@ const Block1ChartWrapper = styled(Block1Chart)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const visitors = {
@@ -73,7 +73,7 @@ function Block1() {
             <MoreVertTwoToneIcon />
           </IconButton>
         }
-        title={t('Visitors Locations')}
+        title={'Visitors Locations'}
       />
       <CardContent
         sx={{
@@ -108,7 +108,7 @@ function Block1() {
                 color: `${theme.colors.success.main}`
               }}
             >
-              {t('Local Visitors')}
+              {'Local Visitors'}
             </Typography>
             <Gauge
               circleRatio={1}
@@ -130,7 +130,7 @@ function Block1() {
                 color: `${theme.colors.error.main}`
               }}
             >
-              {t('External Visitors')}
+              {'External Visitors'}
             </Typography>
             <Gauge
               circleRatio={1}

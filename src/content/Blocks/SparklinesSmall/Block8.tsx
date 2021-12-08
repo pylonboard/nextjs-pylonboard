@@ -1,12 +1,12 @@
 import { Box, Card, Typography, Button, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import Text from 'src/components/Text';
 
 function Block8() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -96,7 +96,7 @@ function Block8() {
       >
         <Box>
           <Typography gutterBottom variant="h3">
-            {t('New Accounts')}
+            {'New Accounts'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -104,11 +104,11 @@ function Block8() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Since your last visit there were ')}{' '}
+            {'Since your last visit there were '}{' '}
             <Text color="success">
               <b>23</b>
             </Text>{' '}
-            {t('new accounts created')}
+            {'new accounts created'}
           </Typography>
         </Box>
         <Button
@@ -126,7 +126,7 @@ function Block8() {
           size="small"
           variant="contained"
         >
-          {t('View all')}
+          {'View all'}
         </Button>
       </Box>
       <Box>

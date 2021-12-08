@@ -21,7 +21,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import HelpTwoToneIcon from '@mui/icons-material/HelpTwoTone';
 import Label from 'src/components/Label';
 import StorageTwoToneIcon from '@mui/icons-material/StorageTwoTone';
@@ -111,7 +111,7 @@ const ListItemButtonWrapper = styled(ListItemButton)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const items = [
@@ -203,9 +203,9 @@ function Block1() {
                   variant="subtitle2"
                   textAlign="center"
                 >
-                  {t(
+                  {
                     'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                  )}
+                  }
                   .
                 </Typography>
               </Box>
@@ -294,7 +294,7 @@ function Block1() {
             <CardActions display="flex" alignItems="center">
               <Tooltip
                 arrow
-                title={t('This is a helper placeholder')}
+                title={'This is a helper placeholder'}
                 placement="right"
               >
                 <IconButtonWrapper
@@ -377,9 +377,9 @@ function Block1() {
                         color: `${theme.colors.alpha.trueWhite[70]}`
                       }}
                     >
-                      {t(
+                      {
                         'High performance React template built with lots of powerful components'
-                      )}
+                      }
                       .
                     </Typography>
                     <Box
@@ -433,7 +433,7 @@ function Block1() {
                           }
                         }}
                       >
-                        {t('View Dashboard')}
+                        {'View Dashboard'}
                       </Button>
                     </Badge>
                   </Card>
@@ -491,9 +491,9 @@ function Block1() {
                         color: `${theme.colors.alpha.trueWhite[70]}`
                       }}
                     >
-                      {t(
+                      {
                         'High performance React template built with lots of powerful components'
-                      )}
+                      }
                       .
                     </Typography>
                     <Box
@@ -537,7 +537,7 @@ function Block1() {
                         }
                       }}
                     >
-                      {t('View Dashboard')}
+                      {'View Dashboard'}
                     </Button>
                   </Card>
                 </Grid>

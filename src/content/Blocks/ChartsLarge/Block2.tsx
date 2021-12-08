@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import Block2Chart from './Block2Chart';
 import { format, subHours, subDays } from 'date-fns';
@@ -37,7 +37,7 @@ const DividerSuccess = styled(Divider)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const visitors = {
@@ -82,7 +82,7 @@ function Block2() {
             <MoreVertTwoToneIcon />
           </IconButton>
         }
-        title={t('Total Revenue')}
+        title={'Total Revenue'}
       />
 
       <CardContent
@@ -123,7 +123,7 @@ function Block2() {
                 pb: 1
               }}
             >
-              {t('Income')}
+              {'Income'}
             </Typography>
             <DividerInfo />
           </Box>
@@ -143,7 +143,7 @@ function Block2() {
                 pb: 1
               }}
             >
-              {t('Expenses')}
+              {'Expenses'}
             </Typography>
             <DividerSuccess />
           </Box>

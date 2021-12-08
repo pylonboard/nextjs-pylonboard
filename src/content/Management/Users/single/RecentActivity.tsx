@@ -8,7 +8,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import StarTwoToneIcon from '@mui/icons-material/StarTwoTone';
@@ -23,19 +23,19 @@ const AvatarPrimary = styled(Avatar)(
 );
 
 function RecentActivity() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
     <Card>
-      <CardHeader title={t('Recent Activity')} />
+      <CardHeader title={'Recent Activity'} />
       <Divider />
       <Box px={2} py={4} display="flex" alignItems="flex-start">
         <AvatarPrimary>
           <ShoppingBagTwoToneIcon />
         </AvatarPrimary>
         <Box pl={2} flex={1}>
-          <Typography variant="h3">{t('Orders')}</Typography>
+          <Typography variant="h3">{'Orders'}</Typography>
 
           <Box pt={2} display="flex">
             <Box pr={8}>
@@ -46,7 +46,7 @@ function RecentActivity() {
                   fontSize: `${theme.typography.pxToRem(16)}`
                 }}
               >
-                {t('Total')}
+                {'Total'}
               </Typography>
               <Typography variant="h2">485</Typography>
             </Box>
@@ -58,7 +58,7 @@ function RecentActivity() {
                   fontSize: `${theme.typography.pxToRem(16)}`
                 }}
               >
-                {t('Failed')}
+                {'Failed'}
               </Typography>
               <Typography variant="h2">8</Typography>
             </Box>
@@ -71,7 +71,7 @@ function RecentActivity() {
           <FavoriteTwoToneIcon />
         </AvatarPrimary>
         <Box pl={2} flex={1}>
-          <Typography variant="h3">{t('Favourites')}</Typography>
+          <Typography variant="h3">{'Favourites'}</Typography>
 
           <Box pt={2} display="flex">
             <Box pr={8}>
@@ -82,7 +82,7 @@ function RecentActivity() {
                   fontSize: `${theme.typography.pxToRem(16)}`
                 }}
               >
-                {t('Products')}
+                {'Products'}
               </Typography>
               <Typography variant="h2">64</Typography>
             </Box>
@@ -94,7 +94,7 @@ function RecentActivity() {
                   fontSize: `${theme.typography.pxToRem(16)}`
                 }}
               >
-                {t('Lists')}
+                {'Lists'}
               </Typography>
               <Typography variant="h2">15</Typography>
             </Box>
@@ -107,7 +107,7 @@ function RecentActivity() {
           <StarTwoToneIcon />
         </AvatarPrimary>
         <Box pl={2} flex={1}>
-          <Typography variant="h3">{t('Reviews')}</Typography>
+          <Typography variant="h3">{'Reviews'}</Typography>
 
           <Box pt={2} display="flex">
             <Box pr={8}>
@@ -118,7 +118,7 @@ function RecentActivity() {
                   fontSize: `${theme.typography.pxToRem(16)}`
                 }}
               >
-                {t('Total')}
+                {'Total'}
               </Typography>
               <Typography variant="h2">654</Typography>
             </Box>
@@ -130,7 +130,7 @@ function RecentActivity() {
                   fontSize: `${theme.typography.pxToRem(16)}`
                 }}
               >
-                {t('Useful')}
+                {'Useful'}
               </Typography>
               <Typography variant="h2">21</Typography>
             </Box>

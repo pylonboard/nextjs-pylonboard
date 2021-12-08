@@ -10,10 +10,10 @@ import {
   Divider,
   Switch
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 function NotificationsTab() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const [state, setState] = useState({
     checkedA: true,
@@ -33,9 +33,9 @@ function NotificationsTab() {
     <Grid container spacing={3}>
       <Grid item xs={12}>
         <Box pb={2}>
-          <Typography variant="h3">{t('Account')}</Typography>
+          <Typography variant="h3">{'Account'}</Typography>
           <Typography variant="subtitle2">
-            {t('Choose what notifications you want to receive')}
+            {'Choose what notifications you want to receive'}
           </Typography>
         </Box>
         <Card>
@@ -51,8 +51,8 @@ function NotificationsTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Widthdraw Activity')}
-                secondary={t('Receive an email when a widthdrawal is made')}
+                primary={'Widthdraw Activity'}
+                secondary={'Receive an email when a widthdrawal is made'}
               />
               <Switch
                 color="primary"
@@ -73,10 +73,10 @@ function NotificationsTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Weekly Report')}
-                secondary={t(
+                primary={'Weekly Report'}
+                secondary={
                   'Receive account status weekly report in your inbox'
-                )}
+                }
               />
               <Switch
                 color="primary"
@@ -90,9 +90,9 @@ function NotificationsTab() {
       </Grid>
       <Grid item xs={12}>
         <Box pb={2}>
-          <Typography variant="h3">{t('Orders')}</Typography>
+          <Typography variant="h3">{'Orders'}</Typography>
           <Typography variant="subtitle2">
-            {t('Receive email notifications related to your orders activity')}
+            {'Receive email notifications related to your orders activity'}
           </Typography>
         </Box>
         <Card>
@@ -108,8 +108,8 @@ function NotificationsTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Failed Payment')}
-                secondary={t('Get a message when a payment fails')}
+                primary={'Failed Payment'}
+                secondary={'Get a message when a payment fails'}
               />
               <Switch
                 color="primary"
@@ -130,10 +130,10 @@ function NotificationsTab() {
                   variant: 'subtitle2',
                   lineHeight: 1
                 }}
-                primary={t('Order Status Update')}
-                secondary={t(
+                primary={'Order Status Update'}
+                secondary={
                   'Whenever an order is updated, get a notification on your phone'
-                )}
+                }
               />
               <Switch
                 color="primary"

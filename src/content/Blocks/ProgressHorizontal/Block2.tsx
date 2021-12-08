@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 
 const LinearProgressWarning = styled(LinearProgress)(
   ({ theme }) => `
@@ -61,7 +61,7 @@ const LinearProgressInfo = styled(LinearProgress)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -81,10 +81,10 @@ function Block2() {
           >
             <Box>
               <Typography color="text.primary" variant="h4" gutterBottom>
-                {t('Deliveries')}
+                {'Deliveries'}
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Total deliveries to date')}
+                {'Total deliveries to date'}
               </Typography>
             </Box>
             <Typography
@@ -111,7 +111,7 @@ function Block2() {
               }}
               variant="subtitle2"
             >
-              {t('Target')}
+              {'Target'}
             </Typography>
             <Typography
               sx={{
@@ -139,10 +139,10 @@ function Block2() {
           >
             <Box>
               <Typography color="text.primary" variant="h4" gutterBottom>
-                {t('Orders')}
+                {'Orders'}
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Total orders to date')}
+                {'Total orders to date'}
               </Typography>
             </Box>
             <Typography
@@ -169,7 +169,7 @@ function Block2() {
               }}
               variant="subtitle2"
             >
-              {t('Target')}
+              {'Target'}
             </Typography>
             <Typography
               sx={{
@@ -197,10 +197,10 @@ function Block2() {
           >
             <Box>
               <Typography color="text.primary" variant="h4" gutterBottom>
-                {t('Customers')}
+                {'Customers'}
               </Typography>
               <Typography variant="subtitle2" noWrap>
-                {t('Total customers to date')}
+                {'Total customers to date'}
               </Typography>
             </Box>
             <Typography
@@ -227,7 +227,7 @@ function Block2() {
               }}
               variant="subtitle2"
             >
-              {t('Target')}
+              {'Target'}
             </Typography>
             <Typography
               sx={{

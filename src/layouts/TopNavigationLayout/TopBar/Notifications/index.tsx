@@ -21,7 +21,7 @@ import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsAct
 import Link from '@mui/material/Link';
 import DescriptionTwoToneIcon from '@mui/icons-material/DescriptionTwoTone';
 import CommentTwoToneIcon from '@mui/icons-material/CommentTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import { formatDistance, subHours, subSeconds, subDays } from 'date-fns';
 
 const IconButtonPrimary = styled(IconButton)(
@@ -114,11 +114,11 @@ function Notifications() {
     setOpen(false);
   };
 
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <>
-      <Tooltip arrow title={t('Notifications')}>
+      <Tooltip arrow title={'Notifications'}>
         <IconButtonPrimary color="primary" ref={ref} onClick={handleOpen}>
           <NotificationsBadge
             badgeContent={2}
@@ -152,7 +152,7 @@ function Notifications() {
           display="flex"
           justifyContent="space-between"
         >
-          <Typography variant="h5">{t('Notifications')}</Typography>
+          <Typography variant="h5">{'Notifications'}</Typography>
           <Link
             href="#"
             variant="caption"
@@ -160,7 +160,7 @@ function Notifications() {
               textTransform: 'none'
             }}
           >
-            {t('Mark all as read')}
+            {'Mark all as read'}
           </Link>
         </Box>
         <Divider />
@@ -213,7 +213,7 @@ function Notifications() {
                   color: theme.colors.error.main
                 }}
               >
-                {t('Missed call')}
+                {'Missed call'}
               </Typography>
               <Typography
                 component="span"
@@ -281,7 +281,7 @@ function Notifications() {
                 </Typography>
               </Box>
               <Typography component="span" variant="body2">
-                {t('Created a new ticket')}:{' '}
+                {'Created a new ticket'}:{' '}
                 <Link href="#" variant="body2">
                   Header Bug Report
                 </Link>
@@ -337,11 +337,11 @@ function Notifications() {
                 variant="body2"
                 color="text.secondary"
               >
-                {t('Added some files to')}{' '}
+                {'Added some files to'}{' '}
                 <Link href="#" variant="body2">
                   Marketing tasks
                 </Link>{' '}
-                {t('section')}.
+                {'section'}.
               </Typography>
               <Paper
                 elevation={2}
@@ -451,7 +451,7 @@ function Notifications() {
                 color="text.secondary"
               >
                 {' '}
-                {t('new messages in your inbox')}
+                {'new messages in your inbox'}
               </Typography>
             </Box>
           </ListItem>
@@ -459,7 +459,7 @@ function Notifications() {
         <Divider />
         <Box m={1}>
           <Button color="secondary" fullWidth>
-            {t('View all notifications')}
+            {'View all notifications'}
           </Button>
         </Box>
       </Popover>

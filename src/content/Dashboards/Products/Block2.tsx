@@ -9,7 +9,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import AssessmentTwoToneIcon from '@mui/icons-material/AssessmentTwoTone';
 import NewReleasesTwoToneIcon from '@mui/icons-material/NewReleasesTwoTone';
@@ -61,7 +61,7 @@ const AvatarGradient = styled(Avatar)(
 );
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -144,7 +144,7 @@ function Block1() {
             variant="contained"
             color="success"
           >
-            {t('View server dashboard')}
+            {'View server dashboard'}
           </Button>
         </Card>
       </Grid>
@@ -222,7 +222,7 @@ function Block1() {
             variant="contained"
             color="error"
           >
-            {t('View server dashboard')}
+            {'View server dashboard'}
           </Button>
         </Card>
       </Grid>
@@ -312,7 +312,7 @@ function Block1() {
             variant="contained"
             color="error"
           >
-            {t('View server dashboard')}
+            {'View server dashboard'}
           </Button>
         </Card>
       </Grid>

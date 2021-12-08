@@ -7,7 +7,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import DirectionsRunTwoToneIcon from '@mui/icons-material/DirectionsRunTwoTone';
 import PoolTwoToneIcon from '@mui/icons-material/PoolTwoTone';
@@ -42,7 +42,7 @@ const AvatarError = styled(Avatar)(
 );
 
 function Parameters() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -170,7 +170,7 @@ function Parameters() {
               >
                 <FavoriteTwoToneIcon />
               </AvatarSuccess>
-              <Typography variant="h4">{t('Heart Rate')}</Typography>
+              <Typography variant="h4">{'Heart Rate'}</Typography>
             </Box>
             <Box>
               <Typography align="right" lineHeight={1} variant="h3">
@@ -181,7 +181,7 @@ function Parameters() {
                 variant="subtitle1"
                 color="text.secondary"
               >
-                {t('bpm')}
+                {'bpm'}
               </Typography>
             </Box>
           </Box>
@@ -213,7 +213,7 @@ function Parameters() {
               >
                 <DirectionsRunTwoToneIcon />
               </AvatarError>
-              <Typography variant="h4">{t('Running')}</Typography>
+              <Typography variant="h4">{'Running'}</Typography>
             </Box>
             <Box>
               <Typography align="right" lineHeight={1} variant="h3">
@@ -224,7 +224,7 @@ function Parameters() {
                 variant="subtitle1"
                 color="text.secondary"
               >
-                {t('km/h')}
+                {'km/h'}
               </Typography>
             </Box>
           </Box>
@@ -256,7 +256,7 @@ function Parameters() {
               >
                 <PoolTwoToneIcon />
               </AvatarInfo>
-              <Typography variant="h4">{t('Swimming')}</Typography>
+              <Typography variant="h4">{'Swimming'}</Typography>
             </Box>
             <Box>
               <Typography align="right" lineHeight={1} variant="h3">
@@ -267,7 +267,7 @@ function Parameters() {
                 variant="subtitle1"
                 color="text.secondary"
               >
-                {t('miles')}
+                {'miles'}
               </Typography>
             </Box>
           </Box>

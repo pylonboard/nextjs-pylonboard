@@ -1,9 +1,9 @@
 import { Card, Box, Typography, useTheme } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import GaugeChart from 'react-gauge-chart';
 
 function MonthlyGoalsTarget() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -23,10 +23,10 @@ function MonthlyGoalsTarget() {
           fontSize: `${theme.typography.pxToRem(21)}`
         }}
       >
-        {t('Monthly Goals Target')}
+        {'Monthly Goals Target'}
       </Typography>
       <Typography align="center" variant="subtitle2">
-        {t('This si your main goals target indicator')}
+        {'This si your main goals target indicator'}
       </Typography>
       <Box
         sx={{
@@ -57,7 +57,7 @@ function MonthlyGoalsTarget() {
         }}
       >
         <Typography component="span" align="center" variant="h4">
-          {t('You have reached')}
+          {'You have reached'}
         </Typography>
         <Typography
           component="span"
@@ -71,7 +71,7 @@ function MonthlyGoalsTarget() {
           46%
         </Typography>
         <Typography component="span" align="center" variant="h4">
-          {t('of your monthly target!')}
+          {'of your monthly target!'}
         </Typography>
       </Box>
     </Card>

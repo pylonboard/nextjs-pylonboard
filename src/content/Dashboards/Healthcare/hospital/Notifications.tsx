@@ -12,21 +12,21 @@ import {
   ListItemAvatar,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import { formatDistance, subDays, subHours, subMinutes } from 'date-fns';
 
 function Notifications() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
     <Card>
       <CardHeader
-        title={t('Notifications')}
+        title={'Notifications'}
         action={
           <Button variant="outlined" size="small">
-            {t('View all')}
+            {'View all'}
           </Button>
         }
       />
@@ -45,21 +45,21 @@ function Notifications() {
             <ListItemText
               primary="Makenna Arcand"
               primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-              secondary={t('Doctor (Pediatrician)')}
+              secondary={'Doctor (Pediatrician)'}
               secondaryTypographyProps={{
                 variant: 'body2',
                 color: 'textSecondary',
                 noWrap: true
               }}
             />
-            <Label color="error">{t('Time-Off')}</Label>
+            <Label color="error">{'Time-Off'}</Label>
             <Box
               sx={{
                 minWidth: 130
               }}
             >
               <Typography variant="h5" align="right" noWrap>
-                {t('Posted')}
+                {'Posted'}
               </Typography>
               <Typography variant="subtitle1" align="right" noWrap>
                 {formatDistance(subMinutes(new Date(), 12), new Date(), {
@@ -75,7 +75,7 @@ function Notifications() {
               pt: 1
             }}
           >
-            {t('Reported time-off leave')}: 21-27 March 2022
+            {'Reported time-off leave'}: 21-27 March 2022
           </Typography>
         </ListItem>
         <Divider component="li" />
@@ -92,21 +92,21 @@ function Notifications() {
             <ListItemText
               primary="Emerson Lubin"
               primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-              secondary={t('Patient')}
+              secondary={'Patient'}
               secondaryTypographyProps={{
                 variant: 'body2',
                 color: 'textSecondary',
                 noWrap: true
               }}
             />
-            <Label color="info">{t('Patients')}</Label>
+            <Label color="info">{'Patients'}</Label>
             <Box
               sx={{
                 minWidth: 130
               }}
             >
               <Typography variant="h5" align="right" noWrap>
-                {t('Posted')}
+                {'Posted'}
               </Typography>
               <Typography variant="subtitle1" align="right" noWrap>
                 {formatDistance(subHours(new Date(), 13), new Date(), {
@@ -122,7 +122,7 @@ function Notifications() {
               pt: 1
             }}
           >
-            {t('Cancelled the scheduled consult set for')}: 21 March 2021
+            {'Cancelled the scheduled consult set for'}: 21 March 2021
           </Typography>
         </ListItem>
         <Divider component="li" />
@@ -146,21 +146,21 @@ function Notifications() {
             <ListItemText
               primary="Phillip Dias"
               primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-              secondary={t('Doctor (Neurosurgeon)')}
+              secondary={'Doctor (Neurosurgeon)'}
               secondaryTypographyProps={{
                 variant: 'body2',
                 color: 'textSecondary',
                 noWrap: true
               }}
             />
-            <Label color="error">{t('Time-Off')}</Label>
+            <Label color="error">{'Time-Off'}</Label>
             <Box
               sx={{
                 minWidth: 130
               }}
             >
               <Typography variant="h5" align="right" noWrap>
-                {t('Posted')}
+                {'Posted'}
               </Typography>
               <Typography variant="subtitle1" align="right" noWrap>
                 {formatDistance(subDays(new Date(), 14), new Date(), {
@@ -176,7 +176,7 @@ function Notifications() {
               pt: 1
             }}
           >
-            {t('Reported time-off leave')}: 02-18 February 2021
+            {'Reported time-off leave'}: 02-18 February 2021
           </Typography>
         </ListItem>
       </List>

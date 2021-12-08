@@ -15,7 +15,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import { Chart } from 'src/components/Chart';
@@ -32,7 +32,7 @@ const DotLegend = styled('span')(
 );
 
 function AllExpenses() {
-  const { t }: { t: any } = useTranslation();
+
   const actionRef1 = useRef<any>(null);
   const [openPeriod, setOpenMenuPeriod] = useState<boolean>(false);
   const theme = useTheme();
@@ -40,19 +40,19 @@ function AllExpenses() {
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -77,11 +77,11 @@ function AllExpenses() {
       }
     ],
     labels: [
-      t('Bills'),
-      t('Helath'),
-      t('Education'),
-      t('Entertainment'),
-      t('Others')
+      'Bills',
+      'Helath',
+      'Education',
+      'Entertainment',
+      'Others'
     ]
   };
 
@@ -149,13 +149,13 @@ function AllExpenses() {
     >
       <CardHeader
         action={
-          <Tooltip arrow title={t('View all Expenses')}>
+          <Tooltip arrow title={'View all Expenses'}>
             <IconButton size="small" color="primary">
               <ChevronRightTwoToneIcon />
             </IconButton>
           </Tooltip>
         }
-        title={t('All Expenses')}
+        title={'All Expenses'}
       />
       <Divider />
       <CardContent>
@@ -172,19 +172,19 @@ function AllExpenses() {
           <Grid spacing={3} container>
             <Grid item sm={4}>
               <Typography variant="caption" gutterBottom>
-                {t('Daily')}
+                {'Daily'}
               </Typography>
               <Typography variant="h3">{data.daily}</Typography>
             </Grid>
             <Grid item sm={4}>
               <Typography variant="caption" gutterBottom>
-                {t('Weekly')}
+                {'Weekly'}
               </Typography>
               <Typography variant="h3">{data.weekly}</Typography>
             </Grid>
             <Grid item sm={4}>
               <Typography variant="caption" gutterBottom>
-                {t('Monthly')}
+                {'Monthly'}
               </Typography>
               <Typography variant="h3">{data.monthly}</Typography>
             </Grid>

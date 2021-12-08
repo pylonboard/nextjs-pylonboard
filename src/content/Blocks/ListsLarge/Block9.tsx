@@ -17,7 +17,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import Text from 'src/components/Text';
 
@@ -92,7 +92,7 @@ const ListItemButtonWrapper = styled(ListItemButton)(
 );
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -115,9 +115,9 @@ function Block9() {
               fontSize: `${theme.typography.pxToRem(12)}`
             }}
           >
-            {t('Status')}
+            {'Status'}
           </Typography>
-          <Typography variant="h4">{t('Team Performance')}</Typography>
+          <Typography variant="h4">{'Team Performance'}</Typography>
         </Box>
         <IconButton
           size="small"
@@ -157,7 +157,7 @@ function Block9() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Task assigned to') + ' Gary Albright'}
+              title={'Task assigned to' + ' Gary Albright'}
             >
               <Avatar
                 sx={{
@@ -202,7 +202,7 @@ function Block9() {
                     }}
                     variant="subtitle2"
                   >
-                    <Text color="success">{t('Completed')}</Text>
+                    <Text color="success">{'Completed'}</Text>
                   </Typography>
                   <Typography
                     sx={{
@@ -234,7 +234,7 @@ function Block9() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Task assigned to') + ' Therry Hefaistos'}
+              title={'Task assigned to' + ' Therry Hefaistos'}
             >
               <Avatar
                 sx={{
@@ -279,7 +279,7 @@ function Block9() {
                     }}
                     variant="subtitle2"
                   >
-                    <Text color="info">{t('In progress')}</Text>
+                    <Text color="info">{'In progress'}</Text>
                   </Typography>
                   <Typography
                     sx={{
@@ -311,7 +311,7 @@ function Block9() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Task assigned to') + ' EA Department'}
+              title={'Task assigned to' + ' EA Department'}
             >
               <Avatar
                 sx={{
@@ -356,7 +356,7 @@ function Block9() {
                     }}
                     variant="subtitle2"
                   >
-                    <Text color="warning">{t('Delayed')}</Text>
+                    <Text color="warning">{'Delayed'}</Text>
                   </Typography>
                   <Typography
                     sx={{
@@ -388,7 +388,7 @@ function Block9() {
             <Tooltip
               arrow
               placement="top"
-              title={t('Task assigned to') + ' Herocle Patrocle'}
+              title={'Task assigned to' + ' Herocle Patrocle'}
             >
               <Avatar
                 sx={{
@@ -431,7 +431,7 @@ function Block9() {
                     }}
                     variant="subtitle2"
                   >
-                    <Text color="error">{t('Overdue')}</Text>
+                    <Text color="error">{'Overdue'}</Text>
                   </Typography>
                   <Typography
                     sx={{

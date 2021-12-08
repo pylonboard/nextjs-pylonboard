@@ -12,13 +12,13 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import { buildStyles } from 'react-circular-progressbar';
 import Gauge from 'src/components/Gauge';
 
 function ProfileGoals() {
-  const { t }: { t: any } = useTranslation();
+  
   const actionRef1 = useRef<any>(null);
   const [openPeriod, setOpenMenuPeriod] = useState<boolean>(false);
   const theme = useTheme();
@@ -31,19 +31,19 @@ function ProfileGoals() {
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -98,33 +98,33 @@ function ProfileGoals() {
           <Typography align="center" variant="h3" gutterBottom>
             79
             <Typography variant="h4" component="span">
-              {t('kg')}
+              {'kg'}
             </Typography>
           </Typography>
           <Typography align="center" variant="subtitle2">
-            {t('weight')}
+            {'weight'}
           </Typography>
         </Box>
         <Box p={2}>
           <Typography align="center" variant="h3" gutterBottom>
             182
             <Typography variant="h4" component="span">
-              {t('cm')}
+              {'cm'}
             </Typography>
           </Typography>
           <Typography align="center" variant="subtitle2">
-            {t('height')}
+            {'height'}
           </Typography>
         </Box>
         <Box p={2}>
           <Typography align="center" variant="h3" gutterBottom>
             24
             <Typography variant="h4" component="span">
-              {t('cm')}
+              {'cm'}
             </Typography>
           </Typography>
           <Typography align="center" variant="subtitle2">
-            {t('age')}
+            {'age'}
           </Typography>
         </Box>
       </Stack>
@@ -134,7 +134,7 @@ function ProfileGoals() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography variant="h4">{t('Your Goals')}</Typography>
+        <Typography variant="h4">{'Your Goals'}</Typography>
         <Button
           size="small"
           variant="outlined"
@@ -188,7 +188,7 @@ function ProfileGoals() {
                 }}
               >
                 <DotLegend style={{ background: theme.colors.success.main }} />
-                {t('Weight Loss')}
+                {'Weight Loss'}
               </TypographyPrimary>
               <Box>
                 <TypographyPrimary
@@ -243,7 +243,7 @@ function ProfileGoals() {
                 }}
               >
                 <DotLegend style={{ background: theme.colors.error.main }} />
-                {t('Sleep')}
+                {'Sleep'}
               </TypographyPrimary>
               <Box>
                 <TypographyPrimary

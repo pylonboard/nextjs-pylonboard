@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
@@ -18,7 +18,7 @@ import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function Block1() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -108,7 +108,7 @@ function Block1() {
               <MonetizationOnTwoToneIcon fontSize="large" />
             </Text>
             <Typography variant="h3">$9,658</Typography>
-            <Typography variant="subtitle2">{t('revenue')}</Typography>
+            <Typography variant="subtitle2">{'revenue'}</Typography>
           </Box>
           <Box
             p={1}
@@ -120,7 +120,7 @@ function Block1() {
               <PersonTwoToneIcon fontSize="large" />
             </Text>
             <Typography variant="h3">23,594</Typography>
-            <Typography variant="subtitle2">{t('users')}</Typography>
+            <Typography variant="subtitle2">{'users'}</Typography>
           </Box>
           <Box
             p={1}
@@ -132,7 +132,7 @@ function Block1() {
               <SubscriptionsTwoToneIcon fontSize="large" />
             </Text>
             <Typography variant="h3">1,064</Typography>
-            <Typography variant="subtitle2">{t('orders')}</Typography>
+            <Typography variant="subtitle2">{'orders'}</Typography>
           </Box>
         </Stack>
       </Box>
@@ -144,7 +144,7 @@ function Block1() {
         }}
       >
         <Button variant="outlined" startIcon={<PieChartTwoToneIcon />}>
-          {t('Generate reports')}
+          {'Generate reports'}
         </Button>
       </Box>
       <Divider />

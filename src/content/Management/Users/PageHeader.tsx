@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+
 import { wait } from 'src/utils/wait';
 
 import {
@@ -73,7 +73,7 @@ const roles = [
 ];
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const [open, setOpen] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -97,7 +97,7 @@ function PageHeader() {
   };
 
   const handleCreateUserSuccess = () => {
-    enqueueSnackbar(t('The user account was created successfully'), {
+    enqueueSnackbar('The user account was created successfully', {
       variant: 'success',
       anchorOrigin: {
         vertical: 'top',
@@ -114,12 +114,12 @@ function PageHeader() {
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Users Management')}
+            {'Users Management'}
           </Typography>
           <Typography variant="subtitle2">
-            {t(
+            {
               'All aspects related to the app users can be managed from this page'
-            )}
+            }
           </Typography>
         </Grid>
         <Grid item>
@@ -131,7 +131,7 @@ function PageHeader() {
             variant="contained"
             startIcon={<AddTwoToneIcon fontSize="small" />}
           >
-            {t('Create user')}
+            {'Create user'}
           </Button>
         </Grid>
       </Grid>
@@ -147,12 +147,12 @@ function PageHeader() {
           }}
         >
           <Typography variant="h4" gutterBottom>
-            {t('Add new user')}
+            {'Add new user'}
           </Typography>
           <Typography variant="subtitle2">
-            {t(
+            {
               'Fill in the fields below to create and add a new user to the site'
-            )}
+            }
           </Typography>
         </DialogTitle>
         <Formik
@@ -167,20 +167,20 @@ function PageHeader() {
           validationSchema={Yup.object().shape({
             username: Yup.string()
               .max(255)
-              .required(t('The username field is required')),
+              .required('The username field is required'),
             first_name: Yup.string()
               .max(255)
-              .required(t('The first name field is required')),
+              .required('The first name field is required'),
             last_name: Yup.string()
               .max(255)
-              .required(t('The last name field is required')),
+              .required('The last name field is required'),
             email: Yup.string()
-              .email(t('The email provided should be a valid email address'))
+              .email('The email provided should be a valid email address')
               .max(255)
-              .required(t('The email field is required')),
+              .required('The email field is required'),
             password: Yup.string()
               .max(255)
-              .required(t('The password field is required'))
+              .required('The password field is required')
           })}
           onSubmit={async (
             _values,
@@ -224,7 +224,7 @@ function PageHeader() {
                           error={Boolean(touched.username && errors.username)}
                           fullWidth
                           helperText={touched.username && errors.username}
-                          label={t('Username')}
+                          label={'Username'}
                           name="username"
                           onBlur={handleBlur}
                           onChange={handleChange}
@@ -239,7 +239,7 @@ function PageHeader() {
                           )}
                           fullWidth
                           helperText={touched.first_name && errors.first_name}
-                          label={t('First name')}
+                          label={'First name'}
                           name="first_name"
                           onBlur={handleBlur}
                           onChange={handleChange}
@@ -252,7 +252,7 @@ function PageHeader() {
                           error={Boolean(touched.last_name && errors.last_name)}
                           fullWidth
                           helperText={touched.last_name && errors.last_name}
-                          label={t('Last name')}
+                          label={'Last name'}
                           name="last_name"
                           onBlur={handleBlur}
                           onChange={handleChange}
@@ -265,7 +265,7 @@ function PageHeader() {
                           error={Boolean(touched.email && errors.email)}
                           fullWidth
                           helperText={touched.email && errors.email}
-                          label={t('Email address')}
+                          label={'Email address'}
                           name="email"
                           onBlur={handleBlur}
                           onChange={handleChange}
@@ -280,7 +280,7 @@ function PageHeader() {
                           fullWidth
                           margin="normal"
                           helperText={touched.password && errors.password}
-                          label={t('Password')}
+                          label={'Password'}
                           name="password"
                           onBlur={handleBlur}
                           onChange={handleChange}
@@ -298,7 +298,7 @@ function PageHeader() {
                             <TextField
                               fullWidth
                               {...params}
-                              label={t('User role')}
+                              label={'User role'}
                             />
                           )}
                         />
@@ -346,7 +346,7 @@ function PageHeader() {
                             pb: 1
                           }}
                         >
-                          {t('Public Profile')}
+                          {'Public Profile'}
                         </Typography>
                         <Switch
                           checked={publicProfile.public}
@@ -365,7 +365,7 @@ function PageHeader() {
                 }}
               >
                 <Button color="secondary" onClick={handleCreateUserClose}>
-                  {t('Cancel')}
+                  {'Cancel'}
                 </Button>
                 <Button
                   type="submit"
@@ -375,7 +375,7 @@ function PageHeader() {
                   disabled={Boolean(errors.submit) || isSubmitting}
                   variant="contained"
                 >
-                  {t('Add new user')}
+                  {'Add new user'}
                 </Button>
               </DialogActions>
             </form>

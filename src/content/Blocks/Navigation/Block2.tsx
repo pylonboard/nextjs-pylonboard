@@ -13,7 +13,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import HelpTwoToneIcon from '@mui/icons-material/HelpTwoTone';
 import BounceRate from 'src/content/Dashboards/Analytics/BounceRate';
 import ConversionsAlt from 'src/content/Dashboards/Analytics/ConversionsAlt';
@@ -138,7 +138,7 @@ const LabelWrapper = styled(Box)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -175,9 +175,9 @@ function Block2() {
                   src="/static/images/placeholders/logo/stripe.svg"
                 />
                 <Typography variant="subtitle2" textAlign="center">
-                  {t(
+                  {
                     'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-                  )}
+                  }
                   .
                 </Typography>
               </Box>
@@ -193,7 +193,7 @@ function Block2() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Analytics')}
+                    primary={'Analytics'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -207,7 +207,7 @@ function Block2() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Reports Management')}
+                    primary={'Reports Management'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -221,7 +221,7 @@ function Block2() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Real Estate')}
+                    primary={'Real Estate'}
                   />
                   <ChevronRightTwoToneIcon
                     sx={{
@@ -235,7 +235,7 @@ function Block2() {
                     primaryTypographyProps={{
                       variant: 'h5'
                     }}
-                    primary={t('Server Status')}
+                    primary={'Server Status'}
                   />
                   <Box display="flex" alignItems="center">
                     <LabelWrapper
@@ -283,7 +283,7 @@ function Block2() {
             <CardActions display="flex" alignItems="center">
               <Tooltip
                 arrow
-                title={t('This is a helper placeholder')}
+                title={'This is a helper placeholder'}
                 placement="right"
               >
                 <IconButtonWrapper

@@ -10,7 +10,7 @@ import {
   IconButton
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import SubscriptionsTwoToneIcon from '@mui/icons-material/SubscriptionsTwoTone';
@@ -49,7 +49,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -77,7 +77,7 @@ function Block4() {
               <MonetizationOnTwoToneIcon />
             </Text>
             <Typography variant="h3">$9,658</Typography>
-            <Typography variant="subtitle2">{t('revenue')}</Typography>
+            <Typography variant="subtitle2">{'revenue'}</Typography>
           </Box>
           <Box
             p={3}
@@ -89,7 +89,7 @@ function Block4() {
               <PersonTwoToneIcon />
             </Text>
             <Typography variant="h3">23,594</Typography>
-            <Typography variant="subtitle2">{t('users')}</Typography>
+            <Typography variant="subtitle2">{'users'}</Typography>
           </Box>
         </Box>
         <Box
@@ -108,7 +108,7 @@ function Block4() {
               <SubscriptionsTwoToneIcon />
             </Text>
             <Typography variant="h3">1,064</Typography>
-            <Typography variant="subtitle2">{t('orders')}</Typography>
+            <Typography variant="subtitle2">{'orders'}</Typography>
           </Box>
           <Box
             p={3}
@@ -137,7 +137,7 @@ function Block4() {
                 suffix="M"
               />
             </Typography>
-            <Typography variant="subtitle2">{t('orders')}</Typography>
+            <Typography variant="subtitle2">{'orders'}</Typography>
           </Box>
         </Box>
       </Stack>
@@ -161,7 +161,7 @@ function Block4() {
               textAlign: 'center'
             }}
           >
-            <Tooltip arrow title={t('Tooltip for this icon button')}>
+            <Tooltip arrow title={'Tooltip for this icon button'}>
               <IconButtonWrapper
                 sx={{
                   background: `${theme.colors.primary.main}`,
@@ -171,7 +171,7 @@ function Block4() {
                 <AddCircleTwoToneIcon />
               </IconButtonWrapper>
             </Tooltip>
-            <Tooltip arrow title={t('Tooltip for this icon button')}>
+            <Tooltip arrow title={'Tooltip for this icon button'}>
               <IconButtonWrapper
                 sx={{
                   mx: 2,
@@ -182,7 +182,7 @@ function Block4() {
                 <AddLocationTwoToneIcon />
               </IconButtonWrapper>
             </Tooltip>
-            <Tooltip arrow title={t('Tooltip for this icon button')}>
+            <Tooltip arrow title={'Tooltip for this icon button'}>
               <IconButtonWrapper
                 sx={{
                   background: `${theme.colors.warning.main}`,
@@ -206,7 +206,7 @@ function Block4() {
               textAlign: 'center'
             }}
           >
-            <Tooltip arrow title={t('Tooltip for this icon button')}>
+            <Tooltip arrow title={'Tooltip for this icon button'}>
               <IconButtonWrapper
                 sx={{
                   background: `${theme.colors.gradients.blue1}`,
@@ -216,7 +216,7 @@ function Block4() {
                 <AddCircleTwoToneIcon />
               </IconButtonWrapper>
             </Tooltip>
-            <Tooltip arrow title={t('Tooltip for this icon button')}>
+            <Tooltip arrow title={'Tooltip for this icon button'}>
               <IconButtonWrapper
                 sx={{
                   mx: 2,
@@ -227,7 +227,7 @@ function Block4() {
                 <AddLocationTwoToneIcon />
               </IconButtonWrapper>
             </Tooltip>
-            <Tooltip arrow title={t('Tooltip for this icon button')}>
+            <Tooltip arrow title={'Tooltip for this icon button'}>
               <IconButtonWrapper
                 sx={{
                   background: `${theme.colors.gradients.orange2}`,

@@ -10,7 +10,7 @@ import {
   Button,
   IconButton
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 import type { Product } from 'src/models/product';
 import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
@@ -22,13 +22,13 @@ interface PageHeaderProps {
 }
 
 const PageHeader: FC<PageHeaderProps> = ({ product }) => {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Grid container justifyContent="space-between" alignItems="center">
       <Grid item>
         <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Tooltip arrow placement="top" title={t('Go back')}>
+          <Tooltip arrow placement="top" title={'Go back'}>
             <IconButton
               href="/management/commerce/products"
               color="primary"
@@ -42,20 +42,20 @@ const PageHeader: FC<PageHeaderProps> = ({ product }) => {
           </Tooltip>
           <Box>
             <Typography variant="h3" component="h3" gutterBottom>
-              {t('Product Details')}
+              {'Product Details'}
             </Typography>
             <Breadcrumbs maxItems={2} aria-label="breadcrumb">
               <Link color="inherit" href="#">
-                {t('Home')}
+                {'Home'}
               </Link>
               <Link color="inherit" href="#">
-                {t('Management')}
+                {'Management'}
               </Link>
               <Link color="inherit" href="#">
-                {t('Commerce')}
+                {'Commerce'}
               </Link>
               <Link color="inherit" href="/management/commerce/products">
-                {t('Products')}
+                {'Products'}
               </Link>
               <Typography color="text.primary">{product.name}</Typography>
             </Breadcrumbs>
@@ -73,7 +73,7 @@ const PageHeader: FC<PageHeaderProps> = ({ product }) => {
           href="/management/commerce/shop"
           variant="contained"
         >
-          {t('Shop Storefront')}
+          {'Shop Storefront'}
         </Button>
       </Grid>
     </Grid>

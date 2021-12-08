@@ -15,7 +15,7 @@ import {
   TooltipProps,
   tooltipClasses
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import KeyboardArrowUpTwoToneIcon from '@mui/icons-material/KeyboardArrowUpTwoTone';
 import Scrollbar from 'src/components/Scrollbar';
@@ -117,7 +117,7 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = ({
   name,
   ...rest
 }) => {
-  const { t }: { t: any } = useTranslation();
+
   const { closeSidebar } = useContext(SidebarContext);
   const [menuToggle] = useState<boolean>(openParent);
 
@@ -137,7 +137,7 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = ({
     return (
       <ListItem component="div" className="Mui-children" key={name} {...rest}>
         <TooltipWrapper
-          title={t(name)}
+          title={name}
           disableInteractive
           placement="top"
           arrow

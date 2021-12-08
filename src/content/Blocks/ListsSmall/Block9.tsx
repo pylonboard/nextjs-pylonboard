@@ -16,7 +16,7 @@ import {
 
 import Text from 'src/components/Text';
 
-import { useTranslation } from 'react-i18next';
+
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
 import TrendingDownTwoToneIcon from '@mui/icons-material/TrendingDownTwoTone';
 import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
@@ -25,7 +25,7 @@ import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone
 import CountUp from 'react-countup';
 
 function Block9() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -38,14 +38,14 @@ function Block9() {
       >
         <Box>
           <Typography gutterBottom variant="h4">
-            {t('My Portfolio')}
+            {'My Portfolio'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Status of your crypto assets')}
+            {'Status of your crypto assets'}
           </Typography>
         </Box>
         <Box>
-          <Tooltip arrow title={t('View stats for last week')}>
+          <Tooltip arrow title={'View stats for last week'}>
             <IconButton
               color="primary"
               sx={{
@@ -56,7 +56,7 @@ function Block9() {
               1W
             </IconButton>
           </Tooltip>
-          <Tooltip arrow title={t('View stats for last month')}>
+          <Tooltip arrow title={'View stats for last month'}>
             <IconButton
               color="primary"
               sx={{
@@ -67,7 +67,7 @@ function Block9() {
               1M
             </IconButton>
           </Tooltip>
-          <Tooltip arrow title={t('View stats for last year')}>
+          <Tooltip arrow title={'View stats for last year'}>
             <IconButton
               color="primary"
               sx={{
@@ -123,7 +123,7 @@ function Block9() {
           }}
           fontWeight="bold"
         >
-          {t('Total Balance')}
+          {'Total Balance'}
         </Typography>
       </Box>
       <Divider />
@@ -157,7 +157,7 @@ function Block9() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('BTC')}</Typography>}
+            primary={<Typography variant="h4">{'BTC'}</Typography>}
             secondary={
               <Typography variant="subtitle2">
                 <Text color="warning">Bitcoin</Text>
@@ -212,7 +212,7 @@ function Block9() {
             />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('ETH')}</Typography>}
+            primary={<Typography variant="h4">{'ETH'}</Typography>}
             secondary={
               <Typography variant="subtitle2">
                 <Text color="info">Ethereum</Text>
@@ -265,7 +265,7 @@ function Block9() {
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h4">{t('USD')}</Typography>}
+            primary={<Typography variant="h4">{'USD'}</Typography>}
             secondary={
               <Typography variant="subtitle2">
                 <Text color="success">Dollar</Text>
@@ -303,7 +303,7 @@ function Block9() {
           variant="contained"
           endIcon={<KeyboardArrowRightTwoToneIcon />}
         >
-          {t('View all transactions')}
+          {'View all transactions'}
         </Button>
       </Box>
     </Card>

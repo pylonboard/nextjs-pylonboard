@@ -14,7 +14,7 @@ import {
   TooltipProps,
   tooltipClasses
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandLessTwoToneIcon from '@mui/icons-material/ExpandLessTwoTone';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 
@@ -58,7 +58,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
   ...rest
 }) => {
   const [menuToggle, setMenuToggle] = useState<boolean>(openParent);
-  const { t }: { t: any } = useTranslation();
+
   const { closeSidebar } = useContext(SidebarContext);
 
   const toggleMenu = (): void => {
@@ -90,7 +90,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
           ) : (
             <Badge badgeContent={badge} />
           )}
-          {t(name)}
+          {name}
         </Button>
         <Collapse in={menuToggle}>{children}</Collapse>
       </ListItem>
@@ -107,7 +107,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
           onClick={closeSidebar}
           startIcon={Icon && <Icon />}
         >
-          {t(name)}
+          {name}
           {badgeTooltip ? (
             <TooltipWrapper title={badgeTooltip} arrow placement="right">
               {badge === '' ? (

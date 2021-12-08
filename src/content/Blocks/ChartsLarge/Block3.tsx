@@ -13,7 +13,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import Block3Chart from './Block3Chart';
 
@@ -40,7 +40,7 @@ const LinearProgressError = styled(LinearProgress)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const visitors = {
     current: [1008, 940, 1010, 821, 1035, 1030, 957, 926, 993, 1021, 997, 879],
@@ -79,10 +79,10 @@ function Block3() {
             variant="outlined"
             endIcon={<ExpandMoreTwoToneIcon />}
           >
-            {t('Export')}
+            {'Export'}
           </Button>
         }
-        title={t('Income Reports')}
+        title={'Income Reports'}
       />
       <Divider />
       <CardContent sx={{ p: 4 }}>
@@ -94,7 +94,7 @@ function Block3() {
               variant="h4"
               gutterBottom
             >
-              {t('YoY Income')}
+              {'YoY Income'}
             </Typography>
             <Typography component="div" variant="h3">
               <small>$</small> 165,594.00
@@ -107,7 +107,7 @@ function Block3() {
               variant="h4"
               gutterBottom
             >
-              {t('Best Seller')}
+              {'Best Seller'}
             </Typography>
             <Typography component="div" noWrap variant="h3">
               Macbook PRO 14" 2021
@@ -120,7 +120,7 @@ function Block3() {
               variant="h4"
               gutterBottom
             >
-              {t('Orders Volume')}
+              {'Orders Volume'}
             </Typography>
             <Typography component="div" variant="h3">
               45,954
@@ -135,7 +135,7 @@ function Block3() {
                 pb: 1
               }}
             >
-              {t('Sales Target')}
+              {'Sales Target'}
             </Typography>
             <Box
               sx={{

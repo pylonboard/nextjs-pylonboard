@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import ReviewsTwoToneIcon from '@mui/icons-material/ReviewsTwoTone';
 import PublicTwoToneIcon from '@mui/icons-material/PublicTwoTone';
 import EngineeringTwoToneIcon from '@mui/icons-material/EngineeringTwoTone';
@@ -59,7 +59,7 @@ const AvatarPrimary = styled(Avatar)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -67,7 +67,7 @@ function Block5() {
       <Grid item xs={12} md={6} xl={3}>
         <Card>
           <Box p={3}>
-            <Typography variant="h4">{t('Positive Reviews')}</Typography>
+            <Typography variant="h4">{'Positive Reviews'}</Typography>
             <ListItem
               disableGutters
               sx={{
@@ -104,7 +104,7 @@ function Block5() {
                 primary={
                   <>
                     <Link fontWeight="bold" href="#">
-                      {t('See reviews')}
+                      {'See reviews'}
                     </Link>
                     <Box
                       component="span"
@@ -112,7 +112,7 @@ function Block5() {
                         pl: 0.5
                       }}
                     >
-                      {t('that were left by past customers from USA')}.
+                      {'that were left by past customers from USA'}.
                     </Box>
                   </>
                 }
@@ -125,7 +125,7 @@ function Block5() {
       <Grid item xs={12} md={6} xl={3}>
         <Card>
           <Box p={3}>
-            <Typography variant="h4">{t('Bounce Rate')}</Typography>
+            <Typography variant="h4">{'Bounce Rate'}</Typography>
             <ListItem
               disableGutters
               sx={{
@@ -162,7 +162,7 @@ function Block5() {
                 primary={
                   <>
                     <Link fontWeight="bold" href="#">
-                      {t('See visits')}
+                      {'See visits'}
                     </Link>
                     <Box
                       component="span"
@@ -170,7 +170,7 @@ function Block5() {
                         pl: 0.5
                       }}
                     >
-                      {t('that had a higher than expected bounce rate')}.
+                      {'that had a higher than expected bounce rate'}.
                     </Box>
                   </>
                 }
@@ -183,7 +183,7 @@ function Block5() {
       <Grid item xs={12} md={6} xl={3}>
         <Card>
           <Box p={3}>
-            <Typography variant="h4">{t('Active Referrals')}</Typography>
+            <Typography variant="h4">{'Active Referrals'}</Typography>
             <ListItem
               disableGutters
               sx={{
@@ -220,7 +220,7 @@ function Block5() {
                 primary={
                   <>
                     <Link fontWeight="bold" href="#">
-                      {t('See referring')}
+                      {'See referring'}
                     </Link>
                     <Box
                       component="span"
@@ -228,7 +228,7 @@ function Block5() {
                         pl: 0.5
                       }}
                     >
-                      {t('domains that sent most visits last month')}.
+                      {'domains that sent most visits last month'}.
                     </Box>
                   </>
                 }
@@ -241,7 +241,7 @@ function Block5() {
       <Grid item xs={12} md={6} xl={3}>
         <Card>
           <Box p={3}>
-            <Typography variant="h4">{t('Opened Invites')}</Typography>
+            <Typography variant="h4">{'Opened Invites'}</Typography>
             <ListItem
               disableGutters
               sx={{
@@ -278,7 +278,7 @@ function Block5() {
                 primary={
                   <>
                     <Link fontWeight="bold" href="#">
-                      {t('See clients')}
+                      {'See clients'}
                     </Link>
                     <Box
                       component="span"
@@ -286,7 +286,7 @@ function Block5() {
                         pl: 0.5
                       }}
                     >
-                      {t('that accepted your invitation to connect')}.
+                      {'that accepted your invitation to connect'}.
                     </Box>
                   </>
                 }

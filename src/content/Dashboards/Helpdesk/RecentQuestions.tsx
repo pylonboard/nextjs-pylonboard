@@ -14,7 +14,7 @@ import {
   Pagination,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { formatDistance, subHours, subMinutes } from 'date-fns';
 import Link from 'src/components/Link';
 
@@ -52,11 +52,11 @@ const DividerWrapper = styled(Divider)(
 );
 
 function RecentQuestions() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
-      <CardHeader title={t('Recent Questions')} />
+      <CardHeader title={'Recent Questions'} />
       <Divider />
       <List disablePadding>
         <ListItem
@@ -88,13 +88,13 @@ function RecentQuestions() {
                     pb: 1
                   }}
                 >
-                  <b>Joe</b> {t('asked this question')}{' '}
+                  <b>Joe</b> {'asked this question'}{' '}
                   <b>
                     {formatDistance(subHours(new Date(), 6), new Date(), {
                       addSuffix: true
                     })}
                   </b>
-                  , {t('in')} <Link href="#">{t('Product Support')}</Link>
+                  , {'in'} <Link href="#">{'Product Support'}</Link>
                 </Typography>
                 Can I use this template in React apps?
               </>
@@ -126,7 +126,7 @@ function RecentQuestions() {
                       color="secondary"
                       variant="text"
                     >
-                      <b>14</b>&nbsp;{t('replies')}
+                      <b>14</b>&nbsp;{'replies'}
                     </ButtonWrapper>
                     <DividerWrapper
                       sx={{
@@ -136,11 +136,11 @@ function RecentQuestions() {
                       flexItem
                     />
                     <Typography variant="body2" color="text.primary">
-                      <b>420</b> {t('views')}
+                      <b>420</b> {'views'}
                     </Typography>
                   </Box>
                   <Button size="small" color="primary" variant="contained">
-                    {t('Answer')}
+                    {'Answer'}
                   </Button>
                 </BoxWrapper>
               </>
@@ -181,13 +181,13 @@ function RecentQuestions() {
                     pb: 1
                   }}
                 >
-                  <b>Horia</b> {t('asked this question')}{' '}
+                  <b>Horia</b> {'asked this question'}{' '}
                   <b>
                     {formatDistance(subMinutes(new Date(), 32), new Date(), {
                       addSuffix: true
                     })}
                   </b>
-                  , {t('in')} <Link href="#">{t('Troubleshooting')}</Link>
+                  , {'in'} <Link href="#">{'Troubleshooting'}</Link>
                 </Typography>
                 How should I proceed with integration?
               </>
@@ -220,7 +220,7 @@ function RecentQuestions() {
                       color="secondary"
                       variant="text"
                     >
-                      <b>3</b>&nbsp;{t('replies')}
+                      <b>3</b>&nbsp;{'replies'}
                     </ButtonWrapper>
                     <DividerWrapper
                       sx={{
@@ -230,11 +230,11 @@ function RecentQuestions() {
                       flexItem
                     />
                     <Typography variant="body2" color="text.primary">
-                      <b>323</b> {t('views')}
+                      <b>323</b> {'views'}
                     </Typography>
                   </Box>
                   <Button size="small" color="primary" variant="contained">
-                    {t('Answer')}
+                    {'Answer'}
                   </Button>
                 </BoxWrapper>
               </>

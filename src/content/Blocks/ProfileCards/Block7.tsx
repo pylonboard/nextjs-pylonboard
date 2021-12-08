@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 
 const BoxComposed = styled(Box)(
   () => `
@@ -145,7 +145,7 @@ const TableWrapper = styled(Table)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -167,7 +167,7 @@ function Block7() {
         }}
       >
         <CardActions>
-          <LabelSuccess>{t('New')}</LabelSuccess>
+          <LabelSuccess>{'New'}</LabelSuccess>
         </CardActions>
         <BoxComposedBg
           sx={{
@@ -195,7 +195,7 @@ function Block7() {
             }}
             variant="h2"
           >
-            {t('The Ultimate UI Design System at your fingertips!')}
+            {'The Ultimate UI Design System at your fingertips!'}
           </Typography>
           <Typography
             sx={{
@@ -206,9 +206,9 @@ function Block7() {
             fontWeight="normal"
             variant="h4"
           >
-            {t(
+            {
               'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-            )}
+            }
             .
           </Typography>
           <Button
@@ -221,7 +221,7 @@ function Block7() {
               boxShadow: `${theme.colors.shadows.error}`
             }}
           >
-            {t('Contact us')}
+            {'Contact us'}
           </Button>
         </BoxComposedContent>
       </BoxComposed>
@@ -230,9 +230,9 @@ function Block7() {
           <TableWrapper>
             <TableHeadWrapper>
               <TableRow>
-                <TableCell>{t('Employee')}</TableCell>
-                <TableCell align="center">{t('Status')}</TableCell>
-                <TableCell align="right">{t('Actions')}</TableCell>
+                <TableCell>{'Employee'}</TableCell>
+                <TableCell align="center">{'Status'}</TableCell>
+                <TableCell align="right">{'Actions'}</TableCell>
               </TableRow>
             </TableHeadWrapper>
             <TableBody>
@@ -270,7 +270,7 @@ function Block7() {
                   </Box>
                 </TableCell>
                 <TableCell align="center">
-                  <LabelWarning>{t('Pending')}</LabelWarning>
+                  <LabelWarning>{'Pending'}</LabelWarning>
                 </TableCell>
                 <TableCell align="right">
                   <Button
@@ -288,7 +288,7 @@ function Block7() {
                       }
                     }}
                   >
-                    {t('Chat')}
+                    {'Chat'}
                   </Button>
                 </TableCell>
               </TableRow>
@@ -326,7 +326,7 @@ function Block7() {
                   </Box>
                 </TableCell>
                 <TableCell align="center">
-                  <LabelSuccess>{t('Completed')}</LabelSuccess>
+                  <LabelSuccess>{'Completed'}</LabelSuccess>
                 </TableCell>
                 <TableCell align="right">
                   <Button
@@ -344,7 +344,7 @@ function Block7() {
                       }
                     }}
                   >
-                    {t('Chat')}
+                    {'Chat'}
                   </Button>
                 </TableCell>
               </TableRow>
@@ -382,7 +382,7 @@ function Block7() {
                   </Box>
                 </TableCell>
                 <TableCell align="center">
-                  <LabelError>{t('Declined')}</LabelError>
+                  <LabelError>{'Declined'}</LabelError>
                 </TableCell>
                 <TableCell align="right">
                   <Button
@@ -400,7 +400,7 @@ function Block7() {
                       }
                     }}
                   >
-                    {t('Chat')}
+                    {'Chat'}
                   </Button>
                 </TableCell>
               </TableRow>

@@ -12,7 +12,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
@@ -79,7 +79,7 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function Block3() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -183,7 +183,7 @@ function Block3() {
               color: `${theme.palette.error.contrastText}`
             }}
           >
-            {t('Updated')}
+            {'Updated'}
           </Label>
         </CardActions>
       </Box>
@@ -213,14 +213,14 @@ function Block3() {
           variant="subtitle2"
           textAlign="center"
         >
-          {t(
+          {
             'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-          )}
+          }
           .
         </Typography>
         <Box mt={3} mx={3}>
           <Button size="large" variant="contained">
-            {t('View complete profile')}
+            {'View complete profile'}
           </Button>
         </Box>
       </Box>

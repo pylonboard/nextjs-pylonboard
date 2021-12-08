@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { ListSubheader, alpha, Box, List, styled } from '@mui/material';
 import SidebarMenuItem from './item';
 import menuItems, { MenuItem } from './items';
-import { useTranslation } from 'react-i18next';
+
 import { useRouter } from 'next/router';
 
 const MenuWrapper = styled(Box)(
@@ -211,7 +211,7 @@ const reduceChildRoutes = ({
 };
 
 function SidebarMenu() {
-  const { t }: { t: any } = useTranslation();
+
   const router = useRouter();
 
   const handlePathChange = () => {
@@ -230,7 +230,7 @@ function SidebarMenu() {
             component="div"
             subheader={
               <ListSubheader component="div" disableSticky>
-                {t(section.heading)}
+                {section.heading}
               </ListSubheader>
             }
           >

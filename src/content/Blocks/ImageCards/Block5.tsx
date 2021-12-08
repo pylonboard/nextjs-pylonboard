@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import { format, subDays } from 'date-fns';
 
@@ -52,7 +52,7 @@ const BgComposed = styled(Box)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -92,7 +92,7 @@ function Block5() {
                 }
               }}
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle2"
@@ -102,9 +102,9 @@ function Block5() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Divider
@@ -156,7 +156,7 @@ function Block5() {
               variant="contained"
               color="error"
             >
-              {t('Read more')}
+              {'Read more'}
             </Button>
           </BgComposed>
           <CardMedia
@@ -183,7 +183,7 @@ function Block5() {
                 color: `${theme.palette.info.contrastText}`
               }}
             >
-              {t('Marketing')}
+              {'Marketing'}
             </Label>
             <Label
               sx={{
@@ -191,7 +191,7 @@ function Block5() {
                 color: `${theme.palette.warning.contrastText}`
               }}
             >
-              {t('Development')}
+              {'Development'}
             </Label>
           </CardActions>
         </Card>
@@ -261,7 +261,7 @@ function Block5() {
                     color: `${theme.palette.error.contrastText}`
                   }}
                 >
-                  {t('Sales')}
+                  {'Sales'}
                 </Label>
                 <Label
                   sx={{
@@ -270,7 +270,7 @@ function Block5() {
                     color: `${theme.palette.success.contrastText}`
                   }}
                 >
-                  {t('Deploys')}
+                  {'Deploys'}
                 </Label>
               </Box>
             </Box>
@@ -293,7 +293,7 @@ function Block5() {
                 }
               }}
             >
-              {t('The Ultimate UI Design System at your fingertips!')}
+              {'The Ultimate UI Design System at your fingertips!'}
             </Link>
             <Typography
               variant="subtitle2"
@@ -303,9 +303,9 @@ function Block5() {
                 color: `${theme.colors.alpha.trueWhite[70]}`
               }}
             >
-              {t(
+              {
                 'High performance React template built with lots of powerful components across multiple product niches for fast & perfect apps development processes'
-              )}
+              }
               .
             </Typography>
             <Divider
@@ -337,7 +337,7 @@ function Block5() {
                 {format(subDays(new Date(), 2), 'MMMM dd yyyy')}
               </Typography>
               <Button variant="contained" color="primary">
-                {t('Read more')}
+                {'Read more'}
               </Button>
             </Box>
           </BgComposed>

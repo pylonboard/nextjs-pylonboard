@@ -21,7 +21,7 @@ import {
   TablePagination
 } from '@mui/material';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
-import { useTranslation } from 'react-i18next';
+
 import numeral from 'numeral';
 import Text from 'src/components/Text';
 import { useSnackbar } from 'notistack';
@@ -68,7 +68,7 @@ const applyPagination = (
 const Results: FC<ResultsProps> = ({ products }) => {
   const [page, setPage] = useState<number>(0);
   const [limit, setLimit] = useState<number>(4);
-  const { t }: { t: any } = useTranslation();
+
   const { enqueueSnackbar } = useSnackbar();
   const [query, setQuery] = useState<string>('');
   const [toggleView, setToggleView] = useState<string | null>('grid_view');
@@ -81,7 +81,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
   };
 
   const handleCart = () => {
-    enqueueSnackbar(t('You added a product to cart'), {
+    enqueueSnackbar('You added a product to cart', {
       variant: 'success',
       preventDuplicate: false,
       anchorOrigin: {
@@ -147,7 +147,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                 </InputAdornment>
               )
             }}
-            placeholder={t('Search by product name...')}
+            placeholder={'Search by product name...'}
           />
         </Card>
       </Grid>
@@ -155,10 +155,10 @@ const Results: FC<ResultsProps> = ({ products }) => {
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <Box>
             <Typography component="span" variant="subtitle1">
-              {t('Showing')}:
+              {'Showing'}:
             </Typography>{' '}
             <b>
-              {filteredProducts.length} {t('products')}
+              {filteredProducts.length} {'products'}
             </b>
           </Box>
           <ToggleButtonGroup
@@ -189,9 +189,9 @@ const Results: FC<ResultsProps> = ({ products }) => {
                 color="text.secondary"
                 align="center"
               >
-                {t(
+                {
                   "We couldn't find any products matching your search criteria"
-                )}
+                }
               </Typography>
             </Grid>
           ) : (
@@ -261,7 +261,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                           variant="outlined"
                           onClick={handleCart}
                         >
-                          {t('Add to cart')}
+                          {'Add to cart'}
                         </Button>
                       </Box>
                       <Divider />
@@ -275,7 +275,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                           <FavoriteTwoToneIcon fontSize="small" />
                         </IconButtonError>
                         <Typography variant="subtitle2">
-                          {t('In Stock')}:{' '}
+                          {'In Stock'}:{' '}
                           <Typography
                             component="span"
                             color="text.primary"
@@ -323,9 +323,9 @@ const Results: FC<ResultsProps> = ({ products }) => {
                 color="text.secondary"
                 align="center"
               >
-                {t(
+                {
                   "We couldn't find any products matching your search criteria"
-                )}
+                }
               </Typography>
             </Grid>
           ) : (
@@ -420,7 +420,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                               variant="outlined"
                               onClick={handleCart}
                             >
-                              {t('Add to cart')}
+                              {'Add to cart'}
                             </Button>
                             <IconButtonError size="small">
                               <FavoriteTwoToneIcon fontSize="small" />
@@ -428,7 +428,7 @@ const Results: FC<ResultsProps> = ({ products }) => {
                           </Box>
 
                           <Typography variant="subtitle2">
-                            {t('In Stock')}:{' '}
+                            {'In Stock'}:{' '}
                             <Typography
                               component="span"
                               color="text.primary"
@@ -482,9 +482,9 @@ const Results: FC<ResultsProps> = ({ products }) => {
               }}
               gutterBottom
             >
-              {t(
+              {
                 'Choose between table or grid views for displaying the projects list.'
-              )}
+              }
             </Typography>
           </Card>
         </Grid>

@@ -17,7 +17,7 @@ import {
 import Scrollbar from 'src/components/Scrollbar';
 import Text from 'src/components/Text';
 
-import { useTranslation } from 'react-i18next';
+
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 import ArrowDownwardTwoToneIcon from '@mui/icons-material/ArrowDownwardTwoTone';
 import Label from 'src/components/Label';
@@ -71,7 +71,7 @@ const BoxComposedBg = styled(Box)(
 );
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -106,10 +106,10 @@ function Block2() {
             }}
             variant="h3"
           >
-            {t('Recent Orders')}
+            {'Recent Orders'}
           </Typography>
           <Typography textAlign="center" fontWeight="normal" variant="h4">
-            {t('Check latest status updates')}
+            {'Check latest status updates'}
           </Typography>
         </BoxComposedContent>
       </BoxComposed>
@@ -150,11 +150,11 @@ function Block2() {
                         Macbook Laptop
                       </Typography>
                     </Box>
-                    <Label color="warning">{t('Pending')}</Label>
+                    <Label color="warning">{'Pending'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$6,384</Typography>
-                    <Text color="error">{t('Increased')}</Text>
+                    <Text color="error">{'Increased'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -184,11 +184,11 @@ function Block2() {
                         iPhone 13 PRO
                       </Typography>
                     </Box>
-                    <Label color="success">{t('Completed')}</Label>
+                    <Label color="success">{'Completed'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$1,594</Typography>
-                    <Text color="primary">{t('Regular')}</Text>
+                    <Text color="primary">{'Regular'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -218,11 +218,11 @@ function Block2() {
                         Desktop PC
                       </Typography>
                     </Box>
-                    <Label color="success">{t('Completed')}</Label>
+                    <Label color="success">{'Completed'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$3,594</Typography>
-                    <Text color="primary">{t('Regular')}</Text>
+                    <Text color="primary">{'Regular'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -252,11 +252,11 @@ function Block2() {
                         Macbook Laptop
                       </Typography>
                     </Box>
-                    <Label color="warning">{t('Pending')}</Label>
+                    <Label color="warning">{'Pending'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$6,384</Typography>
-                    <Text color="error">{t('Increased')}</Text>
+                    <Text color="error">{'Increased'}</Text>
                   </TableCell>
                 </TableRow>
 
@@ -287,11 +287,11 @@ function Block2() {
                         Macbook Laptop
                       </Typography>
                     </Box>
-                    <Label color="warning">{t('Pending')}</Label>
+                    <Label color="warning">{'Pending'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$6,384</Typography>
-                    <Text color="error">{t('Increased')}</Text>
+                    <Text color="error">{'Increased'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -321,11 +321,11 @@ function Block2() {
                         iPhone 13 PRO
                       </Typography>
                     </Box>
-                    <Label color="success">{t('Completed')}</Label>
+                    <Label color="success">{'Completed'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$1,594</Typography>
-                    <Text color="primary">{t('Regular')}</Text>
+                    <Text color="primary">{'Regular'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -355,11 +355,11 @@ function Block2() {
                         Desktop PC
                       </Typography>
                     </Box>
-                    <Label color="success">{t('Completed')}</Label>
+                    <Label color="success">{'Completed'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$3,594</Typography>
-                    <Text color="primary">{t('Regular')}</Text>
+                    <Text color="primary">{'Regular'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -389,11 +389,11 @@ function Block2() {
                         Macbook Laptop
                       </Typography>
                     </Box>
-                    <Label color="warning">{t('Pending')}</Label>
+                    <Label color="warning">{'Pending'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$6,384</Typography>
-                    <Text color="error">{t('Increased')}</Text>
+                    <Text color="error">{'Increased'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -423,11 +423,11 @@ function Block2() {
                         iPhone 13 PRO
                       </Typography>
                     </Box>
-                    <Label color="success">{t('Completed')}</Label>
+                    <Label color="success">{'Completed'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$1,594</Typography>
-                    <Text color="primary">{t('Regular')}</Text>
+                    <Text color="primary">{'Regular'}</Text>
                   </TableCell>
                 </TableRow>
                 <TableRow hover>
@@ -457,11 +457,11 @@ function Block2() {
                         Desktop PC
                       </Typography>
                     </Box>
-                    <Label color="success">{t('Completed')}</Label>
+                    <Label color="success">{'Completed'}</Label>
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="h4">$3,594</Typography>
-                    <Text color="primary">{t('Regular')}</Text>
+                    <Text color="primary">{'Regular'}</Text>
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -481,7 +481,7 @@ function Block2() {
             }}
             variant="contained"
           >
-            {t('View all')}
+            {'View all'}
           </Button>
         </Badge>
       </Box>

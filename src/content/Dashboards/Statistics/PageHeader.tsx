@@ -10,7 +10,7 @@ import {
   useTheme,
   Card
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import PieChartTwoToneIcon from '@mui/icons-material/PieChartTwoTone';
 
 const AvatarPageTitle = styled(Avatar)(
@@ -49,7 +49,7 @@ const DotLegend = styled('span')(
 );
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -65,10 +65,10 @@ function PageHeader() {
         </AvatarPageTitle>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            {t('Statistics')}
+            {'Statistics'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('Build any kind of dashboard for any kind of niche')}
+            {'Build any kind of dashboard for any kind of niche'}
           </Typography>
         </Box>
       </Box>
@@ -93,7 +93,7 @@ function PageHeader() {
           spacing={0}
         >
           <Box px={3} py={2} textAlign="center">
-            <Typography variant="h4">{t('Earnings')}</Typography>
+            <Typography variant="h4">{'Earnings'}</Typography>
           </Box>
           <Box px={3} py={2} textAlign="center">
             <Typography
@@ -102,7 +102,7 @@ function PageHeader() {
               color="text.secondary"
               gutterBottom
             >
-              {t('Current Week')}
+              {'Current Week'}
             </Typography>
             <Box display="flex" alignItems="center" justifyContent="center">
               <DotLegend
@@ -123,7 +123,7 @@ function PageHeader() {
               color="text.secondary"
               gutterBottom
             >
-              {t('Previous Week')}
+              {'Previous Week'}
             </Typography>
             <Box display="flex" alignItems="center" justifyContent="center">
               <DotLegend

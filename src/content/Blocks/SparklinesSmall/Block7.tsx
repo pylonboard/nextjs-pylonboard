@@ -1,11 +1,11 @@
 import { Box, Card, alpha, Typography, Button, useTheme } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -126,7 +126,7 @@ function Block7() {
       >
         <Box>
           <Typography gutterBottom variant="h3">
-            {t('Weekly Sales')}
+            {'Weekly Sales'}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -134,7 +134,7 @@ function Block7() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Reports for what we sold this week')}
+            {'Reports for what we sold this week'}
           </Typography>
         </Box>
         <Button
@@ -152,7 +152,7 @@ function Block7() {
           size="small"
           variant="contained"
         >
-          {t('Advanced reports')}
+          {'Advanced reports'}
         </Button>
       </Box>
       <Box>

@@ -10,7 +10,7 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import Text from 'src/components/Text';
@@ -23,7 +23,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Block4() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -100,7 +100,7 @@ function Block4() {
             {'View all'}
           </Button>
         }
-        title={t('Reports')}
+        title={'Reports'}
       />
       <Divider />
       <Stack
@@ -121,10 +121,10 @@ function Block4() {
         >
           <Box>
             <Typography gutterBottom variant="h4">
-              {t('Reports')}
+              {'Reports'}
             </Typography>
             <Typography variant="subtitle2">
-              {t('Monthly sales reports')}
+              {'Monthly sales reports'}
             </Typography>
           </Box>
           <Text color="error">
@@ -142,10 +142,10 @@ function Block4() {
         >
           <Box>
             <Typography gutterBottom variant="h4">
-              {t('Stats')}
+              {'Stats'}
             </Typography>
             <Typography variant="subtitle2">
-              {t('Last month targets')}
+              {'Last month targets'}
             </Typography>
           </Box>
           <Text color="warning">
@@ -172,10 +172,10 @@ function Block4() {
         >
           <Box>
             <Typography gutterBottom variant="h4">
-              {t('Users')}
+              {'Users'}
             </Typography>
             <Typography variant="subtitle2">
-              {t('Visitors last week')}
+              {'Visitors last week'}
             </Typography>
           </Box>
           <Text color="success">
@@ -193,9 +193,9 @@ function Block4() {
         >
           <Box>
             <Typography gutterBottom variant="h4">
-              {t('Payments')}
+              {'Payments'}
             </Typography>
-            <Typography variant="subtitle2">{t("Week's expenses")}</Typography>
+            <Typography variant="subtitle2">{"Week's expenses"}</Typography>
           </Box>
           <Text color="error">
             <Typography variant="h4">-$123,305</Typography>
@@ -221,10 +221,10 @@ function Block4() {
         >
           <Box>
             <Typography gutterBottom variant="h4">
-              {t('Sales')}
+              {'Sales'}
             </Typography>
             <Typography variant="subtitle2">
-              {t('Total average weekly report')}
+              {'Total average weekly report'}
             </Typography>
           </Box>
           <Text color="primary">
@@ -242,10 +242,10 @@ function Block4() {
         >
           <Box>
             <Typography gutterBottom variant="h4">
-              {t('Orders')}
+              {'Orders'}
             </Typography>
             <Typography variant="subtitle2">
-              {t('Total products ordered')}
+              {'Total products ordered'}
             </Typography>
           </Box>
           <Text color="info">
@@ -269,7 +269,7 @@ function Block4() {
           variant="contained"
           endIcon={<ArrowForwardTwoToneIcon />}
         >
-          {t('View details')}
+          {'View details'}
         </Button>
       </CardWrapper>
       <Chart options={Box1Options} series={Box1Data} type="area" height={167} />

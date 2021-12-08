@@ -12,7 +12,7 @@ import {
   IconButton,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizaitonProvider from '@mui/lab/LocalizationProvider';
 import CalendarPicker from '@mui/lab/CalendarPicker';
@@ -77,7 +77,7 @@ const SwipeIndicator = styled(IconButton)(
 );
 
 function UpcomingConferences() {
-  const { t }: { t: any } = useTranslation();
+  
   const [date, setDate] = useState<Date | null>(new Date());
 
   const theme = useTheme();
@@ -92,7 +92,7 @@ function UpcomingConferences() {
           pb: 3
         }}
       >
-        <Typography variant="h3">{t('Upcoming Conferences')}</Typography>
+        <Typography variant="h3">{'Upcoming Conferences'}</Typography>
         <Box>
           <SwipeIndicator className="MuiSwipe-root MuiSwipe-left">
             <ChevronLeftTwoToneIcon />
@@ -156,7 +156,7 @@ function UpcomingConferences() {
                       </Avatar>
                       <Typography variant="h5">Apple</Typography>
                     </Box>
-                    <Label color="success">{t('seats available')}</Label>
+                    <Label color="success">{'seats available'}</Label>
                   </Box>
                   <Box
                     sx={{
@@ -164,13 +164,13 @@ function UpcomingConferences() {
                     }}
                   >
                     <Typography variant="subtitle2" gutterBottom>
-                      10/16/2021 - {t('Remote')}
+                      10/16/2021 - {'Remote'}
                     </Typography>
                     <Typography variant="h3">
                       Apple World Wide Developer Conference 2021
                     </Typography>
                   </Box>
-                  <Typography variant="subtitle1">{t('Hosted by')}:</Typography>
+                  <Typography variant="subtitle1">{'Hosted by'}:</Typography>
                   <Box
                     display="flex"
                     justifyContent="flex-start"
@@ -181,7 +181,7 @@ function UpcomingConferences() {
                     <AvatarGroup max={5}>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Remy Sharp'}
+                        title={'View profile for' + ' Remy Sharp'}
                       >
                         <Avatar
                           sx={{
@@ -196,7 +196,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Travis Howard'}
+                        title={'View profile for' + ' Travis Howard'}
                       >
                         <Avatar
                           sx={{
@@ -211,7 +211,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Cindy Baker'}
+                        title={'View profile for' + ' Cindy Baker'}
                       >
                         <Avatar
                           sx={{
@@ -226,7 +226,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Agnes Walker'}
+                        title={'View profile for' + ' Agnes Walker'}
                       >
                         <Avatar
                           sx={{
@@ -241,7 +241,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Trevor Henderson'}
+                        title={'View profile for' + ' Trevor Henderson'}
                       >
                         <Avatar
                           sx={{
@@ -265,10 +265,10 @@ function UpcomingConferences() {
                       startIcon={<EventSeatTwoToneIcon />}
                       variant="contained"
                     >
-                      {t('Book a seat')}
+                      {'Book a seat'}
                     </Button>
                     <Button fullWidth variant="outlined">
-                      {t('More information')}
+                      {'More information'}
                     </Button>
                   </Box>
                 </Card>
@@ -306,7 +306,7 @@ function UpcomingConferences() {
                       <Typography variant="h5">Google</Typography>
                     </Box>
                     <Label color="error">
-                      <b>{t('no seats available')}</b>
+                      <b>{'no seats available'}</b>
                     </Label>
                   </Box>
                   <Box
@@ -315,13 +315,13 @@ function UpcomingConferences() {
                     }}
                   >
                     <Typography variant="subtitle2" gutterBottom>
-                      10/23/2021 - {t('Remote')}
+                      10/23/2021 - {'Remote'}
                     </Typography>
                     <Typography variant="h3">
                       Google 2021 Mobile Devices Conference
                     </Typography>
                   </Box>
-                  <Typography variant="subtitle1">{t('Hosted by')}:</Typography>
+                  <Typography variant="subtitle1">{'Hosted by'}:</Typography>
                   <Box
                     display="flex"
                     justifyContent="flex-start"
@@ -332,7 +332,7 @@ function UpcomingConferences() {
                     <AvatarGroup max={5}>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Agnes Walker'}
+                        title={'View profile for' + ' Agnes Walker'}
                       >
                         <Avatar
                           sx={{
@@ -347,7 +347,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Cindy Baker'}
+                        title={'View profile for' + ' Cindy Baker'}
                       >
                         <Avatar
                           sx={{
@@ -362,7 +362,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Trevor Henderson'}
+                        title={'View profile for' + ' Trevor Henderson'}
                       >
                         <Avatar
                           sx={{
@@ -377,7 +377,7 @@ function UpcomingConferences() {
                       </Tooltip>
                       <Tooltip
                         arrow
-                        title={t('View profile for') + ' Travis Howard'}
+                        title={'View profile for' + ' Travis Howard'}
                       >
                         <Avatar
                           sx={{
@@ -402,10 +402,10 @@ function UpcomingConferences() {
                       startIcon={<EventSeatTwoToneIcon />}
                       variant="contained"
                     >
-                      {t('Book a seat')}
+                      {'Book a seat'}
                     </Button>
                     <Button fullWidth variant="outlined">
-                      {t('More information')}
+                      {'More information'}
                     </Button>
                   </Box>
                 </Card>

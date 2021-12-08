@@ -11,7 +11,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import { formatDistance, subMinutes } from 'date-fns';
 import CloseIcon from '@mui/icons-material/Close';
 import { Chart } from 'src/components/Chart';
@@ -27,7 +27,7 @@ const CardHeaderWrapper = styled(CardHeader)(
 );
 
 function ResourcesAlarm() {
-  const { t }: { t: any } = useTranslation();
+
   const [open, setOpen] = useState(true);
   const theme = useTheme();
 
@@ -125,13 +125,13 @@ function ResourcesAlarm() {
       <CardHeaderWrapper
         action={
           <Button variant="contained" size="small">
-            {t('Run diagnostics')}
+            {'Run diagnostics'}
           </Button>
         }
-        title={t('Resources Alarm')}
+        title={'Resources Alarm'}
         subheader={
           <>
-            {t('Server load snapshot from')}{' '}
+            {'Server load snapshot from'}{' '}
             {formatDistance(subMinutes(new Date(), 13), new Date(), {
               addSuffix: true
             })}
@@ -163,7 +163,7 @@ function ResourcesAlarm() {
             }
             severity="error"
           >
-            {t('Your server is overloaded, fix it as soon as possible!')}
+            {'Your server is overloaded, fix it as soon as possible!'}
           </Alert>
         </Collapse>
       </CardContent>

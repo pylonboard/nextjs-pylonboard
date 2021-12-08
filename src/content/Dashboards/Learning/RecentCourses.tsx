@@ -23,7 +23,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import { useSnackbar } from 'notistack';
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import Text from 'src/components/Text';
@@ -99,19 +99,19 @@ const IconButtonWrapper = styled(IconButton)(
 );
 
 function RecentCourses() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const { enqueueSnackbar } = useSnackbar();
 
   const handleDelete = () => {
-    enqueueSnackbar(t('You clicked on delete!'), {
+    enqueueSnackbar('You clicked on delete!', {
       variant: 'error'
     });
   };
 
   const handleClick = () => {
-    enqueueSnackbar(t('You clicked on the chip!'), {
+    enqueueSnackbar('You clicked on the chip!', {
       variant: 'success'
     });
   };
@@ -119,9 +119,9 @@ function RecentCourses() {
   const [currentTab, setCurrentTab] = useState<string>('all');
 
   const tabs = [
-    { value: 'all', label: t('All Courses') },
-    { value: 'active', label: t('Active') },
-    { value: 'upcoming', label: t('Upcoming') }
+    { value: 'all', label: 'All Courses' },
+    { value: 'active', label: 'Active' },
+    { value: 'upcoming', label: 'Upcoming' }
   ];
 
   const handleTabsChange = (_event: ChangeEvent<{}>, value: string): void => {
@@ -130,7 +130,7 @@ function RecentCourses() {
 
   return (
     <Card>
-      <CardHeader title={t('Recent Courses')} />
+      <CardHeader title={'Recent Courses'} />
       <Divider />
       <TabsContainerWrapper>
         <Tabs
@@ -190,7 +190,7 @@ function RecentCourses() {
                           mr: 1
                         }}
                         size="small"
-                        label={t('Software')}
+                        label={'Software'}
                         color="secondary"
                         onClick={handleClick}
                         onDelete={handleDelete}
@@ -200,7 +200,7 @@ function RecentCourses() {
                           mr: 1
                         }}
                         size="small"
-                        label={t('Development')}
+                        label={'Development'}
                         color="secondary"
                         onClick={handleClick}
                         onDelete={handleDelete}
@@ -210,7 +210,7 @@ function RecentCourses() {
                           mr: 1
                         }}
                         size="small"
-                        label={t('AML')}
+                        label={'AML'}
                         color="secondary"
                         onClick={handleClick}
                         onDelete={handleDelete}
@@ -242,7 +242,7 @@ function RecentCourses() {
                         <TimerTwoToneIcon />
                       </AvatarInfo>
                       <Text color="info">
-                        <b>{t('In Progress')}</b>
+                        <b>{'In Progress'}</b>
                       </Text>
                     </Box>
                   </>
@@ -322,7 +322,7 @@ function RecentCourses() {
                           mr: 1
                         }}
                         size="small"
-                        label={t('Dev Tools')}
+                        label={'Dev Tools'}
                         color="secondary"
                         onClick={handleClick}
                         onDelete={handleDelete}
@@ -332,7 +332,7 @@ function RecentCourses() {
                           mr: 1
                         }}
                         size="small"
-                        label={t('Frontend')}
+                        label={'Frontend'}
                         color="secondary"
                         onClick={handleClick}
                         onDelete={handleDelete}
@@ -364,7 +364,7 @@ function RecentCourses() {
                         <CheckTwoToneIcon />
                       </AvatarSuccess>
                       <Text color="success">
-                        <b>{t('Completed')}</b>
+                        <b>{'Completed'}</b>
                       </Text>
                     </Box>
                   </>
@@ -429,7 +429,7 @@ function RecentCourses() {
           <AvatarPending>
             <NotificationsActiveTwoToneIcon />
           </AvatarPending>
-          <Typography variant="h2">{t('Start learning today')}!</Typography>
+          <Typography variant="h2">{'Start learning today'}!</Typography>
           <Typography
             variant="h4"
             sx={{
@@ -439,9 +439,9 @@ function RecentCourses() {
             fontWeight="normal"
             color="text.secondary"
           >
-            {t(
+            {
               'Browse over 500 quality courses to start learning something useful today'
-            )}
+            }
             !
           </Typography>
           <Button
@@ -454,7 +454,7 @@ function RecentCourses() {
               }
             }}
           >
-            {t('Browse courses')}
+            {'Browse courses'}
           </Button>
         </Box>
       )}
@@ -469,7 +469,7 @@ function RecentCourses() {
           <AvatarEvents>
             <InsertInvitationTwoToneIcon />
           </AvatarEvents>
-          <Typography variant="h2">{t('Upcoming events')}</Typography>
+          <Typography variant="h2">{'Upcoming events'}</Typography>
           <Typography
             variant="h4"
             sx={{
@@ -479,7 +479,7 @@ function RecentCourses() {
             fontWeight="normal"
             color="text.secondary"
           >
-            {t('Right now there are no upcoming events available')}!
+            {'Right now there are no upcoming events available'}!
           </Typography>
           <Button
             color="info"
@@ -492,7 +492,7 @@ function RecentCourses() {
               }
             }}
           >
-            {t('Subscribe to newsletter')}
+            {'Subscribe to newsletter'}
           </Button>
         </Box>
       )}

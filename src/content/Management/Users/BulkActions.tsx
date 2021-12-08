@@ -12,7 +12,7 @@ import {
   Typography,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
@@ -32,7 +32,7 @@ const ButtonError = styled(Button)(
 function BulkActions() {
   const [onMenuOpen, menuOpen] = useState<boolean>(false);
   const moreRef = useRef<HTMLButtonElement | null>(null);
-  const { t }: { t: any } = useTranslation();
+
 
   const openMenu = (): void => {
     menuOpen(true);
@@ -47,9 +47,9 @@ function BulkActions() {
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <Box display="flex" alignItems="center">
           <Typography variant="h5" color="text.secondary">
-            {t('Bulk actions')}:
+            {'Bulk actions'}:
           </Typography>
-          <Tooltip arrow placement="top" title={t('Resend verification email')}>
+          <Tooltip arrow placement="top" title={'Resend verification email'}>
             <IconButton
               color="primary"
               sx={{
@@ -67,7 +67,7 @@ function BulkActions() {
             startIcon={<DeleteTwoToneIcon />}
             variant="contained"
           >
-            {t('Delete')}
+            {'Delete'}
           </ButtonError>
         </Box>
         <IconButton
@@ -105,10 +105,10 @@ function BulkActions() {
           component="nav"
         >
           <ListItem button>
-            <ListItemText primary={t('Bulk edit accounts')} />
+            <ListItemText primary={'Bulk edit accounts'} />
           </ListItem>
           <ListItem button>
-            <ListItemText primary={t('Close selected accounts')} />
+            <ListItemText primary={'Close selected accounts'} />
           </ListItem>
         </List>
       </Menu>

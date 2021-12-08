@@ -15,7 +15,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Scrollbar from 'src/components/Scrollbar';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import AutoAwesomeMosaicTwoToneIcon from '@mui/icons-material/AutoAwesomeMosaicTwoTone';
@@ -55,7 +55,7 @@ const LabelWrapper = styled(Box)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -68,14 +68,14 @@ function Block7() {
       >
         <Box>
           <Typography gutterBottom variant="h4">
-            {t('Navigation Pills')}
+            {'Navigation Pills'}
           </Typography>
           <Typography variant="subtitle2">
-            {t('This is yet another example for navigation')}
+            {'This is yet another example for navigation'}
           </Typography>
         </Box>
         <Button size="small" variant="contained" color="primary">
-          {t('View all')}
+          {'View all'}
         </Button>
       </Box>
       <Divider />
@@ -121,12 +121,12 @@ function Block7() {
                       alignItems: 'center'
                     }}
                   >
-                    {t('Business')}
+                    {'Business'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('Grow familiar with the countless')}
+                    {'Grow familiar with the countless'}
                   </Typography>
                 }
               />
@@ -170,7 +170,7 @@ function Block7() {
                       alignItems: 'center'
                     }}
                   >
-                    {t('Finance')}
+                    {'Finance'}
                     <LabelWrapper
                       ml={1}
                       component="span"
@@ -179,13 +179,13 @@ function Block7() {
                         color: `${theme.colors.info.main}`
                       }}
                     >
-                      {t('New')}
+                      {'New'}
                     </LabelWrapper>
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('A wonderful serenity has taken')}
+                    {'A wonderful serenity has taken'}
                   </Typography>
                 }
               />
@@ -229,7 +229,7 @@ function Block7() {
                       alignItems: 'center'
                     }}
                   >
-                    {t('Images')}
+                    {'Images'}
                     <LabelWrapper
                       ml={1}
                       component="span"
@@ -238,13 +238,13 @@ function Block7() {
                         color: `${theme.colors.error.main}`
                       }}
                     >
-                      {t('Hot')}
+                      {'Hot'}
                     </LabelWrapper>
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('Absorbed in the exquisite sense')}
+                    {'Absorbed in the exquisite sense'}
                   </Typography>
                 }
               />
@@ -288,12 +288,12 @@ function Block7() {
                       alignItems: 'center'
                     }}
                   >
-                    {t('Finance')}
+                    {'Finance'}
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('A wonderful serenity has taken')}
+                    {'A wonderful serenity has taken'}
                   </Typography>
                 }
               />
@@ -337,7 +337,7 @@ function Block7() {
                       alignItems: 'center'
                     }}
                   >
-                    {t('Accounts')}
+                    {'Accounts'}
                     <LabelWrapper
                       ml={1}
                       component="span"
@@ -346,13 +346,13 @@ function Block7() {
                         color: `${theme.colors.warning.main}`
                       }}
                     >
-                      {t('In progress')}
+                      {'In progress'}
                     </LabelWrapper>
                   </Typography>
                 }
                 secondary={
                   <Typography noWrap variant="subtitle2">
-                    {t('Absorbed in the exquisite sense')}
+                    {'Absorbed in the exquisite sense'}
                   </Typography>
                 }
               />
@@ -378,7 +378,7 @@ function Block7() {
           variant="contained"
           endIcon={<KeyboardArrowRightTwoToneIcon />}
         >
-          {t('View more items')}
+          {'View more items'}
         </Button>
       </Box>
     </Card>

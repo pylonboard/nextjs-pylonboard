@@ -7,11 +7,11 @@ import {
   Avatar,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import LocalPharmacyTwoToneIcon from '@mui/icons-material/LocalPharmacyTwoTone';
 
 function FatAlt() {
-  const { t }: { t: any } = useTranslation();
+
 
   const AvatarPrimary = styled(Avatar)(
     ({ theme }) => `
@@ -45,7 +45,7 @@ function FatAlt() {
               variant="subtitle2"
               color="text.secondary"
             >
-              {t('grams')}
+              {'grams'}
             </Typography>
           </>
         }
@@ -61,7 +61,7 @@ function FatAlt() {
             pb: 3
           }}
         >
-          {t('Fat')}
+          {'Fat'}
         </Typography>
         <LinearProgress value={79} color="primary" variant="determinate" />
       </CardContent>

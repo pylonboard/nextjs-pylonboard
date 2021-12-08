@@ -8,7 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
@@ -18,7 +18,7 @@ import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
 function Block2() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -104,7 +104,7 @@ function Block2() {
             <Box ml={1}>
               <Typography variant="h3">$14,264</Typography>
               <Typography noWrap variant="subtitle2">
-                {t('total value')}
+                {'total value'}
               </Typography>
             </Box>
           </Box>
@@ -115,7 +115,7 @@ function Block2() {
             <Box ml={1}>
               <Typography variant="h3">6,598</Typography>
               <Typography noWrap variant="subtitle2">
-                {t('new members')}
+                {'new members'}
               </Typography>
             </Box>
           </Box>
@@ -134,7 +134,7 @@ function Block2() {
           color="success"
           endIcon={<ArrowForwardTwoToneIcon />}
         >
-          {t('View recent sales')}
+          {'View recent sales'}
         </Button>
       </Box>
       <Divider />

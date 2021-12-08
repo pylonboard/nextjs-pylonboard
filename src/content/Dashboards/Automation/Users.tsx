@@ -10,10 +10,10 @@ import {
 } from '@mui/material';
 
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
-import { useTranslation } from 'react-i18next';
+
 
 function Users() {
-  const { t }: { t: any } = useTranslation();
+  
 
   return (
     <>
@@ -23,8 +23,8 @@ function Users() {
         justifyContent="space-between"
         mb={1}
       >
-        <Typography variant="h3">{t('Top users')}</Typography>
-        <Tooltip placement="top" title={t('View all')} arrow>
+        <Typography variant="h3">{'Top users'}</Typography>
+        <Tooltip placement="top" title={'View all'} arrow>
           <IconButton size="large" color="primary">
             <KeyboardArrowRightTwoToneIcon />
           </IconButton>
@@ -47,7 +47,7 @@ function Users() {
             alignItems="center"
             justifyContent="center"
           >
-            <Tooltip placement="top" title={t('View profile')} arrow>
+            <Tooltip placement="top" title={'View profile'} arrow>
               <Avatar
                 component="a"
                 href="#"
@@ -70,7 +70,7 @@ function Users() {
             alignItems="center"
             justifyContent="center"
           >
-            <Tooltip placement="top" title={t('View profile')} arrow>
+            <Tooltip placement="top" title={'View profile'} arrow>
               <Avatar
                 component="a"
                 href="#"
@@ -93,7 +93,7 @@ function Users() {
             alignItems="center"
             justifyContent="center"
           >
-            <Tooltip placement="top" title={t('View profile')} arrow>
+            <Tooltip placement="top" title={'View profile'} arrow>
               <Avatar
                 component="a"
                 href="#"

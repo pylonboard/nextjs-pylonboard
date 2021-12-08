@@ -6,7 +6,7 @@ import {
   Grid,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 
@@ -59,7 +59,7 @@ const productTags = [
 ];
 
 function GeneralSection() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card
@@ -72,7 +72,7 @@ function GeneralSection() {
           <TextField
             fullWidth
             name="title"
-            placeholder={t('Project title here...')}
+            placeholder={'Project title here...'}
             variant="outlined"
           />
         </Grid>
@@ -96,7 +96,7 @@ function GeneralSection() {
                 {...params}
                 fullWidth
                 variant="outlined"
-                placeholder={t('Select project tags...')}
+                placeholder={'Select project tags...'}
               />
             )}
           />

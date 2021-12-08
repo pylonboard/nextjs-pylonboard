@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 
 import {
@@ -30,50 +30,50 @@ const CardActionsWrapper = styled(CardActions)(
 );
 
 function AudienceOverview() {
-  const { t }: { t: any } = useTranslation();
+
 
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
   const audiences = [
     {
       value: 'users',
-      text: t('Users')
+      text: 'Users'
     },
     {
       value: 'new_users',
-      text: t('New users')
+      text: 'New users'
     },
     {
       value: 'page_views',
-      text: t('Page views')
+      text: 'Page views'
     },
     {
       value: 'avg_session_duration',
-      text: t('Avg. session duration')
+      text: 'Avg. session duration'
     },
     {
       value: 'bounce_rate',
-      text: t('Bounce rate')
+      text: 'Bounce rate'
     },
     {
       value: 'sessions',
-      text: t('Sessions')
+      text: 'Sessions'
     }
   ];
 
@@ -303,7 +303,7 @@ function AudienceOverview() {
             </Menu>
           </>
         }
-        title={t('Audience Overview')}
+        title={'Audience Overview'}
       />
       <Divider />
       <CardContent>
@@ -386,7 +386,7 @@ function AudienceOverview() {
               >
                 <Box>
                   <Typography variant="subtitle2" gutterBottom>
-                    {t('Users')}
+                    {'Users'}
                   </Typography>
                   <Typography variant="h3">{data.users}</Typography>
                 </Box>
@@ -432,7 +432,7 @@ function AudienceOverview() {
               >
                 <Box>
                   <Typography variant="subtitle2" gutterBottom>
-                    {t('New Users')}
+                    {'New Users'}
                   </Typography>
                   <Typography variant="h3">{data.newUsers}</Typography>
                 </Box>
@@ -477,7 +477,7 @@ function AudienceOverview() {
               >
                 <Box>
                   <Typography variant="subtitle2" gutterBottom>
-                    {t('Page Views')}
+                    {'Page Views'}
                   </Typography>
                   <Typography variant="h3">{data.pageViews}</Typography>
                 </Box>
@@ -523,7 +523,7 @@ function AudienceOverview() {
               >
                 <Box>
                   <Typography variant="subtitle2" gutterBottom>
-                    {t('Avg. Session Duration')}
+                    {'Avg. Session Duration'}
                   </Typography>
                   <Typography variant="h3">
                     {data.avgSessionDuration}
@@ -571,7 +571,7 @@ function AudienceOverview() {
               >
                 <Box>
                   <Typography variant="subtitle2" gutterBottom>
-                    {t('Bounce Rate')}
+                    {'Bounce Rate'}
                   </Typography>
                   <Typography variant="h3">{data.bounceRate}</Typography>
                 </Box>
@@ -617,7 +617,7 @@ function AudienceOverview() {
               >
                 <Box>
                   <Typography variant="subtitle2" gutterBottom>
-                    {t('Sessions')}
+                    {'Sessions'}
                   </Typography>
                   <Typography variant="h3">{data.sessions}</Typography>
                 </Box>

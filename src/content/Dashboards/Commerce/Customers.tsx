@@ -8,7 +8,7 @@ import {
   Tooltip,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import HelpOutlineTwoToneIcon from '@mui/icons-material/HelpOutlineTwoTone';
 import Label from 'src/components/Label';
 import ArrowDownwardTwoTone from '@mui/icons-material/ArrowDownwardTwoTone';
@@ -19,7 +19,7 @@ const ArrowDownwardWrapper = styled(ArrowDownwardTwoTone)(
 `
 );
 function Customers() {
-  const { t }: { t: any } = useTranslation();
+
 
   const data = {
     value: '347'
@@ -45,14 +45,14 @@ function Customers() {
           <Tooltip
             placement="top"
             arrow
-            title={t('This section can have a description!')}
+            title={'This section can have a description!'}
           >
             <IconButton size="small" color="secondary">
               <HelpOutlineTwoToneIcon fontSize="small" />
             </IconButton>
           </Tooltip>
         }
-        title={t('Customers')}
+        title={'Customers'}
       />
       <CardContent
         sx={{

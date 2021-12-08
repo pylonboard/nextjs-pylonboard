@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 
-import { useTranslation } from 'react-i18next';
+
 import CloudDownloadTwoToneIcon from '@mui/icons-material/CloudDownloadTwoTone';
 import Block7Chart from './Block7Chart';
 
@@ -96,7 +96,7 @@ const CardWrapper = styled(Card)(
 );
 
 function Block7() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const visitors = {
@@ -126,7 +126,7 @@ function Block7() {
             gutterBottom
             variant="h3"
           >
-            {t('Revenue progress')}
+            {'Revenue progress'}
           </Typography>
           <Typography
             component="div"
@@ -134,7 +134,7 @@ function Block7() {
             color="text.secondary"
             variant="h5"
           >
-            {t('Our company revenues, split by progress')}
+            {'Our company revenues, split by progress'}
           </Typography>
         </Box>
         <Button
@@ -143,7 +143,7 @@ function Block7() {
           variant="outlined"
           startIcon={<CloudDownloadTwoToneIcon />}
         >
-          {t('Download report')}
+          {'Download report'}
         </Button>
       </Box>
       <Divider />
@@ -391,7 +391,7 @@ function Block7() {
       <Divider />
       <Box textAlign="center" p={3}>
         <Button variant="contained" endIcon={<ArrowForwardTwoToneIcon />}>
-          {t('View complete report')}
+          {'View complete report'}
         </Button>
       </Box>
     </Card>

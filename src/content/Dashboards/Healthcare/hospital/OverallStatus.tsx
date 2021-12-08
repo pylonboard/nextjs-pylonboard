@@ -11,7 +11,7 @@ import {
   MenuItem,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import OverallStatusChart from './OverallStatusChart';
 
@@ -44,26 +44,26 @@ const OverallStatusChartWrapper = styled(OverallStatusChart)(
 );
 
 function OverallStatus() {
-  const { t }: { t: any } = useTranslation();
+
   const actionRef1 = useRef<any>(null);
   const [openPeriod, setOpenMenuPeriod] = useState<boolean>(false);
 
   const periods = [
     {
       value: 'today',
-      text: t('Today')
+      text: 'Today'
     },
     {
       value: 'yesterday',
-      text: t('Yesterday')
+      text: 'Yesterday'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -140,7 +140,7 @@ function OverallStatus() {
             </Menu>
           </>
         }
-        title={t('Overall Status')}
+        title={'Overall Status'}
       />
       <Divider />
       <CardContent>
@@ -160,7 +160,7 @@ function OverallStatus() {
             }}
           >
             <DotPrimary />
-            {t('patients')}
+            {'patients'}
           </Typography>
           <Typography
             variant="body2"
@@ -171,7 +171,7 @@ function OverallStatus() {
             }}
           >
             <DotSuccess />
-            {t('consultations')}
+            {'consultations'}
           </Typography>
         </Box>
 

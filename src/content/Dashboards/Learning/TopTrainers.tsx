@@ -17,7 +17,7 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Text from 'src/components/Text';
 import { formatDistance, subSeconds, subHours, subMinutes } from 'date-fns';
@@ -42,7 +42,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function TopTrainers() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -57,7 +57,7 @@ function TopTrainers() {
             <SearchTwoToneIcon fontSize="small" />
           </IconButton>
         }
-        title={t('Top Trainers')}
+        title={'Top Trainers'}
       />
       <Divider />
       <Box
@@ -88,7 +88,7 @@ function TopTrainers() {
                       arrow
                       placement="top"
                       title={
-                        t('Online since') +
+                        'Online since' +
                         ' ' +
                         formatDistance(subMinutes(new Date(), 12), new Date(), {
                           addSuffix: true
@@ -110,7 +110,7 @@ function TopTrainers() {
               <ListItemText
                 primary="Allison Torff"
                 primaryTypographyProps={{ variant: 'h4', noWrap: true }}
-                secondary={t('React Front End Developer')}
+                secondary={'React Front End Developer'}
                 secondaryTypographyProps={{
                   variant: 'subtitle2',
                   noWrap: true
@@ -133,7 +133,7 @@ function TopTrainers() {
               </Box>
               <Box>
                 <Button variant="outlined" color="primary" size="small">
-                  {t('Profile')}
+                  {'Profile'}
                 </Button>
               </Box>
             </ListItem>
@@ -159,7 +159,7 @@ function TopTrainers() {
                       arrow
                       placement="top"
                       title={
-                        t('Offline since') +
+                        'Offline since' +
                         ' ' +
                         formatDistance(subSeconds(new Date(), 12), new Date(), {
                           addSuffix: true
@@ -181,7 +181,7 @@ function TopTrainers() {
               <ListItemText
                 primary="Brandon Jonas"
                 primaryTypographyProps={{ variant: 'h4', noWrap: true }}
-                secondary={t('Lead UX Designer')}
+                secondary={'Lead UX Designer'}
                 secondaryTypographyProps={{
                   variant: 'subtitle2',
                   noWrap: true
@@ -204,7 +204,7 @@ function TopTrainers() {
               </Box>
               <Box>
                 <Button variant="outlined" color="primary" size="small">
-                  {t('Profile')}
+                  {'Profile'}
                 </Button>
               </Box>
             </ListItem>
@@ -227,7 +227,7 @@ function TopTrainers() {
               <ListItemText
                 primary="Ellesse Pena"
                 primaryTypographyProps={{ variant: 'h4', noWrap: true }}
-                secondary={t('Expert Accountant')}
+                secondary={'Expert Accountant'}
                 secondaryTypographyProps={{
                   variant: 'subtitle2',
                   noWrap: true
@@ -250,7 +250,7 @@ function TopTrainers() {
               </Box>
               <Box>
                 <Button variant="outlined" color="primary" size="small">
-                  {t('Profile')}
+                  {'Profile'}
                 </Button>
               </Box>
             </ListItem>
@@ -273,7 +273,7 @@ function TopTrainers() {
               <ListItemText
                 primary="Dora Alvarez"
                 primaryTypographyProps={{ variant: 'h4', noWrap: true }}
-                secondary={t('UX Designer')}
+                secondary={'UX Designer'}
                 secondaryTypographyProps={{
                   variant: 'subtitle2',
                   noWrap: true
@@ -296,7 +296,7 @@ function TopTrainers() {
               </Box>
               <Box>
                 <Button variant="outlined" color="primary" size="small">
-                  {t('Profile')}
+                  {'Profile'}
                 </Button>
               </Box>
             </ListItem>
@@ -322,7 +322,7 @@ function TopTrainers() {
                       arrow
                       placement="top"
                       title={
-                        t('Idle for') +
+                        'Idle for' +
                         ' ' +
                         formatDistance(subHours(new Date(), 9), new Date(), {
                           addSuffix: true
@@ -344,7 +344,7 @@ function TopTrainers() {
               <ListItemText
                 primary="Jaydon Madsen"
                 primaryTypographyProps={{ variant: 'h4', noWrap: true }}
-                secondary={t('Senior Project Manager')}
+                secondary={'Senior Project Manager'}
                 secondaryTypographyProps={{
                   variant: 'subtitle2',
                   noWrap: true
@@ -367,7 +367,7 @@ function TopTrainers() {
               </Box>
               <Box>
                 <Button variant="outlined" color="primary" size="small">
-                  {t('Profile')}
+                  {'Profile'}
                 </Button>
               </Box>
             </ListItem>
@@ -384,7 +384,7 @@ function TopTrainers() {
           justifyContent: 'center'
         }}
       >
-        <Button size="small">{t('View all trainers')}</Button>
+        <Button size="small">{'View all trainers'}</Button>
       </CardActions>
     </Card>
   );

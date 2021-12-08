@@ -14,7 +14,7 @@ import {
   List,
   ListItemAvatar
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import TrendingUp from '@mui/icons-material/TrendingUp';
 import Text from 'src/components/Text';
 import { Chart } from 'src/components/Chart';
@@ -57,7 +57,7 @@ const ListItemAvatarWrapper = styled(ListItemAvatar)(
 );
 
 function AccountBalance() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -112,7 +112,7 @@ function AccountBalance() {
     fill: {
       opacity: 1
     },
-    labels: [t('Bitcoin'), t('Ripple'), t('Cardano'), t('Ethereum')],
+    labels: ['Bitcoin', 'Ripple', 'Cardano', 'Ethereum'],
     legend: {
       labels: {
         colors: theme.colors.alpha.trueWhite[100]
@@ -140,7 +140,7 @@ function AccountBalance() {
               }}
               variant="h4"
             >
-              {t('Account Balance')}
+              {'Account Balance'}
             </Typography>
             <Box>
               <Typography variant="h1" gutterBottom>
@@ -171,7 +171,7 @@ function AccountBalance() {
                 <Box>
                   <Typography variant="h4">+ $3,594.00</Typography>
                   <Typography variant="subtitle2" noWrap>
-                    {t('this month')}
+                    {'this month'}
                   </Typography>
                 </Box>
               </Box>
@@ -179,12 +179,12 @@ function AccountBalance() {
             <Grid container spacing={3}>
               <Grid sm item>
                 <Button fullWidth variant="outlined">
-                  {t('Send')}
+                  {'Send'}
                 </Button>
               </Grid>
               <Grid sm item>
                 <Button fullWidth variant="contained">
-                  {t('Receive')}
+                  {'Receive'}
                 </Button>
               </Grid>
             </Grid>

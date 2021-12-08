@@ -7,29 +7,17 @@ import {
   List,
   ListItem,
   Box,
-  ListItemAvatar,
   ListItemText,
   Typography,
   useTheme,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Label from 'src/components/Label';
 import Text from 'src/components/Text';
 
-import deFlag from 'country-flag-icons/3x2/DE.svg';
-import usFlag from 'country-flag-icons/3x2/US.svg';
-import esFlag from 'country-flag-icons/3x2/ES.svg';
-import frFlag from 'country-flag-icons/3x2/FR.svg';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
-
-const ImageWrapper = styled('img')(
-  ({ theme }) => `
-        width: 46px;
-        margin-right: ${theme.spacing(2)};
-`
-);
 
 const ListItemWrapper = styled(ListItem)(
   ({ theme }) => `
@@ -39,7 +27,7 @@ const ListItemWrapper = styled(ListItem)(
 );
 
 function ActiveServers() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   const chartOptions: ApexOptions = {
@@ -166,21 +154,12 @@ function ActiveServers() {
 
   return (
     <Card>
-      <CardHeader title={t('Active Servers')} />
+      <CardHeader title={'Active Servers'} />
       <Divider />
       <Grid container>
         <Grid item xs={12} md>
           <List disablePadding component="div">
             <ListItemWrapper>
-              <ListItemAvatar
-                sx={{
-                  minWidth: '36px',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <ImageWrapper alt="Germany" src={deFlag} />
-              </ListItemAvatar>
               <ListItemText
                 primary="Frankfurt"
                 primaryTypographyProps={{ variant: 'h5' }}
@@ -193,7 +172,7 @@ function ActiveServers() {
                   textAlign: 'right'
                 }}
               >
-                <Label color="success">{t('active')}</Label>
+                <Label color="success">{'active'}</Label>
                 <Typography
                   align="right"
                   variant="body2"
@@ -203,7 +182,7 @@ function ActiveServers() {
                     pt: 0.5
                   }}
                 >
-                  {t('Page Load')}:{' '}
+                  {'Page Load'}:{' '}
                   <Text color="black">
                     <b>36ms</b>
                   </Text>
@@ -212,15 +191,6 @@ function ActiveServers() {
             </ListItemWrapper>
             <Divider />
             <ListItemWrapper>
-              <ListItemAvatar
-                sx={{
-                  minWidth: '36px',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <ImageWrapper alt="USA" src={usFlag} />
-              </ListItemAvatar>
               <ListItemText
                 primary="San Francisco"
                 primaryTypographyProps={{ variant: 'h5' }}
@@ -233,7 +203,7 @@ function ActiveServers() {
                   textAlign: 'right'
                 }}
               >
-                <Label color="warning">{t('provisioning')}</Label>
+                <Label color="warning">{'provisioning'}</Label>
                 <Typography
                   align="right"
                   variant="body2"
@@ -243,7 +213,7 @@ function ActiveServers() {
                     pt: 0.5
                   }}
                 >
-                  {t('Page Load')}:{' '}
+                  {'Page Load'}:{' '}
                   <Text color="black">
                     <b>255ms</b>
                   </Text>
@@ -252,15 +222,6 @@ function ActiveServers() {
             </ListItemWrapper>
             <Divider />
             <ListItemWrapper>
-              <ListItemAvatar
-                sx={{
-                  minWidth: '36px',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <ImageWrapper alt="Spain" src={esFlag} />
-              </ListItemAvatar>
               <ListItemText
                 primary="Barcelona"
                 primaryTypographyProps={{ variant: 'h5' }}
@@ -273,7 +234,7 @@ function ActiveServers() {
                   textAlign: 'right'
                 }}
               >
-                <Label color="error">{t('high risk')}</Label>
+                <Label color="error">{'high risk'}</Label>
                 <Typography
                   align="right"
                   variant="body2"
@@ -283,7 +244,7 @@ function ActiveServers() {
                     pt: 0.5
                   }}
                 >
-                  {t('Page Load')}:{' '}
+                  {'Page Load'}:{' '}
                   <Text color="black">
                     <b>387ms</b>
                   </Text>
@@ -292,15 +253,6 @@ function ActiveServers() {
             </ListItemWrapper>
             <Divider />
             <ListItemWrapper>
-              <ListItemAvatar
-                sx={{
-                  minWidth: '36px',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <ImageWrapper alt="USA" src={frFlag} />
-              </ListItemAvatar>
               <ListItemText
                 primary="Toulouse"
                 primaryTypographyProps={{ variant: 'h5' }}
@@ -313,7 +265,7 @@ function ActiveServers() {
                   textAlign: 'right'
                 }}
               >
-                <Label color="error">{t('high risk')}</Label>
+                <Label color="error">{'high risk'}</Label>
                 <Typography
                   align="right"
                   variant="body2"
@@ -323,7 +275,7 @@ function ActiveServers() {
                     pt: 0.5
                   }}
                 >
-                  {t('Page Load')}:{' '}
+                  {'Page Load'}:{' '}
                   <Text color="black">
                     <b>456ms</b>
                   </Text>
@@ -343,7 +295,7 @@ function ActiveServers() {
             }}
           >
             <Alert severity="warning">
-              {t('Too many servers have problems starting!')}
+              {'Too many servers have problems starting!'}
             </Alert>
 
             <Chart

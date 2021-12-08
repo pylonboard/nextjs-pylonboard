@@ -1,23 +1,23 @@
 import { useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import { Typography, Grid, Button, Menu, MenuItem } from '@mui/material';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 
 function PageHeader() {
-  const { t }: { t: any } = useTranslation();
+  
 
   const periods = [
     {
       value: 'this_week',
-      text: t('This week')
+      text: 'This week'
     },
     {
       value: 'last_month',
-      text: t('Last month')
+      text: 'Last month'
     },
     {
       value: 'last_year',
-      text: t('Last year')
+      text: 'Last year'
     }
   ];
 
@@ -29,10 +29,10 @@ function PageHeader() {
     <Grid container justifyContent="space-between" alignItems="center">
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          {t('Welcome')}, Rachael Simons!
+          {'Welcome'}, Rachael Simons!
         </Typography>
         <Typography variant="subtitle2">
-          {t('Check the latest stats is your commerce dashboard overview.')}
+          {'Check the latest stats is your commerce dashboard overview.'}
         </Typography>
       </Grid>
       <Grid item>

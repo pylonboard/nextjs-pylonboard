@@ -1,5 +1,5 @@
 import { Button, Card, Typography, Avatar, Box, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import AddTaskTwoToneIcon from '@mui/icons-material/AddTaskTwoTone';
 
 const AvatarSuccess = styled(Avatar)(
@@ -36,7 +36,7 @@ const TypographySecondary = styled(Typography)(
 );
 
 function AccountVerification() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <RootWrapper
@@ -55,10 +55,10 @@ function AccountVerification() {
         </AvatarSuccess>
         <Box>
           <TypographyPrimary variant="h5">
-            {t('Account Verification')}
+            {'Account Verification'}
           </TypographyPrimary>
           <TypographySecondary variant="subtitle2">
-            {t('Your account is almost ready!')}
+            {'Your account is almost ready!'}
           </TypographySecondary>
         </Box>
       </Box>
@@ -67,7 +67,7 @@ function AccountVerification() {
           pt: { xs: 2, sm: 0 }
         }}
       >
-        <Button variant="contained">{t('Confirm email address')}</Button>
+        <Button variant="contained">{'Confirm email address'}</Button>
       </Box>
     </RootWrapper>
   );

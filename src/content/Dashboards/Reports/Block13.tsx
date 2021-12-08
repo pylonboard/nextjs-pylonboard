@@ -14,13 +14,13 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import ArrowUpwardTwoToneIcon from '@mui/icons-material/ArrowUpwardTwoTone';
 
 function Block13() {
-  const { t }: { t: any } = useTranslation();
+  
   const theme = useTheme();
 
   return (
@@ -37,7 +37,7 @@ function Block13() {
               fontSize: `${theme.typography.pxToRem(16)}`
             }}
           >
-            {t('Users list')}
+            {'Users list'}
           </Typography>
         }
         action={
@@ -56,7 +56,7 @@ function Block13() {
               }
             }}
           >
-            {t('Export')}
+            {'Export'}
           </Button>
         }
       />
@@ -83,7 +83,7 @@ function Block13() {
           <ListItemText
             primary={
               <Link href="#" color="text.primary" variant="h5">
-                {t('Isaiah Ruiz')}
+                {'Isaiah Ruiz'}
               </Link>
             }
             secondary={
@@ -125,10 +125,10 @@ function Block13() {
             <Avatar src="/static/images/avatars/2.jpg" />
           </ListItemAvatar>
           <ListItemText
-            primary={<Typography variant="h5">{t('Inez Conley')}</Typography>}
+            primary={<Typography variant="h5">{'Inez Conley'}</Typography>}
             secondary={
               <Typography variant="subtitle2" noWrap>
-                {t('Project Manager')}
+                {'Project Manager'}
               </Typography>
             }
           />

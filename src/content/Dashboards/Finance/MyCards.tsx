@@ -20,7 +20,7 @@ import {
 } from '@mui/material';
 import Link from 'src/components/Link';
 
-import { useTranslation } from 'react-i18next';
+
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import ChevronLeftTwoToneIcon from '@mui/icons-material/ChevronLeftTwoTone';
@@ -203,7 +203,7 @@ const TypographySecondary = styled(Typography)(
 );
 
 function MyCards() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const [state, setState] = useState({
@@ -228,7 +228,7 @@ function MyCards() {
       }}
     >
       <CardHeader
-        title={t('My Cards')}
+        title={'My Cards'}
         action={
           <IconButton size="small">
             <MenuTwoToneIcon />
@@ -279,7 +279,7 @@ function MyCards() {
                     src={data.logo1}
                   />
                 }
-                title={t('Balance')}
+                title={'Balance'}
                 subheader="$22,674.32"
                 subheaderTypographyProps={{ variant: 'h2' }}
               />
@@ -293,7 +293,7 @@ function MyCards() {
                 justifyContent="space-between"
               >
                 <Typography variant="h4">**** 4856</Typography>
-                <Tooltip arrow title={t('Disable Account')}>
+                <Tooltip arrow title={'Disable Account'}>
                   <Switch
                     checked={state.interest}
                     onChange={interestActivate}
@@ -329,7 +329,7 @@ function MyCards() {
                     src={data.logo1}
                   />
                 }
-                title={t('Balance')}
+                title={'Balance'}
                 subheader="$15,689.36"
                 subheaderTypographyProps={{ variant: 'h2' }}
               />
@@ -343,7 +343,7 @@ function MyCards() {
                 justifyContent="space-between"
               >
                 <Typography variant="h4">**** 3466</Typography>
-                <Tooltip arrow title={t('Disable Account')}>
+                <Tooltip arrow title={'Disable Account'}>
                   <Switch
                     checked={state.interest}
                     onChange={interestActivate}
@@ -379,7 +379,7 @@ function MyCards() {
                     src={data.logo1}
                   />
                 }
-                title={t('Balance')}
+                title={'Balance'}
                 subheader="$54,345.23"
                 subheaderTypographyProps={{ variant: 'h2' }}
               />
@@ -393,7 +393,7 @@ function MyCards() {
                 justifyContent="space-between"
               >
                 <Typography variant="h4">**** 6545</Typography>
-                <Tooltip arrow title={t('Disable Account')}>
+                <Tooltip arrow title={'Disable Account'}>
                   <Switch
                     checked={state.interest}
                     onChange={interestActivate}
@@ -412,7 +412,7 @@ function MyCards() {
           <ChevronRightTwoToneIcon />
         </SwipeIndicator>
       </SwiperWrapper>
-      <CardHeader title={t('Latest Expenses')} />
+      <CardHeader title={'Latest Expenses'} />
       <List disablePadding>
         <ListItemWrapper>
           <ListItemAvatar
@@ -500,7 +500,7 @@ function MyCards() {
         </ListItemWrapper>
       </List>
       <CardHeader
-        title={t('Spending Limit')}
+        title={'Spending Limit'}
         action={
           <>
             <TypographyPrimary
@@ -538,7 +538,7 @@ function MyCards() {
           variant="determinate"
         />
       </Box>
-      <CardHeader title={t('Quick Payments')} />
+      <CardHeader title={'Quick Payments'} />
       <Box
         sx={{
           mx: 2,
@@ -549,7 +549,7 @@ function MyCards() {
         }}
       >
         <AvatarGroup max={6}>
-          <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+          <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
             <Avatar
               component={Link}
               href="#"
@@ -557,7 +557,7 @@ function MyCards() {
               src="/static/images/avatars/1.jpg"
             />
           </Tooltip>
-          <Tooltip arrow title={t('View profile for') + ' Travis Howard'}>
+          <Tooltip arrow title={'View profile for' + ' Travis Howard'}>
             <Avatar
               component={Link}
               href="#"
@@ -565,7 +565,7 @@ function MyCards() {
               src="/static/images/avatars/2.jpg"
             />
           </Tooltip>
-          <Tooltip arrow title={t('View profile for') + ' Cindy Baker'}>
+          <Tooltip arrow title={'View profile for' + ' Cindy Baker'}>
             <Avatar
               component={Link}
               href="#"
@@ -573,7 +573,7 @@ function MyCards() {
               src="/static/images/avatars/3.jpg"
             />
           </Tooltip>
-          <Tooltip arrow title={t('View profile for') + ' Agnes Walker'}>
+          <Tooltip arrow title={'View profile for' + ' Agnes Walker'}>
             <Avatar
               component={Link}
               href="#"
@@ -581,7 +581,7 @@ function MyCards() {
               src="/static/images/avatars/4.jpg"
             />
           </Tooltip>
-          <Tooltip arrow title={t('View profile for') + ' Trevor Henderson'}>
+          <Tooltip arrow title={'View profile for' + ' Trevor Henderson'}>
             <Avatar
               component={Link}
               href="#"
@@ -589,7 +589,7 @@ function MyCards() {
               src="/static/images/avatars/5.jpg"
             />
           </Tooltip>
-          <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+          <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
             <Avatar
               component={Link}
               href="#"
@@ -597,7 +597,7 @@ function MyCards() {
               src="/static/images/avatars/1.jpg"
             />
           </Tooltip>
-          <Tooltip arrow title={t('View profile for') + ' Remy Sharp'}>
+          <Tooltip arrow title={'View profile for' + ' Remy Sharp'}>
             <Avatar
               component={Link}
               href="#"
@@ -606,7 +606,7 @@ function MyCards() {
             />
           </Tooltip>
         </AvatarGroup>
-        <Tooltip arrow title={t('Add Quick Payment Profile')}>
+        <Tooltip arrow title={'Add Quick Payment Profile'}>
           <IconButtonDotted
             size="small"
             sx={{

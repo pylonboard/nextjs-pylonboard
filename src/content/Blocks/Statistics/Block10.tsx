@@ -1,6 +1,6 @@
 import { Box, Card, Grid, styled } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import Link from 'src/components/Link';
@@ -78,7 +78,7 @@ const LabelWarning = styled(Box)(
 );
 
 function Block5() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Grid container spacing={4}>
@@ -96,7 +96,7 @@ function Block5() {
             Presentation site design
           </Link>
           <Box mt={1.5} display="flex" alignItems="center">
-            <LabelPrimary>{t('On hold')}</LabelPrimary>
+            <LabelPrimary>{'On hold'}</LabelPrimary>
             <Text flex color="error">
               <AccessTimeTwoToneIcon
                 sx={{
@@ -124,7 +124,7 @@ function Block5() {
             Create UI mockups
           </Link>
           <Box mt={1.5} display="flex" alignItems="center">
-            <LabelSuccess>{t('On hold')}</LabelSuccess>
+            <LabelSuccess>{'On hold'}</LabelSuccess>
             <Text flex color="secondary">
               <AccessTimeTwoToneIcon
                 sx={{
@@ -152,7 +152,7 @@ function Block5() {
             UX research
           </Link>
           <Box mt={1.5} display="flex" alignItems="center">
-            <LabelWarning>{t('Scheduled')}</LabelWarning>
+            <LabelWarning>{'Scheduled'}</LabelWarning>
             <Text flex color="secondary">
               <AccessTimeTwoToneIcon
                 sx={{

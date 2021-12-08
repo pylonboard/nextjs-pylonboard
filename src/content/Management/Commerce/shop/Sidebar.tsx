@@ -16,7 +16,7 @@ import {
   ListItemText,
   styled
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const AccordionSummaryWrapper = styled(AccordionSummary)(
@@ -40,7 +40,7 @@ const ListItemWrapper = styled(ListItemButton)(
 );
 
 function Sidebar() {
-  const { t }: { t: any } = useTranslation();
+
 
   const categories = [
     {
@@ -128,7 +128,7 @@ function Sidebar() {
     <Card>
       <Accordion defaultExpanded>
         <AccordionSummaryWrapper expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h5">{t('Price Range')}</Typography>
+          <Typography variant="h5">{'Price Range'}</Typography>
         </AccordionSummaryWrapper>
         <AccordionDetails
           sx={{
@@ -149,7 +149,7 @@ function Sidebar() {
       <Divider />
       <Accordion defaultExpanded>
         <AccordionSummaryWrapper expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h5">{t('Categories')}</Typography>
+          <Typography variant="h5">{'Categories'}</Typography>
         </AccordionSummaryWrapper>
         <AccordionDetails
           sx={{
@@ -192,7 +192,7 @@ function Sidebar() {
       <Divider />
       <Accordion defaultExpanded>
         <AccordionSummaryWrapper expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h5">{t('Rating')}</Typography>
+          <Typography variant="h5">{'Rating'}</Typography>
         </AccordionSummaryWrapper>
         <AccordionDetails
           sx={{

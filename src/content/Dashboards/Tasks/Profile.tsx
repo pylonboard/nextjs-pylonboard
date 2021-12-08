@@ -11,13 +11,13 @@ import {
   Avatar,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import PhoneTwoToneIcon from '@mui/icons-material/PhoneTwoTone';
 import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
 import MessageTwoToneIcon from '@mui/icons-material/MessageTwoTone';
 
 function Profile() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   return (
@@ -37,7 +37,7 @@ function Profile() {
         Craig Donin
       </Typography>
       <Typography align="center" variant="subtitle2" gutterBottom>
-        {t('Senior Web Developer')}
+        {'Senior Web Developer'}
       </Typography>
 
       <Box display="flex" alignItems="center" justifyContent="center">
@@ -53,7 +53,7 @@ function Profile() {
       </Box>
 
       <Box py={2} display="flex" alignItems="center" justifyContent="center">
-        <Tooltip arrow placement="top" title={t('Call')}>
+        <Tooltip arrow placement="top" title={'Call'}>
           <IconButton
             color="primary"
             sx={{
@@ -63,7 +63,7 @@ function Profile() {
             <PhoneTwoToneIcon />
           </IconButton>
         </Tooltip>
-        <Tooltip arrow placement="top" title={t('Send email')}>
+        <Tooltip arrow placement="top" title={'Send email'}>
           <IconButton
             color="primary"
             sx={{
@@ -73,7 +73,7 @@ function Profile() {
             <EmailTwoToneIcon />
           </IconButton>
         </Tooltip>
-        <Tooltip arrow placement="top" title={t('Send message')}>
+        <Tooltip arrow placement="top" title={'Send message'}>
           <IconButton
             color="primary"
             sx={{
@@ -96,7 +96,7 @@ function Profile() {
           }}
         >
           <ListItemText
-            primary={t('Join Date')}
+            primary={'Join Date'}
             primaryTypographyProps={{ variant: 'subtitle2' }}
           />
           <Typography variant="subtitle2" color="text.primary">
@@ -110,7 +110,7 @@ function Profile() {
           }}
         >
           <ListItemText
-            primary={t('Company')}
+            primary={'Company'}
             primaryTypographyProps={{ variant: 'subtitle2' }}
           />
           <Typography variant="subtitle2" color="text.primary">
@@ -124,7 +124,7 @@ function Profile() {
           }}
         >
           <ListItemText
-            primary={t('Tasks')}
+            primary={'Tasks'}
             primaryTypographyProps={{ variant: 'subtitle2' }}
           />
           <Typography

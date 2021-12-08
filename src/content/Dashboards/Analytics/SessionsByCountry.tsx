@@ -10,19 +10,6 @@ import {
   styled
 } from '@mui/material';
 
-import { useTranslation } from 'react-i18next';
-import deFlag from 'country-flag-icons/3x2/DE.svg';
-import usFlag from 'country-flag-icons/3x2/US.svg';
-import esFlag from 'country-flag-icons/3x2/ES.svg';
-import frFlag from 'country-flag-icons/3x2/FR.svg';
-import cnFlag from 'country-flag-icons/3x2/CN.svg';
-
-const ImageWrapper = styled('img')(
-  ({ theme }) => `
-        margin-right: ${theme.spacing(1)};
-        width: 36px;
-`
-);
 
 const LinearProgressWrapper = styled(LinearProgress)(
   ({ theme }) => `
@@ -38,11 +25,11 @@ const ListItemWrapper = styled(ListItem)(
 );
 
 function SessionsByCountry() {
-  const { t }: { t: any } = useTranslation();
+
 
   return (
     <Card>
-      <CardHeader title={t('Sessions by Country')} />
+      <CardHeader title={'Sessions by Country'} />
       <Divider />
       <List disablePadding component="nav">
         <ListItemWrapper
@@ -50,7 +37,6 @@ function SessionsByCountry() {
             py: 3.15
           }}
         >
-          <ImageWrapper alt="USA" src={usFlag} />
           <Typography
             variant="h5"
             color="text.primary"
@@ -86,7 +72,6 @@ function SessionsByCountry() {
             py: 3.15
           }}
         >
-          <ImageWrapper alt="Germany" src={deFlag} />
           <Typography
             variant="h5"
             color="text.primary"
@@ -122,7 +107,6 @@ function SessionsByCountry() {
             py: 3.15
           }}
         >
-          <ImageWrapper alt="France" src={frFlag} />
           <Typography
             variant="h5"
             color="text.primary"
@@ -158,7 +142,6 @@ function SessionsByCountry() {
             py: 3.15
           }}
         >
-          <ImageWrapper alt="Spain" src={esFlag} />
           <Typography
             variant="h5"
             color="text.primary"
@@ -194,7 +177,6 @@ function SessionsByCountry() {
             py: 3.15
           }}
         >
-          <ImageWrapper alt="China" src={cnFlag} />
           <Typography
             variant="h5"
             color="text.primary"

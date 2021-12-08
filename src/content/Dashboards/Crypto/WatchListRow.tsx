@@ -11,7 +11,7 @@ import {
   styled,
   useTheme
 } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+
 import Text from 'src/components/Text';
 import Label from 'src/components/Label';
 import { Chart } from 'src/components/Chart';
@@ -49,7 +49,7 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function WatchListRow() {
-  const { t }: { t: any } = useTranslation();
+
   const theme = useTheme();
 
   const Box1Options: ApexOptions = {
@@ -364,7 +364,7 @@ function WatchListRow() {
           justifyContent: 'center'
         }}
       >
-        <Button variant="outlined">{t('View more assets')}</Button>
+        <Button variant="outlined">{'View more assets'}</Button>
       </CardActions>
     </Card>
   );
