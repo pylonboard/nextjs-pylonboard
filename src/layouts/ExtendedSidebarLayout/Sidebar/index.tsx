@@ -9,7 +9,6 @@ import {
   styled,
   Divider,
   useTheme,
-  lighten,
   darken
 } from '@mui/material';
 
@@ -46,7 +45,7 @@ function Sidebar() {
           top: 0,
           background:
             theme.palette.mode === 'dark'
-              ? alpha(lighten(theme.header.background, 0.1), 0.5)
+              ? alpha(theme.header.background, 0.8)
               : darken(theme.colors.alpha.black[100], 0.5),
           boxShadow:
             theme.palette.mode === 'dark' ? theme.sidebar.boxShadow : 'none'
