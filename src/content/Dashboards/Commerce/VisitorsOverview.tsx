@@ -1,9 +1,31 @@
-import { Card, Box, Grid, Typography, useTheme } from '@mui/material';
+import { useQuery, gql } from '@apollo/client';
+
+import { Card, Box, useTheme, CardHeader, Divider, CardContent } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
+const QUERY = gql`
+    query MineStakingStats {
+        mineStakingStats {
+            stakedPerDay {
+                at
+                value
+            }
+            stakedPerDayCumulative {
+                at
+                value
+            }
+        }
+    }
+`;
+
 function VisitorsOverview() {
+  const { data, loading, error } = useQuery(QUERY);
+
+  if (!loading && !error) {
+    console.log('data', data);
+  }
 
   const theme = useTheme();
 
@@ -47,13 +69,22 @@ function VisitorsOverview() {
       }
     },
     labels: [
-      'Monday',
-      'Tueday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday'
+      'Nov 22, 2021',
+      'Nov 23, 2021',
+      'Nov 24, 2021',
+      'Nov 25, 2021',
+      'Nov 26, 2021',
+      'Nov 27, 2021',
+      'Nov 28, 2021',
+      'Nov 29, 2021',
+      'Nov 30, 2021',
+      'Dec 1, 2021',
+      'Dec 2, 2021',
+      'Dec 3, 2021',
+      'Dec 4, 2021',
+      'Dec 5, 2021',
+      'Dec 6, 2021',
+      'Dec 7, 2021',
     ],
     dataLabels: {
       enabled: false
@@ -96,22 +127,11 @@ function VisitorsOverview() {
 
   const chartData = [
     {
-      name: 'Visitors',
+      name: 'UST',
       type: 'column',
-      data: [434, 827, 123, 367, 818, 833, 860]
-    },
-    {
-      name: 'Revenue',
-      type: 'line',
-      data: [434, 108, 912, 767, 855, 840, 756]
+      data: [10120000, 1960000, 447410, 363820, 115100, 93460, 124640, 426290, 284600, 149980, 952260, 105830, 68170, 240640, 99170, 60630]
     }
   ];
-
-  const data = {
-    visitors: '23.584',
-    conversion: '7.23%',
-    revenue: '$18.12'
-  };
 
   return (
     <Card
@@ -121,49 +141,23 @@ function VisitorsOverview() {
         flexDirection: 'column'
       }}
     >
-      <Box
-        sx={{
-          p: 3
-        }}
-      >
-        <Chart
-          options={chartOptions}
-          series={chartData}
-          type="line"
-          height={250}
-        />
+      <CardHeader title={'UST deposited over time'} />
+      <Divider />
+      <CardContent>
         <Box
           sx={{
-            px: { lg: 4 },
-            pt: 3,
-            pb: 2,
-            height: '100%',
-            flex: 1,
-            textAlign: 'center'
+            p: 3
           }}
         >
-          <Grid spacing={3} container>
-            <Grid item md={4}>
-              <Typography variant="caption" gutterBottom>
-                {'Visitors'}
-              </Typography>
-              <Typography variant="h3">{data.visitors}</Typography>
-            </Grid>
-            <Grid item md={4}>
-              <Typography variant="caption" gutterBottom>
-                {'Conversion'}
-              </Typography>
-              <Typography variant="h3">{data.conversion}</Typography>
-            </Grid>
-            <Grid item md={4}>
-              <Typography variant="caption" gutterBottom>
-                {'Revenue/Visitor'}
-              </Typography>
-              <Typography variant="h3">{data.revenue}</Typography>
-            </Grid>
-          </Grid>
+          <Chart
+            options={chartOptions}
+            series={chartData}
+            type="line"
+            height={450}
+          />
         </Box>
-      </Box>
+      </CardContent>
+
     </Card>
   );
 }

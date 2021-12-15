@@ -27,18 +27,37 @@ function SalesByCategory() {
 
   const theme = useTheme();
 
+  const colors = [
+    '#ff0000',
+    '#008000',
+    '#0000ff',
+    '#ffff00',
+    '#800080',
+    '#ffa500',
+    '#008080',
+    '#A5462B',
+    '#9ea4c1',
+    '#787878',
+  ]
+
   const sales = {
     datasets: [
       {
-        backgroundColor: [
-          theme.palette.primary.main,
-          theme.palette.success.main,
-          theme.palette.warning.main,
-          theme.palette.info.main
-        ]
+        backgroundColor: colors
       }
     ],
-    labels: ['Electronics', 'Furniture', 'Fashion', 'Home & Decor']
+    labels: [
+      'terra1l72xv27ez68v0swe9ha29txxg...',
+      'terra1ndtc35aawrfnc9tza4kkvga8...',
+      'terra1uuy8vrvwk09sh4vq5zy8q5lv...',
+      'terra1gdtsmjs3cjpr044e0d83mkcl...',
+      'terra1cjcal6j3x8xw4pkjtjevj2tqgeg...',
+      'terra16as7w3r6792djckdstjn3r3yj4',
+      'terra1a69kq0sh4gq0hmtpns8k3p...',
+      'terra1sm0p7gug459al3lwxdk0rem...',
+      'terra1szv45efyk0svp5et2gzn6lw7jj...',
+      'others',
+    ]
   };
 
   const chartOptions: ApexOptions = {
@@ -56,12 +75,7 @@ function SalesByCategory() {
         }
       }
     },
-    colors: [
-      theme.palette.primary.main,
-      theme.palette.success.main,
-      theme.palette.warning.main,
-      theme.palette.info.main
-    ],
+    colors,
     dataLabels: {
       enabled: true,
       formatter: function (val) {
@@ -90,15 +104,15 @@ function SalesByCategory() {
       width: 0
     },
     theme: {
-      mode: theme.palette.mode
+      palette: 'palette1'
     }
   };
 
-  const chartSeries = [15, 45, 25, 15];
+  const chartSeries = [40.2, 4.5, 2.2, 1.3, 0.8, 0.65, 0.65, 0.65, 0.65, 48.4];
 
   return (
     <Card>
-      <CardHeader title={'Sales by Category'} />
+      <CardHeader title={'Wallet %-share of total UST deposited'} />
       <Divider />
       <CardContent>
         <Grid container spacing={3}>
@@ -110,7 +124,7 @@ function SalesByCategory() {
             alignItems="center"
           >
             <Chart
-              height={228}
+              height={300}
               options={chartOptions}
               series={chartSeries}
               type="donut"
