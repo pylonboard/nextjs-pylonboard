@@ -20,6 +20,7 @@ import useScrollTop from 'src/hooks/useScrollTop';
 import { SnackbarProvider } from 'notistack';
 import { ApolloProvider } from '@apollo/client';
 import client from '../apollo-client';
+import { NewRelicSnippet } from '@/components/NewRelicSnippet';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -44,6 +45,7 @@ function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
+        <NewRelicSnippet />
         <title>Tokyo Black NextJS Typescript Admin Dashboard</title>
         <meta
           name="viewport"
