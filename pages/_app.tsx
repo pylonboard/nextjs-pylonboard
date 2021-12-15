@@ -33,6 +33,8 @@ interface MyAppProps extends AppProps {
   Component: NextPageWithLayout;
 }
 
+const isDev = process.env.NODE_ENV === 'development'
+
 function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout ?? ((page) => page);
@@ -45,12 +47,14 @@ function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <NewRelicSnippet />
         <title>Tokyo Black NextJS Typescript Admin Dashboard</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {!isDev && (
+          <NewRelicSnippet />
+        )}
       </Head>
       <ReduxProvider store={store}>
         <SidebarProvider>
