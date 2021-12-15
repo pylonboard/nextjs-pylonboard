@@ -32,7 +32,7 @@ function Overview() {
   return (
     <OverviewWrapper>
       <Head>
-        <title>Tokyo Black NextJS Typescript Admin Dashboard</title>
+        <title>Pylon Board</title>
       </Head>
       <HeaderWrapper>
         <Container maxWidth="lg">

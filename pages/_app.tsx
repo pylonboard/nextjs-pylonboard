@@ -18,6 +18,8 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import useScrollTop from 'src/hooks/useScrollTop';
 import { SnackbarProvider } from 'notistack';
+import { ApolloProvider } from '@apollo/client';
+import client from '../apollo-client';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -60,7 +62,9 @@ function MyApp(props: MyAppProps) {
                 }}
               >
                 <CssBaseline />
-                {getLayout(<Component {...pageProps} />)}
+                <ApolloProvider client={client}>
+                  {getLayout(<Component {...pageProps} />)}
+                </ApolloProvider>
               </SnackbarProvider>
             </LocalizationProvider>
           </ThemeProvider>

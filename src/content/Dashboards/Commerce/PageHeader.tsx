@@ -29,10 +29,10 @@ function PageHeader() {
     <Grid container justifyContent="space-between" alignItems="center">
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          {'Welcome'}, Rachael Simons!
+          White Whale
         </Typography>
         <Typography variant="subtitle2">
-          {'Check the latest stats is your commerce dashboard overview.'}
+          Pylon Gateway Pools
         </Typography>
       </Grid>
       <Grid item>

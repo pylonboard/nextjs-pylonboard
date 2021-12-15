@@ -13,9 +13,7 @@ import {
   darken
 } from '@mui/material';
 
-import SidebarTopSection from './SidebarTopSection';
 import SidebarMenu from './SidebarMenu';
-import SidebarFooter from './SidebarFooter';
 import Logo from 'src/components/LogoSign';
 
 const SidebarWrapper = styled(Box)(
@@ -72,22 +70,8 @@ function Sidebar() {
               background: theme.colors.alpha.trueWhite[10]
             }}
           />
-          <SidebarTopSection />
-          <Divider
-            sx={{
-              my: theme.spacing(3),
-              mx: theme.spacing(2),
-              background: theme.colors.alpha.trueWhite[10]
-            }}
-          />
           <SidebarMenu />
         </Scrollbar>
-        <Divider
-          sx={{
-            background: theme.colors.alpha.trueWhite[10]
-          }}
-        />
-        <SidebarFooter />
       </SidebarWrapper>
       <Drawer
         sx={{
@@ -125,17 +109,8 @@ function Sidebar() {
                 background: theme.colors.alpha.trueWhite[10]
               }}
             />
-            <SidebarTopSection />
-            <Divider
-              sx={{
-                my: theme.spacing(3),
-                mx: theme.spacing(2),
-                background: theme.colors.alpha.trueWhite[10]
-              }}
-            />
             <SidebarMenu />
           </Scrollbar>
-          <SidebarFooter />
         </SidebarWrapper>
       </Drawer>
     </>

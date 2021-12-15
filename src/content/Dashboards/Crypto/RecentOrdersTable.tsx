@@ -30,7 +30,6 @@ import { CryptoOrder, CryptoOrderStatus } from 'src/models/crypto_order';
 
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import BulkActions from 'src/content/Management/Commerce/BulkActions';
 
 interface RecentOrdersTableProps {
   className?: string;
@@ -179,11 +178,6 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
 
   return (
     <Card>
-      {selectedBulkActions && (
-        <Box flex={1} p={2}>
-          <BulkActions />
-        </Box>
-      )}
       {!selectedBulkActions && (
         <CardHeader
           action={

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import ClientOnly from '@/components/ClientOnly';
 
 import ExtendedSidebarLayout from 'src/layouts/ExtendedSidebarLayout';
 
@@ -9,9 +9,11 @@ function DashboardCommerce() {
   return (
     <>
       <Head>
-        <title>Commerce Dashboard</title>
+        <title>Deposit Metrics</title>
       </Head>
-      <DashboardCommerceContent />
+      <ClientOnly>
+        <DashboardCommerceContent />
+      </ClientOnly>
     </>
   );
 }
