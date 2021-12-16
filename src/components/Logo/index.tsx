@@ -119,9 +119,9 @@ function Logo() {
       >
         <LogoTextWrapper>
           <Tooltip title={'Version' + ' 3.0'} arrow placement="right">
-            <VersionBadge>3.0</VersionBadge>
+            <VersionBadge>1.0</VersionBadge>
           </Tooltip>
-          <LogoText>Tokyo</LogoText>
+          <LogoText>Pylon Board</LogoText>
         </LogoTextWrapper>
       </Box>
     </LogoWrapper>

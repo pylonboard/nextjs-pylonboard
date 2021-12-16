@@ -4,15 +4,15 @@ import '@mui/lab/themeAugmentation';
 // import i18n from 'src/i18n/i18n';
 
 const themeColors = {
-  primary: '#CB3C1D',
-  secondary: '#A1A1A1',
+  primary: '#00EEFA',
+  secondary: '#9EA4C1',
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
   info: '#33C2FF',
-  black: '#FFFFFF',
-  white: '#252525',
-  primaryAlt: '#090A0C',
+  black: 'rgba(255, 255, 255, 0.72)',
+  white: '#191c21',
+  primaryAlt: '#191c21',
   trueWhite: '#ffffff'
 };
 
@@ -42,27 +42,27 @@ const colors = {
       '0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)',
     info: '0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35)',
     primary:
-      '0px 1px 4px rgba(162, 48, 23, 0.25), 0px 3px 12px 2px rgba(162, 48, 23, 0.35)',
+      '0px 1px 4px rgba(112, 99, 192, 0.25), 0px 3px 12px 2px rgba(112, 99, 192, 0.35)',
     warning:
       '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
-    card: '0px 0px 2px #996a6a',
-    cardSm: '0px 0px 2px #996a6a',
+    card: '0px 0px 2px #6A7199',
+    cardSm: '0px 0px 2px #6A7199',
     cardLg:
       '0 0rem 14rem 0 rgb(255 255 255 / 20%), 0 0.8rem 2.3rem rgb(111 130 156 / 3%), 0 0.2rem 0.7rem rgb(17 29 57 / 15%)'
   },
   layout: {
     general: {
-      bodyBg: '#1C1C1C'
+      bodyBg: '#000'
     },
     sidebar: {
       background: themeColors.primaryAlt,
       textColor: themeColors.secondary,
-      dividerBg: '#1d1818',
-      menuItemColor: '#A3A3A3',
+      dividerBg: '#272C48',
+      menuItemColor: '#9EA4C1',
       menuItemColorActive: '#ffffff',
       menuItemBg: themeColors.primaryAlt,
-      menuItemBgActive: '#221e1e',
-      menuItemIconColor: themeColors.secondary,
+      menuItemBgActive: 'rgba(43, 48, 77, .6)',
+      menuItemIconColor: '#444A6B',
       menuItemIconColorActive: '#ffffff',
       menuItemHeadingColor: darken(themeColors.secondary, 0.3)
     }
@@ -131,7 +131,7 @@ const colors = {
   }
 };
 
-export const DarkSpacesTheme = createTheme({
+export const PylonTheme = createTheme({
   // direction: i18n.dir(),
   colors: {
     gradients: {
@@ -240,13 +240,13 @@ export const DarkSpacesTheme = createTheme({
     menuItemIconColor: colors.layout.sidebar.menuItemIconColor,
     menuItemIconColorActive: colors.layout.sidebar.menuItemIconColorActive,
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
-    boxShadow: '1px 0 0 #413333',
+    boxShadow: '1px 0 0 #272C48',
     width: '290px'
   },
   header: {
     height: '80px',
-    background: themeColors.primaryAlt,
-    boxShadow: '0px 1px 0px' + themeColors.primaryAlt,
+    background: '#000',
+    boxShadow: '0px 1px 0px #272C48',
     textColor: colors.secondary.main
   },
   spacing: 9,
@@ -326,7 +326,7 @@ export const DarkSpacesTheme = createTheme({
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          backgroundColor: alpha(darken('#1C1C1C', 0.5), 0.4),
+          backgroundColor: alpha(darken('#070C27', 0.5), 0.4),
           backdropFilter: 'blur(2px)',
 
           '&.MuiBackdrop-invisible': {
@@ -1172,7 +1172,7 @@ export const DarkSpacesTheme = createTheme({
   },
   typography: {
     fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      'Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontWeight: 700,
       fontSize: 35
