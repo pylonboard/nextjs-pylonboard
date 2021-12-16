@@ -20,6 +20,7 @@ import useScrollTop from 'src/hooks/useScrollTop';
 import { SnackbarProvider } from 'notistack';
 import { ApolloProvider } from '@apollo/client';
 import client from '../apollo-client';
+import { NewRelicSnippet } from '@/components/NewRelicSnippet';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -31,6 +32,8 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
   Component: NextPageWithLayout;
 }
+
+const isDev = process.env.NODE_ENV === 'development'
 
 function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -49,6 +52,9 @@ function MyApp(props: MyAppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {!isDev && (
+          <NewRelicSnippet />
+        )}
       </Head>
       <ReduxProvider store={store}>
         <SidebarProvider>
