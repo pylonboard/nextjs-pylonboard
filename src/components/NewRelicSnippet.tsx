@@ -7,5 +7,5 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
 `;
 
 export const NewRelicSnippet = () => {
-  return <script type="text/javascript" dangerouslySetInnerHTML={{ __html: snippet}} />
+  return <script async type="text/javascript" dangerouslySetInnerHTML={{ __html: snippet}} />
 };
