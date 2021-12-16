@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import SmartToyTwoToneIcon from '@mui/icons-material/SmartToyTwoTone';
+import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 
 export interface MenuItem {
   link?: string;
@@ -23,24 +23,20 @@ const menuItems: MenuItems[] = [
     items: [
       {
         name: 'Dashboards',
-        icon: SmartToyTwoToneIcon,
+        icon: DashboardRoundedIcon,
         link: '/dashboards',
         items: [
           {
-            name: 'Total Mine Staked',
+            name: 'Staking',
             link: '/dashboards/staking',
+            badge: '',
+            badgeTooltip: 'Pylon MINE Staking'
           },
           {
-            name: 'Reports',
-            link: '/dashboards/reports',
+            name: 'Metrics',
+            link: '/dashboards/metrics',
             badge: '',
-            badgeTooltip: 'Reports Dashboard - version 3.0'
-          },
-          {
-            name: 'Expenses',
-            link: '/dashboards/expenses',
-            badge: '',
-            badgeTooltip: 'Expenses Dashboard - version 3.0'
+            badgeTooltip: 'Pylon MINE Metrics'
           },
           {
             name: 'Products',

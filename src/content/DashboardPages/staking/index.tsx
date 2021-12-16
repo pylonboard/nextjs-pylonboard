@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
 import TotalMineStakedPerDay from '@/content/Dashboards/Staking/TotalMineStakedPerDay';
-import PageHeader from '@/content/Dashboards/Staking/PageHeader';
+import PageHeader from '@/components/PageHeader';
 import { gql, useQuery } from '@apollo/client';
 import NewStakersPerDay from '@/content/Dashboards/Staking/NewStakersPerDay';
 import TotalMineStakedCumulative from '@/content/Dashboards/Staking/TotalMineStakedCumulative';
@@ -43,7 +43,10 @@ function DashboardStakingContent() {
   return (
     <>
       <PageTitleWrapper>
-        <PageHeader />
+        <PageHeader
+          title="Pylon MINE Staking"
+          subtitle="These are the MINE staking statistics until now"
+        />
       </PageTitleWrapper>
       <Grid
         sx={{ px: 4 }}
