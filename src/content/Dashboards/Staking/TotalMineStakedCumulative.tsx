@@ -77,12 +77,9 @@ function TotalMineStakedCumulative({ data }) {
         style: {
           colors: theme.palette.text.secondary
         },
-        formatter: (value) =>
-          new Intl.DateTimeFormat().format(new Date(parseInt(value)))
       }
     },
     yaxis: {
-      tickAmount: 6,
       axisBorder: {
         show: true
       },
@@ -93,9 +90,11 @@ function TotalMineStakedCumulative({ data }) {
         style: {
           colors: theme.palette.text.secondary
         },
-        formatter: value => new Intl.NumberFormat('en-US', {
+        formatter: value => new Intl.NumberFormat('default', {
           notation: "compact",
-          compactDisplay: "short"
+          compactDisplay: "short",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2
         }).format(value)
       }
     }

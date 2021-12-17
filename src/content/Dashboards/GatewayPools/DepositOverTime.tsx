@@ -1,27 +1,43 @@
-import {
-  Card,
-  Box,
-  CardContent,
-  CardHeader,
-  Divider,
-  useTheme
-} from '@mui/material';
+import { Card, Box, useTheme, CardHeader, Divider, CardContent } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
-function TotalMineStakedCumulative({ data }) {
+function DepositOverTime({ data }) {
   const theme = useTheme();
 
-  const ChartAudienceOptions: ApexOptions = {
+  const chartDepositOverTimeOptions: ApexOptions = {
     chart: {
       background: 'transparent',
       toolbar: {
-        show: false
+        show: true,
+        tools: {
+          download: false,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true,
+        },
+        autoSelected: 'zoom'
       },
       zoom: {
-        enabled: false
-      }
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+        zoomedArea: {
+          fill: {
+            color: '#90CAF9',
+            opacity: 0.4
+          },
+          stroke: {
+            color: '#0D47A1',
+            opacity: 0.4,
+            width: 1
+          }
+        }
+      },
     },
     colors: [theme.colors.primary.main],
     dataLabels: {
@@ -61,16 +77,20 @@ function TotalMineStakedCumulative({ data }) {
       mode: theme.palette.mode
     },
     xaxis: {
+      type: "datetime",
+      tickPlacement: "on",
       axisBorder: {
         show: false
       },
       axisTicks: {
-        show: false
+        show: true
       },
       labels: {
+        hideOverlappingLabels: true,
         style: {
           colors: theme.palette.text.secondary
-        }
+        },
+
       }
     },
     yaxis: {
@@ -95,29 +115,40 @@ function TotalMineStakedCumulative({ data }) {
   };
 
   return (
-    <Card>
-      <CardHeader title={'Number of continuous days that wallets have staked'} />
+    <Card
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
+      <CardHeader title={'UST deposited over time'} />
       <Divider />
       <CardContent>
-        <Box mt={2}>
+        <Box
+          sx={{
+            p: 3
+          }}
+        >
           <Chart
             options={{
-              ...ChartAudienceOptions,
-              labels: data.map(d => d.daysStakedBin)
+              ...chartDepositOverTimeOptions,
+              labels: data.map(d => d.at)
             }}
             series={[
               {
-                name: 'Record Count',
-                data: data.map(d => d.count),
+                name: 'Amount',
+                data: data.map(d => d.value),
               }
             ]}
             type="bar"
-            height={420}
+            height={450}
           />
         </Box>
       </CardContent>
+
     </Card>
   );
 }
 
-export default TotalMineStakedCumulative;
+export default DepositOverTime;
