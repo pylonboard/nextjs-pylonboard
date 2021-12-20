@@ -21,130 +21,19 @@ const TypographyH2 = styled(Typography)(
 `
 );
 
-const ImgWrapper = styled(Box)(
+const TypographyHeading = styled(Typography)(
   ({ theme }) => `
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    overflow: hidden;
-    border-radius: ${theme.general.borderRadiusLg};
-    box-shadow: 0 0rem 14rem 0 rgb(255 255 255 / 20%), 0 0.8rem 2.3rem rgb(111 130 156 / 3%), 0 0.2rem 0.7rem rgb(17 29 57 / 15%);
-
-    img {
-      display: block;
-      width: 100%;
-    }
-  `
-);
-
-const BoxAccent = styled(Box)(
-  ({ theme }) => `
-    border-radius: ${theme.general.borderRadiusLg};
-    background: ${theme.palette.background.default};
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: -40px;
-    bottom: -40px;
-    display: block;
-    z-index: 4;
-  `
-);
-
-const BoxContent = styled(Box)(
-  () => `
-  width: 150%;
-  position: relative;
+    font-size: ${theme.typography.pxToRem(36)};
 `
 );
 
-const LabelWrapper = styled(Box)(
+const TypographySubHeading = styled(Typography)(
   ({ theme }) => `
-    background-color: ${theme.colors.success.main};
-    color: ${theme.palette.success.contrastText};
-    font-weight: bold;
-    border-radius: 30px;
-    text-transform: uppercase;
-    display: inline-block;
-    font-size: ${theme.typography.pxToRem(11)};
-    padding: ${theme.spacing(0.5)} ${theme.spacing(1.5)};
-    margin-bottom: ${theme.spacing(2)};
-`
-);
-
-const ListItemWrapper = styled(Box)(
-  () => `
-    display: flex;
-    align-items: center;
-`
-);
-
-const MuiAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: #e5f7ff;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
-`
-);
-
-const TsAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: #dfebf6;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
-`
-);
-
-const NextJsAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: ${
-      theme.palette.mode === 'dark'
-        ? theme.colors.alpha.trueWhite[50]
-        : theme.colors.alpha.black[10]
-    };
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
+    font-size: ${theme.typography.pxToRem(17)};
 `
 );
 
 function Hero() {
-
 
   return (
     <Container maxWidth="lg">
@@ -155,14 +44,13 @@ function Hero() {
         container
       >
         <Grid item md={6} pr={{ xs: 0, md: 3 }}>
-          <LabelWrapper color="success">{'Version 3.0'}</LabelWrapper>
           <TypographyH1
             sx={{
               mb: 2
             }}
             variant="h1"
           >
-            {'Tokyo Next.js Typescript Admin Dashboard'}
+            {'Pylon Board'}
           </TypographyH1>
           <TypographyH2
             sx={{
@@ -174,91 +62,78 @@ function Hero() {
             fontWeight="normal"
           >
             {
-              'High performance React template built with lots of powerful MUI (Material-UI) components across multiple product niches for fast & perfect apps development processes'
+              'Pylon Protocol related data, namely insights on MINE staking and wallet distributions in Gateway Pools.'
             }
           </TypographyH2>
           <Button
             component={Link}
-            href="/dashboards/reports"
+            href="/dashboards/staking"
             size="large"
             variant="contained"
           >
-            {'Browse Live Preview'}
+            {'Explore'}
           </Button>
-          <Button
-            sx={{
-              ml: 2
-            }}
-            component="a"
-            href="#key-features"
-            size="large"
-            variant="text"
-          >
-            {'Key Features'}
-          </Button>
-          <ListItemWrapper sx={{ mt: 5, mb: 2 }}>
-            <NextJsAvatar>
-              <img src="/static/images/logo/next-js.svg" alt="NextJS" />
-            </NextJsAvatar>
-            <Typography variant="h6">
-              <b>Built with Next.js </b>
-              <Typography component="span" variant="subtitle2">
-                {' '}
-                - Next.js gives you the best developer experience with all the
-                features you need for production.
-              </Typography>
-            </Typography>
-          </ListItemWrapper>
-          <ListItemWrapper
-            sx={{
-              mb: 2
-            }}
-          >
-            <MuiAvatar>
-              <img
-                src="/static/images/logo/material-ui.svg"
-                alt="MUI (Material-UI)"
-              />
-            </MuiAvatar>
-            <Typography variant="h6">
-              <b>Powered by MUI (Material-UI)</b>
-              <Typography component="span" variant="subtitle2">
-                {' '}
-                - A simple and customizable component library to build faster,
-                beautiful, andaccessible React apps.
-              </Typography>
-            </Typography>
-          </ListItemWrapper>
-          <ListItemWrapper>
-            <TsAvatar>
-              <img src="/static/images/logo/typescript.svg" alt="Typescript" />
-            </TsAvatar>
-            <Typography variant="h6">
-              <b>Built with Typescript</b>
-              <Typography component="span" variant="subtitle2">
-                {' '}
-                - Tokyo features a modern technology stack and is built with
-                React + Typescript.
-              </Typography>
-            </Typography>
-          </ListItemWrapper>
         </Grid>
         <Grid item md={6}>
-          <BoxContent>
-            <Link href="/dashboards/reports">
-              <ImgWrapper>
-                <img
-                  alt="Tokyo"
-                  src="/static/images/overview/hero-screenshot.png"
-                />
-              </ImgWrapper>
-            </Link>
-            <BoxAccent
+          <Box>
+            <TypographyHeading
               sx={{
-                display: { xs: 'none', md: 'block' }
+                mb: 1
               }}
-            />
-          </BoxContent>
+              variant="h3"
+            >
+              {'Dashboards'}
+            </TypographyHeading>
+            <TypographySubHeading
+              sx={{
+                maxWidth: 500,
+                lineHeight: 1.5,
+                mb: 3
+              }}
+              variant="h4"
+              color="text.secondary"
+              fontWeight="normal"
+            >
+              {
+                'Explore the Pylon Board dashboards'
+              }
+            </TypographySubHeading>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  fullWidth
+                  component={Link}
+                  href="/dashboards/staking"
+                  variant="contained"
+                  color="secondary"
+                >
+                  {'MINE Staking Dashboard'}
+                </Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  fullWidth
+                  component={Link}
+                  href="/dashboards/metrics"
+                  variant="contained"
+                  color="secondary"
+                >
+                  {'MINE Metrics'}
+                </Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  fullWidth
+                  component={Link}
+                  href="/dashboards/gateway-pools"
+                  variant="contained"
+                  color="secondary"
+                >
+                  {'Pylon Gateway Pools'}
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Container>

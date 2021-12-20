@@ -14,6 +14,7 @@ import {
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
+import Logo from '@/components/LogoSign';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -60,7 +61,15 @@ function Header() {
         alignItems="center"
         spacing={2}
       >
-
+        <Box
+          component="span"
+          sx={{
+            ml: 2,
+            display: { lg: 'none', xs: 'inline-block' }
+          }}
+        >
+          <Logo />
+        </Box>
       </Stack>
       <Box display="flex" alignItems="center">
         <Box

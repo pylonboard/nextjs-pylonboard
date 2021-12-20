@@ -5,7 +5,7 @@ import '@mui/lab/themeAugmentation';
 
 const themeColors = {
   primary: '#00EEFA',
-  secondary: '#9EA4C1',
+  secondary: '#BFBFBF',
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
@@ -604,6 +604,7 @@ export const PylonTheme = createTheme({
           textTransform: 'none',
           paddingLeft: 16,
           paddingRight: 16,
+          borderRadius: 4,
 
           '.MuiSvgIcon-root': {
             transition: 'all .2s'
