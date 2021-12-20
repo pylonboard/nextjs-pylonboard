@@ -1,4 +1,4 @@
-import { Box, Card, Container, Button, styled } from '@mui/material';
+import { Box, Container, Button, styled } from '@mui/material';
 import type { ReactElement } from 'react';
 import BaseLayout from 'src/layouts/BaseLayout';
 
@@ -6,10 +6,9 @@ import Link from 'src/components/Link';
 import Head from 'next/head';
 import Logo from 'src/components/LogoSign';
 import Hero from 'src/content/Overview/Hero';
-import Highlights from 'src/content/Overview/Highlights';
 import Footer from 'src/components/Footer';
 
-const HeaderWrapper = styled(Card)(
+const HeaderWrapper = styled(Box)(
   ({ theme }) => `
   width: 100%;
   display: flex;
@@ -19,14 +18,13 @@ const HeaderWrapper = styled(Card)(
 `
 );
 
-const OverviewWrapper = styled(Box)(
-  ({ theme }) => `
+const OverviewWrapper = styled(Box)`
     overflow: auto;
-    background: ${theme.palette.common.white};
     flex: 1;
     overflow-x: hidden;
-`
-);
+    display: flex;
+    flex-direction: column;
+`;
 
 function Overview() {
   return (
@@ -37,7 +35,9 @@ function Overview() {
       <HeaderWrapper>
         <Container maxWidth="lg">
           <Box display="flex" alignItems="center">
-            <Logo />
+            <Box display="flex" alignItems="center">
+              <Logo />
+            </Box>
             <Box
               display="flex"
               alignItems="center"
@@ -48,19 +48,20 @@ function Overview() {
               <Box>
                 <Button
                   component={Link}
-                  href="/dashboards/reports"
+                  href="/dashboards/staking"
                   variant="contained"
                   sx={{ ml: 2 }}
                 >
-                  Reports
+                  Dashboards
                 </Button>
               </Box>
             </Box>
           </Box>
         </Container>
       </HeaderWrapper>
-      <Hero />
-      <Highlights />
+      <Box flex={1}>
+        <Hero />
+      </Box>
       <Footer />
     </OverviewWrapper>
   );

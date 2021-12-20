@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Sidebar from './Sidebar';
 import Header from './Header';
+import Footer from '@/components/Footer';
 
 interface ExtendedSidebarLayoutProps {
   children?: ReactNode;
@@ -45,7 +46,9 @@ const ExtendedSidebarLayout: FC<ExtendedSidebarLayoutProps> = ({
           sx={{
             position: 'relative',
             zIndex: 5,
-            display: 'block',
+            minHeight: '100%',
+            display: 'flex',
+            flexDirection: 'column',
             flex: 1,
             pt: `${theme.header.height}`,
             [theme.breakpoints.up('lg')]: {
@@ -53,7 +56,8 @@ const ExtendedSidebarLayout: FC<ExtendedSidebarLayoutProps> = ({
             }
           }}
         >
-          <Box display="block">{children}</Box>
+          <Box display="block" flex={1}>{children}</Box>
+          <Footer />
         </Box>
       </Box>
     </>

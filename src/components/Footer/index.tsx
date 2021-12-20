@@ -1,6 +1,6 @@
-import { Box, Card, Typography, styled } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 
-const FooterWrapper = styled(Card)(
+const FooterWrapper = styled(Box)(
   ({ theme }) => `
         border-radius: 0;
         margin-top: ${theme.spacing(4)};
@@ -9,13 +9,12 @@ const FooterWrapper = styled(Card)(
 
 function Footer() {
   return (
-    <FooterWrapper className="footer-wrapper">
+    <FooterWrapper>
       <Box
         p={4}
         display={{ xs: 'block', md: 'flex' }}
         alignItems="center"
-        textAlign={{ xs: 'center', md: 'left' }}
-        justifyContent="space-between"
+        justifyContent="center"
       >
         <Box>
           <Typography variant="subtitle1">
