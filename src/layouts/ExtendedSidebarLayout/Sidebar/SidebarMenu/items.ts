@@ -39,6 +39,12 @@ const menuItems: MenuItems[] = [
             badgeTooltip: 'Pylon MINE Metrics'
           },
           {
+            name: 'Buy Back Distribution',
+            link: '/dashboards/buy-back-distribution',
+            badge: '',
+            badgeTooltip: 'Pylon MINE Buy Back Distribution'
+          },
+          {
             name: 'Wallets',
             link: '/dashboards/wallet-amounts',
             badge: '',
