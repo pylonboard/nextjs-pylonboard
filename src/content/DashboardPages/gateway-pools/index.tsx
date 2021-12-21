@@ -44,6 +44,10 @@ function DashboardGatewayPoolsContent() {
 
   const pools: Pool[] = [
     {
+      value: 'SAYVE',
+      text: 'Sayve'
+    },
+    {
       value: 'GLOW',
       text: 'Glow'
     },
