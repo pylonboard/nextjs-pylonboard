@@ -39,6 +39,12 @@ const menuItems: MenuItems[] = [
             badgeTooltip: 'Pylon MINE Metrics'
           },
           {
+            name: 'Wallets',
+            link: '/dashboards/wallet-amounts',
+            badge: '',
+            badgeTooltip: 'Pylon MINE Wallet amounts'
+          },
+          {
             name: 'Gateway Pools',
             link: '/dashboards/gateway-pools',
             badge: '',
