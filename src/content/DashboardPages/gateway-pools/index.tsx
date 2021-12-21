@@ -39,10 +39,14 @@ interface Pool {
 function DashboardGatewayPoolsContent() {
   const { data, loading, refetch } = useQuery(QUERY, {
     variables: {
-      gatewayIdentifier: 'WHITE_WHALE'
+      gatewayIdentifier: 'GLOW'
     }});
 
   const pools: Pool[] = [
+    {
+      value: 'GLOW',
+      text: 'Glow'
+    },
     {
       value: 'WHITE_WHALE',
       text: 'White Whale'
