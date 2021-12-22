@@ -53,7 +53,7 @@ const QUERY = gql`
 
 const RankingLabels = {
   tier1: '1 to 1K',
-  tier2: '1 to 10K',
+  tier2: '1K to 10K',
   tier3: '10K to 100K',
   tier4: '100K to 220K',
   tier5: '220K+',
@@ -69,7 +69,6 @@ function MineStakingRankings({ gatewayIdentifier }) {
     <Card variant="outlined">
       <CardHeader title={'MINE staker deposit metrics'}/>
       <Divider />
-
         <TableContainer>
           {loading ? (
             <Skeleton variant="rectangular" height={320} />
@@ -128,7 +127,6 @@ function MineStakingRankings({ gatewayIdentifier }) {
             </Table>
           )}
         </TableContainer>
-
     </Card>
   );
 }

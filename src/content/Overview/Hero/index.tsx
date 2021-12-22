@@ -125,6 +125,28 @@ function Hero() {
                 <Button
                   fullWidth
                   component={Link}
+                  href="/dashboards/buy-back-distribution"
+                  variant="contained"
+                  color="secondary"
+                >
+                  {'MINE Buyback Distribution'}
+                </Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  fullWidth
+                  component={Link}
+                  href="/dashboards/wallet-amounts"
+                  variant="contained"
+                  color="secondary"
+                >
+                  {'MINE Wallet Amounts'}
+                </Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  fullWidth
+                  component={Link}
                   href="/dashboards/gateway-pools"
                   variant="contained"
                   color="secondary"
