@@ -10,6 +10,8 @@ import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import DepositOverTime from '@/content/Dashboards/GatewayPools/DepositOverTime';
 import DepositMetrics from '@/content/Dashboards/GatewayPools/DepositMetrics';
 import WalletShares from '@/content/Dashboards/GatewayPools/WalletShares';
+import MineStakingStatsTable from '@/content/Dashboards/GatewayPools/MineStakingStatsTable';
+import MineStakingRankings from '@/content/Dashboards/GatewayPools/MineStakingRankings';
 
 const QUERY = gql`
     query GatewayPoolStats($gatewayIdentifier: GatewayPoolIdentifier!) {
@@ -38,57 +40,57 @@ interface Pool {
   text: string;
 }
 
+const pools: Pool[] = [
+  {
+    value: 'SAYVE',
+    text: 'Sayve'
+  },
+  {
+    value: 'GLOW',
+    text: 'Glow'
+  },
+  {
+    value: 'WHITE_WHALE',
+    text: 'White Whale'
+  },
+  {
+    value: 'LOOP',
+    text: 'Loop'
+  },
+  {
+    value: 'ORION',
+    text: 'Orion'
+  },
+  {
+    value: 'VALKYRIE',
+    text: 'Valrkyrie'
+  },
+  {
+    value: 'TERRA_WORLD',
+    text: 'Terra World'
+  },
+  {
+    value: 'MINE',
+    text: 'MINE'
+  },
+  {
+    value: 'NEXUS',
+    text: 'Nexus'
+  }
+];
+
 function DashboardGatewayPoolsContent() {
   const { data, loading, refetch } = useQuery(QUERY, {
     variables: {
-      gatewayIdentifier: 'GLOW'
+      gatewayIdentifier: pools[0].value
     }});
-
-  const pools: Pool[] = [
-    {
-      value: 'SAYVE',
-      text: 'Sayve'
-    },
-    {
-      value: 'GLOW',
-      text: 'Glow'
-    },
-    {
-      value: 'WHITE_WHALE',
-      text: 'White Whale'
-    },
-    {
-      value: 'LOOP',
-      text: 'Loop'
-    },
-    {
-      value: 'ORION',
-      text: 'Orion'
-    },
-    {
-      value: 'VALKYRIE',
-      text: 'Valrkyrie'
-    },
-    {
-      value: 'TERRA_WORLD',
-      text: 'Terra World'
-    },
-    {
-      value: 'MINE',
-      text: 'MINE'
-    },
-    {
-      value: 'NEXUS',
-      text: 'Nexus'
-    }
-  ];
 
   const actionRef1 = useRef<any>(null);
   const [openPool, setOpenMenuPool] = useState<boolean>(false);
-  const [pool, setPool] = useState<string>(pools[0].text);
+  const [pool, setPool] = useState<Pool>(pools[0]);
 
   const handlePoolChange = (pool: Pool) => {
-    setPool(pool.text);
+    setPool(pool);
     setOpenMenuPool(false);
     refetch({ gatewayIdentifier: pool.value })
   }
@@ -111,7 +113,7 @@ function DashboardGatewayPoolsContent() {
                 onClick={() => setOpenMenuPool(true)}
                 endIcon={<ExpandMoreTwoToneIcon fontSize="small" />}
               >
-                {pool}
+                {pool.text}
               </Button>
               <Menu
                 disableScrollLock
@@ -157,6 +159,12 @@ function DashboardGatewayPoolsContent() {
         </Grid>
         <Grid item xs={12}>
           <DepositOverTime data={data.gatewayPoolStats.overall.depositsOverTime} />
+        </Grid>
+        <Grid item xs={12}>
+          <MineStakingStatsTable gatewayIdentifier={pool.value} />
+        </Grid>
+        <Grid item xs={12}>
+          <MineStakingRankings gatewayIdentifier={pool.value} />
         </Grid>
       </Grid>
     </>
