@@ -9,6 +9,7 @@ import { useRef, useState } from 'react';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import DepositOverTime from '@/content/Dashboards/GatewayPools/DepositOverTime';
 import DepositMetrics from '@/content/Dashboards/GatewayPools/DepositMetrics';
+import WalletShares from '@/content/Dashboards/GatewayPools/WalletShares';
 
 const QUERY = gql`
     query GatewayPoolStats($gatewayIdentifier: GatewayPoolIdentifier!) {
@@ -17,6 +18,7 @@ const QUERY = gql`
                 depositPerWallet {
                     amount
                     wallet
+                    inPercent
                 }
                 depositsOverTime {
                     value
@@ -151,9 +153,10 @@ function DashboardGatewayPoolsContent() {
           <DepositMetrics data={data.gatewayPoolStats.overall} />
         </Grid>
         <Grid item xs={12}>
-          <DepositOverTime
-            data={data.gatewayPoolStats.overall.depositsOverTime}
-          />
+          <WalletShares data={data.gatewayPoolStats.overall.depositPerWallet} />
+        </Grid>
+        <Grid item xs={12}>
+          <DepositOverTime data={data.gatewayPoolStats.overall.depositsOverTime} />
         </Grid>
       </Grid>
     </>

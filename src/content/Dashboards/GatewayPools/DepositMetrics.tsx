@@ -8,13 +8,7 @@ import {
   Box,
 } from '@mui/material';
 
-const amountFormatter = (value: number) =>
-  new Intl.NumberFormat('default', {
-    notation: "compact",
-    compactDisplay: "short",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2
-  }).format(value)
+import { amountFormatter } from '@/utils/numberFormatters';
 
 function DepositMetrics({ data }) {
   return (
@@ -37,25 +31,25 @@ function DepositMetrics({ data }) {
           }}
         >
           <Grid spacing={3} container>
-            <Grid item sm={3}>
+            <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Total'}
               </Typography>
               <Typography variant="h3">{amountFormatter(data.totalValueLocked)}</Typography>
             </Grid>
-            <Grid item sm={3}>
+            <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Average'}
               </Typography>
               <Typography variant="h3">{amountFormatter(data.averageDeposit)}</Typography>
             </Grid>
-            <Grid item sm={3}>
+            <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Largest'}
               </Typography>
               <Typography variant="h3">{amountFormatter(data.maxDeposit)}</Typography>
             </Grid>
-            <Grid item sm={3}>
+            <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Smallest'}
               </Typography>
