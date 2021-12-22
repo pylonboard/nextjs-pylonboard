@@ -1,4 +1,4 @@
-import { Fragment} from 'react';
+import { useEffect, useState } from 'react';
 import {
   Divider,
   Box,
@@ -10,10 +10,12 @@ import {
   TableBody,
   Table,
   TableContainer,
-  useTheme, InputAdornment, styled, TextField, Skeleton
+  useTheme, InputAdornment, styled, TextField, Skeleton, CardHeader, IconButton
 } from '@mui/material';
-import { gql, useLazyQuery } from '@apollo/client';
+import { gql, useLazyQuery, useQuery } from '@apollo/client';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
+import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
+import Text from '@/components/Text';
 
 const SearchInputWrapper = styled(TextField)(
   ({ theme }) => `
@@ -42,7 +44,7 @@ const TableHeadWrapper = styled(TableHead)(
   `
 );
 
-const QUERY = gql`
+const QUERY_MINE_TREASURY_BY_WALLET = gql`
     query MineTreasuryBuybackByWallet($wallet: String!) {
         mineTreasuryBuybackByWallet(wallet: $wallet) {
             ustAmount
@@ -53,17 +55,67 @@ const QUERY = gql`
     }
 `;
 
+const QUERY_MINE_TREASURY = gql`
+    query MineTreasury {
+        mineTreasury {
+            buybacks {
+                ustAmount
+                mineAmount
+                createdAt
+                transactionHash
+            }
+        }
+    }
+`;
+
 function WalletDistribution() {
   const theme = useTheme()
-  const [loadWalletDistribution, { called, data, loading }] = useLazyQuery(QUERY);
+  const [search, setSearch] = useState('');
+  const [tableData, setTableData] = useState([]);
+  const [buybacks, setBuybacks] = useState([]);
+  const { data: dataBuybacks, loading: loadingBuybacks } = useQuery(QUERY_MINE_TREASURY);
+  const [loadWalletDistribution, { called, data: dataWallet, loading: loadingWallet }] = useLazyQuery(QUERY_MINE_TREASURY_BY_WALLET);
 
+  useEffect(() => {
+    if (dataBuybacks) {
+      setBuybacks(dataBuybacks.mineTreasury.buybacks)
+    }
+  }, [dataBuybacks]);
+
+  useEffect(() => {
+    if (!loadingWallet) {
+      if (dataWallet && dataWallet.mineTreasuryBuybackByWallet.length) {
+        setTableData(dataWallet.mineTreasuryBuybackByWallet)
+      } else {
+        if (!search) {
+          setTableData(buybacks)
+        } else {
+          setTableData([])
+        }
+      }
+    }
+  }, [loadingWallet, dataWallet, buybacks]);
+
+  useEffect(() => {
+    if (search) {
+      loadWalletDistribution({
+        variables: {
+          wallet: search
+        }})
+    } else {
+      setTableData(buybacks)
+    }
+  }, [search])
 
   const handleSearch = (event) => {
-    loadWalletDistribution({
-      variables: {
-        wallet: event.target.value
-      }})
+    setSearch(event.target.value)
   };
+
+  const handleClearSearch = () => {
+    setSearch('')
+  };
+
+  const isLoading = (loadingBuybacks || loadingWallet);
 
   return (
     <Card variant="outlined">
@@ -79,15 +131,35 @@ function WalletDistribution() {
               <InputAdornment position="start">
                 <SearchTwoToneIcon />
               </InputAdornment>
+            ),
+            endAdornment: search && (
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={handleClearSearch}
+                  disableRipple
+                >
+                  <ClearTwoToneIcon />
+                </IconButton>
+              </InputAdornment>
             )
           }}
           onChange={handleSearch}
           placeholder={'Add your wallet address...'}
           fullWidth
+          value={search}
         />
       </Box>
       <Divider />
-      {(called && loading) ? (
+
+      <Box px={3}>
+        <CardHeader
+          title={search ? `Buyback distributions for: ${search}` : `Buyback distributions`}
+          subheader={called && !isLoading && !tableData.length && <Text color="error">Wallet Not Found</Text>}
+        />
+      </Box>
+      <Divider />
+
+      {isLoading ? (
           <Box px={3} py={3}>
             <Skeleton />
             <Skeleton />
@@ -95,20 +167,20 @@ function WalletDistribution() {
           </Box>
       ) : (
         <Box px={3} pb={3}>
-          <TableContainer>
-            <Table>
-              <TableHeadWrapper>
-                <TableRow>
-                  <TableCell>{'Tx Hash'}</TableCell>
-                  <TableCell>{'UST'}</TableCell>
-                  <TableCell align="center">{'MINE'}</TableCell>
-                  <TableCell align="right">{'Date'}</TableCell>
-                </TableRow>
-              </TableHeadWrapper>
-              <TableBody>
-                {data && data.mineTreasuryBuybackByWallet.map(({ ustAmount, mineAmount, transactionHash, createdAt }) => (
-                  <Fragment key={transactionHash}>
-                    <TableRow>
+          {(!!tableData.length) && (
+            <TableContainer>
+              <Table>
+                <TableHeadWrapper>
+                  <TableRow>
+                    <TableCell>{'Tx Hash'}</TableCell>
+                    <TableCell>{'UST'}</TableCell>
+                    <TableCell align="center">{'MINE'}</TableCell>
+                    <TableCell align="right">{'Date'}</TableCell>
+                  </TableRow>
+                </TableHeadWrapper>
+                <TableBody>
+                  {tableData.map(({ ustAmount, mineAmount, transactionHash, createdAt }) => (
+                    <TableRow key={transactionHash}>
                       <TableCell>
                         <Box sx={{ width: '120px' }}>
                           <Typography
@@ -150,11 +222,11 @@ function WalletDistribution() {
                         </Box>
                       </TableCell>
                     </TableRow>
-                  </Fragment>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          )}
         </Box>
       )}
     </Card>
