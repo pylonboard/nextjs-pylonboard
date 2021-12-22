@@ -10,7 +10,7 @@ import {
   TableBody,
   Table,
   TableContainer,
-  CardHeader
+  CardHeader, Skeleton
 } from '@mui/material';
 
 const PercentileLabels = {
@@ -21,56 +21,77 @@ const PercentileLabels = {
   floor: 'floor',
 }
 
-function MetricsTable({ data }) {
+function MetricsTable({ data, loading }) {
   return (
     <Card variant="outlined">
       <CardHeader title={'MINE Metrics'}/>
       <Divider />
       <TableContainer>
         <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>{'Percentile'}</TableCell>
-            <TableCell>{'Floor'}</TableCell>
-            <TableCell align="center">{'Wallets'}</TableCell>
-            <TableCell align="right">{'Amount of MINE'}</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {Object.keys(data).map(key => (
-            <Fragment key={key}>
-              <TableRow hover key={key}>
-                <TableCell>
-                  <Box>
-                    <Typography variant="h4">{PercentileLabels[key]}</Typography>
-                  </Box>
-                </TableCell>
-                <TableCell>
-                  <Box>
-                    <Typography variant="h4">{data[key].percentileFloor}</Typography>
-                  </Box>
-                </TableCell>
-                <TableCell align="center">
-                  <Box>
-                    <Typography variant="h4">{data[key].walletsIncluded}</Typography>
-                  </Box>
-                </TableCell>
-                <TableCell align="right">
-                  <Box>
-                    <Typography variant="h4">
-                      {new Intl.NumberFormat('en-US', {
-                        notation: "compact",
-                        compactDisplay: "short",
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      }).format(data[key].amountOfMine)}
-                    </Typography>
-                  </Box>
-                </TableCell>
-              </TableRow>
-            </Fragment>
-          ))}
-        </TableBody>
+          <TableHead>
+            <TableRow>
+              <TableCell>{'Percentile'}</TableCell>
+              <TableCell>{'Floor'}</TableCell>
+              <TableCell align="center">{'Wallets'}</TableCell>
+              <TableCell align="right">{'Amount of MINE'}</TableCell>
+            </TableRow>
+          </TableHead>
+          {loading ? (
+            <TableBody>
+              {Array.from(Array(5), Math.random).map(value => (
+                <TableRow key={value}>
+                  <TableCell>
+                    <Skeleton/>
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton/>
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton/>
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton/>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          ) : (
+            <TableBody>
+              {Object.keys(data).map(key => (
+                <Fragment key={key}>
+                  <TableRow hover key={key}>
+                    <TableCell>
+                      <Box>
+                        <Typography variant="h4">{PercentileLabels[key]}</Typography>
+                      </Box>
+                    </TableCell>
+                    <TableCell>
+                      <Box>
+                        <Typography variant="h4">{data[key].percentileFloor}</Typography>
+                      </Box>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Box>
+                        <Typography variant="h4">{data[key].walletsIncluded}</Typography>
+                      </Box>
+                    </TableCell>
+                    <TableCell align="right">
+                      <Box>
+                        <Typography variant="h4">
+                          {new Intl.NumberFormat('en-US', {
+                            notation: "compact",
+                            compactDisplay: "short",
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          }).format(data[key].amountOfMine)}
+                        </Typography>
+                      </Box>
+                    </TableCell>
+                  </TableRow>
+                </Fragment>
+              ))}
+            </TableBody>
+          )}
       </Table>
       </TableContainer>
     </Card>

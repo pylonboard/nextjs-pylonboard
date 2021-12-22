@@ -4,13 +4,13 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  useTheme
+  useTheme, Skeleton
 } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
-function TotalMineStakedPerDay({ data }) {
+function TotalMineStakedPerDay({ data, loading }) {
   const theme = useTheme();
 
   const ChartAudienceOptions: ApexOptions = {
@@ -115,6 +115,18 @@ function TotalMineStakedPerDay({ data }) {
           fontFamily: 'inherit'
         }
       },
+    },
+    noData: {
+      text: 'Loading',
+      align: 'center',
+      verticalAlign: 'middle',
+      offsetX: 0,
+      offsetY: 0,
+      style: {
+        color: undefined,
+        fontSize: '14px',
+        fontFamily: undefined
+      }
     }
   };
 
@@ -123,21 +135,25 @@ function TotalMineStakedPerDay({ data }) {
       <CardHeader title={'Total MINE staked per day'} />
       <Divider />
       <CardContent>
-        <Box mt={2}>
-          <Chart
-            options={{
-              ...ChartAudienceOptions,
-              labels: data.map(d => d.at)
-            }}
-            series={[
-              {
-                name: 'Amount',
-                data: data.map(d => d.value),
-              }
-            ]}
-            type="line"
-            height={420}
-          />
+        <Box mt={2} height={420}>
+          {loading ? (
+            <Skeleton variant="rectangular" height="100%" />
+          ) : (
+            <Chart
+              options={{
+                ...ChartAudienceOptions,
+                labels: data.map(d => d.at)
+              }}
+              series={[
+                {
+                  name: 'Amount',
+                  data: data.map(d => d.value),
+                }
+              ]}
+              type="line"
+              height={420}
+            />
+          )}
         </Box>
       </CardContent>
     </Card>

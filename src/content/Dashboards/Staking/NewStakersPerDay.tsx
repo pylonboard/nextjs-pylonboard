@@ -4,13 +4,13 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  useTheme
+  useTheme, Skeleton
 } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
-function NewStakersPerDay({ data }) {
+function NewStakersPerDay({ data, loading }) {
   const theme = useTheme();
 
   const ChartAudienceOptions: ApexOptions = {
@@ -123,21 +123,25 @@ function NewStakersPerDay({ data }) {
       <CardHeader title={'Number of new stakers per day'} />
       <Divider />
       <CardContent>
-        <Box mt={2}>
-          <Chart
-            options={{
-              ...ChartAudienceOptions,
-              labels: data.map(d => d.at)
-            }}
-            series={[
-              {
-                name: 'Wallet',
-                data: data.map(d => d.value),
-              }
-            ]}
-            type="line"
-            height={420}
-          />
+        <Box mt={2} height={420}>
+          {loading ? (
+            <Skeleton variant="rectangular" height="100%" />
+          ) : (
+            <Chart
+              options={{
+                ...ChartAudienceOptions,
+                labels: data.map(d => d.at)
+              }}
+              series={[
+                {
+                  name: 'Wallet',
+                  data: data.map(d => d.value),
+                }
+              ]}
+              type="line"
+              height={420}
+            />
+          )}
         </Box>
       </CardContent>
     </Card>
