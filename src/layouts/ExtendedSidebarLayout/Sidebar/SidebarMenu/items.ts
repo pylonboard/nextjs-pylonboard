@@ -55,46 +55,6 @@ const menuItems: MenuItems[] = [
             link: '/dashboards/gateway-pools',
             badge: '',
             badgeTooltip: 'Pylon Gateway Pools'
-          },
-          {
-            name: 'Products',
-            link: '/dashboards/products',
-            badge: '',
-            badgeTooltip: 'Products Dashboard - version 3.0'
-          },
-          {
-            name: 'Statistics',
-            link: '/dashboards/statistics',
-            badge: '',
-            badgeTooltip: 'Statistics Dashboard - version 3.0'
-          },
-          {
-            name: 'Automation',
-            link: '/dashboards/automation'
-          },
-          {
-            name: 'Analytics',
-            link: '/dashboards/analytics'
-          },
-          {
-            name: 'Banking',
-            link: '/dashboards/banking'
-          },
-          {
-            name: 'Commerce',
-            link: '/dashboards/commerce'
-          },
-          {
-            name: 'Crypto',
-            link: '/dashboards/crypto'
-          },
-          {
-            name: 'Finance',
-            link: '/dashboards/finance'
-          },
-          {
-            name: 'Fitness',
-            link: '/dashboards/fitness'
           }
         ]
       }
