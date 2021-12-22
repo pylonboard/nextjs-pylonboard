@@ -5,15 +5,13 @@ import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import PageHeader from '@/components/PageHeader';
 import WalletDistribution from '@/content/Dashboards/BuyBackDistribution/WalletDistribution';
 
-
-
 function DashboardBuyBackDistributionContent() {
   return (
     <>
       <PageTitleWrapper>
         <PageHeader
-          title="Pylon MINE Buy Back Distribution"
-          subtitle="Buy Back Distribution per wallet"
+          title="Pylon MINE Buyback Distribution"
+          subtitle="These are the Buyback Distributions"
         />
       </PageTitleWrapper>
 
