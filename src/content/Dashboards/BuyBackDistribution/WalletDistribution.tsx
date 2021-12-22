@@ -16,6 +16,7 @@ import { gql, useLazyQuery, useQuery } from '@apollo/client';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
 import Text from '@/components/Text';
+import Link from '@/components/Link';
 
 const SearchInputWrapper = styled(TextField)(
   ({ theme }) => `
@@ -183,12 +184,27 @@ function WalletDistribution() {
                     <TableRow key={transactionHash}>
                       <TableCell>
                         <Box sx={{ width: '120px' }}>
-                          <Typography
+                          <Link
+                            href={`https://finder.terra.money/mainnet/tx/${transactionHash}`}
+                            target="_blank"
+                            rel="noopener"
                             title={transactionHash}
+                            color={`${theme.colors.primary.main}`}
+                            underline="none"
+                            textOverflow="ellipsis"
+                            variant="body2"
                             noWrap
-                            variant="body2">
+                            overflow="hidden"
+                            display="block"
+                            sx={{
+                              width: '120px',
+                              '&:hover': {
+                                textDecoration: 'underline'
+                              }
+                            }}
+                          >
                             {transactionHash}
-                          </Typography>
+                          </Link>
                         </Box>
                       </TableCell>
                       <TableCell>
