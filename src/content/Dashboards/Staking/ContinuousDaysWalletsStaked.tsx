@@ -71,7 +71,16 @@ function TotalMineStakedCumulative({ data }) {
         style: {
           colors: theme.palette.text.secondary
         }
-      }
+      },
+      title: {
+        text: 'continuous days',
+        offsetX: 0,
+        offsetY: 0,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     },
     yaxis: {
       axisBorder: {
@@ -90,7 +99,16 @@ function TotalMineStakedCumulative({ data }) {
           minimumFractionDigits: 0,
           maximumFractionDigits: 2
         }).format(value)
-      }
+      },
+      title: {
+        text: 'record count',
+        offsetX: 2,
+        offsetY: 0,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     }
   };
 

@@ -77,7 +77,16 @@ function NewStakersPerDay({ data }) {
         style: {
           colors: theme.palette.text.secondary
         }
-      }
+      },
+      title: {
+        text: 'days',
+        offsetX: 0,
+        offsetY: 5,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     },
     yaxis: {
       axisBorder: {
@@ -96,7 +105,16 @@ function NewStakersPerDay({ data }) {
           minimumFractionDigits: 0,
           maximumFractionDigits: 2
         }).format(value)
-      }
+      },
+      title: {
+        text: 'new stakers',
+        offsetX: 0,
+        offsetY: 0,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     }
   };
 

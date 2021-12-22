@@ -90,8 +90,16 @@ function DepositOverTime({ data }) {
         style: {
           colors: theme.palette.text.secondary
         },
-
-      }
+      },
+      title: {
+        text: 'time',
+        offsetX: 0,
+        offsetY: 5,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     },
     yaxis: {
       axisBorder: {
@@ -110,7 +118,16 @@ function DepositOverTime({ data }) {
           minimumFractionDigits: 0,
           maximumFractionDigits: 2
         }).format(value)
-      }
+      },
+      title: {
+        text: 'UST amount',
+        offsetX: 0,
+        offsetY: 0,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     }
   };
 
