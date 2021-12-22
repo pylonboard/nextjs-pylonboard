@@ -1,4 +1,4 @@
-import { Box, Container, Button, styled } from '@mui/material';
+import { Box, Container, Button, styled, Grid } from '@mui/material';
 import type { ReactElement } from 'react';
 import BaseLayout from 'src/layouts/BaseLayout';
 
@@ -7,6 +7,7 @@ import Head from 'next/head';
 import Logo from 'src/components/LogoSign';
 import Hero from 'src/content/Overview/Hero';
 import Footer from 'src/components/Footer';
+import GatewayPoolStats from '@/content/Overview/GatewayPoolStats';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -14,7 +15,7 @@ const HeaderWrapper = styled(Box)(
   display: flex;
   align-items: center;
   height: ${theme.spacing(10)};
-  margin-bottom: ${theme.spacing(10)};
+  margin-bottom: ${theme.spacing(5)};
 `
 );
 
@@ -60,7 +61,14 @@ function Overview() {
         </Container>
       </HeaderWrapper>
       <Box flex={1}>
-        <Hero />
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Hero />
+          </Grid>
+          <Grid item xs={12}>
+            <GatewayPoolStats />
+          </Grid>
+        </Grid>
       </Box>
       <Footer />
     </OverviewWrapper>
