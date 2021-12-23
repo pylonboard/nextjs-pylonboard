@@ -4,13 +4,13 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  useTheme
+  useTheme, Skeleton
 } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
-function TotalMineStakedCumulative({ data }) {
+function TotalMineStakedCumulative({ data, loading }) {
   const theme = useTheme();
 
   const ChartAudienceOptions: ApexOptions = {
@@ -71,7 +71,16 @@ function TotalMineStakedCumulative({ data }) {
         style: {
           colors: theme.palette.text.secondary
         }
-      }
+      },
+      title: {
+        text: 'continuous days',
+        offsetX: 0,
+        offsetY: 0,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     },
     yaxis: {
       axisBorder: {
@@ -90,7 +99,16 @@ function TotalMineStakedCumulative({ data }) {
           minimumFractionDigits: 0,
           maximumFractionDigits: 2
         }).format(value)
-      }
+      },
+      title: {
+        text: 'record count',
+        offsetX: 2,
+        offsetY: 0,
+        style: {
+          fontWeight: 300,
+          fontFamily: 'inherit'
+        }
+      },
     }
   };
 
@@ -99,21 +117,25 @@ function TotalMineStakedCumulative({ data }) {
       <CardHeader title={'Number of continuous days that wallets have staked'} />
       <Divider />
       <CardContent>
-        <Box mt={2}>
-          <Chart
-            options={{
-              ...ChartAudienceOptions,
-              labels: data.map(d => d.daysStakedBin)
-            }}
-            series={[
-              {
-                name: 'Record Count',
-                data: data.map(d => d.count),
-              }
-            ]}
-            type="bar"
-            height={420}
-          />
+        <Box mt={2} height={420}>
+          {loading ? (
+            <Skeleton variant="rectangular" height="100%" />
+          ) : (
+            <Chart
+              options={{
+                ...ChartAudienceOptions,
+                labels: data.map(d => d.daysStakedBin)
+              }}
+              series={[
+                {
+                  name: 'Record Count',
+                  data: data.map(d => d.count),
+                }
+              ]}
+              type="bar"
+              height={420}
+            />
+          )}
         </Box>
       </CardContent>
     </Card>

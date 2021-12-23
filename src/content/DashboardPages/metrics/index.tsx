@@ -4,7 +4,6 @@ import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
 import PageHeader from '@/components/PageHeader';
 import { gql, useQuery } from '@apollo/client';
-import Loader from '@/components/Loader';
 import MetricsTable from '@/content/Dashboards/Metrics/MetricsTable';
 
 const QUERY = gql`
@@ -42,10 +41,6 @@ const QUERY = gql`
 function DashboardMetricsContent() {
   const { data, loading } = useQuery(QUERY);
 
-  if (loading) {
-    return <Loader />
-  }
-
   return (
     <>
       <PageTitleWrapper>
@@ -63,7 +58,7 @@ function DashboardMetricsContent() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <MetricsTable data={data.mineRankings} />
+          <MetricsTable data={data && data.mineRankings} loading={loading} />
         </Grid>
       </Grid>
     </>

@@ -95,7 +95,7 @@ function WalletDistribution() {
         }
       }
     }
-  }, [loadingWallet, dataWallet, buybacks]);
+  }, [loadingWallet, dataWallet, buybacks, search]);
 
   useEffect(() => {
     if (search) {
@@ -161,11 +161,38 @@ function WalletDistribution() {
       <Divider />
 
       {isLoading ? (
-          <Box px={3} py={3}>
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-          </Box>
+        <Box px={3} pb={3}>
+          <TableContainer>
+            <Table>
+              <TableHeadWrapper>
+                <TableRow>
+                  <TableCell>{'Tx Hash'}</TableCell>
+                  <TableCell>{'UST'}</TableCell>
+                  <TableCell align="center">{'MINE'}</TableCell>
+                  <TableCell align="right">{'Date'}</TableCell>
+                </TableRow>
+              </TableHeadWrapper>
+              <TableBody>
+                {Array.from(Array(10), Math.random).map(value => (
+                  <TableRow key={value}>
+                    <TableCell>
+                      <Skeleton />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton />
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
       ) : (
         <Box px={3} pb={3}>
           {(!!tableData.length) && (

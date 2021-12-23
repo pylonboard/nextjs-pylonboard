@@ -8,7 +8,6 @@ import { gql, useQuery } from '@apollo/client';
 import NewStakersPerDay from '@/content/Dashboards/Staking/NewStakersPerDay';
 import TotalMineStakedCumulative from '@/content/Dashboards/Staking/TotalMineStakedCumulative';
 import ContinuousDaysWalletsStaked from '@/content/Dashboards/Staking/ContinuousDaysWalletsStaked';
-import Loader from '@/components/Loader';
 
 const QUERY = gql`
     query MineStakingStats {
@@ -36,10 +35,6 @@ const QUERY = gql`
 function DashboardStakingContent() {
   const { data, loading } = useQuery(QUERY);
 
-  if (loading) {
-    return <Loader />
-  }
-
   return (
     <>
       <PageTitleWrapper>
@@ -57,16 +52,28 @@ function DashboardStakingContent() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <TotalMineStakedPerDay data={data.mineStakingStats.stakedPerDay} />
+          <TotalMineStakedPerDay
+            data={data && data.mineStakingStats.stakedPerDay}
+            loading={loading}
+          />
         </Grid>
         <Grid item xs={12}>
-          <TotalMineStakedCumulative data={data.mineStakingStats.stakedPerDayCumulative} />
+          <TotalMineStakedCumulative
+            data={data && data.mineStakingStats.stakedPerDayCumulative}
+            loading={loading}
+          />
         </Grid>
         <Grid item xs={12}>
-          <ContinuousDaysWalletsStaked data={data.mineStakingStats.daysStakedBinned} />
+          <ContinuousDaysWalletsStaked
+            data={data && data.mineStakingStats.daysStakedBinned}
+            loading={loading}
+          />
         </Grid>
         <Grid item xs={12}>
-          <NewStakersPerDay data={data.mineStakingStats.newWalletsPerDay} />
+          <NewStakersPerDay
+            data={data && data.mineStakingStats.newWalletsPerDay}
+            loading={loading}
+          />
         </Grid>
       </Grid>
     </>
