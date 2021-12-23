@@ -12,6 +12,7 @@ import useScrollTop from 'src/hooks/useScrollTop';
 import { ApolloProvider } from '@apollo/client';
 import client from '../apollo-client';
 import { NewRelicSnippet } from '@/components/NewRelicSnippet';
+import '../src/styles.css';
 
 const clientSideEmotionCache = createEmotionCache();
 
