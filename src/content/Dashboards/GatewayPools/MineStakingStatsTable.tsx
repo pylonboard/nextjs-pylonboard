@@ -59,29 +59,30 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
   const { data, loading, fetchMore } = useQuery(QUERY, {
     variables: {
       gatewayIdentifier,
-      skip: page,
+      skip: page * rowsPerPage,
       take: rowsPerPage
-    }
+    },
+    notifyOnNetworkStatusChange: true
   });
 
   useEffect(() => {
     if (data) {
       setCount(data.gatewayPoolMineStakingStats.totalCount)
-      if (page && fetchMore) {
-        fetchMore({
-          variables: {
-            take: data.gatewayPoolMineStakingStats.items.length
-          }
-        })
-      }
     }
-  }, [data, page]);
+  }, [data]);
 
   const handleChangePage = (
     _event: MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
-    setPage(newPage);
+    fetchMore({
+      variables: {
+        skip: newPage * rowsPerPage,
+        take: data.gatewayPoolMineStakingStats.items.length
+      }
+    }).then(() => {
+      setPage(newPage);
+    })
   };
 
   const handleChangeRowsPerPage = (

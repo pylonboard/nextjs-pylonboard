@@ -44,7 +44,7 @@ const dateFormatter = timestamp =>
 
 const QUERY = gql`
     query WalletStats($skip: Int, $take: Int) {
-        mineWalletStats(skip: $skip, take: $take, sortBy: "stakedSince") {
+        mineWalletStats(skip: $skip, take: $take, sortBy: "") {
             items {
                 wallet
                 stakedSince
@@ -68,29 +68,30 @@ function WalletAmountsTable() {
 
   const { data, loading, fetchMore } = useQuery(QUERY, {
     variables: {
-      skip: page,
+      skip: page * rowsPerPage,
       take: rowsPerPage
-    }
+    },
+    notifyOnNetworkStatusChange: true
   });
 
   useEffect(() => {
     if (data) {
-      setCount(data.mineWalletStats.totalCount)
-      if (page && fetchMore) {
-        fetchMore({
-          variables: {
-            take: data.mineWalletStats.items.length
-          }
-        })
-      }
+      setCount(data.mineWalletStats.totalCount);
     }
-  }, [data, page]);
+  }, [data]);
 
   const handleChangePage = (
     _event: MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
-    setPage(newPage);
+    fetchMore({
+      variables: {
+        skip: newPage * rowsPerPage,
+        take: rowsPerPage
+      }
+    }).then(() => {
+      setPage(newPage)
+    })
   };
 
   const handleChangeRowsPerPage = (
