@@ -45,8 +45,8 @@ function DashboardMetricsContent() {
     <>
       <PageTitleWrapper>
         <PageHeader
-          title="Pylon Mine Metrics"
-          subtitle="These are the Pylon Mine Percentile Rankings"
+          title="Pylon MINE Staking percentiles"
+          subtitle="The page shows percentile floors for wallets staking MINE. The 99 percentile contains the top 1% stakers."
         />
       </PageTitleWrapper>
       <Grid

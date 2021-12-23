@@ -40,7 +40,7 @@ function DashboardStakingContent() {
       <PageTitleWrapper>
         <PageHeader
           title="Pylon MINE Staking"
-          subtitle="These are the MINE staking statistics until now"
+          subtitle="MINE staking statistics - cumulative amounts, daily movements and wallet insights"
         />
       </PageTitleWrapper>
       <Grid

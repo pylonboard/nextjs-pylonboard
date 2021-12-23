@@ -26,10 +26,10 @@ const QUERY = gql`
 const ValueLabels = [
   {
     value: 'totalValueLocked',
-    label: 'Total Value'
+    label: 'Total Value Locked'
   }, {
     value: 'valueLocked24h',
-    label: 'Last 24 horus'
+    label: 'Last 24 hours'
   }, {
     value: 'valueLocked7d',
     label: 'Last 7 days'
@@ -51,7 +51,7 @@ function GatewayPoolStats() {
             <TypographyHeading
               variant="h3"
             >
-              {'Gateway Pools Metrics'}
+              {'Gateway Pools TVL'}
             </TypographyHeading>
           </Box>
         </Grid>

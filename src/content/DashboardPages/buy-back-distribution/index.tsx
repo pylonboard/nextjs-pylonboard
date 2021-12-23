@@ -11,7 +11,7 @@ function DashboardBuyBackDistributionContent() {
       <PageTitleWrapper>
         <PageHeader
           title="Pylon MINE Buyback Distribution"
-          subtitle="These are the Buyback Distributions"
+          subtitle="Treasury MINE buybacks. Search for your wallet and see a list of estimated buyback amounts added to your wallet."
         />
       </PageTitleWrapper>
 

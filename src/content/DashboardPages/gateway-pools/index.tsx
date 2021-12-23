@@ -111,7 +111,7 @@ function DashboardGatewayPoolsContent() {
       <PageTitleWrapper>
         <PageHeader
           title="Pylon Gateway Pools"
-          subtitle={`These are the Pylon Gateway Pools for ${getActivePool(activeTab).text}`}
+          subtitle={`Pylon Gateway Pools insights - deposit sizes, MINE staking vs deposits. Currently showing data for the ${getActivePool(activeTab).text} pool.`}
         />
       </PageTitleWrapper>
 

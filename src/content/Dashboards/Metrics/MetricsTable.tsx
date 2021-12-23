@@ -67,7 +67,14 @@ function MetricsTable({ data, loading }) {
                     </TableCell>
                     <TableCell>
                       <Box>
-                        <Typography variant="h4">{data[key].percentileFloor}</Typography>
+                        <Typography variant="h4">
+                          {new Intl.NumberFormat('en-US', {
+                            notation: "compact",
+                            compactDisplay: "short",
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          }).format(data[key].percentileFloor)}
+                        </Typography>
                       </Box>
                     </TableCell>
                     <TableCell align="center">
