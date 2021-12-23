@@ -1,17 +1,29 @@
-import { Button, Grid, Menu, MenuItem } from '@mui/material';
+import { Grid, styled, Tab, Tabs } from '@mui/material';
 
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
 import PageHeader from '@/components/PageHeader';
 import { gql, useQuery } from '@apollo/client';
-import Loader from '@/components/Loader';
-import { useRef, useState } from 'react';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+import { SyntheticEvent, useState } from 'react';
 import DepositOverTime from '@/content/Dashboards/GatewayPools/DepositOverTime';
 import DepositMetrics from '@/content/Dashboards/GatewayPools/DepositMetrics';
 import WalletShares from '@/content/Dashboards/GatewayPools/WalletShares';
 import MineStakingStatsTable from '@/content/Dashboards/GatewayPools/MineStakingStatsTable';
 import MineStakingRankings from '@/content/Dashboards/GatewayPools/MineStakingRankings';
+
+const TabsWrapper = styled(Tabs)(
+  ({ theme }) => `
+    @media (max-width: ${theme.breakpoints.values.md}px) {
+      .MuiTabs-scrollableX {
+        overflow-x: auto !important;
+      }
+
+      .MuiTabs-indicator {
+          box-shadow: none;
+      }
+    }
+    `
+);
 
 const QUERY = gql`
     query GatewayPoolStats($gatewayIdentifier: GatewayPoolIdentifier!) {
@@ -80,66 +92,26 @@ const pools: Pool[] = [
 ];
 
 function DashboardGatewayPoolsContent() {
+  const [activeTab, setActiveTab] = useState<string>(pools[0].value);
   const { data, loading, refetch } = useQuery(QUERY, {
     variables: {
       gatewayIdentifier: pools[0].value
     }});
 
-  const actionRef1 = useRef<any>(null);
-  const [openPool, setOpenMenuPool] = useState<boolean>(false);
-  const [pool, setPool] = useState<Pool>(pools[0]);
-
-  const handlePoolChange = (pool: Pool) => {
-    setPool(pool);
-    setOpenMenuPool(false);
-    refetch({ gatewayIdentifier: pool.value })
+  const handleTabsChange = (_event: SyntheticEvent, tabsValue: string) => {
+    setActiveTab(tabsValue);
+    refetch({ gatewayIdentifier: tabsValue })
   }
 
-  if (loading) {
-    return <Loader />
-  }
+  const getActivePool = (value: string) =>
+    pools.find(pool => pool.value === value)
 
   return (
     <>
       <PageTitleWrapper>
         <PageHeader
           title="Pylon Gateway Pools"
-          subtitle="These are the Pylon Gateway Pools"
-          action={
-            <>
-              <Button
-                variant="outlined"
-                ref={actionRef1}
-                onClick={() => setOpenMenuPool(true)}
-                endIcon={<ExpandMoreTwoToneIcon fontSize="small" />}
-              >
-                {pool.text}
-              </Button>
-              <Menu
-                disableScrollLock
-                anchorEl={actionRef1.current}
-                onClose={() => setOpenMenuPool(false)}
-                open={openPool}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'right'
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right'
-                }}
-              >
-                {pools.map((pool) => (
-                  <MenuItem
-                    key={pool.value}
-                    onClick={() => handlePoolChange(pool)}
-                  >
-                    {pool.text}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </>
-          }
+          subtitle={`These are the Pylon Gateway Pools for ${getActivePool(activeTab).text}`}
         />
       </PageTitleWrapper>
 
@@ -152,19 +124,38 @@ function DashboardGatewayPoolsContent() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <DepositMetrics data={data.gatewayPoolStats.overall} />
+          <TabsWrapper
+            onChange={handleTabsChange}
+            scrollButtons="auto"
+            textColor="primary"
+            value={activeTab}
+            variant="scrollable"
+          >
+            {pools.map((pool) => (
+              <Tab key={pool.value} value={pool.value} label={pool.text} disableRipple />
+            ))}
+          </TabsWrapper>
         </Grid>
         <Grid item xs={12}>
-          <WalletShares data={data.gatewayPoolStats.overall.depositPerWallet} />
+          <DepositMetrics data={data && data.gatewayPoolStats.overall} loading={loading} />
         </Grid>
         <Grid item xs={12}>
-          <DepositOverTime data={data.gatewayPoolStats.overall.depositsOverTime} />
+          <WalletShares
+            data={data && data.gatewayPoolStats.overall.depositPerWallet}
+            loading={loading}
+          />
         </Grid>
         <Grid item xs={12}>
-          <MineStakingStatsTable gatewayIdentifier={pool.value} />
+          <DepositOverTime
+            data={data && data.gatewayPoolStats.overall.depositsOverTime}
+            loading={loading}
+          />
         </Grid>
         <Grid item xs={12}>
-          <MineStakingRankings gatewayIdentifier={pool.value} />
+          <MineStakingStatsTable gatewayIdentifier={activeTab} />
+        </Grid>
+        <Grid item xs={12}>
+          <MineStakingRankings gatewayIdentifier={activeTab} />
         </Grid>
       </Grid>
     </>
