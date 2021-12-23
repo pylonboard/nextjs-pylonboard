@@ -6,18 +6,16 @@ import {
   Grid,
   Divider,
   Box,
-  useTheme,
+  useTheme, Skeleton
 } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { percentileFormatter } from '@/utils/numberFormatters';
 
-function WalletShares({ data }) {
+function WalletShares({ data, loading }) {
 
   const theme = useTheme();
-
-  const labels = data.map(({ wallet }) => wallet);
 
   const chartOptions: ApexOptions = {
     chart: {
@@ -56,7 +54,6 @@ function WalletShares({ data }) {
     fill: {
       opacity: 1
     },
-    labels,
     legend: {
       show: false
     },
@@ -67,8 +64,6 @@ function WalletShares({ data }) {
       palette: 'palette3'
     }
   };
-
-  const chartSeries = data.map(({ inPercent }) => inPercent);
 
   return (
     <Card>
@@ -83,38 +78,56 @@ function WalletShares({ data }) {
             justifyContent="center"
             alignItems="center"
           >
-            <Chart
-              height={300}
-              options={chartOptions}
-              series={chartSeries}
-              type="donut"
-            />
+            {loading ? (
+              <Skeleton variant="circular" width={282} height={282} />
+            ) : (
+              <Chart
+                height={300}
+                options={{
+                  ...chartOptions,
+                  labels: data.map(({ wallet }) => wallet)
+                }}
+                series={data.map(({ inPercent }) => inPercent)}
+                type="donut"
+              />
+            )}
           </Grid>
           <Grid md={6} item display="flex" alignItems="center">
             <Box sx={{width: "100%" }}>
-              {labels.map((label: string, i: number) => (
-                <Typography
-                  key={label}
-                  variant="body2"
-                  sx={{
-                    display: 'block',
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden',
-                    py: 0.8,
-                    mr: 2
-                  }}
-                >
+              {loading ? (
+                <>
+                  <Skeleton />
+                  <Skeleton />
+                  <Skeleton />
+                  <Skeleton />
+                  <Skeleton />
+                  <Skeleton />
+                </>
+              ) : (
+                data.map(({ wallet }, i: number) => (
+                  <Typography
+                    key={wallet}
+                    variant="body2"
+                    sx={{
+                      display: 'block',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden',
+                      py: 0.8,
+                      mr: 2
+                    }}
+                  >
                   <span
                     style={{
                       paddingRight: 10,
                       color: `${theme.palette.primary.main}`
                     }}
                   >
-                    {percentileFormatter(chartSeries[i] / 100)}
+                    {percentileFormatter(data[i].inPercent / 100)}
                   </span>
-                  {label}
-                </Typography>
-              ))}
+                    {wallet}
+                  </Typography>
+                ))
+              )}
             </Box>
           </Grid>
         </Grid>

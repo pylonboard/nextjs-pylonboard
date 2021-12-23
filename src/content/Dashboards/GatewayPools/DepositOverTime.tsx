@@ -1,9 +1,9 @@
-import { Card, Box, useTheme, CardHeader, Divider, CardContent } from '@mui/material';
+import { Card, Box, useTheme, CardHeader, Divider, CardContent, Skeleton } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 
-function DepositOverTime({ data }) {
+function DepositOverTime({ data, loading }) {
   const theme = useTheme();
 
   const chartDepositOverTimeOptions: ApexOptions = {
@@ -147,23 +147,26 @@ function DepositOverTime({ data }) {
             p: 3
           }}
         >
-          <Chart
-            options={{
-              ...chartDepositOverTimeOptions,
-              labels: data.map(d => d.at)
-            }}
-            series={[
-              {
-                name: 'Amount',
-                data: data.map(d => d.value),
-              }
-            ]}
-            type="bar"
-            height={450}
-          />
+          {loading ? (
+            <Skeleton variant="rectangular" height={450} />
+          ) : (
+            <Chart
+              options={{
+                ...chartDepositOverTimeOptions,
+                labels: data.map(d => d.at)
+              }}
+              series={[
+                {
+                  name: 'Amount',
+                  data: data.map(d => d.value),
+                }
+              ]}
+              type="bar"
+              height={450}
+            />
+          )}
         </Box>
       </CardContent>
-
     </Card>
   );
 }

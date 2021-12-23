@@ -5,12 +5,12 @@ import {
   Typography,
   Divider,
   Grid,
-  Box,
+  Box, Skeleton
 } from '@mui/material';
 
 import { amountFormatter } from '@/utils/numberFormatters';
 
-function DepositMetrics({ data }) {
+function DepositMetrics({ data, loading }) {
   return (
     <Card
       sx={{
@@ -35,25 +35,49 @@ function DepositMetrics({ data }) {
               <Typography variant="caption" gutterBottom>
                 {'Total'}
               </Typography>
-              <Typography variant="h3">{amountFormatter(data.totalValueLocked)}</Typography>
+              <Typography variant="h3">
+                {loading ? (
+                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                ) : (
+                  amountFormatter(data.totalValueLocked)
+                )}
+              </Typography>
             </Grid>
             <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Average'}
               </Typography>
-              <Typography variant="h3">{amountFormatter(data.averageDeposit)}</Typography>
+              <Typography variant="h3">
+                {loading ? (
+                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                ) : (
+                  amountFormatter(data.averageDeposit)
+                )}
+              </Typography>
             </Grid>
             <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Largest'}
               </Typography>
-              <Typography variant="h3">{amountFormatter(data.maxDeposit)}</Typography>
+              <Typography variant="h3">
+                {loading ? (
+                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                ) : (
+                  amountFormatter(data.maxDeposit)
+                )}
+              </Typography>
             </Grid>
             <Grid item xs={6} sm={3}>
               <Typography variant="caption" gutterBottom>
                 {'Smallest'}
               </Typography>
-              <Typography variant="h3">{amountFormatter(data.minDeposit)}</Typography>
+              <Typography variant="h3">
+                {loading ? (
+                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                ) : (
+                  amountFormatter(data.minDeposit)
+                )}
+              </Typography>
             </Grid>
           </Grid>
         </Box>
