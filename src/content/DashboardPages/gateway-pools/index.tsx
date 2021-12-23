@@ -62,12 +62,12 @@ const pools: Pool[] = [
     text: 'Glow'
   },
   {
-    value: 'WHITE_WHALE',
-    text: 'White Whale'
+    value: 'NEXUS',
+    text: 'Nexus'
   },
   {
-    value: 'LOOP',
-    text: 'Loop'
+    value: 'WHITE_WHALE',
+    text: 'White Whale'
   },
   {
     value: 'ORION',
@@ -82,13 +82,13 @@ const pools: Pool[] = [
     text: 'Terra World'
   },
   {
+    value: 'LOOP',
+    text: 'Loop'
+  },
+  {
     value: 'MINE',
     text: 'MINE'
   },
-  {
-    value: 'NEXUS',
-    text: 'Nexus'
-  }
 ];
 
 function DashboardGatewayPoolsContent() {
