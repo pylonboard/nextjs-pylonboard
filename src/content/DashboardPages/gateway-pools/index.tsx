@@ -1,15 +1,18 @@
-import { Grid, styled, Tab, Tabs } from '@mui/material';
+import { Grid, Box, styled, Tab, Tabs } from '@mui/material';
 
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
 import PageHeader from '@/components/PageHeader';
-import { gql, useQuery } from '@apollo/client';
-import { SyntheticEvent, useState } from 'react';
+import { useRouter } from 'next/router'
+import { gql, useLazyQuery } from '@apollo/client';
+import { SyntheticEvent, useEffect } from 'react';
 import DepositOverTime from '@/content/Dashboards/GatewayPools/DepositOverTime';
 import DepositMetrics from '@/content/Dashboards/GatewayPools/DepositMetrics';
 import WalletShares from '@/content/Dashboards/GatewayPools/WalletShares';
 import MineStakingStatsTable from '@/content/Dashboards/GatewayPools/MineStakingStatsTable';
 import MineStakingRankings from '@/content/Dashboards/GatewayPools/MineStakingRankings';
+
+import pools from '@/content/DashboardPages/gateway-pools/pools';
 
 const TabsWrapper = styled(Tabs)(
   ({ theme }) => `
@@ -47,71 +50,51 @@ const QUERY = gql`
     }
 `;
 
-interface Pool {
-  value: string;
-  text: string;
-}
-
-const pools: Pool[] = [
-  {
-    value: 'SAYVE',
-    text: 'Sayve'
-  },
-  {
-    value: 'GLOW',
-    text: 'Glow'
-  },
-  {
-    value: 'NEXUS',
-    text: 'Nexus'
-  },
-  {
-    value: 'WHITE_WHALE',
-    text: 'White Whale'
-  },
-  {
-    value: 'ORION',
-    text: 'Orion'
-  },
-  {
-    value: 'VALKYRIE',
-    text: 'Valrkyrie'
-  },
-  {
-    value: 'TERRA_WORLD',
-    text: 'Terra World'
-  },
-  {
-    value: 'LOOP',
-    text: 'Loop'
-  },
-  {
-    value: 'MINE',
-    text: 'MINE'
-  },
-];
+const getPoolByValue = value => pools.find(pool => pool.value === value)
 
 function DashboardGatewayPoolsContent() {
-  const [activeTab, setActiveTab] = useState<string>(pools[0].value);
-  const { data, loading, refetch } = useQuery(QUERY, {
-    variables: {
-      gatewayIdentifier: pools[0].value
-    }});
+  const router = useRouter();
+  const gwp = router.query.gwp as string;
+
+  useEffect(() => {
+    if (router.isReady && (!router.query.gwp || !getPoolByValue(router.query.gwp))) {
+      router.push({
+        pathname: router.pathname,
+        query: { gwp: pools[0].value },
+      }, undefined, { shallow: true })
+    }
+
+  }, [router.isReady]);
+
+
+  const [getGatewayPool, { data, loading, called }] = useLazyQuery(QUERY);
+
+  useEffect(() => {
+    if (getPoolByValue(gwp)) {
+      getGatewayPool({
+        variables: {
+          gatewayIdentifier: gwp
+        }
+      })
+    }
+  }, [router.query.gwp])
+
 
   const handleTabsChange = (_event: SyntheticEvent, tabsValue: string) => {
-    setActiveTab(tabsValue);
-    refetch({ gatewayIdentifier: tabsValue })
+    router.push({
+      pathname: router.pathname,
+      query: { gwp: tabsValue },
+    }, undefined, { shallow: true })
   }
 
-  const getActivePool = (value: string) =>
-    pools.find(pool => pool.value === value)
+  const poolExists = getPoolByValue(gwp);
 
   return (
     <>
       <PageTitleWrapper>
         <PageHeader
           title="Pylon Gateway Pools"
-          subtitle={`Pylon Gateway Pools insights - deposit sizes, MINE staking vs deposits. Currently showing data for the ${getActivePool(activeTab).text} pool.`}
+          subtitle={`Pylon Gateway Pools insights - deposit sizes, MINE staking vs deposits.${poolExists ? ' Currently showing data for the ' + poolExists.text + ' pool' : ''}`}
         />
       </PageTitleWrapper>
 
@@ -124,38 +107,59 @@ function DashboardGatewayPoolsContent() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <TabsWrapper
-            onChange={handleTabsChange}
-            scrollButtons="auto"
-            textColor="primary"
-            value={activeTab}
-            variant="scrollable"
-          >
-            {pools.map((pool) => (
-              <Tab key={pool.value} value={pool.value} label={pool.text} disableRipple />
-            ))}
-          </TabsWrapper>
+          {poolExists ? (
+            <TabsWrapper
+              onChange={handleTabsChange}
+              scrollButtons="auto"
+              textColor="primary"
+              value={gwp}
+              variant="scrollable"
+            >
+              {pools.map((pool) => (
+                <Tab
+                  key={pool.value}
+                  value={pool.value}
+                  label={pool.text}
+                  disableRipple
+                />
+              ))}
+            </TabsWrapper>
+          ) : (
+            <Box display="flex" height={38} sx={{ overflowX : "auto" }}>
+              {pools.map((pool) => (
+                <Tab
+                  disabled
+                  key={pool.value}
+                  value={pool.value}
+                  label={pool.text}
+                  disableRipple
+                />
+              ))}
+            </Box>
+          )}
         </Grid>
         <Grid item xs={12}>
-          <DepositMetrics data={data && data.gatewayPoolStats.overall} loading={loading} />
+          <DepositMetrics
+            data={data && data.gatewayPoolStats.overall}
+            loading={!called || loading} />
         </Grid>
         <Grid item xs={12}>
           <WalletShares
             data={data && data.gatewayPoolStats.overall.depositPerWallet}
-            loading={loading}
+            loading={!called || loading}
           />
         </Grid>
         <Grid item xs={12}>
           <DepositOverTime
             data={data && data.gatewayPoolStats.overall.depositsOverTime}
-            loading={loading}
+            loading={!called || loading}
           />
         </Grid>
         <Grid item xs={12}>
-          <MineStakingStatsTable gatewayIdentifier={activeTab} />
+          {poolExists && <MineStakingStatsTable gatewayIdentifier={gwp} />}
         </Grid>
         <Grid item xs={12}>
-          <MineStakingRankings gatewayIdentifier={activeTab} />
+          {poolExists && <MineStakingRankings gatewayIdentifier={gwp} />}
         </Grid>
       </Grid>
     </>

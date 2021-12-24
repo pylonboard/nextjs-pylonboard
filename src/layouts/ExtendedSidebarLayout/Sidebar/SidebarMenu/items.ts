@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
-
-import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
+import pools from '@/content/DashboardPages/gateway-pools/pools';
 
 export interface MenuItem {
   link?: string;
@@ -22,8 +21,7 @@ const menuItems: MenuItems[] = [
     heading: 'General',
     items: [
       {
-        name: 'Dashboards',
-        icon: DashboardRoundedIcon,
+        name: 'MINE Dashboards',
         link: '/dashboards',
         items: [
           {
@@ -49,14 +47,17 @@ const menuItems: MenuItems[] = [
             link: '/dashboards/wallet-amounts',
             badge: '',
             badgeTooltip: 'Pylon MINE wallet stake amounts'
-          },
-          {
-            name: 'Gateway Pools',
-            link: '/dashboards/gateway-pools',
-            badge: '',
-            badgeTooltip: 'Pylon gateway pools'
           }
         ]
+      }, {
+        name: 'Gateway Pools',
+        link: '/dashboards/gateway-pools',
+        items: pools.map(({ value, text }) => ({
+          name: text,
+          link: `/dashboards/gateway-pools?gwp=${value}`,
+          badge: '',
+          badgeTooltip: `${text} gateway pool`
+        }))
       }
     ]
   }
