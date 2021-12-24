@@ -30,31 +30,31 @@ const menuItems: MenuItems[] = [
             name: 'Staking',
             link: '/dashboards/staking',
             badge: '',
-            badgeTooltip: 'Pylon MINE Staking'
+            badgeTooltip: 'Pylon MINE staking'
           },
           {
             name: 'Stake Percentiles',
             link: '/dashboards/metrics',
             badge: '',
-            badgeTooltip: 'Pylon MINE Metrics'
+            badgeTooltip: 'Pylon MINE staking percentiles'
           },
           {
-            name: 'Buy Back Distribution',
+            name: 'Buyback Distribution',
             link: '/dashboards/buy-back-distribution',
             badge: '',
-            badgeTooltip: 'Pylon MINE Buy Back Distribution'
+            badgeTooltip: 'Pylon MINE buyback distribution'
           },
           {
             name: 'Biggest Mine wallets',
             link: '/dashboards/wallet-amounts',
             badge: '',
-            badgeTooltip: 'Pylon MINE Wallet amounts'
+            badgeTooltip: 'Pylon MINE wallet stake amounts'
           },
           {
             name: 'Gateway Pools',
             link: '/dashboards/gateway-pools',
             badge: '',
-            badgeTooltip: 'Pylon Gateway Pools'
+            badgeTooltip: 'Pylon gateway pools'
           }
         ]
       }

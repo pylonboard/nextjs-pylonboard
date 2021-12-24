@@ -104,10 +104,10 @@ function Hero() {
                   fullWidth
                   component={Link}
                   href="/dashboards/staking"
-                  variant="contained"
-                  color="secondary"
+                  variant="outlined"
+                  color="primary"
                 >
-                  {'MINE Staking Dashboard'}
+                  {'Staking'}
                 </Button>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -115,10 +115,10 @@ function Hero() {
                   fullWidth
                   component={Link}
                   href="/dashboards/metrics"
-                  variant="contained"
-                  color="secondary"
+                  variant="outlined"
+                  color="primary"
                 >
-                  {'MINE Metrics'}
+                  {'Stake Percentiles'}
                 </Button>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -126,10 +126,10 @@ function Hero() {
                   fullWidth
                   component={Link}
                   href="/dashboards/buy-back-distribution"
-                  variant="contained"
-                  color="secondary"
+                  variant="outlined"
+                  color="primary"
                 >
-                  {'MINE Buyback Distribution'}
+                  {'Buyback Distribution'}
                 </Button>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -137,10 +137,10 @@ function Hero() {
                   fullWidth
                   component={Link}
                   href="/dashboards/wallet-amounts"
-                  variant="contained"
-                  color="secondary"
+                  variant="outlined"
+                  color="primary"
                 >
-                  {'MINE Wallet Amounts'}
+                  {'Biggest Mine Wallets'}
                 </Button>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -148,10 +148,10 @@ function Hero() {
                   fullWidth
                   component={Link}
                   href="/dashboards/gateway-pools"
-                  variant="contained"
-                  color="secondary"
+                  variant="outlined"
+                  color="primary"
                 >
-                  {'Pylon Gateway Pools'}
+                  {'Gateway Pools'}
                 </Button>
               </Grid>
             </Grid>
