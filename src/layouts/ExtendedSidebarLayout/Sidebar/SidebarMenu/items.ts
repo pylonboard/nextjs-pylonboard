@@ -33,7 +33,7 @@ const menuItems: MenuItems[] = [
             badgeTooltip: 'Pylon MINE Staking'
           },
           {
-            name: 'Metrics',
+            name: 'Stake Percentiles',
             link: '/dashboards/metrics',
             badge: '',
             badgeTooltip: 'Pylon MINE Metrics'
@@ -45,7 +45,7 @@ const menuItems: MenuItems[] = [
             badgeTooltip: 'Pylon MINE Buy Back Distribution'
           },
           {
-            name: 'Wallets',
+            name: 'Biggest Mine wallets',
             link: '/dashboards/wallet-amounts',
             badge: '',
             badgeTooltip: 'Pylon MINE Wallet amounts'

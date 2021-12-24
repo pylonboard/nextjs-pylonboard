@@ -3,7 +3,8 @@ export const amountFormatter = (value: number) =>
     notation: "compact",
     compactDisplay: "short",
     minimumFractionDigits: 0,
-    maximumFractionDigits: 2
+    maximumFractionDigits: 2,
+
   }).format(value)
 
 export const percentileFormatter = (value: number) =>

@@ -9,7 +9,7 @@ function DashboardMetrics() {
   return (
     <>
       <Head>
-        <title>MINE Metrics</title>
+        <title>MINE Staking Percentiles</title>
       </Head>
       <DashboardMineMetricsContent />
     </>

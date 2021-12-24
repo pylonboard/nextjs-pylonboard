@@ -114,7 +114,7 @@ function TotalMineStakedCumulative({ data, loading }) {
 
   return (
     <Card>
-      <CardHeader title={'Number of continuous days that wallets have staked'} />
+      <CardHeader title={'Days without unstaking'} />
       <Divider />
       <CardContent>
         <Box mt={2} height={420}>

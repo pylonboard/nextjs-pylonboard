@@ -9,7 +9,7 @@ function DashboarWalletAmounts() {
   return (
     <>
       <Head>
-        <title>Pylon Gateway Pools</title>
+        <title>Biggest Mine wallets</title>
       </Head>
       <DashboardWalletAmountsContent />
     </>

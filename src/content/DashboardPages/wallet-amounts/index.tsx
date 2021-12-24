@@ -14,8 +14,8 @@ function DashboardWalletAmountsContent() {
     <>
       <PageTitleWrapper>
         <PageHeader
-          title="Pylon MINE Wallet Amounts"
-          subtitle="These are the Pylon MINE Wallet Amounts"
+          title="Pylon MINE Wallet stake amounts"
+          subtitle="Wallet MINE staking amounts sorted to show the biggest wallets first"
         />
       </PageTitleWrapper>
       <Grid

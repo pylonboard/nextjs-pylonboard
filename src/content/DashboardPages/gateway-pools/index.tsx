@@ -62,12 +62,12 @@ const pools: Pool[] = [
     text: 'Glow'
   },
   {
-    value: 'WHITE_WHALE',
-    text: 'White Whale'
+    value: 'NEXUS',
+    text: 'Nexus'
   },
   {
-    value: 'LOOP',
-    text: 'Loop'
+    value: 'WHITE_WHALE',
+    text: 'White Whale'
   },
   {
     value: 'ORION',
@@ -82,13 +82,13 @@ const pools: Pool[] = [
     text: 'Terra World'
   },
   {
+    value: 'LOOP',
+    text: 'Loop'
+  },
+  {
     value: 'MINE',
     text: 'MINE'
   },
-  {
-    value: 'NEXUS',
-    text: 'Nexus'
-  }
 ];
 
 function DashboardGatewayPoolsContent() {
@@ -111,7 +111,7 @@ function DashboardGatewayPoolsContent() {
       <PageTitleWrapper>
         <PageHeader
           title="Pylon Gateway Pools"
-          subtitle={`These are the Pylon Gateway Pools for ${getActivePool(activeTab).text}`}
+          subtitle={`Pylon Gateway Pools insights - deposit sizes, MINE staking vs deposits. Currently showing data for the ${getActivePool(activeTab).text} pool.`}
         />
       </PageTitleWrapper>
 
