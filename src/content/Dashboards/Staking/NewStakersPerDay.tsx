@@ -9,6 +9,7 @@ import {
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
+import { amountFormatter } from '@/utils/numberFormatters';
 
 function NewStakersPerDay({ data, loading }) {
   const theme = useTheme();
@@ -99,12 +100,7 @@ function NewStakersPerDay({ data, loading }) {
         style: {
           colors: theme.palette.text.secondary
         },
-        formatter: value => new Intl.NumberFormat('default', {
-          notation: "compact",
-          compactDisplay: "short",
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 2
-        }).format(value)
+        formatter: value => amountFormatter(value)
       },
       title: {
         text: 'new stakers',

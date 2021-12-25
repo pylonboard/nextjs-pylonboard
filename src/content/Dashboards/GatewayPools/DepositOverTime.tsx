@@ -2,6 +2,7 @@ import { Card, Box, useTheme, CardHeader, Divider, CardContent, Skeleton } from 
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
+import { amountFormatter } from '@/utils/numberFormatters';
 
 function DepositOverTime({ data, loading }) {
   const theme = useTheme();
@@ -39,9 +40,8 @@ function DepositOverTime({ data, loading }) {
         }
       },
     },
-    colors: [theme.colors.primary.main],
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     fill: {
       opacity: 1
@@ -112,12 +112,7 @@ function DepositOverTime({ data, loading }) {
         style: {
           colors: theme.palette.text.secondary
         },
-        formatter: value => new Intl.NumberFormat('default', {
-          notation: "compact",
-          compactDisplay: "short",
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 2
-        }).format(value)
+        formatter: value => amountFormatter(value)
       },
       title: {
         text: 'UST amount',

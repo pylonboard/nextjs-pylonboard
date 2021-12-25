@@ -1,11 +1,7 @@
-export const amountFormatter = (value: number) =>
-  new Intl.NumberFormat('default', {
-    notation: "compact",
-    compactDisplay: "short",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
+import numeral from 'numeral';
 
-  }).format(value)
+export const amountFormatter = (value: number) =>
+  numeral(value).format('0a.[00]').toUpperCase()
 
 export const percentileFormatter = (value: number) =>
   new Intl.NumberFormat('default', {
