@@ -12,6 +12,7 @@ import {
   TableContainer,
   CardHeader, Skeleton
 } from '@mui/material';
+import { amountFormatter } from '@/utils/numberFormatters';
 
 const PercentileLabels = {
   percentile99: '99%',
@@ -68,12 +69,7 @@ function MetricsTable({ data, loading }) {
                     <TableCell>
                       <Box>
                         <Typography variant="h4">
-                          {new Intl.NumberFormat('en-US', {
-                            notation: "compact",
-                            compactDisplay: "short",
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2,
-                          }).format(data[key].percentileFloor)}
+                          {amountFormatter(data[key].percentileFloor)}
                         </Typography>
                       </Box>
                     </TableCell>
@@ -85,12 +81,7 @@ function MetricsTable({ data, loading }) {
                     <TableCell align="right">
                       <Box>
                         <Typography variant="h4">
-                          {new Intl.NumberFormat('en-US', {
-                            notation: "compact",
-                            compactDisplay: "short",
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2,
-                          }).format(data[key].amountOfMine)}
+                          {amountFormatter(data[key].amountOfMine)}
                         </Typography>
                       </Box>
                     </TableCell>
