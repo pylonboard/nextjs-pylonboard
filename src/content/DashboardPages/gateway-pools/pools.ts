@@ -5,6 +5,10 @@ interface Pool {
 
 const pools: Pool[] = [
   {
+    value: 'XDEFI',
+    text: 'Xdefi'
+  },
+  {
     value: 'SAYVE',
     text: 'Sayve'
   },
