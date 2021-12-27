@@ -10,30 +10,30 @@ import TotalMineStakedCumulative from '@/content/Dashboards/Staking/TotalMineSta
 import ContinuousDaysWalletsStaked from '@/content/Dashboards/Staking/ContinuousDaysWalletsStaked';
 
 const QUERY = gql`
-    query MineStakingStats {
-        mineStakingStats {
-            stakedPerDay {
-                at
-                value
-            }
-            stakedPerDayCumulative {
-                at
-                value
-            }
-            daysStakedBinned {
-                daysStakedBin
-                count
-            }
-            newWalletsPerDay {
-                at
-                value
-            }
-        }
+  query MineStakingStats {
+    mineStakingStats {
+      stakedPerDay {
+        at
+        value
+      }
+      stakedPerDayCumulative {
+        at
+        value
+      }
+      daysStakedBinned {
+        daysStakedBin
+        count
+      }
+      newWalletsPerDay {
+        at
+        value
+      }
     }
+  }
 `;
 
 function DashboardStakingContent() {
-  const { data, loading } = useQuery(QUERY);
+  const { data, loading, error } = useQuery(QUERY);
 
   return (
     <>
@@ -55,24 +55,28 @@ function DashboardStakingContent() {
           <TotalMineStakedPerDay
             data={data && data.mineStakingStats.stakedPerDay}
             loading={loading}
+            error={error}
           />
         </Grid>
         <Grid item xs={12}>
           <TotalMineStakedCumulative
             data={data && data.mineStakingStats.stakedPerDayCumulative}
             loading={loading}
+            error={error}
           />
         </Grid>
         <Grid item xs={12}>
           <ContinuousDaysWalletsStaked
             data={data && data.mineStakingStats.daysStakedBinned}
             loading={loading}
+            error={error}
           />
         </Grid>
         <Grid item xs={12}>
           <NewStakersPerDay
             data={data && data.mineStakingStats.newWalletsPerDay}
             loading={loading}
+            error={error}
           />
         </Grid>
       </Grid>

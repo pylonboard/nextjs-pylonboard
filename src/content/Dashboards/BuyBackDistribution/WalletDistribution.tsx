@@ -10,13 +10,14 @@ import {
   TableBody,
   Table,
   TableContainer,
-  useTheme, InputAdornment, styled, TextField, Skeleton, CardHeader, IconButton
+  useTheme, InputAdornment, styled, TextField, Skeleton, CardHeader, IconButton, CardContent
 } from '@mui/material';
 import { gql, useLazyQuery, useQuery } from '@apollo/client';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
 import Text from '@/components/Text';
 import Link from '@/components/Link';
+import Error from '@/components/Error';
 
 const SearchInputWrapper = styled(TextField)(
   ({ theme }) => `
@@ -74,7 +75,7 @@ function WalletDistribution() {
   const [search, setSearch] = useState('');
   const [tableData, setTableData] = useState([]);
   const [buybacks, setBuybacks] = useState([]);
-  const { data: dataBuybacks, loading: loadingBuybacks } = useQuery(QUERY_MINE_TREASURY);
+  const { data: dataBuybacks, loading: loadingBuybacks, error: errorBuybacks } = useQuery(QUERY_MINE_TREASURY);
   const [loadWalletDistribution, { called, data: dataWallet, loading: loadingWallet }] = useLazyQuery(QUERY_MINE_TREASURY_BY_WALLET);
 
   useEffect(() => {
@@ -117,6 +118,18 @@ function WalletDistribution() {
   };
 
   const isLoading = (loadingBuybacks || loadingWallet);
+
+  if (!isLoading && errorBuybacks) {
+    return (
+      <Card variant="outlined">
+        <CardHeader title="Buyback distributions" />
+        <Divider />
+        <CardContent>
+          <Error message={errorBuybacks.message} />
+        </CardContent>
+      </Card>
+    )
+  }
 
   return (
     <Card variant="outlined">

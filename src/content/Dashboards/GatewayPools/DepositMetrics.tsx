@@ -9,8 +9,9 @@ import {
 } from '@mui/material';
 
 import { amountFormatter } from '@/utils/numberFormatters';
+import Error from '@/components/Error';
 
-function DepositMetrics({ data, loading }) {
+function DepositMetrics({ data, loading, error }) {
   return (
     <Card
       sx={{
@@ -20,67 +21,71 @@ function DepositMetrics({ data, loading }) {
       <CardHeader title={'Deposit Amounts'} />
       <Divider />
       <CardContent>
-        <Box
-          sx={{
-            px: { lg: 4 },
-            pt: 2,
-            pb: 4,
-            height: '100%',
-            flex: 1,
-            textAlign: 'center'
-          }}
-        >
-          <Grid spacing={3} container>
-            <Grid item xs={6} sm={3}>
-              <Typography variant="caption" gutterBottom>
-                {'Total'}
-              </Typography>
-              <Typography variant="h3">
-                {loading ? (
-                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
-                ) : (
-                  amountFormatter(data.totalValueLocked)
-                )}
-              </Typography>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <Box
+            sx={{
+              px: { lg: 4 },
+              pt: 2,
+              pb: 4,
+              height: '100%',
+              flex: 1,
+              textAlign: 'center'
+            }}
+          >
+            <Grid spacing={3} container>
+              <Grid item xs={6} sm={3}>
+                <Typography variant="caption" gutterBottom>
+                  {'Total'}
+                </Typography>
+                <Typography variant="h3">
+                  {loading ? (
+                    <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                  ) : (
+                    amountFormatter(data.totalValueLocked)
+                  )}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Typography variant="caption" gutterBottom>
+                  {'Average'}
+                </Typography>
+                <Typography variant="h3">
+                  {loading ? (
+                    <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                  ) : (
+                    amountFormatter(data.averageDeposit)
+                  )}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Typography variant="caption" gutterBottom>
+                  {'Largest'}
+                </Typography>
+                <Typography variant="h3">
+                  {loading ? (
+                    <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                  ) : (
+                    amountFormatter(data.maxDeposit)
+                  )}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Typography variant="caption" gutterBottom>
+                  {'Smallest'}
+                </Typography>
+                <Typography variant="h3">
+                  {loading ? (
+                    <Skeleton  width={130} sx={{ display: 'inline-block' }} />
+                  ) : (
+                    amountFormatter(data.minDeposit)
+                  )}
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={6} sm={3}>
-              <Typography variant="caption" gutterBottom>
-                {'Average'}
-              </Typography>
-              <Typography variant="h3">
-                {loading ? (
-                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
-                ) : (
-                  amountFormatter(data.averageDeposit)
-                )}
-              </Typography>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Typography variant="caption" gutterBottom>
-                {'Largest'}
-              </Typography>
-              <Typography variant="h3">
-                {loading ? (
-                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
-                ) : (
-                  amountFormatter(data.maxDeposit)
-                )}
-              </Typography>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Typography variant="caption" gutterBottom>
-                {'Smallest'}
-              </Typography>
-              <Typography variant="h3">
-                {loading ? (
-                  <Skeleton  width={130} sx={{ display: 'inline-block' }} />
-                ) : (
-                  amountFormatter(data.minDeposit)
-                )}
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        )}
       </CardContent>
     </Card>
   );

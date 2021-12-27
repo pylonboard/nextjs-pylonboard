@@ -3,8 +3,9 @@ import { Card, Box, useTheme, CardHeader, Divider, CardContent, Skeleton } from 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { amountFormatter } from '@/utils/numberFormatters';
+import Error from '@/components/Error';
 
-function DepositOverTime({ data, loading }) {
+function DepositOverTime({ data, loading, error }) {
   const theme = useTheme();
 
   const chartDepositOverTimeOptions: ApexOptions = {
@@ -137,30 +138,34 @@ function DepositOverTime({ data, loading }) {
       <CardHeader title={'UST deposited over time'} />
       <Divider />
       <CardContent>
-        <Box
-          sx={{
-            p: 3
-          }}
-        >
-          {loading ? (
-            <Skeleton variant="rectangular" height={450} />
-          ) : (
-            <Chart
-              options={{
-                ...chartDepositOverTimeOptions,
-                labels: data.map(d => d.at)
-              }}
-              series={[
-                {
-                  name: 'Amount',
-                  data: data.map(d => d.value),
-                }
-              ]}
-              type="bar"
-              height={450}
-            />
-          )}
-        </Box>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <Box
+            sx={{
+              p: 3
+            }}
+          >
+            {loading ? (
+              <Skeleton variant="rectangular" height={450} />
+            ) : (
+              <Chart
+                options={{
+                  ...chartDepositOverTimeOptions,
+                  labels: data.map(d => d.at)
+                }}
+                series={[
+                  {
+                    name: 'Amount',
+                    data: data.map(d => d.value),
+                  }
+                ]}
+                type="bar"
+                height={450}
+              />
+            )}
+          </Box>
+        )}
       </CardContent>
     </Card>
   );

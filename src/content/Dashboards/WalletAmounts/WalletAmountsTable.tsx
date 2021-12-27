@@ -19,6 +19,7 @@ import {
 import Link from 'src/components/Link';
 
 import { gql, useQuery } from '@apollo/client';
+import Error from '@/components/Error';
 
 const TableHeadWrapper = styled(TableHead)(
   ({ theme }) => `
@@ -66,7 +67,7 @@ function WalletAmountsTable() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [count, setCount] = useState(0);
 
-  const { data, loading, fetchMore } = useQuery(QUERY, {
+  const { data, loading, fetchMore, error } = useQuery(QUERY, {
     variables: {
       skip: page * rowsPerPage,
       take: rowsPerPage
@@ -106,94 +107,100 @@ function WalletAmountsTable() {
       <CardHeader title={'Wallet Amounts'} />
       <Divider />
       <CardContent>
-        <TableContainer>
-          <Table>
-            <TableHeadWrapper>
-              <TableRow>
-                <TableCell>{'Wallet'}</TableCell>
-                <TableCell align="center">{'Staked Since'}</TableCell>
-                <TableCell align="right">{'Amount'}</TableCell>
-              </TableRow>
-            </TableHeadWrapper>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <>
+            <TableContainer>
+              <Table>
+                <TableHeadWrapper>
+                  <TableRow>
+                    <TableCell>{'Wallet'}</TableCell>
+                    <TableCell align="center">{'Staked Since'}</TableCell>
+                    <TableCell align="right">{'Amount'}</TableCell>
+                  </TableRow>
+                </TableHeadWrapper>
 
-            {loading ? (
-              <TableBody>
-                {Array.from(Array(rowsPerPage), Math.random).map(value => (
-                  <TableRow key={value}>
-                    <TableCell>
-                        <Skeleton/>
-                      </TableCell>
-                    <TableCell>
-                      <Skeleton/>
-                    </TableCell>
-                    <TableCell>
-                      <Skeleton/>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            ) : (
-              <TableBody>
-                {data.mineWalletStats.items.map(({ wallet, stakedSince, sum }) =>
-                  <TableRow key={wallet}>
-                    <TableCell>
-                      <Box>
-                        <Link
-                          href={`https://finder.terra.money/columbus-5/address/${wallet}`}
-                          target="_blank"
-                          rel="noopener"
-                          title={wallet}
-                          color={`${theme.colors.primary.main}`}
-                          underline="none"
-                          textOverflow="ellipsis"
-                          variant="h5"
-                          noWrap
-                          overflow="hidden"
-                          display="block"
-                          sx={{
-                            width: '120px',
-                            '&:hover': {
-                              textDecoration: 'underline'
-                            }
-                          }}
-                        >
-                          {wallet}
-                        </Link>
-                      </Box>
-                    </TableCell>
-                    <TableCell align="center">
-                      <Box>
-                        <Typography variant="h5"  noWrap>
-                          {dateFormatter(stakedSince)}
-                        </Typography>
-                      </Box>
-                    </TableCell>
-                    <TableCell align="right">
-                      <Box>
-                        <Typography variant="h4">
-                          {new Intl.NumberFormat('default', {
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 2
-                          }).format(sum)}
-                        </Typography>
-                      </Box>
-                    </TableCell>
-                  </TableRow>
+                {loading ? (
+                  <TableBody>
+                    {Array.from(Array(rowsPerPage), Math.random).map(value => (
+                      <TableRow key={value}>
+                        <TableCell>
+                          <Skeleton/>
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton/>
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton/>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                ) : (
+                  <TableBody>
+                    {data.mineWalletStats.items.map(({ wallet, stakedSince, sum }) =>
+                      <TableRow key={wallet}>
+                        <TableCell>
+                          <Box>
+                            <Link
+                              href={`https://finder.terra.money/columbus-5/address/${wallet}`}
+                              target="_blank"
+                              rel="noopener"
+                              title={wallet}
+                              color={`${theme.colors.primary.main}`}
+                              underline="none"
+                              textOverflow="ellipsis"
+                              variant="h5"
+                              noWrap
+                              overflow="hidden"
+                              display="block"
+                              sx={{
+                                width: '120px',
+                                '&:hover': {
+                                  textDecoration: 'underline'
+                                }
+                              }}
+                            >
+                              {wallet}
+                            </Link>
+                          </Box>
+                        </TableCell>
+                        <TableCell align="center">
+                          <Box>
+                            <Typography variant="h5"  noWrap>
+                              {dateFormatter(stakedSince)}
+                            </Typography>
+                          </Box>
+                        </TableCell>
+                        <TableCell align="right">
+                          <Box>
+                            <Typography variant="h4">
+                              {new Intl.NumberFormat('default', {
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 2
+                              }).format(sum)}
+                            </Typography>
+                          </Box>
+                        </TableCell>
+                      </TableRow>
+                    )}
+                  </TableBody>
                 )}
-              </TableBody>
-            )}
-          </Table>
-        </TableContainer>
-        <Box pt={1} display="flex" justifyContent="flex-end">
-          <TablePagination
-            component="div"
-            count={count}
-            page={page}
-            onPageChange={handleChangePage}
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Box>
+              </Table>
+            </TableContainer>
+            <Box pt={1} display="flex" justifyContent="flex-end">
+              <TablePagination
+                component="div"
+                count={count}
+                page={page}
+                onPageChange={handleChangePage}
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </Box>
+          </>
+        )}
       </CardContent>
     </Card>
   );

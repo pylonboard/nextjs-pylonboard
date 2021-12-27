@@ -10,8 +10,9 @@ import {
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { amountFormatter } from '@/utils/numberFormatters';
+import Error from '@/components/Error';
 
-function TotalMineStakedPerDay({ data, loading }) {
+function TotalMineStakedPerDay({ data, loading, error }) {
   const theme = useTheme();
 
   const ChartAudienceOptions: ApexOptions = {
@@ -131,26 +132,30 @@ function TotalMineStakedPerDay({ data, loading }) {
       <CardHeader title={'Total MINE staked per day'} />
       <Divider />
       <CardContent>
-        <Box mt={2} height={420}>
-          {loading ? (
-            <Skeleton variant="rectangular" height="100%" />
-          ) : (
-            <Chart
-              options={{
-                ...ChartAudienceOptions,
-                labels: data.map(d => d.at)
-              }}
-              series={[
-                {
-                  name: 'Amount',
-                  data: data.map(d => d.value),
-                }
-              ]}
-              type="line"
-              height={420}
-            />
-          )}
-        </Box>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <Box mt={2} height={420}>
+            {loading ? (
+              <Skeleton variant="rectangular" height="100%" />
+            ) : (
+              <Chart
+                options={{
+                  ...ChartAudienceOptions,
+                  labels: data.map(d => d.at)
+                }}
+                series={[
+                  {
+                    name: 'Amount',
+                    data: data.map(d => d.value),
+                  }
+                ]}
+                type="line"
+                height={420}
+              />
+            )}
+          </Box>
+        )}
       </CardContent>
     </Card>
   );
