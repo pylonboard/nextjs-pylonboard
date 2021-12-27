@@ -25,8 +25,16 @@ const pools: Pool[] = [
     text: 'White Whale'
   },
   {
+    value: 'DEVIANTS_FACTIONS',
+    text: 'Deviants Factions'
+  },
+  {
     value: 'ORION',
     text: 'Orion'
+  },
+  {
+    value: 'GALACTIC_PUNKS',
+    text:'Galactic Punks'
   },
   {
     value: 'VALKYRIE',
