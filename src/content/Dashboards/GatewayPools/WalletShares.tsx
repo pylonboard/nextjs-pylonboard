@@ -6,17 +6,61 @@ import {
   Grid,
   Divider,
   Box,
-  useTheme, Skeleton
+  useTheme,
+  styled,
+  Skeleton
 } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { percentileFormatter } from '@/utils/numberFormatters';
+import { stringMiddleTruncate } from '@/utils/stringMiddleTruncate';
 import Error from '@/components/Error';
 
-function WalletShares({ data, loading, error }) {
 
+const DotLegend = styled('span')(
+  ({ theme }) => `
+    border-radius: 22px;
+    width: ${theme.spacing(1.5)};
+    height: ${theme.spacing(1.5)};
+    display: inline-block;
+    margin-right: ${theme.spacing(0.5)};
+  `
+);
+
+const GridItem = styled(Grid)(
+  ({ theme }) => `
+    ${theme.breakpoints.down('sm')} {
+        width: 100%;
+    }
+  `
+);
+
+const PieChartSkeleton = styled(Skeleton)(
+  ({ theme }) => `
+    width: 260px;
+    height: 260px;
+    ${theme.breakpoints.up('md')} {
+        width: 380px;
+        height: 380px;
+    }
+  `
+);
+
+function WalletShares({ data, loading, error }) {
   const theme = useTheme();
+
+  const colors = [
+    theme.colors.primary.main,
+    '#008FFB',
+    '#00E396',
+    '#FEB019',
+    '#FF4560',
+    '#775DD0',
+    '#A300D6',
+    '#F86624',
+    theme.colors.secondary.main
+  ];
 
   const chartOptions: ApexOptions = {
     chart: {
@@ -26,6 +70,17 @@ function WalletShares({ data, loading, error }) {
         show: false
       }
     },
+    responsive: [
+      {
+        breakpoint: theme.breakpoints.values.md - 1,
+        options: {
+          chart: {
+            width: 300,
+            height: 300
+          }
+        }
+      }
+    ],
     plotOptions: {
       pie: {
         donut: {
@@ -33,11 +88,19 @@ function WalletShares({ data, loading, error }) {
         }
       }
     },
+    colors,
     tooltip: {
       enabled: true,
       fillSeriesColor: true,
+      style: {
+        fontSize: '16px'
+      },
       y: {
-        formatter: (value: number) => percentileFormatter(value / 100),
+        title: {
+          formatter: (seriesName: string) =>
+            stringMiddleTruncate(seriesName, 16)
+        },
+        formatter: (value: number) => percentileFormatter(value / 100)
       }
     },
     dataLabels: {
@@ -59,10 +122,7 @@ function WalletShares({ data, loading, error }) {
       show: false
     },
     stroke: {
-      width: 0
-    },
-    theme: {
-      palette: 'palette3'
+      width: 1
     }
   };
 
@@ -75,18 +135,19 @@ function WalletShares({ data, loading, error }) {
           <Error message={error.message} />
         ) : (
           <Grid container spacing={3}>
-            <Grid
-              md={6}
+            <GridItem
+              sm={6}
               item
               display="flex"
               justifyContent="center"
               alignItems="center"
             >
               {loading ? (
-                <Skeleton variant="circular" width={282} height={282} />
+                <PieChartSkeleton variant="circular" />
               ) : (
                 <Chart
-                  height={300}
+                  width={400}
+                  height={400}
                   options={{
                     ...chartOptions,
                     labels: data.map(({ wallet }) => wallet)
@@ -95,45 +156,49 @@ function WalletShares({ data, loading, error }) {
                   type="donut"
                 />
               )}
-            </Grid>
-            <Grid md={6} item display="flex" alignItems="center">
-              <Box sx={{width: "100%" }}>
-                {loading ? (
-                  <>
-                    <Skeleton />
-                    <Skeleton />
-                    <Skeleton />
-                    <Skeleton />
-                    <Skeleton />
-                    <Skeleton />
-                  </>
-                ) : (
-                  data.map(({ wallet }, i: number) => (
-                    <Typography
-                      key={wallet}
-                      variant="body2"
-                      sx={{
-                        display: 'block',
-                        textOverflow: 'ellipsis',
-                        overflow: 'hidden',
-                        py: 0.8,
-                        mr: 2
-                      }}
-                    >
-                  <span
-                    style={{
-                      paddingRight: 10,
-                      color: `${theme.palette.primary.main}`
-                    }}
-                  >
-                    {percentileFormatter(data[i].inPercent / 100)}
-                  </span>
-                      {wallet}
-                    </Typography>
-                  ))
-                )}
+            </GridItem>
+            <GridItem
+              sm={6}
+              item
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Box sx={{ width: '100%' }}>
+                {loading
+                  ? Array.from(Array(9), Math.random).map((value) => (
+                      <Skeleton key={value} sx={{ py: 0.8, fontSize: 10 }} />
+                    ))
+                  : data.map(({ wallet }, i: number) => (
+                      <Typography
+                        key={wallet}
+                        variant="body2"
+                        noWrap
+                        sx={{
+                          textOverflow: 'ellipsis',
+                          overflow: 'hidden',
+                          py: 0.6
+                        }}
+                      >
+                        <DotLegend
+                          style={{
+                            marginRight: theme.spacing(1),
+                            background: colors[i]
+                          }}
+                        />
+                        <span
+                          style={{
+                            paddingRight: 10,
+                            color: colors[i]
+                          }}
+                        >
+                          {percentileFormatter(data[i].inPercent / 100)}
+                        </span>
+                        {wallet}
+                      </Typography>
+                    ))}
               </Box>
-            </Grid>
+            </GridItem>
           </Grid>
         )}
       </CardContent>
