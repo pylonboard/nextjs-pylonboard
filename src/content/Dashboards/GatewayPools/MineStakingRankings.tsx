@@ -3,11 +3,12 @@ import {
   CardHeader,
   Typography,
   Divider,
-  Box, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Skeleton
+  Box, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Skeleton, CardContent
 } from '@mui/material';
 
 import { amountFormatter } from '@/utils/numberFormatters';
 import { gql, useQuery } from '@apollo/client';
+import Error from '@/components/Error';
 
 const QUERY = gql`
     query GatewayPoolStats($gatewayIdentifier: GatewayPoolIdentifier!) {
@@ -60,7 +61,7 @@ const RankingLabels = {
 }
 
 function MineStakingRankings({ gatewayIdentifier }) {
-  const { data, loading } = useQuery(QUERY, {
+  const { data, loading, error } = useQuery(QUERY, {
     variables: {
       gatewayIdentifier: gatewayIdentifier
     }});
@@ -69,6 +70,11 @@ function MineStakingRankings({ gatewayIdentifier }) {
     <Card variant="outlined">
       <CardHeader title={'MINE staker deposit metrics'}/>
       <Divider />
+      {!loading && error ? (
+        <CardContent>
+          <Error message={error.message} />
+        </CardContent>
+      ) : (
         <TableContainer>
           {loading ? (
             <Skeleton variant="rectangular" height={320} />
@@ -127,6 +133,7 @@ function MineStakingRankings({ gatewayIdentifier }) {
             </Table>
           )}
         </TableContainer>
+      )}
     </Card>
   );
 }

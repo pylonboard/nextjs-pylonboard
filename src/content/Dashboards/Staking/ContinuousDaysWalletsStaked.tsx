@@ -10,8 +10,9 @@ import {
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { amountFormatter } from '@/utils/numberFormatters';
+import Error from '@/components/Error';
 
-function TotalMineStakedCumulative({ data, loading }) {
+function TotalMineStakedCumulative({ data, loading, error }) {
   const theme = useTheme();
 
   const ChartAudienceOptions: ApexOptions = {
@@ -113,26 +114,30 @@ function TotalMineStakedCumulative({ data, loading }) {
       <CardHeader title={'Days without unstaking'} />
       <Divider />
       <CardContent>
-        <Box mt={2} height={420}>
-          {loading ? (
-            <Skeleton variant="rectangular" height="100%" />
-          ) : (
-            <Chart
-              options={{
-                ...ChartAudienceOptions,
-                labels: data.map(d => d.daysStakedBin)
-              }}
-              series={[
-                {
-                  name: 'Record Count',
-                  data: data.map(d => d.count),
-                }
-              ]}
-              type="bar"
-              height={420}
-            />
-          )}
-        </Box>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <Box mt={2} height={420}>
+            {loading ? (
+              <Skeleton variant="rectangular" height="100%" />
+            ) : (
+              <Chart
+                options={{
+                  ...ChartAudienceOptions,
+                  labels: data.map(d => d.daysStakedBin)
+                }}
+                series={[
+                  {
+                    name: 'Record Count',
+                    data: data.map(d => d.count),
+                  }
+                ]}
+                type="bar"
+                height={420}
+              />
+            )}
+          </Box>
+        )}
       </CardContent>
     </Card>
   );

@@ -63,7 +63,7 @@ function DashboardGatewayPoolsContent() {
   }, [router.isReady]);
 
 
-  const [getGatewayPool, { data, loading, called }] = useLazyQuery(QUERY);
+  const [getGatewayPool, { data, loading, called, error }] = useLazyQuery(QUERY);
 
   useEffect(() => {
     if (getPoolByValue(gwp)) {
@@ -136,18 +136,22 @@ function DashboardGatewayPoolsContent() {
         <Grid item xs={12}>
           <DepositMetrics
             data={data && data.gatewayPoolStats.overall}
-            loading={!called || loading} />
+            loading={!called || loading}
+            error={error}
+          />
         </Grid>
         <Grid item xs={12}>
           <WalletShares
             data={data && data.gatewayPoolStats.overall.depositPerWallet}
             loading={!called || loading}
+            error={error}
           />
         </Grid>
         <Grid item xs={12}>
           <DepositOverTime
             data={data && data.gatewayPoolStats.overall.depositsOverTime}
             loading={!called || loading}
+            error={error}
           />
         </Grid>
         <Grid item xs={12}>

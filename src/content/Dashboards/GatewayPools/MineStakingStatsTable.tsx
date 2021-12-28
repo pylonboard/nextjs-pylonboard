@@ -14,11 +14,14 @@ import {
   TableContainer,
   Skeleton,
   styled,
-  useTheme, CardHeader, CardContent
+  useTheme,
+  CardHeader,
+  CardContent
 } from '@mui/material';
 import Link from 'src/components/Link';
 
 import { gql, useQuery } from '@apollo/client';
+import Error from '@/components/Error';
 
 const TableHeadWrapper = styled(TableHead)(
   ({ theme }) => `
@@ -37,16 +40,25 @@ const TableHeadWrapper = styled(TableHead)(
 );
 
 const QUERY = gql`
-    query MineStakingStats($gatewayIdentifier: GatewayPoolIdentifier!, $skip: Int, $take: Int) {
-        gatewayPoolMineStakingStats(gatewayIdentifier: $gatewayIdentifier, skip: $skip, take: $take, sortBy: "") {
-            items {
-                stakingAmount
-                depositAmount
-                depositor
-            }
-            totalCount
-        }
+  query MineStakingStats(
+    $gatewayIdentifier: GatewayPoolIdentifier!
+    $skip: Int
+    $take: Int
+  ) {
+    gatewayPoolMineStakingStats(
+      gatewayIdentifier: $gatewayIdentifier
+      skip: $skip
+      take: $take
+      sortBy: ""
+    ) {
+      items {
+        stakingAmount
+        depositAmount
+        depositor
+      }
+      totalCount
     }
+  }
 `;
 
 function MineStakingStatsTable({ gatewayIdentifier }) {
@@ -56,7 +68,7 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [count, setCount] = useState(0);
 
-  const { data, loading, fetchMore } = useQuery(QUERY, {
+  const { data, loading, fetchMore, error } = useQuery(QUERY, {
     variables: {
       gatewayIdentifier,
       skip: page * rowsPerPage,
@@ -67,7 +79,7 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
 
   useEffect(() => {
     if (data) {
-      setCount(data.gatewayPoolMineStakingStats.totalCount)
+      setCount(data.gatewayPoolMineStakingStats.totalCount);
     }
   }, [data]);
 
@@ -82,7 +94,7 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
       }
     }).then(() => {
       setPage(newPage);
-    })
+    });
   };
 
   const handleChangeRowsPerPage = (
@@ -97,97 +109,107 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
       <CardHeader title={'Depositors also staking MINE'} />
       <Divider />
       <CardContent>
-        <TableContainer>
-          <Table>
-            <TableHeadWrapper>
-              <TableRow>
-                <TableCell>{'Depositor'}</TableCell>
-                <TableCell align="center">{'Deposit Amount'}</TableCell>
-                <TableCell align="right">{'Staking Amount'}</TableCell>
-              </TableRow>
-            </TableHeadWrapper>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <>
+            <TableContainer>
+              <Table>
+                <TableHeadWrapper>
+                  <TableRow>
+                    <TableCell>{'Depositor'}</TableCell>
+                    <TableCell align="center">{'Deposit Amount'}</TableCell>
+                    <TableCell align="right">{'Staking Amount'}</TableCell>
+                  </TableRow>
+                </TableHeadWrapper>
 
-            {loading ? (
-              <TableBody>
-                {Array.from(Array(rowsPerPage), Math.random).map(value => (
-                  <TableRow key={value}>
-                    <TableCell>
-                      <Skeleton/>
-                    </TableCell>
-                    <TableCell>
-                      <Skeleton/>
-                    </TableCell>
-                    <TableCell>
-                      <Skeleton/>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            ) : (
-              <TableBody>
-                {data.gatewayPoolMineStakingStats.items.map(({ stakingAmount, depositAmount, depositor }) =>
-                  <TableRow key={depositor}>
-                    <TableCell>
-                      <Box>
-                        <Link
-                          href={`https://finder.terra.money/columbus-5/address/${depositor}`}
-                          target="_blank"
-                          rel="noopener"
-                          title={depositor}
-                          color={`${theme.colors.primary.main}`}
-                          underline="none"
-                          textOverflow="ellipsis"
-                          variant="h5"
-                          noWrap
-                          overflow="hidden"
-                          display="block"
-                          sx={{
-                            width: '120px',
-                            '&:hover': {
-                              textDecoration: 'underline'
-                            }
-                          }}
-                        >
-                          {depositor}
-                        </Link>
-                      </Box>
-                    </TableCell>
-                    <TableCell align="center">
-                      <Box>
-                        <Typography variant="h5">
-                          {new Intl.NumberFormat('default', {
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 2
-                          }).format(depositAmount)}
-                        </Typography>
-                      </Box>
-                    </TableCell>
-                    <TableCell align="right">
-                      <Box>
-                        <Typography variant="h4">
-                          {new Intl.NumberFormat('default', {
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 2
-                          }).format(stakingAmount)}
-                        </Typography>
-                      </Box>
-                    </TableCell>
-                  </TableRow>
+                {loading ? (
+                  <TableBody>
+                    {Array.from(Array(rowsPerPage), Math.random).map(
+                      (value) => (
+                        <TableRow key={value}>
+                          <TableCell>
+                            <Skeleton />
+                          </TableCell>
+                          <TableCell>
+                            <Skeleton />
+                          </TableCell>
+                          <TableCell>
+                            <Skeleton />
+                          </TableCell>
+                        </TableRow>
+                      )
+                    )}
+                  </TableBody>
+                ) : (
+                  <TableBody>
+                    {data.gatewayPoolMineStakingStats.items.map(
+                      ({ stakingAmount, depositAmount, depositor }) => (
+                        <TableRow key={depositor}>
+                          <TableCell>
+                            <Box>
+                              <Link
+                                href={`https://finder.terra.money/columbus-5/address/${depositor}`}
+                                target="_blank"
+                                rel="noopener"
+                                title={depositor}
+                                color={`${theme.colors.primary.main}`}
+                                underline="none"
+                                textOverflow="ellipsis"
+                                variant="h5"
+                                noWrap
+                                overflow="hidden"
+                                display="block"
+                                sx={{
+                                  width: '120px',
+                                  '&:hover': {
+                                    textDecoration: 'underline'
+                                  }
+                                }}
+                              >
+                                {depositor}
+                              </Link>
+                            </Box>
+                          </TableCell>
+                          <TableCell align="center">
+                            <Box>
+                              <Typography variant="h5">
+                                {new Intl.NumberFormat('default', {
+                                  minimumFractionDigits: 0,
+                                  maximumFractionDigits: 2
+                                }).format(depositAmount)}
+                              </Typography>
+                            </Box>
+                          </TableCell>
+                          <TableCell align="right">
+                            <Box>
+                              <Typography variant="h4">
+                                {new Intl.NumberFormat('default', {
+                                  minimumFractionDigits: 0,
+                                  maximumFractionDigits: 2
+                                }).format(stakingAmount)}
+                              </Typography>
+                            </Box>
+                          </TableCell>
+                        </TableRow>
+                      )
+                    )}
+                  </TableBody>
                 )}
-              </TableBody>
-            )}
-          </Table>
-        </TableContainer>
-        <Box pt={1} display="flex" justifyContent="flex-end">
-          <TablePagination
-            component="div"
-            count={count}
-            page={page}
-            onPageChange={handleChangePage}
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Box>
+              </Table>
+            </TableContainer>
+            <Box pt={1} display="flex" justifyContent="flex-end">
+              <TablePagination
+                component="div"
+                count={count}
+                page={page}
+                onPageChange={handleChangePage}
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </Box>
+          </>
+        )}
       </CardContent>
     </Card>
   );

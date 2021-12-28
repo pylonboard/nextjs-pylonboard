@@ -12,8 +12,9 @@ import {
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { percentileFormatter } from '@/utils/numberFormatters';
+import Error from '@/components/Error';
 
-function WalletShares({ data, loading }) {
+function WalletShares({ data, loading, error }) {
 
   const theme = useTheme();
 
@@ -70,52 +71,55 @@ function WalletShares({ data, loading }) {
       <CardHeader title={'Wallet %-share of total UST deposited'} />
       <Divider />
       <CardContent>
-        <Grid container spacing={3}>
-          <Grid
-            md={6}
-            item
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-            {loading ? (
-              <Skeleton variant="circular" width={282} height={282} />
-            ) : (
-              <Chart
-                height={300}
-                options={{
-                  ...chartOptions,
-                  labels: data.map(({ wallet }) => wallet)
-                }}
-                series={data.map(({ inPercent }) => inPercent)}
-                type="donut"
-              />
-            )}
-          </Grid>
-          <Grid md={6} item display="flex" alignItems="center">
-            <Box sx={{width: "100%" }}>
+        {!loading && error ? (
+          <Error message={error.message} />
+        ) : (
+          <Grid container spacing={3}>
+            <Grid
+              md={6}
+              item
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
               {loading ? (
-                <>
-                  <Skeleton />
-                  <Skeleton />
-                  <Skeleton />
-                  <Skeleton />
-                  <Skeleton />
-                  <Skeleton />
-                </>
+                <Skeleton variant="circular" width={282} height={282} />
               ) : (
-                data.map(({ wallet }, i: number) => (
-                  <Typography
-                    key={wallet}
-                    variant="body2"
-                    sx={{
-                      display: 'block',
-                      textOverflow: 'ellipsis',
-                      overflow: 'hidden',
-                      py: 0.8,
-                      mr: 2
-                    }}
-                  >
+                <Chart
+                  height={300}
+                  options={{
+                    ...chartOptions,
+                    labels: data.map(({ wallet }) => wallet)
+                  }}
+                  series={data.map(({ inPercent }) => inPercent)}
+                  type="donut"
+                />
+              )}
+            </Grid>
+            <Grid md={6} item display="flex" alignItems="center">
+              <Box sx={{width: "100%" }}>
+                {loading ? (
+                  <>
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                  </>
+                ) : (
+                  data.map(({ wallet }, i: number) => (
+                    <Typography
+                      key={wallet}
+                      variant="body2"
+                      sx={{
+                        display: 'block',
+                        textOverflow: 'ellipsis',
+                        overflow: 'hidden',
+                        py: 0.8,
+                        mr: 2
+                      }}
+                    >
                   <span
                     style={{
                       paddingRight: 10,
@@ -124,13 +128,14 @@ function WalletShares({ data, loading }) {
                   >
                     {percentileFormatter(data[i].inPercent / 100)}
                   </span>
-                    {wallet}
-                  </Typography>
-                ))
-              )}
-            </Box>
+                      {wallet}
+                    </Typography>
+                  ))
+                )}
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
+        )}
       </CardContent>
     </Card>
   );
