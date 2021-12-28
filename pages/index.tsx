@@ -1,13 +1,13 @@
-import { Box, Container, Button, styled, Grid } from '@mui/material';
+import { Box, Container, styled, Grid } from '@mui/material';
 import type { ReactElement } from 'react';
 import BaseLayout from 'src/layouts/BaseLayout';
 
-import Link from 'src/components/Link';
 import Head from 'next/head';
 import Logo from 'src/components/LogoSign';
 import Hero from 'src/content/Overview/Hero';
 import Footer from 'src/components/Footer';
 import GatewayPoolStats from '@/content/Overview/GatewayPoolStats';
+import WalletConnect from '@/components/WalletConnect';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -47,14 +47,7 @@ function Overview() {
             >
               <Box />
               <Box>
-                <Button
-                  component={Link}
-                  href="/dashboards/staking"
-                  variant="contained"
-                  sx={{ ml: 2 }}
-                >
-                  Dashboards
-                </Button>
+                <WalletConnect />
               </Box>
             </Box>
           </Box>
