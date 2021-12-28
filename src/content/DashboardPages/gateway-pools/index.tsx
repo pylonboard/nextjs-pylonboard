@@ -14,19 +14,15 @@ import MineStakingRankings from '@/content/Dashboards/GatewayPools/MineStakingRa
 
 import pools from '@/content/DashboardPages/gateway-pools/pools';
 
-const TabsWrapper = styled(Tabs)(
-  ({ theme }) => `
-    @media (max-width: ${theme.breakpoints.values.md}px) {
-      .MuiTabs-scrollableX {
-        overflow-x: auto !important;
-      }
+const TabsWrapper = styled(Tabs)`
+  .MuiTabs-scrollableX {
+    overflow-x: auto !important;
+  }
 
-      .MuiTabs-indicator {
-          box-shadow: none;
-      }
-    }
-    `
-);
+  .MuiTabs-indicator {
+    box-shadow: none;
+  }
+`;
 
 const QUERY = gql`
     query GatewayPoolStats($gatewayIdentifier: GatewayPoolIdentifier!) {
@@ -98,46 +94,45 @@ function DashboardGatewayPoolsContent() {
         />
       </PageTitleWrapper>
 
+      {poolExists ? (
+        <TabsWrapper
+          onChange={handleTabsChange}
+          scrollButtons="auto"
+          textColor="primary"
+          value={gwp}
+          variant="scrollable"
+        >
+          {pools.map((pool) => (
+            <Tab
+              key={pool.value}
+              value={pool.value}
+              label={pool.text}
+              disableRipple
+            />
+          ))}
+        </TabsWrapper>
+      ) : (
+        <Box display="flex" height={38} sx={{ overflowX : "auto" }}>
+          {pools.map((pool) => (
+            <Tab
+              disabled
+              key={pool.value}
+              value={pool.value}
+              label={pool.text}
+              disableRipple
+            />
+          ))}
+        </Box>
+      )}
+
       <Grid
-        sx={{ px: 4 }}
+        sx={{ px: 4, mt: 1 }}
         container
         direction="row"
         justifyContent="center"
         alignItems="stretch"
         spacing={3}
       >
-        <Grid item xs={12}>
-          {poolExists ? (
-            <TabsWrapper
-              onChange={handleTabsChange}
-              scrollButtons="auto"
-              textColor="primary"
-              value={gwp}
-              variant="scrollable"
-            >
-              {pools.map((pool) => (
-                <Tab
-                  key={pool.value}
-                  value={pool.value}
-                  label={pool.text}
-                  disableRipple
-                />
-              ))}
-            </TabsWrapper>
-          ) : (
-            <Box display="flex" height={38} sx={{ overflowX : "auto" }}>
-              {pools.map((pool) => (
-                <Tab
-                  disabled
-                  key={pool.value}
-                  value={pool.value}
-                  label={pool.text}
-                  disableRipple
-                />
-              ))}
-            </Box>
-          )}
-        </Grid>
         <Grid item xs={12}>
           <DepositMetrics
             data={data && data.gatewayPoolStats.overall}
