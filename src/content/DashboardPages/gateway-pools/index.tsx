@@ -15,6 +15,14 @@ import MineStakingRankings from '@/content/Dashboards/GatewayPools/MineStakingRa
 import pools from '@/content/DashboardPages/gateway-pools/pools';
 
 const TabsWrapper = styled(Tabs)`
+  > .MuiTabScrollButton-root + .MuiTabs-scrollableX + .MuiTabs-scroller {
+    padding-left: 0;
+  }
+
+  .MuiTabs-scroller {
+    padding-left: 40px;
+  }
+
   .MuiTabs-scrollableX {
     overflow-x: auto !important;
   }
@@ -98,6 +106,7 @@ function DashboardGatewayPoolsContent() {
         <TabsWrapper
           onChange={handleTabsChange}
           scrollButtons="auto"
+          allowScrollButtonsMobile
           textColor="primary"
           value={gwp}
           variant="scrollable"
@@ -112,7 +121,7 @@ function DashboardGatewayPoolsContent() {
           ))}
         </TabsWrapper>
       ) : (
-        <Box display="flex" height={38} sx={{ overflowX : "auto" }}>
+        <Box display="flex" height={38} sx={{ overflowX : "auto", pl: '40px' }}>
           {pools.map((pool) => (
             <Tab
               disabled
