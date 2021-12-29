@@ -15,6 +15,7 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import Logo from '@/components/LogoSign';
+import WalletConnect from '@/components/WalletConnect';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -88,6 +89,15 @@ function Header() {
               )}
             </IconButton>
           </Tooltip>
+        </Box>
+        <Box
+          component="span"
+          sx={{
+            ml: 2,
+            display: { lg: 'block', xs: 'none' }
+          }}
+        >
+          <WalletConnect />
         </Box>
       </Box>
     </HeaderWrapper>

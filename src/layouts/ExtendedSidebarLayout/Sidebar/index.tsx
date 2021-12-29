@@ -14,6 +14,7 @@ import {
 
 import SidebarMenu from './SidebarMenu';
 import Logo from 'src/components/LogoSign';
+import WalletConnect from '@/components/WalletConnect';
 
 const SidebarWrapper = styled(Box)(
   ({ theme }) => `
@@ -92,12 +93,19 @@ function Sidebar() {
             <Box mt={3}>
               <Box
                 mx={2}
-                sx={{
-                  width: 52
-                }}
               >
                 <Logo />
               </Box>
+            </Box>
+            <Divider
+              sx={{
+                my: theme.spacing(3),
+                mx: theme.spacing(2),
+                background: theme.colors.alpha.trueWhite[10]
+              }}
+            />
+            <Box mx={2}>
+              <WalletConnect />
             </Box>
             <Divider
               sx={{

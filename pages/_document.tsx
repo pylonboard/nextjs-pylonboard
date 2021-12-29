@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-
+          <meta name="terra-wallet" />
         </Head>
         <body>
           <Main />

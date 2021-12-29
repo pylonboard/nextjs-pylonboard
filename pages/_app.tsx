@@ -13,6 +13,11 @@ import { ApolloProvider } from '@apollo/client';
 import client from '../apollo-client';
 import { NewRelicSnippet } from '@/components/NewRelicSnippet';
 import '../src/styles.css';
+import {
+  WalletProvider,
+  StaticWalletProvider,
+  getChainOptions, WalletControllerChainOptions
+} from '@terra-money/wallet-provider';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -27,12 +32,12 @@ interface MyAppProps extends AppProps {
 
 const isDev = process.env.NODE_ENV === 'development'
 
-function MyApp(props: MyAppProps) {
+function MyApp({ defaultNetwork, walletConnectChainIds, ...props}: MyAppProps & WalletControllerChainOptions) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout ?? ((page) => page);
   useScrollTop()
 
-  return (
+  const app = (
     <CacheProvider value={emotionCache}>
       <Head>
         <title>Pylon Board</title>
@@ -54,6 +59,25 @@ function MyApp(props: MyAppProps) {
       </SidebarProvider>
     </CacheProvider>
   );
+  return typeof window !== 'undefined' ? (
+    <WalletProvider
+      defaultNetwork={defaultNetwork}
+      walletConnectChainIds={walletConnectChainIds}
+    >
+      {app}
+    </WalletProvider>
+  ) : (
+    <StaticWalletProvider defaultNetwork={defaultNetwork}>
+      {app}
+    </StaticWalletProvider>
+  );
 }
+
+MyApp.getInitialProps = async () => {
+  const chainOptions = await getChainOptions();
+  return {
+    ...chainOptions,
+  };
+};
 
 export default MyApp;
