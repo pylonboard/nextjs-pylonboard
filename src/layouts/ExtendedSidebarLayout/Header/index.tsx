@@ -72,7 +72,6 @@ function Header() {
           <Logo />
         </Box>
       </Stack>
-      <WalletConnect />
       <Box display="flex" alignItems="center">
         <Box
           component="span"
@@ -90,6 +89,15 @@ function Header() {
               )}
             </IconButton>
           </Tooltip>
+        </Box>
+        <Box
+          component="span"
+          sx={{
+            ml: 2,
+            display: { lg: 'block', xs: 'none' }
+          }}
+        >
+          <WalletConnect />
         </Box>
       </Box>
     </HeaderWrapper>
