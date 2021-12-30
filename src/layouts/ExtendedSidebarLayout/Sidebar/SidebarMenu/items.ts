@@ -49,7 +49,8 @@ const menuItems: MenuItems[] = [
             badgeTooltip: 'Pylon MINE wallet stake amounts'
           }
         ]
-      }, {
+      },
+      {
         name: 'Gateway Pools',
         link: '/dashboards/gateway-pools',
         items: pools.map(({ value, text }) => ({
@@ -58,6 +59,18 @@ const menuItems: MenuItems[] = [
           badge: '',
           badgeTooltip: `${text} gateway pool`
         }))
+      },
+      {
+        name: 'Arbitrage',
+        link: '/arbitrage',
+        items: [
+          {
+            name: 'Nexus Liquid',
+            link: '/arbitrage/nexus-liquid',
+            badge: '',
+            badgeTooltip: 'Nexus Liquid bPsiDP-24m token arbitrage'
+          },
+        ]
       }
     ]
   }

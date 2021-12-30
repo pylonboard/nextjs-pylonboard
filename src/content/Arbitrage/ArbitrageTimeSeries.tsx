@@ -1,48 +1,65 @@
-import { Card, Box, useTheme, CardHeader, Divider, CardContent, Skeleton } from '@mui/material';
+import {
+  Card,
+  Box,
+  CardContent,
+  CardHeader,
+  Divider,
+  useTheme, Skeleton
+} from '@mui/material';
 
-import { Chart } from 'src/components/Chart';
+import { Chart } from '@/components/Chart';
 import type { ApexOptions } from 'apexcharts';
 import { amountFormatter } from '@/utils/numberFormatters';
 import Error from '@/components/Error';
 
-function DepositOverTime({ data, loading, error }) {
+function ArbitrageTimeSeries({ data, loading, error, chartTitle, yAxisTitle, xAxisTitle }) {
   const theme = useTheme();
 
-  const chartDepositOverTimeOptions: ApexOptions = {
+  const ChartAudienceOptions: ApexOptions = {
     chart: {
       background: 'transparent',
       toolbar: {
-        show: true,
-        tools: {
-          download: false,
-          selection: true,
-          zoom: true,
-          zoomin: true,
-          zoomout: true,
-          pan: true,
-          reset: true,
-        },
-        autoSelected: 'zoom'
+        show: false
       },
       zoom: {
-        enabled: true,
-        type: 'x',
-        autoScaleYaxis: true,
-        zoomedArea: {
-          fill: {
-            color: '#90CAF9',
-            opacity: 0.4
-          },
-          stroke: {
-            color: '#0D47A1',
-            opacity: 0.4,
-            width: 1
-          }
-        }
-      },
+        enabled: false
+      }
     },
+    annotations: {
+      yaxis: [
+        {
+          y: 0.95,
+          y2: 0.75,
+          borderColor: '#00E396',
+          fillColor: '#00E396',
+          label: {
+            borderColor: '#333',
+            style: {
+              fontSize: '10px',
+              color: '#333',
+              background: '#00E396'
+            },
+            text: 'Buy'
+          }
+        },
+        {
+          y: 0.98,
+          y2: 1.02,
+          borderColor: '#FEB019',
+          label: {
+            borderColor: '#333',
+            style: {
+              color: '#fff',
+              background: '#FEB019',
+            },
+            text: 'Sell'
+          }
+        },
+      ]
+    },
+    colors: [theme.colors.primary.main],
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
       opacity: 1
@@ -74,33 +91,36 @@ function DepositOverTime({ data, loading, error }) {
       strokeColors: [theme.colors.primary.main],
       colors: [theme.colors.alpha.white[100]]
     },
+    stroke: {
+      curve: 'stepline',
+      lineCap: 'butt',
+      width: 1
+    },
     theme: {
       mode: theme.palette.mode
     },
     xaxis: {
-      type: "datetime",
-      tickPlacement: "on",
+      type: 'datetime',
       axisBorder: {
         show: false
       },
       axisTicks: {
-        show: true
+        show: false
       },
       labels: {
-        hideOverlappingLabels: true,
         style: {
           colors: theme.palette.text.secondary
-        },
+        }
       },
       title: {
-        text: 'time',
+        text: xAxisTitle,
         offsetX: 0,
         offsetY: 5,
         style: {
           fontWeight: 300,
           fontFamily: 'inherit'
         }
-      },
+      }
     },
     yaxis: {
       axisBorder: {
@@ -116,52 +136,42 @@ function DepositOverTime({ data, loading, error }) {
         formatter: value => amountFormatter(value)
       },
       title: {
-        text: 'UST amount',
+        text: yAxisTitle,
         offsetX: 0,
         offsetY: 0,
         style: {
           fontWeight: 300,
           fontFamily: 'inherit'
         }
-      },
-    },
+      }
+    }
   };
 
   return (
-    <Card
-      sx={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column'
-      }}
-    >
-      <CardHeader title={'UST deposited over time'} />
+    <Card>
+      <CardHeader title={chartTitle} />
       <Divider />
       <CardContent>
         {!loading && error ? (
           <Error message={error.message} />
         ) : (
-          <Box
-            sx={{
-              p: 3
-            }}
-          >
+          <Box mt={2} height={420}>
             {loading ? (
-              <Skeleton variant="rectangular" height={450} />
+              <Skeleton variant='rectangular' height='100%' />
             ) : (
               <Chart
                 options={{
-                  ...chartDepositOverTimeOptions,
+                  ...ChartAudienceOptions,
                   labels: data.map(d => d.at)
                 }}
                 series={[
                   {
-                    name: 'Amount',
-                    data: data.map(d => d.value),
+                    name: 'value',
+                    data: data.map(d => d.value)
                   }
                 ]}
-                type="bar"
-                height={450}
+                type='line'
+                height={420}
               />
             )}
           </Box>
@@ -171,4 +181,4 @@ function DepositOverTime({ data, loading, error }) {
   );
 }
 
-export default DepositOverTime;
+export default ArbitrageTimeSeries;
