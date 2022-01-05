@@ -2,6 +2,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - v*
     paths:
       - 'src/**'
       - 'Dockerfile'
@@ -9,18 +11,20 @@ on:
 
 jobs:
   build:
-    name: Build, push, and deploy
+    name: Build, and push docker image
     runs-on: ubuntu-latest
     steps:
 
       - name: Checkout main
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Update SHA
         run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/_meta
 
       - name: Build container image
-        run: docker build -t registry.digitalocean.com/pylonboard/app:$(echo $GITHUB_SHA | head -c7) .
+        run: docker build -t registry.digitalocean.com/pylonboard/app:$(git describe --tags) .
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
@@ -31,4 +35,4 @@ jobs:
         run: doctl registry login --expiry-seconds 600
 
       - name: Push image to DigitalOcean Container Registry
-        run: docker push registry.digitalocean.com/pylonboard/app:$(echo $GITHUB_SHA | head -c7)
+        run: docker push registry.digitalocean.com/pylonboard/app:$(git describe --tags)
