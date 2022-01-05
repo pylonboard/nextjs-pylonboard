@@ -1,0 +1,21 @@
+{{- if .Values.ingress.traefik.enabled }}
+{{- $fullName := include "pylonboard.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+{{- $top := . -}}
+{{- range $index, $host := .Values.ingress.traefik.hosts }}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: "{{ $fullName }}-{{ $index }}"
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`{{ $host }}`)
+      kind: Rule
+      services:
+        - name: {{ $fullName }}
+          port: {{ $svcPort }}
+{{- end }}
+{{- end }}
