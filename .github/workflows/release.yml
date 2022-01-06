@@ -31,4 +31,4 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-pylonboard
 
       - name: Deploy APP
-        run: helm upgrade --kube-context=do-ams3-k8s-pylonboard --install --atomic --timeout=600 --namespace=pylonboard --set "ingress.traefik.hosts={pylonboard.money}" app ./releases/*.tgz
+        run: helm upgrade --kube-context=do-ams3-k8s-pylonboard --install --atomic --timeout=600s --namespace=pylonboard --set "ingress.traefik.hosts={pylonboard.money}" app ./releases/*.tgz
