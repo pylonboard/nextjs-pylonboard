@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://api.pylonboard.money/graphql",
+  uri: "https://api-ng.pylonboard.money/graphql",
   cache: new InMemoryCache({
     addTypename: false
   }),
