@@ -149,7 +149,7 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
                           <TableCell>
                             <Box>
                               <Link
-                                href={`https://finder.terra.money/columbus-5/address/${depositor}`}
+                                href={`https://finder.extraterrestrial.money/mainnet/address/${depositor}`}
                                 target="_blank"
                                 rel="noopener"
                                 title={depositor}

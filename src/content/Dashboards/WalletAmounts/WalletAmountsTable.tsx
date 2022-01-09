@@ -144,7 +144,7 @@ function WalletAmountsTable() {
                         <TableCell>
                           <Box>
                             <Link
-                              href={`https://finder.terra.money/columbus-5/address/${wallet}`}
+                              href={`https://finder.extraterrestrial.money/mainnet/address/${wallet}`}
                               target="_blank"
                               rel="noopener"
                               title={wallet}

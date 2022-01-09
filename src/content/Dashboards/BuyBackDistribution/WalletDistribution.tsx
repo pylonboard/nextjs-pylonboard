@@ -225,7 +225,7 @@ function WalletDistribution() {
                       <TableCell>
                         <Box sx={{ width: '120px' }}>
                           <Link
-                            href={`https://finder.terra.money/mainnet/tx/${transactionHash}`}
+                            href={`https://finder.extraterrestrial.money/mainnet/tx/${transactionHash}`}
                             target="_blank"
                             rel="noopener"
                             title={transactionHash}
