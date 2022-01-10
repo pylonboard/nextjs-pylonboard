@@ -148,7 +148,7 @@ const WalletConnect = () => {
               )}
 
               <Button
-                href={`https://finder.terra.money/columbus-5/address/${wallets[0].terraAddress}`}
+                href={`https://finder.extraterrestrial.money/mainnet/address/${wallets[0].terraAddress}`}
                 target="_blank"
                 rel="noopener"
                 color="secondary"
