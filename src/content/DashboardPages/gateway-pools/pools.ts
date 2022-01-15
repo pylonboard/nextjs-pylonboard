@@ -1,57 +1,80 @@
+import { GatewayPoolsEnum } from '@/enums/gatewayPools';
+
 interface Pool {
   value: string;
   text: string;
+  logo: string;
 }
 
 const pools: Pool[] = [
   {
-    value: 'XDEFI',
-    text: 'Xdefi'
+    value: GatewayPoolsEnum['XDEFI'],
+    text: 'Xdefi',
+    logo: '/static/images/pools/xdefi.png',
   },
   {
-    value: 'SAYVE',
-    text: 'Sayve'
+    value: GatewayPoolsEnum['SAYVE'],
+    text: 'Sayve',
+    logo: '/static/images/pools/sayve.png',
   },
   {
-    value: 'GLOW',
-    text: 'Glow'
+    value: GatewayPoolsEnum['GLOW'],
+    text: 'Glow',
+    logo: '/static/images/pools/glow.png',
   },
   {
-    value: 'NEXUS',
-    text: 'Nexus'
+    value: GatewayPoolsEnum['NEXUS'],
+    text: 'Nexus',
+    logo: '/static/images/pools/nexus.png',
   },
   {
-    value: 'WHITE_WHALE',
-    text: 'White Whale'
+    value: GatewayPoolsEnum['WHITE_WHALE'],
+    text: 'White Whale',
+    logo: '/static/images/pools/white_whale.png',
   },
   {
-    value: 'DEVIANTS_FACTIONS',
-    text: 'Deviants Factions'
+    value: GatewayPoolsEnum['DEVIANTS_FACTIONS'],
+    text: 'Deviants Factions',
+    logo: '/static/images/pools/deviants_factions.png',
   },
   {
-    value: 'ORION',
-    text: 'Orion'
+    value: GatewayPoolsEnum['ORION'],
+    text: 'Orion',
+    logo: '/static/images/pools/orion.png',
   },
   {
-    value: 'GALACTIC_PUNKS',
-    text:'Galactic Punks'
+    value: GatewayPoolsEnum['GALACTIC_PUNKS'],
+    text:'Galactic Punks',
+    logo: '/static/images/pools/galactic_punks.png',
   },
   {
-    value: 'VALKYRIE',
-    text: 'Valrkyrie'
+    value: GatewayPoolsEnum['VALKYRIE'],
+    text: 'Valkyrie',
+    logo: '/static/images/pools/valkyrie.png',
   },
   {
-    value: 'TERRA_WORLD',
-    text: 'Terra World'
+    value: GatewayPoolsEnum['TERRA_WORLD'],
+    text: 'Terra World',
+    logo: '/static/images/pools/twd.png',
   },
   {
-    value: 'LOOP',
-    text: 'Loop'
+    value: GatewayPoolsEnum['LOOP'],
+    text: 'Loop',
+    logo: '/static/images/pools/loop.png',
   },
   {
-    value: 'MINE',
-    text: 'MINE'
+    value: GatewayPoolsEnum['MINE'],
+    text: 'MINE',
+    logo: '/static/images/pools/mine.png',
   },
 ];
+
+export const poolsByIdentifier = pools.reduce(
+  (obj, item) => ({
+    ...obj,
+    [item.value]: { title: item.text, logo: item.logo }
+  }),
+  {}
+);
 
 export default pools;

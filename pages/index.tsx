@@ -8,6 +8,7 @@ import Hero from 'src/content/Overview/Hero';
 import Footer from 'src/components/Footer';
 import GatewayPoolStats from '@/content/Overview/GatewayPoolStats';
 import WalletConnect from '@/components/WalletConnect';
+import MyGatewayPools from '@/content/Overview/MyGatewayPools';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -54,12 +55,15 @@ function Overview() {
         </Container>
       </HeaderWrapper>
       <Box flex={1}>
-        <Grid container spacing={4}>
+        <Grid container spacing={8}>
           <Grid item xs={12}>
             <Hero />
           </Grid>
           <Grid item xs={12}>
             <GatewayPoolStats />
+          </Grid>
+          <Grid item xs={12}>
+            <MyGatewayPools />
           </Grid>
         </Grid>
       </Box>
