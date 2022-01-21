@@ -154,6 +154,17 @@ function Hero() {
                   {'Gateway Pools'}
                 </Button>
               </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  fullWidth
+                  component={Link}
+                  href="/dashboards/arbitrage/nexus-liquid"
+                  variant="outlined"
+                  color="primary"
+                >
+                  {'Arbitrage'}
+                </Button>
+              </Grid>
             </Grid>
           </Box>
         </Grid>
