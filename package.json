@@ -46,7 +46,7 @@
     "export": "next export",
     "lint": "next lint",
     "lint-fix": "next lint --fix",
-    "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json}\" --config ./.prettierrc"
+    "format": "npx prettier --write \"./**/*.{ts,tsx,js,jsx,json}\" --config ./.prettierrc"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

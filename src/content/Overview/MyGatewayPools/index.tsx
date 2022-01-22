@@ -22,21 +22,21 @@ import Error from '@/components/Error';
 import WalletConnect from '@/components/WalletConnect';
 
 const QUERY = gql`
-  query MyGatewayPools($terraWallet: String!) {
-    myGatewayPools(terraWallet: $terraWallet) {
-      poolIdentifier
-      friendlyName
-      totalDepositAmount
-      totalClaimedAmount
-      totalClaimedAmountInUst
-      claimedAmountToUstMultiplier
-      rewardDenominator
-      poolContractAddress
-      startedAt
-      claimAt
-      withdrawAt
+    query MyGatewayPools($terraWallet: String!) {
+        myGatewayPools(terraWallet: $terraWallet) {
+            poolIdentifier
+            friendlyName
+            totalDepositAmount
+            totalClaimedAmount
+            totalClaimedAmountInUst
+            claimedAmountToUstMultiplier
+            rewardDenominator
+            poolContractAddress
+            startedAt
+            claimAt
+            withdrawAt
+        }
     }
-  }
 `;
 
 const getRewardsUrl = ({ poolContractAddress, walletAddress }) => {
@@ -61,30 +61,30 @@ function MyGatewayPools() {
 
   useEffect(() => {
     status === WalletStatus.WALLET_CONNECTED &&
-      setMyWalletAddress(wallets[0].terraAddress);
+    setMyWalletAddress(wallets[0].terraAddress);
   }, [status]);
 
   useEffect(() => {
     myWalletAddress &&
-      getMyGatewayPools({
-        variables: {
-          terraWallet: myWalletAddress
-        }
-      })
+    getMyGatewayPools({
+      variables: {
+        terraWallet: myWalletAddress
+      }
+    });
   }, [myWalletAddress]);
 
   useEffect(() => {
     if (data && data.myGatewayPools.length) {
       setMyGatewayPools(data.myGatewayPools);
     }
-  }, [data])
+  }, [data]);
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth='lg'>
       <Grid container spacing={4}>
         <Grid item xs={12}>
           <Box>
-            <TypographyHeading variant="h3">
+            <TypographyHeading variant='h3'>
               {'My Gateway Pools'}
             </TypographyHeading>
           </Box>
@@ -96,23 +96,23 @@ function MyGatewayPools() {
           </Grid>
         ) : loading ? (
           <Grid item xs={12}>
-            <Skeleton variant="rectangular" height={300} />
+            <Skeleton variant='rectangular' height={300} />
           </Grid>
         ) : myGatewayPools.length > 0 ? (
           myGatewayPools.map(
             ({
-              poolIdentifier,
-              poolContractAddress,
-              friendlyName,
-              totalDepositAmount,
-              totalClaimedAmount,
-              totalClaimedAmountInUst,
-              claimedAmountToUstMultiplier,
-              rewardDenominator,
-              startedAt,
-              claimAt,
-              withdrawAt
-            }) => (
+               poolIdentifier,
+               poolContractAddress,
+               friendlyName,
+               totalDepositAmount,
+               totalClaimedAmount,
+               totalClaimedAmountInUst,
+               claimedAmountToUstMultiplier,
+               rewardDenominator,
+               startedAt,
+               claimAt,
+               withdrawAt
+             }) => (
               <Grid key={friendlyName} item xs={12} sm={6} lg={4}>
                 <PoolCard
                   title={poolsByIdentifier[poolIdentifier].title}
@@ -134,7 +134,7 @@ function MyGatewayPools() {
             )
           )
         ) : (
-          <Grid item xs={12} alignItems="center">
+          <Grid item xs={12} alignItems='center'>
             {status === WalletStatus.WALLET_NOT_CONNECTED && (
               <Box>
                 <Typography
@@ -142,8 +142,8 @@ function MyGatewayPools() {
                     mb: 1.5,
                     fontWeight: 'normal'
                   }}
-                  variant="h4"
-                  component="p"
+                  variant='h4'
+                  component='p'
                 >
                   Connect your wallet to see your pools
                 </Typography>
@@ -157,8 +157,8 @@ function MyGatewayPools() {
                     marginY: 1.5,
                     fontWeight: 'normal'
                   }}
-                  variant="h3"
-                  component="p"
+                  variant='h3'
+                  component='p'
                 >
                   No Gateway Pools found
                 </Typography>
@@ -194,18 +194,18 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 const PoolCard = ({
-  logo,
-  title,
-  rewardDenominator,
-  totalDepositAmount,
-  rewardsUrl,
-  totalClaimedAmount,
-  totalClaimedAmountInUst,
-  claimedAmountToUstMultiplier,
-  startedAt,
-  rewardsClaimableAt,
-  poolEndsAt
-}) => {
+                    logo,
+                    title,
+                    rewardDenominator,
+                    totalDepositAmount,
+                    rewardsUrl,
+                    totalClaimedAmount,
+                    totalClaimedAmountInUst,
+                    claimedAmountToUstMultiplier,
+                    startedAt,
+                    rewardsClaimableAt,
+                    poolEndsAt
+                  }) => {
   const [rewards, setRewards] = useState(0);
   const [rewardsInUst, setRewardsInUst] = useState(0);
   const [rewardsError, setRewardsError] = useState('');
@@ -220,10 +220,9 @@ const PoolCard = ({
           if (result) {
             const totalRewards = new Decimal(result.amount)
               .div(1_000_000)
-              .plus(totalClaimedAmount)
-              .toNumber()
+              .toNumber();
             setRewards(totalRewards);
-            setRewardsInUst(totalRewards * claimedAmountToUstMultiplier)
+            setRewardsInUst(totalRewards * claimedAmountToUstMultiplier);
           } else if (error) {
             setRewardsError('Error fetching data');
           }
@@ -241,7 +240,7 @@ const PoolCard = ({
         py: 3
       }}
     >
-      <Box display="flex" alignItems="center">
+      <Box display='flex' alignItems='center'>
         <AvatarWrapper>
           <img src={logo} alt={title} />
         </AvatarWrapper>
@@ -250,36 +249,36 @@ const PoolCard = ({
             ml: 1.5,
             fontWeight: 'normal'
           }}
-          variant="h3"
-          component="h3"
+          variant='h3'
+          component='h3'
         >
           {title}
         </Typography>
       </Box>
       <Box sx={{ mt: 1.5 }}>
         <Stack
-          divider={<Divider orientation="horizontal" flexItem />}
+          divider={<Divider orientation='horizontal' flexItem />}
           spacing={0}
         >
           <Box py={1}>
-            <Typography variant="subtitle2">{'Deposits'}</Typography>
-            <Typography variant="h3">
+            <Typography variant='subtitle2'>{'Deposits'}</Typography>
+            <Typography variant='h3'>
               {numeral(totalDepositAmount).format('0,000.[00]')} UST
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant='subtitle1'>
               {numeral(totalDepositAmount).format('$0,000.[0000]')}
             </Typography>
           </Box>
 
           <Box py={1}>
-            <Typography variant="subtitle2">{'Rewards'}</Typography>
+            <Typography variant='subtitle2'>{'Pending rewards'}</Typography>
             {!loadingRewards && rewardsError ? (
-              <Typography variant="h3" color="error">
+              <Typography variant='h3' color='error'>
                 {rewardsError}
               </Typography>
             ) : (
               <>
-                <Typography variant="h3">
+                <Typography variant='h3'>
                   {loadingRewards ? (
                     <Skeleton />
                   ) : (
@@ -287,7 +286,7 @@ const PoolCard = ({
                   )}
                 </Typography>
                 <Typography
-                  variant="subtitle1"
+                  variant='subtitle1'
                   sx={{ display: 'inline-block' }}
                 >
                   {loadingRewards ? (
@@ -303,13 +302,11 @@ const PoolCard = ({
           </Box>
 
           <Box py={1}>
-            <Typography variant="subtitle2">{'Claimed'}</Typography>
-            <Typography variant="h3">
-              {`${numeral(totalClaimedAmount).format(
-                '0,000.[0000]'
-              )} ${rewardDenominator}`}
+            <Typography variant='subtitle2'>{'Claimed rewards'}</Typography>
+            <Typography variant='h3'>
+              {`${amountFormatter(totalClaimedAmount)} ${rewardDenominator}`}
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant='subtitle1'>
               {numeral(totalClaimedAmountInUst).format('$0,000.[0000]')}
             </Typography>
           </Box>

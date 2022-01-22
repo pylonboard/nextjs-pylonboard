@@ -137,7 +137,7 @@ const StepperProgress = ({ startedAt, rewardsClaimableAt, poolEndsAt }) => {
           }}
           variant="subtitle2"
         >
-          {`Launched from `}
+          {`Launched at `}
           <span style={{ whiteSpace: 'nowrap' }}>
             {new Intl.DateTimeFormat('default', {
               year: 'numeric',
