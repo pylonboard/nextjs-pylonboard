@@ -158,7 +158,7 @@ function Hero() {
                 <Button
                   fullWidth
                   component={Link}
-                  href="/dashboards/arbitrage/nexus-liquid"
+                  href="/arbitrage/nexus-liquid"
                   variant="outlined"
                   color="primary"
                 >
