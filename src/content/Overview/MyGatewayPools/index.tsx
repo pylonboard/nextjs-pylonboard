@@ -27,6 +27,7 @@ const QUERY = gql`
             poolIdentifier
             friendlyName
             totalDepositAmount
+            totalWithdrawnAmount
             totalClaimedAmount
             totalClaimedAmountInUst
             claimedAmountToUstMultiplier
@@ -105,6 +106,7 @@ function MyGatewayPools() {
                poolContractAddress,
                friendlyName,
                totalDepositAmount,
+               totalWithdrawnAmount,
                totalClaimedAmount,
                totalClaimedAmountInUst,
                claimedAmountToUstMultiplier,
@@ -122,7 +124,7 @@ function MyGatewayPools() {
                     poolContractAddress,
                     walletAddress: myWalletAddress
                   })}
-                  totalDepositAmount={totalDepositAmount}
+                  totalDepositAmount={totalDepositAmount-Math.abs(totalWithdrawnAmount)}
                   totalClaimedAmount={totalClaimedAmount}
                   totalClaimedAmountInUst={totalClaimedAmountInUst}
                   claimedAmountToUstMultiplier={claimedAmountToUstMultiplier}
