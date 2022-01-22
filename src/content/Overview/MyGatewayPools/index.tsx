@@ -220,7 +220,6 @@ const PoolCard = ({
           if (result) {
             const totalRewards = new Decimal(result.amount)
               .div(1_000_000)
-              .plus(totalClaimedAmount)
               .toNumber();
             setRewards(totalRewards);
             setRewardsInUst(totalRewards * claimedAmountToUstMultiplier);
@@ -272,7 +271,7 @@ const PoolCard = ({
           </Box>
 
           <Box py={1}>
-            <Typography variant='subtitle2'>{'Rewards'}</Typography>
+            <Typography variant='subtitle2'>{'Pending rewards'}</Typography>
             {!loadingRewards && rewardsError ? (
               <Typography variant='h3' color='error'>
                 {rewardsError}
@@ -303,7 +302,7 @@ const PoolCard = ({
           </Box>
 
           <Box py={1}>
-            <Typography variant='subtitle2'>{'Claimed'}</Typography>
+            <Typography variant='subtitle2'>{'Claimed rewards'}</Typography>
             <Typography variant='h3'>
               {`${amountFormatter(totalClaimedAmount)} ${rewardDenominator}`}
             </Typography>
