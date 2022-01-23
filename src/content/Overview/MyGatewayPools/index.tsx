@@ -32,6 +32,7 @@ const QUERY = gql`
             totalClaimedAmountInUst
             claimedAmountToUstMultiplier
             rewardDenominator
+            rewardUAmountDivisor
             poolContractAddress
             startedAt
             claimAt
@@ -111,6 +112,7 @@ function MyGatewayPools() {
                totalClaimedAmountInUst,
                claimedAmountToUstMultiplier,
                rewardDenominator,
+               rewardUAmountDivisor,
                startedAt,
                claimAt,
                withdrawAt
@@ -120,6 +122,7 @@ function MyGatewayPools() {
                   title={poolsByIdentifier[poolIdentifier].title}
                   logo={poolsByIdentifier[poolIdentifier].logo}
                   rewardDenominator={rewardDenominator}
+                  rewardUAmountDivisor={rewardUAmountDivisor}
                   rewardsUrl={getRewardsUrl({
                     poolContractAddress,
                     walletAddress: myWalletAddress
@@ -199,6 +202,7 @@ const PoolCard = ({
                     logo,
                     title,
                     rewardDenominator,
+                    rewardUAmountDivisor,
                     totalDepositAmount,
                     rewardsUrl,
                     totalClaimedAmount,
@@ -221,7 +225,7 @@ const PoolCard = ({
         .then(({ result, error }) => {
           if (result) {
             const totalRewards = new Decimal(result.amount)
-              .div(1_000_000)
+              .div(rewardUAmountDivisor)
               .toNumber();
             setRewards(totalRewards);
             setRewardsInUst(totalRewards * claimedAmountToUstMultiplier);
