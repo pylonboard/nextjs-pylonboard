@@ -20,6 +20,7 @@ import Link from 'src/components/Link';
 
 import { gql, useQuery } from '@apollo/client';
 import Error from '@/components/Error';
+import { stringMiddleTruncate } from '@/utils/stringMiddleTruncate';
 
 const TableHeadWrapper = styled(TableHead)(
   ({ theme }) => `
@@ -150,19 +151,14 @@ function WalletAmountsTable() {
                               title={wallet}
                               color={`${theme.colors.primary.main}`}
                               underline="none"
-                              textOverflow="ellipsis"
                               variant="h5"
-                              noWrap
-                              overflow="hidden"
-                              display="block"
                               sx={{
-                                width: '120px',
                                 '&:hover': {
                                   textDecoration: 'underline'
                                 }
                               }}
                             >
-                              {wallet}
+                              {stringMiddleTruncate(wallet)}
                             </Link>
                           </Box>
                         </TableCell>

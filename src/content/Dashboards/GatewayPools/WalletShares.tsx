@@ -16,6 +16,7 @@ import type { ApexOptions } from 'apexcharts';
 import { percentileFormatter } from '@/utils/numberFormatters';
 import { stringMiddleTruncate } from '@/utils/stringMiddleTruncate';
 import Error from '@/components/Error';
+import Link from '@/components/Link';
 
 
 const DotLegend = styled('span')(
@@ -161,24 +162,18 @@ function WalletShares({ data, loading, error }) {
               sm={6}
               item
               display="flex"
-              justifyContent="center"
               alignItems="center"
             >
-              <Box sx={{ width: '100%' }}>
+              <Box>
                 {loading
                   ? Array.from(Array(9), Math.random).map((value) => (
-                      <Skeleton key={value} sx={{ py: 0.8, fontSize: 10 }} />
+                      <Skeleton key={value} sx={{ py: 0.8, fontSize: 10, width: '20em' }} />
                     ))
                   : data.map(({ wallet }, i: number) => (
                       <Typography
                         key={wallet}
                         variant="body2"
-                        noWrap
-                        sx={{
-                          textOverflow: 'ellipsis',
-                          overflow: 'hidden',
-                          py: 0.6
-                        }}
+                        sx={{ py: 0.6 }}
                       >
                         <DotLegend
                           style={{
@@ -194,7 +189,22 @@ function WalletShares({ data, loading, error }) {
                         >
                           {percentileFormatter(data[i].inPercent / 100)}
                         </span>
-                        {wallet}
+                        <Link
+                          href={`https://finder.extraterrestrial.money/mainnet/address/${wallet}`}
+                          target="_blank"
+                          rel="noopener"
+                          title={wallet}
+                          color={`${theme.colors.primary.main}`}
+                          underline="none"
+                          variant="h5"
+                          sx={{
+                            '&:hover': {
+                              textDecoration: 'underline'
+                            }
+                          }}
+                        >
+                          {stringMiddleTruncate(wallet)}
+                        </Link>
                       </Typography>
                     ))}
               </Box>
