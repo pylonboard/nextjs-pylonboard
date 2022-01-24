@@ -18,6 +18,7 @@ import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
 import Text from '@/components/Text';
 import Link from '@/components/Link';
 import Error from '@/components/Error';
+import { stringMiddleTruncate } from '@/utils/stringMiddleTruncate';
 
 const SearchInputWrapper = styled(TextField)(
   ({ theme }) => `
@@ -223,7 +224,7 @@ function WalletDistribution() {
                   {tableData.map(({ ustAmount, mineAmount, transactionHash, createdAt }) => (
                     <TableRow key={transactionHash}>
                       <TableCell>
-                        <Box sx={{ width: '120px' }}>
+                        <Box>
                           <Link
                             href={`https://finder.extraterrestrial.money/mainnet/tx/${transactionHash}`}
                             target="_blank"
@@ -237,13 +238,12 @@ function WalletDistribution() {
                             overflow="hidden"
                             display="block"
                             sx={{
-                              width: '120px',
                               '&:hover': {
                                 textDecoration: 'underline'
                               }
                             }}
                           >
-                            {transactionHash}
+                            {stringMiddleTruncate(transactionHash)}
                           </Link>
                         </Box>
                       </TableCell>

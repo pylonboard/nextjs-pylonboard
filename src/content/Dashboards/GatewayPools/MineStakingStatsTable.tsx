@@ -22,6 +22,7 @@ import Link from 'src/components/Link';
 
 import { gql, useQuery } from '@apollo/client';
 import Error from '@/components/Error';
+import { stringMiddleTruncate } from '@/utils/stringMiddleTruncate';
 
 const TableHeadWrapper = styled(TableHead)(
   ({ theme }) => `
@@ -155,19 +156,14 @@ function MineStakingStatsTable({ gatewayIdentifier }) {
                                 title={depositor}
                                 color={`${theme.colors.primary.main}`}
                                 underline="none"
-                                textOverflow="ellipsis"
                                 variant="h5"
-                                noWrap
-                                overflow="hidden"
-                                display="block"
                                 sx={{
-                                  width: '120px',
                                   '&:hover': {
                                     textDecoration: 'underline'
                                   }
                                 }}
                               >
-                                {depositor}
+                                {stringMiddleTruncate(depositor)}
                               </Link>
                             </Box>
                           </TableCell>

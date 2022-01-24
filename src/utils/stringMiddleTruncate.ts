@@ -1,4 +1,8 @@
-export const stringMiddleTruncate = (fullStr: string, strLen: number, separator = '...') => {
+export const stringMiddleTruncate = (
+  fullStr: string,
+  strLen: number = 20,
+  separator = '...'
+) => {
   if (fullStr.length <= strLen) return fullStr;
 
   const sepLen = separator.length,
