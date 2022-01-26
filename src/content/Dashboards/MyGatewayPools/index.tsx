@@ -2,13 +2,12 @@ import {
   Avatar,
   Box,
   Card,
-  Container,
   Divider,
   Grid,
   Skeleton,
   Stack,
   styled,
-  Typography
+  Typography, useTheme
 } from '@mui/material';
 import numeral from 'numeral';
 import Decimal from 'decimal.js';
@@ -63,7 +62,7 @@ function MyGatewayPools() {
 
   useEffect(() => {
     status === WalletStatus.WALLET_CONNECTED &&
-    setMyWalletAddress('terra14qul6swv2p3vcfqk38fm8dvkezf0gj52m6a78k');//setMyWalletAddress(wallets[0].terraAddress);
+    setMyWalletAddress(wallets[0].terraAddress);
   }, [status]);
 
   useEffect(() => {
@@ -82,109 +81,93 @@ function MyGatewayPools() {
   }, [data]);
 
   return (
-    <Container maxWidth="lg">
-      <Grid container spacing={4}>
+    <Grid container spacing={4}>
+      {error ? (
         <Grid item xs={12}>
-          <Box>
-            <TypographyHeading variant="h3">
-              {'My Gateway Pools'}
-            </TypographyHeading>
-          </Box>
+          <Error message={error.message} />
         </Grid>
-
-        {error ? (
-          <Grid item xs={12}>
-            <Error message={error.message} />
-          </Grid>
-        ) : loading ? (
-          <Grid item xs={12}>
-            <Skeleton variant="rectangular" height={300} />
-          </Grid>
-        ) : myGatewayPools.length > 0 ? (
-          myGatewayPools.map(
-            ({
-              poolIdentifier,
-              poolContractAddress,
-              friendlyName,
-              totalDepositAmount,
-              totalWithdrawnAmount,
-              totalClaimedAmount,
-              totalClaimedAmountInUst,
-              claimedAmountToUstMultiplier,
-              rewardDenominator,
-              rewardUAmountDivisor,
-              startedAt,
-              claimAt,
-              withdrawAt
-            }) => (
-              <Grid key={friendlyName} item xs={12} sm={6} lg={4}>
-                <PoolCard
-                  title={poolsByIdentifier[poolIdentifier].title}
-                  logo={poolsByIdentifier[poolIdentifier].logo}
-                  rewardDenominator={rewardDenominator}
-                  rewardUAmountDivisor={rewardUAmountDivisor}
-                  rewardsUrl={getRewardsUrl({
-                    poolContractAddress,
-                    walletAddress: myWalletAddress
-                  })}
-                  totalDepositAmount={
-                    totalDepositAmount - Math.abs(totalWithdrawnAmount)
-                  }
-                  totalClaimedAmount={totalClaimedAmount}
-                  totalClaimedAmountInUst={totalClaimedAmountInUst}
-                  claimedAmountToUstMultiplier={claimedAmountToUstMultiplier}
-                  startedAt={startedAt}
-                  rewardsClaimableAt={claimAt}
-                  poolEndsAt={withdrawAt}
-                />
-              </Grid>
-            )
+      ) : loading ? (
+        <Grid item xs={12}>
+          <Skeleton variant="rectangular" height={300} />
+        </Grid>
+      ) : myGatewayPools.length > 0 ? (
+        myGatewayPools.map(
+          ({
+             poolIdentifier,
+             poolContractAddress,
+             friendlyName,
+             totalDepositAmount,
+             totalWithdrawnAmount,
+             totalClaimedAmount,
+             totalClaimedAmountInUst,
+             claimedAmountToUstMultiplier,
+             rewardDenominator,
+             rewardUAmountDivisor,
+             startedAt,
+             claimAt,
+             withdrawAt
+           }) => (
+            <Grid key={friendlyName} item xs={12} sm={6} md={4} xl={3}>
+              <PoolCard
+                title={poolsByIdentifier[poolIdentifier].title}
+                logo={poolsByIdentifier[poolIdentifier].logo}
+                rewardDenominator={rewardDenominator}
+                rewardUAmountDivisor={rewardUAmountDivisor}
+                rewardsUrl={getRewardsUrl({
+                  poolContractAddress,
+                  walletAddress: myWalletAddress
+                })}
+                totalDepositAmount={
+                  totalDepositAmount - Math.abs(totalWithdrawnAmount)
+                }
+                totalClaimedAmount={totalClaimedAmount}
+                totalClaimedAmountInUst={totalClaimedAmountInUst}
+                claimedAmountToUstMultiplier={claimedAmountToUstMultiplier}
+                startedAt={startedAt}
+                rewardsClaimableAt={claimAt}
+                poolEndsAt={withdrawAt}
+              />
+            </Grid>
           )
-        ) : (
-          <Grid item xs={12} alignItems="center">
-            {status === WalletStatus.WALLET_NOT_CONNECTED && (
-              <Box>
-                <Typography
-                  sx={{
-                    mb: 1.5,
-                    fontWeight: 'normal'
-                  }}
-                  variant="h4"
-                  component="p"
-                >
-                  Connect your wallet to see your pools
-                </Typography>
-                <WalletConnect />
-              </Box>
-            )}
-            {status === WalletStatus.WALLET_CONNECTED && (
-              <Box sx={{ textAlign: 'center' }}>
-                <Typography
-                  sx={{
-                    marginY: 1.5,
-                    fontWeight: 'normal'
-                  }}
-                  variant="h3"
-                  component="p"
-                >
-                  No Gateway Pools found
-                </Typography>
-              </Box>
-            )}
-          </Grid>
-        )}
-      </Grid>
-    </Container>
+        )
+      ) : (
+        <Grid item xs={12} alignItems="center">
+          {status === WalletStatus.WALLET_NOT_CONNECTED && (
+            <Box>
+              <Typography
+                sx={{
+                  mb: 1.5,
+                  fontWeight: 'normal'
+                }}
+                variant="h4"
+                component="p"
+              >
+                Connect your wallet to see your pools
+              </Typography>
+              <WalletConnect />
+            </Box>
+          )}
+          {status === WalletStatus.WALLET_CONNECTED && (
+            <Box sx={{ textAlign: 'center' }}>
+              <Typography
+                sx={{
+                  marginY: 1.5,
+                  fontWeight: 'normal'
+                }}
+                variant="h3"
+                component="p"
+              >
+                No Gateway Pools found
+              </Typography>
+            </Box>
+          )}
+        </Grid>
+      )}
+    </Grid>
   );
 }
 
 export default MyGatewayPools;
-
-const TypographyHeading = styled(Typography)(
-  ({ theme }) => `
-    font-size: ${theme.typography.pxToRem(36)};
-`
-);
 
 const AvatarWrapper = styled(Avatar)(
   ({ theme }) => `
@@ -200,7 +183,8 @@ const AvatarWrapper = styled(Avatar)(
 `
 );
 
-const PoolCard = ({
+export const PoolCard = ({
+  backgroundColor = null,
   logo,
   title,
   rewardDenominator,
@@ -214,6 +198,7 @@ const PoolCard = ({
   rewardsClaimableAt,
   poolEndsAt
 }) => {
+  const theme = useTheme();
   const [rewards, setRewards] = useState(0);
   const [rewardsInUst, setRewardsInUst] = useState(0);
   const [rewardsError, setRewardsError] = useState('');
@@ -244,6 +229,7 @@ const PoolCard = ({
   return (
     <Card
       sx={{
+        backgroundColor: backgroundColor || theme.colors.alpha.white[100],
         px: 2,
         py: 3
       }}
