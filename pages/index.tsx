@@ -1,4 +1,4 @@
-import { Box, Container, styled, Grid } from '@mui/material';
+import { Box, Container, styled, Grid, Button } from '@mui/material';
 import type { ReactElement } from 'react';
 import BaseLayout from 'src/layouts/BaseLayout';
 
@@ -6,9 +6,8 @@ import Head from 'next/head';
 import Logo from 'src/components/LogoSign';
 import Hero from 'src/content/Overview/Hero';
 import Footer from 'src/components/Footer';
-import GatewayPoolStats from '@/content/Overview/GatewayPoolStats';
-import WalletConnect from '@/components/WalletConnect';
-import MyGatewayPools from '@/content/Overview/MyGatewayPools';
+import Link from '@/components/Link';
+import Highlights from '@/content/Overview/Highlights';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -26,6 +25,7 @@ const OverviewWrapper = styled(Box)`
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    background: #232a2e;
 `;
 
 function Overview() {
@@ -48,7 +48,13 @@ function Overview() {
             >
               <Box />
               <Box>
-                <WalletConnect />
+                <Button
+                  component={Link}
+                  href="/dashboards/my-gateway-pools"
+                  variant="contained"
+                >
+                  {'Webapp'}
+                </Button>
               </Box>
             </Box>
           </Box>
@@ -60,10 +66,7 @@ function Overview() {
             <Hero />
           </Grid>
           <Grid item xs={12}>
-            <GatewayPoolStats />
-          </Grid>
-          <Grid item xs={12}>
-            <MyGatewayPools />
+            <Highlights />
           </Grid>
         </Grid>
       </Box>
