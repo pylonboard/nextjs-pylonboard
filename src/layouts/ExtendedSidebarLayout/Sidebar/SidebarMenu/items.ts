@@ -18,6 +18,15 @@ export interface MenuItems {
 
 const menuItems: MenuItems[] = [
   {
+    heading: 'Personal',
+    items: [
+      {
+        name: 'My Gateway Pools',
+        link: '/dashboards/my-gateway-pools',
+      },
+    ]
+  },
+  {
     heading: 'General',
     items: [
       {
@@ -53,12 +62,15 @@ const menuItems: MenuItems[] = [
       {
         name: 'Gateway Pools',
         link: '/dashboards/gateway-pools',
-        items: pools.map(({ value, text }) => ({
+        items: [{
+          name: 'Overview',
+          link: `/dashboards/gateway-pools-overview`,
+        }, ...pools.map(({ value, text }) => ({
           name: text,
           link: `/dashboards/gateway-pools?gwp=${value}`,
           badge: '',
           badgeTooltip: `${text} gateway pool`
-        }))
+        }))]
       },
       {
         name: 'Arbitrage',
