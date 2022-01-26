@@ -58,7 +58,7 @@ const PercentileLabels = {
 
 function MetricsTable() {
   const { data, loading, error } = useQuery(QUERY);
-console.log('data', data);
+
   return (
     <Card variant="outlined">
       <CardHeader title={'MINE Metrics'}/>
