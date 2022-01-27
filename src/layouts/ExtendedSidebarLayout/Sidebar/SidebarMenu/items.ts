@@ -6,6 +6,7 @@ export interface MenuItem {
   icon?: ReactNode;
   badge?: string;
   badgeTooltip?: string;
+  disabled?: boolean;
 
   items?: MenuItem[];
   name: string;
@@ -23,6 +24,11 @@ const menuItems: MenuItems[] = [
       {
         name: 'My Gateway Pools',
         link: '/dashboards/my-gateway-pools',
+      },
+      {
+        name: 'Airdrops (coming soon)',
+        link: '',
+        disabled: true,
       },
     ]
   },
