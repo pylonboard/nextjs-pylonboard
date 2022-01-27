@@ -186,6 +186,7 @@ const reduceChildRoutes = ({
         link={item.link}
         badge={item.badge}
         badgeTooltip={item.badgeTooltip}
+        disabled={item.disabled}
       >
         {renderSidebarMenuItems({
           path,
@@ -203,6 +204,7 @@ const reduceChildRoutes = ({
         badge={item.badge}
         badgeTooltip={item.badgeTooltip}
         icon={item.icon}
+        disabled={item.disabled}
       />
     );
   }
