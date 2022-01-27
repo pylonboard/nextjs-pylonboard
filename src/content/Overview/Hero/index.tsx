@@ -21,15 +21,39 @@ const TypographyH2 = styled(Typography)(
 `
 );
 
-const TypographyHeading = styled(Typography)(
+const ImgWrapper = styled(Box)(
   ({ theme }) => `
-    font-size: ${theme.typography.pxToRem(36)};
-`
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    overflow: hidden;
+    border-radius: ${theme.general.borderRadiusLg};
+        box-shadow: rgb(255 255 255 / 20%) 0px 0rem 14rem 0px, rgb(111 130 156 / 3%) 0px 0.8rem 2.3rem, rgb(17 29 57 / 15%) 0px 0.2rem 0.7rem;
+    img {
+      display: block;
+      width: 100%;
+    }
+  `
 );
 
-const TypographySubHeading = styled(Typography)(
+const BoxAccent = styled(Box)(
   ({ theme }) => `
-    font-size: ${theme.typography.pxToRem(17)};
+    border-radius: ${theme.general.borderRadiusLg};
+    background: ${theme.palette.background.default};
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -40px;
+    bottom: -40px;
+    display: block;
+    z-index: 4;
+  `
+);
+
+const BoxContent = styled(Box)(
+  () => `
+  width: 150%;
+  position: relative;
 `
 );
 
@@ -65,108 +89,32 @@ function Hero() {
               'Pylon Protocol related data, namely insights on MINE staking and wallet distributions in Gateway Pools.'
             }
           </TypographyH2>
-          <Button
-            component={Link}
-            href="/dashboards/staking"
-            size="large"
-            variant="contained"
-          >
-            {'Explore'}
-          </Button>
+          <Box>
+            <Button
+              component={Link}
+              href="/dashboards/my-gateway-pools"
+              variant="contained"
+            >
+              {'Go to the Webapp'}
+            </Button>
+          </Box>
         </Grid>
         <Grid item md={6}>
-          <Box>
-            <TypographyHeading
+          <BoxContent>
+            <Link href="/dashboards/gateway-pools?gwp=MINE">
+              <ImgWrapper>
+                <img
+                  alt="Tokyo"
+                  src="/static/images/overview/hero-screenshot.jpg"
+                />
+              </ImgWrapper>
+            </Link>
+            <BoxAccent
               sx={{
-                mb: 1
+                display: { xs: 'none', md: 'block' }
               }}
-              variant="h3"
-            >
-              {'Dashboards'}
-            </TypographyHeading>
-            <TypographySubHeading
-              sx={{
-                maxWidth: 500,
-                lineHeight: 1.5,
-                mb: 3
-              }}
-              variant="h4"
-              color="text.secondary"
-              fontWeight="normal"
-            >
-              {
-                'Explore the Pylon Board dashboards'
-              }
-            </TypographySubHeading>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <Button
-                  fullWidth
-                  component={Link}
-                  href="/dashboards/staking"
-                  variant="outlined"
-                  color="primary"
-                >
-                  {'Staking'}
-                </Button>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Button
-                  fullWidth
-                  component={Link}
-                  href="/dashboards/metrics"
-                  variant="outlined"
-                  color="primary"
-                >
-                  {'Stake Percentiles'}
-                </Button>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Button
-                  fullWidth
-                  component={Link}
-                  href="/dashboards/buy-back-distribution"
-                  variant="outlined"
-                  color="primary"
-                >
-                  {'Buyback Distribution'}
-                </Button>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Button
-                  fullWidth
-                  component={Link}
-                  href="/dashboards/wallet-amounts"
-                  variant="outlined"
-                  color="primary"
-                >
-                  {'Biggest Mine Wallets'}
-                </Button>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Button
-                  fullWidth
-                  component={Link}
-                  href="/dashboards/gateway-pools"
-                  variant="outlined"
-                  color="primary"
-                >
-                  {'Gateway Pools'}
-                </Button>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Button
-                  fullWidth
-                  component={Link}
-                  href="/arbitrage/nexus-liquid"
-                  variant="outlined"
-                  color="primary"
-                >
-                  {'Arbitrage'}
-                </Button>
-              </Grid>
-            </Grid>
-          </Box>
+            />
+          </BoxContent>
         </Grid>
       </Grid>
     </Container>

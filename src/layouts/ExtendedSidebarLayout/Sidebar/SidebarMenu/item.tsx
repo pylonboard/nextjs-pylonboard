@@ -27,6 +27,7 @@ interface SidebarMenuItemProps {
   open?: boolean;
   active?: boolean;
   name: string;
+  disabled: boolean;
 }
 
 const TooltipWrapper = styled(({ className, ...props }: TooltipProps) => (

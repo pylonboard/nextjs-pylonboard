@@ -35,7 +35,7 @@ const pools: Pool[] = [
   {
     value: GatewayPoolsEnum['DEVIANTS_FACTIONS'],
     text: 'Deviants Factions',
-    logo: '/static/images/pools/deviants_factions.png',
+    logo: '/static/images/pools/deviants-factions.png',
   },
   {
     value: GatewayPoolsEnum['ORION'],
