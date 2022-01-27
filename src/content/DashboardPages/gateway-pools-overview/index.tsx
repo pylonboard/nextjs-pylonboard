@@ -14,7 +14,7 @@ function DashboardGatewayPoolsOverviewContent() {
       <PageTitleWrapper>
         <PageHeader
           title="Pylon Gateway Pools"
-          subtitle={'bla'}
+          subtitle={'Statistics for all Pylon pools combined'}
         />
       </PageTitleWrapper>
 
