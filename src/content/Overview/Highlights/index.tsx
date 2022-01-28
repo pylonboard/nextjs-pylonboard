@@ -13,8 +13,8 @@ import {
 import pools, {
   poolsByIdentifier
 } from '@/content/DashboardPages/gateway-pools/pools';
-import { PoolCard } from '@/content/Dashboards/MyGatewayPools';
-import { GatewayPoolsEnum } from '@/enums/gatewayPools';
+import { GatewayPoolCardContent } from '@/content/Dashboards/MyGatewayPools/GatewayPoolCard';
+import { poolCardsHighlights } from '@/content/Overview/Highlights/data';
 
 const BoxHighlights = styled(Box)(
   () => `
@@ -149,154 +149,8 @@ const AvatarWrapper = styled(Avatar)(
 `
 );
 
-const poolCardsHighlights = [
-  {
-    id: GatewayPoolsEnum['MINE'],
-    rewardDenominator: 'MINE',
-    totalDepositAmount: 3098.120013,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 8980.998701,
-    totalClaimedAmountInUst: 431.519025585648,
-    claimedAmountToUstMultiplier: 0.048048,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-07-02T03:00:00.000Z',
-    claimAt: '2022-01-02T03:00:00.000Z',
-    withdrawAt: '2022-07-02T03:00:00.000Z',
-    top: -50,
-    left: -30,
-    animation: '2.1s 2.1s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['LOOP'],
-    rewardDenominator: 'LOOP',
-    totalDepositAmount: 1198.573402,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 0,
-    totalClaimedAmountInUst: 0.000000,
-    claimedAmountToUstMultiplier: 0.248624,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-08-13T03:00:00.000Z',
-    claimAt: '2022-05-13T03:00:00.000Z',
-    withdrawAt: '2023-02-13T03:00:00.000Z',
-    top: 515,
-    left: 1152,
-    animation: '2.1s 1.5s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['ORION'],
-    rewardDenominator: 'ORION',
-    totalDepositAmount: 1258.2213,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 8980.998701,
-    totalClaimedAmountInUst: 431.519025585648,
-    claimedAmountToUstMultiplier: 0.048048,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-07-02T03:00:00.000Z',
-    claimAt: '2022-01-02T03:00:00.000Z',
-    withdrawAt: '2022-07-02T03:00:00.000Z',
-    top: 280,
-    left: -15,
-    animation: '3.5s 2.4s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['TERRA_WORLD'],
-    rewardDenominator: 'TWD',
-    totalDepositAmount: 1103.979704,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 5200.77821,
-    totalClaimedAmountInUst: 250.000000,
-    claimedAmountToUstMultiplier: 0.063119,
-    rewardUAmountDivisor: 1000000,
-    startedAt: "2021-08-22T14:00:00.000Z",
-    claimAt: "2022-05-22T14:00:00.000Z",
-    withdrawAt: "2023-02-22T14:00:00.000Z",
-    top: 15,
-    left: 360,
-    animation: '1.5s 1s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['WHITE_WHALE'],
-    rewardDenominator: 'WHALE',
-    totalDepositAmount: 5128.2203,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 12980.924,
-    totalClaimedAmountInUst: 631.619028,
-    claimedAmountToUstMultiplier: 0.048048,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-07-02T03:00:00.000Z',
-    claimAt: '2022-01-02T03:00:00.000Z',
-    withdrawAt: '2022-07-02T03:00:00.000Z',
-    top: 210,
-    left: 1090,
-    animation: '2.5s 3s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['NEXUS'],
-    rewardDenominator: 'PSI',
-    totalDepositAmount: 2204.449847,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 836.854831,
-    totalClaimedAmountInUst: 27.781906679538,
-    claimedAmountToUstMultiplier: 0.033198,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-10-05T03:00:00.000Z',
-    claimAt: '2021-10-05T03:00:00.000Z',
-    withdrawAt: '2023-10-05T03:00:00.000Z',
-    top: 480,
-    left: 700,
-    animation: '2.5s 3s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['GLOW'],
-    rewardDenominator: 'GLOW',
-    totalDepositAmount: 501.107147,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 0,
-    totalClaimedAmountInUst: 0.000000,
-    claimedAmountToUstMultiplier: 0.074661,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-12-19T14:00:00.000Z',
-    claimAt: '2022-09-19T14:00:00.000Z',
-    withdrawAt: '2023-06-19T14:00:00.000Z',
-    top: 295,
-    left: 458,
-    animation: '3s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['SAYVE'],
-    rewardDenominator: 'SAYVE',
-    totalDepositAmount: 751.397377,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 0,
-    totalClaimedAmountInUst: 0.000,
-    claimedAmountToUstMultiplier: 0.001,
-    rewardUAmountDivisor: 1000000,
-    startedAt: '2021-12-21T14:00:00.000Z',
-    claimAt: '2022-09-02T14:00:00.000Z',
-    withdrawAt: '2023-06-21T14:00:00.000Z',
-    top: 32,
-    left: 840,
-    animation: '2s 2s infinite alternate ease-in-out float'
-  },
-  {
-    id: GatewayPoolsEnum['XDEFI'],
-    rewardDenominator: 'XDEFI',
-    totalDepositAmount: 500.980584,
-    totalWithdrawnAmount: 0,
-    totalClaimedAmount: 0,
-    totalClaimedAmountInUst: 0,
-    claimedAmountToUstMultiplier: 1,
-    rewardUAmountDivisor: 100000000,
-    startedAt: "2021-12-22T14:00:00.000Z",
-    claimAt: "2022-04-22T14:00:00.000Z",
-    withdrawAt: "2022-12-22T14:00:00.000Z",
-    top: 215,
-    left: -409,
-    animation: '2s 2s infinite alternate ease-in-out float'
-  }
-];
-
 function Highlights() {
+
   return (
     <BoxHighlights>
       <BoxLayouts>
@@ -441,15 +295,15 @@ function Highlights() {
               {poolCardsHighlights.map(
                 ({
                   id,
+                  rewards,
+                  rewardsInUst,
                   rewardDenominator,
-                   rewardUAmountDivisor,
                   top,
                   left,
                   animation,
                   totalDepositAmount,
                   totalClaimedAmount,
                   totalClaimedAmountInUst,
-                  claimedAmountToUstMultiplier,
                   startedAt,
                   claimAt,
                   withdrawAt
@@ -469,23 +323,23 @@ function Highlights() {
                       }}
                     >
                       <Box sx={{ animation }}>
-                        <PoolCard
-                          backgroundColor="transparent"
-                          title={title}
-                          logo={logo}
-                          rewardDenominator={rewardDenominator}
-                          rewardUAmountDivisor={rewardUAmountDivisor}
-                          rewardsUrl={''}
-                          totalDepositAmount={totalDepositAmount}
-                          totalClaimedAmount={totalClaimedAmount}
-                          totalClaimedAmountInUst={totalClaimedAmountInUst}
-                          claimedAmountToUstMultiplier={
-                            claimedAmountToUstMultiplier
-                          }
-                          startedAt={startedAt}
-                          rewardsClaimableAt={claimAt}
-                          poolEndsAt={withdrawAt}
-                        />
+                        <Card sx={{ backgroundColor: 'transparent' }}>
+                          <GatewayPoolCardContent
+                            title={title}
+                            logo={logo}
+                            rewardDenominator={rewardDenominator}
+                            totalDepositAmount={totalDepositAmount}
+                            totalClaimedAmount={totalClaimedAmount}
+                            totalClaimedAmountInUst={totalClaimedAmountInUst}
+                            startedAt={startedAt}
+                            rewardsClaimableAt={claimAt}
+                            poolEndsAt={withdrawAt}
+                            rewardsInUst={rewardsInUst}
+                            rewards={rewards}
+                            loading={false}
+                            error={null}
+                          />
+                        </Card>
                       </Box>
                     </Box>
                   );
@@ -688,7 +542,7 @@ function Highlights() {
           justifyContent="center"
           alignItems="center"
           sx={{
-            mt: 12,
+            mt: 12
           }}
           spacing={6}
         >
@@ -719,9 +573,7 @@ function Highlights() {
               color="text.secondary"
               fontWeight="normal"
             >
-              {
-                'Arbitrage opportunities for Liquid Pools.'
-              }
+              {'Arbitrage opportunities for Liquid Pools.'}
             </TypographySubHeading>
           </Grid>
           <Grid item xs={12} md={6}>
