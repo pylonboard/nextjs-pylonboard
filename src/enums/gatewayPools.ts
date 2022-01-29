@@ -12,3 +12,8 @@ export const enum GatewayPoolsEnum {
   VALKYRIE = 'VALKYRIE',
   LOOP = 'LOOP',
 }
+
+export const enum GatewayPoolsSortBy {
+  ALPHABETICAL = 'ALPHABETICAL',
+  CLAIM_AT = 'CLAIM_AT',
+}

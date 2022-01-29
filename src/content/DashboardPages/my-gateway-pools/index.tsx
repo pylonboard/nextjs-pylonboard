@@ -3,15 +3,27 @@ import { Grid } from '@mui/material';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import PageHeader from '@/components/PageHeader';
 import MyGatewayPools from '@/content/Dashboards/MyGatewayPools';
+import { useState } from 'react';
+import { GatewayPoolsSortBy } from '@/enums/gatewayPools';
+import GatewayPoolSorting from '@/content/Dashboards/MyGatewayPools/GatewayPoolSorting';
 
 function DashboardMyGatewayPoolsContent() {
+  const [sortBy, setSortBy] = useState<string>(GatewayPoolsSortBy['ALPHABETICAL']);
 
   return (
     <>
       <PageTitleWrapper>
         <PageHeader
           title="My Gateway Pools"
-          subtitle={'Connect your wallet to see details on your Pylon Gateway Pools deposits and rewards.'}
+          subtitle={
+            'Connect your wallet to see details on your Pylon Gateway Pools deposits and rewards.'
+          }
+          action={
+            <GatewayPoolSorting
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+            />
+          }
         />
       </PageTitleWrapper>
 
@@ -24,7 +36,7 @@ function DashboardMyGatewayPoolsContent() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <MyGatewayPools />
+          <MyGatewayPools sortBy={sortBy} />
         </Grid>
       </Grid>
     </>
@@ -32,3 +44,4 @@ function DashboardMyGatewayPoolsContent() {
 }
 
 export default DashboardMyGatewayPoolsContent;
+

@@ -1,9 +1,4 @@
-import {
-  Box,
-  Grid,
-  Skeleton,
-  Typography,
-} from '@mui/material';
+import { Box, Grid, Skeleton, Typography } from '@mui/material';
 import { gql, useLazyQuery } from '@apollo/client';
 import { useWallet, WalletStatus } from '@terra-money/wallet-provider';
 import { useEffect, useState } from 'react';
@@ -11,6 +6,15 @@ import { poolsByIdentifier } from '@/content/DashboardPages/gateway-pools/pools'
 import Error from '@/components/Error';
 import WalletConnect from '@/components/WalletConnect';
 import { GatewayPoolCard } from '@/content/Dashboards/MyGatewayPools/GatewayPoolCard';
+import { GatewayPoolsSortBy } from '@/enums/gatewayPools';
+
+const sortByDate = (a, b, field) => {
+  return new Date(b[field]).valueOf() - new Date(a[field]).valueOf()
+}
+
+const sortByName = (a, b, field) => {
+  return b[field] - a[field]
+}
 
 const QUERY = gql`
   query MyGatewayPools($terraWallet: String!) {
@@ -46,7 +50,7 @@ const getRewardsUrl = ({ poolContractAddress, walletAddress }) => {
   return `${baseUrl}/${poolContractAddress}/store?query_msg=${query_str}`;
 };
 
-function MyGatewayPools() {
+function MyGatewayPools({ sortBy }) {
   const [myWalletAddress, setMyWalletAddress] = useState(null);
   const [myGatewayPools, setMyGatewayPools] = useState([]);
   const { wallets, status } = useWallet();
@@ -54,7 +58,7 @@ function MyGatewayPools() {
 
   useEffect(() => {
     status === WalletStatus.WALLET_CONNECTED &&
-    setMyWalletAddress(wallets[0].terraAddress);
+      setMyWalletAddress(wallets[0].terraAddress);
   }, [status]);
 
   useEffect(() => {
@@ -68,9 +72,17 @@ function MyGatewayPools() {
 
   useEffect(() => {
     if (data && data.myGatewayPools.length) {
-      setMyGatewayPools(data.myGatewayPools);
+      if (sortBy === GatewayPoolsSortBy['ALPHABETICAL']) {
+        setMyGatewayPools([...data.myGatewayPools].sort(
+          (a, b) => sortByName(a, b, 'friendlyName')
+        ));
+      } else if (sortBy === GatewayPoolsSortBy['CLAIM_AT']) {
+        setMyGatewayPools([...data.myGatewayPools].sort(
+          (a, b) => sortByDate(a, b, 'claimAt')
+        ));
+      }
     }
-  }, [data]);
+  }, [data, sortBy]);
 
   return (
     <Grid container spacing={4}>
@@ -85,20 +97,20 @@ function MyGatewayPools() {
       ) : myGatewayPools.length > 0 ? (
         myGatewayPools.map(
           ({
-             poolIdentifier,
-             poolContractAddress,
-             friendlyName,
-             totalDepositAmount,
-             totalWithdrawnAmount,
-             totalClaimedAmount,
-             totalClaimedAmountInUst,
-             claimedAmountToUstMultiplier,
-             rewardDenominator,
-             rewardUAmountDivisor,
-             startedAt,
-             claimAt,
-             withdrawAt
-           }) => (
+            poolIdentifier,
+            poolContractAddress,
+            friendlyName,
+            totalDepositAmount,
+            totalWithdrawnAmount,
+            totalClaimedAmount,
+            totalClaimedAmountInUst,
+            claimedAmountToUstMultiplier,
+            rewardDenominator,
+            rewardUAmountDivisor,
+            startedAt,
+            claimAt,
+            withdrawAt
+          }) => (
             <Grid key={friendlyName} item xs={12} sm={6} md={4} xl={3}>
               <GatewayPoolCard
                 walletAddress={myWalletAddress}
