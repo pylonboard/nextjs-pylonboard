@@ -9,12 +9,12 @@ import { GatewayPoolCard } from '@/content/Dashboards/MyGatewayPools/GatewayPool
 import { GatewayPoolsSortBy } from '@/enums/gatewayPools';
 
 const sortByDate = (a, b, field) => {
-  return new Date(b[field]).valueOf() - new Date(a[field]).valueOf()
-}
+  return new Date(b[field]).valueOf() - new Date(a[field]).valueOf();
+};
 
 const sortByName = (a, b, field) => {
-  return b[field] - a[field]
-}
+  return b[field] - a[field];
+};
 
 const QUERY = gql`
   query MyGatewayPools($terraWallet: String!) {
@@ -50,7 +50,7 @@ const getRewardsUrl = ({ poolContractAddress, walletAddress }) => {
   return `${baseUrl}/${poolContractAddress}/store?query_msg=${query_str}`;
 };
 
-function MyGatewayPools({ sortBy }) {
+function MyGatewayPoolsList({ sortBy }) {
   const [myWalletAddress, setMyWalletAddress] = useState(null);
   const [myGatewayPools, setMyGatewayPools] = useState([]);
   const { wallets, status } = useWallet();
@@ -73,87 +73,91 @@ function MyGatewayPools({ sortBy }) {
   useEffect(() => {
     if (data && data.myGatewayPools.length) {
       if (sortBy === GatewayPoolsSortBy['ALPHABETICAL']) {
-        setMyGatewayPools([...data.myGatewayPools].sort(
-          (a, b) => sortByName(a, b, 'friendlyName')
-        ));
+        setMyGatewayPools(
+          [...data.myGatewayPools].sort((a, b) =>
+            sortByName(a, b, 'friendlyName')
+          )
+        );
       } else if (sortBy === GatewayPoolsSortBy['CLAIM_AT']) {
-        setMyGatewayPools([...data.myGatewayPools].sort(
-          (a, b) => sortByDate(a, b, 'claimAt')
-        ));
+        setMyGatewayPools(
+          [...data.myGatewayPools].sort((a, b) => sortByDate(a, b, 'claimAt'))
+        );
       }
     }
   }, [data, sortBy]);
 
-  return (
-    <Grid container spacing={4}>
-      {error ? (
+  if (error) {
+    return (
+      <Grid container spacing={4}>
         <Grid item xs={12}>
           <Error message={error.message} />
         </Grid>
-      ) : loading ? (
-        <Grid item xs={12}>
-          <Skeleton variant="rectangular" height={300} />
-        </Grid>
-      ) : myGatewayPools.length > 0 ? (
-        myGatewayPools.map(
-          ({
-            poolIdentifier,
-            poolContractAddress,
-            friendlyName,
-            totalDepositAmount,
-            totalWithdrawnAmount,
-            totalClaimedAmount,
-            totalClaimedAmountInUst,
-            claimedAmountToUstMultiplier,
-            rewardDenominator,
-            rewardUAmountDivisor,
-            startedAt,
-            claimAt,
-            withdrawAt
-          }) => (
-            <Grid key={friendlyName} item xs={12} sm={6} md={4} xl={3}>
-              <GatewayPoolCard
-                walletAddress={myWalletAddress}
-                poolContractId={poolContractAddress}
-                title={poolsByIdentifier[poolIdentifier].title}
-                logo={poolsByIdentifier[poolIdentifier].logo}
-                rewardDenominator={rewardDenominator}
-                rewardUAmountDivisor={rewardUAmountDivisor}
-                rewardsUrl={getRewardsUrl({
-                  poolContractAddress,
-                  walletAddress: myWalletAddress
-                })}
-                totalDepositAmount={
-                  totalDepositAmount - Math.abs(totalWithdrawnAmount)
-                }
-                totalClaimedAmount={totalClaimedAmount}
-                totalClaimedAmountInUst={totalClaimedAmountInUst}
-                claimedAmountToUstMultiplier={claimedAmountToUstMultiplier}
-                startedAt={startedAt}
-                rewardsClaimableAt={claimAt}
-                poolEndsAt={withdrawAt}
-              />
+      </Grid>
+    );
+  }
+
+  return (
+    <Grid container spacing={4}>
+      {loading
+        ? Array.from(Array(8), Math.random).map((value) => (
+            <Grid key={value} item xs={12} sm={6} md={4} xl={3}>
+              <Skeleton variant="rectangular" height={516} />
             </Grid>
-          )
-        )
-      ) : (
-        <Grid item xs={12} alignItems="center">
-          {status === WalletStatus.WALLET_NOT_CONNECTED && (
-            <Box>
-              <Typography
-                sx={{
-                  mb: 1.5,
-                  fontWeight: 'normal'
-                }}
-                variant="h4"
-                component="p"
-              >
-                Connect your wallet to see your pools
-              </Typography>
-              <WalletConnect />
-            </Box>
+          ))
+        : myGatewayPools.map(
+            ({
+              friendlyName,
+              poolIdentifier,
+              poolContractAddress,
+              totalDepositAmount,
+              totalWithdrawnAmount,
+              startedAt,
+              claimAt,
+              withdrawAt,
+              ...rest
+            }) => {
+              return (
+                <Grid key={friendlyName} item xs={12} sm={6} md={4} xl={3}>
+                  <GatewayPoolCard
+                    header={{
+                      title: poolsByIdentifier[poolIdentifier].title,
+                      logo: poolsByIdentifier[poolIdentifier].logo
+                    }}
+                    walletAddress={myWalletAddress}
+                    poolContractId={poolContractAddress}
+                    rewardsUrl={getRewardsUrl({
+                      poolContractAddress,
+                      walletAddress: myWalletAddress
+                    })}
+                    totalDepositAmount={
+                      totalDepositAmount - Math.abs(totalWithdrawnAmount)
+                    }
+                    poolProgress={{ startedAt, claimAt, withdrawAt }}
+                    {...rest}
+                  />
+                </Grid>
+              );
+            }
           )}
-          {status === WalletStatus.WALLET_CONNECTED && (
+      <Grid item xs={12} alignItems="center">
+        {!loading && status === WalletStatus.WALLET_NOT_CONNECTED && (
+          <Box>
+            <Typography
+              sx={{
+                mb: 1.5,
+                fontWeight: 'normal'
+              }}
+              variant="h4"
+              component="p"
+            >
+              Connect your wallet to see your pools
+            </Typography>
+            <WalletConnect />
+          </Box>
+        )}
+        {!loading &&
+          myGatewayPools.length === 0 &&
+          status === WalletStatus.WALLET_CONNECTED && (
             <Box sx={{ textAlign: 'center' }}>
               <Typography
                 sx={{
@@ -167,10 +171,9 @@ function MyGatewayPools({ sortBy }) {
               </Typography>
             </Box>
           )}
-        </Grid>
-      )}
+      </Grid>
     </Grid>
   );
 }
 
-export default MyGatewayPools;
+export default MyGatewayPoolsList;

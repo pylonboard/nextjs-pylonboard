@@ -56,6 +56,15 @@ const QUERY = gql`
   }
 `;
 
+type GatewayPoolDetailsProps = {
+  terraWallet: string;
+  poolContractId: string;
+  title: string;
+  logo: string;
+  isOpen: boolean;
+  handleClose: () => void;
+};
+
 function GatewayPoolDetails({
   handleClose,
   isOpen,
@@ -63,7 +72,7 @@ function GatewayPoolDetails({
   logo,
   terraWallet,
   poolContractId
-}) {
+}: GatewayPoolDetailsProps) {
   const theme = useTheme();
   const [getPoolDetails, { data, loading, error }] = useLazyQuery(QUERY);
 

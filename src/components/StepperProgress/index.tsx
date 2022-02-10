@@ -11,17 +11,17 @@ import {
 
 const LinearProgressPrimary = styled(LinearProgress)(
   ({ theme }) => `
-        height: 3px;
+    height: 3px;
+    border-radius: ${theme.general.borderRadiusLg};
+    &.${linearProgressClasses.colorPrimary} {
+        background-color: ${theme.palette.grey[800]};
+    }
+    
+    & .${linearProgressClasses.bar} {
         border-radius: ${theme.general.borderRadiusLg};
-        &.${linearProgressClasses.colorPrimary} {
-            background-color: ${theme.palette.grey[800]};
-        }
-        
-        & .${linearProgressClasses.bar} {
-            border-radius: ${theme.general.borderRadiusLg};
-            background-color: ${theme.colors.primary.main};
-        }
-    `
+        background-color: ${theme.colors.primary.main};
+    }
+`
 );
 
 const DotLegend = styled('span')(
@@ -35,18 +35,28 @@ const DotLegend = styled('span')(
 
 const today = new Date();
 
-const StepperProgress = ({ startedAt, rewardsClaimableAt, poolEndsAt }) => {
+export interface StepperProgressType {
+  startedAt: string;
+  claimAt: string;
+  withdrawAt: string;
+}
+
+const StepperProgress = ({
+  startedAt,
+                           claimAt,
+                           withdrawAt
+}: StepperProgressType) => {
   const theme = useTheme();
 
   const totalDays = Math.floor(
-    (new Date(poolEndsAt).valueOf() - new Date(startedAt).valueOf()) /
+    (new Date(withdrawAt).valueOf() - new Date(startedAt).valueOf()) /
       (1000 * 60 * 60 * 24)
   );
   const untilToday = Math.floor(
     (today.valueOf() - new Date(startedAt).valueOf()) / (1000 * 60 * 60 * 24)
   );
   const claimable = Math.floor(
-    (new Date(rewardsClaimableAt).valueOf() - new Date(startedAt).valueOf()) /
+    (new Date(claimAt).valueOf() - new Date(startedAt).valueOf()) /
       (1000 * 60 * 60 * 24)
   );
   const progress = (untilToday / totalDays) * 100;
@@ -160,7 +170,7 @@ const StepperProgress = ({ startedAt, rewardsClaimableAt, poolEndsAt }) => {
               year: 'numeric',
               month: 'short',
               day: 'numeric'
-            }).format(new Date(poolEndsAt))}
+            }).format(new Date(withdrawAt))}
           </span>
         </Typography>
 
@@ -181,7 +191,7 @@ const StepperProgress = ({ startedAt, rewardsClaimableAt, poolEndsAt }) => {
               year: 'numeric',
               month: 'short',
               day: 'numeric'
-            }).format(new Date(rewardsClaimableAt))}
+            }).format(new Date(claimAt))}
           </span>
         </Typography>
       </Box>

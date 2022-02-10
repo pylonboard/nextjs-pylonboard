@@ -54,14 +54,14 @@ const QUERY = gql`
     }
 `;
 
-const getPoolByValue = value => pools.find(pool => pool.value === value)
+const getPoolByValue = (value: string) => pools.find(pool => pool.value === value)
 
 function DashboardGatewayPoolsContent() {
   const router = useRouter();
   const gwp = router.query.gwp as string;
 
   useEffect(() => {
-    if (router.isReady && (!router.query.gwp || !getPoolByValue(router.query.gwp))) {
+    if (router.isReady && (!router.query.gwp || !getPoolByValue(gwp))) {
       router.push({
         pathname: router.pathname,
         query: { gwp: pools[0].value },

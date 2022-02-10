@@ -13,7 +13,9 @@ import {
 import pools, {
   poolsByIdentifier
 } from '@/content/DashboardPages/gateway-pools/pools';
-import { GatewayPoolCardContent } from '@/content/Dashboards/MyGatewayPools/GatewayPoolCard';
+import GatewayPoolCardHeader from '@/content/Dashboards/MyGatewayPools/GatewayPoolCardHeader';
+import GatewayPoolCardContent from '@/content/Dashboards/MyGatewayPools/GatewayPoolCardContent';
+
 import { poolCardsHighlights } from '@/content/Overview/Highlights/data';
 
 const BoxHighlights = styled(Box)(
@@ -150,7 +152,6 @@ const AvatarWrapper = styled(Avatar)(
 );
 
 function Highlights() {
-
   return (
     <BoxHighlights>
       <BoxLayouts>
@@ -323,19 +324,18 @@ function Highlights() {
                       }}
                     >
                       <Box sx={{ animation }}>
-                        <Card sx={{ backgroundColor: 'transparent' }}>
+                        <Card
+                          sx={{ backgroundColor: 'transparent', px: 2, py: 3 }}
+                        >
+                          <GatewayPoolCardHeader title={title} logo={logo} />
                           <GatewayPoolCardContent
-                            title={title}
-                            logo={logo}
+                            rewards={rewards}
+                            rewardsInUst={rewardsInUst}
                             rewardDenominator={rewardDenominator}
                             totalDepositAmount={totalDepositAmount}
                             totalClaimedAmount={totalClaimedAmount}
                             totalClaimedAmountInUst={totalClaimedAmountInUst}
-                            startedAt={startedAt}
-                            rewardsClaimableAt={claimAt}
-                            poolEndsAt={withdrawAt}
-                            rewardsInUst={rewardsInUst}
-                            rewards={rewards}
+                            poolProgress={{ startedAt, claimAt, withdrawAt }}
                             loading={false}
                             error={null}
                           />
