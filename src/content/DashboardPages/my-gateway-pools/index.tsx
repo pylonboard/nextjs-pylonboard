@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import PageHeader from '@/components/PageHeader';
-import MyGatewayPools from '@/content/Dashboards/MyGatewayPools';
+import MyGatewayPoolsList from '@/content/Dashboards/MyGatewayPools/MyGatewayPoolsList';
 import { useState } from 'react';
 import { GatewayPoolsSortBy } from '@/enums/gatewayPools';
 import GatewayPoolSorting from '@/content/Dashboards/MyGatewayPools/GatewayPoolSorting';
@@ -36,7 +36,7 @@ function DashboardMyGatewayPoolsContent() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <MyGatewayPools sortBy={sortBy} />
+          <MyGatewayPoolsList sortBy={sortBy} />
         </Grid>
       </Grid>
     </>
