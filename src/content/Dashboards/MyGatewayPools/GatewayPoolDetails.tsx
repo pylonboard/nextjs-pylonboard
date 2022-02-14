@@ -89,7 +89,9 @@ function GatewayPoolDetails({
   const OPERATION_COLORS = {
     CLAIM: theme.colors.success,
     DEPOSIT: theme.colors.warning,
-    WITHDRAW: theme.colors.info
+    WITHDRAW: theme.colors.info,
+    BUY: theme.colors.warning,
+    SELL: theme.colors.info,
   };
 
   return (
