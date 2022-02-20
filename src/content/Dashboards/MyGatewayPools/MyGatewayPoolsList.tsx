@@ -80,7 +80,7 @@ function MyGatewayPoolsList({ sortBy }) {
         );
       } else if (sortBy === GatewayPoolsSortBy['CLAIM_AT']) {
         setMyGatewayPools(
-          [...data.myGatewayPools].sort((a, b) => sortByDate(a, b, 'claimAt'))
+          [...data.myGatewayPools].sort((a, b) => sortByDate(a, b, 'claimAt')).reverse()
         );
       }
     }
