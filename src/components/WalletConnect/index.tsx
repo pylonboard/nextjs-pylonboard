@@ -14,6 +14,8 @@ import {
 } from '@mui/material';
 import { stringMiddleTruncate } from '@/utils/stringMiddleTruncate';
 import { LoadingButton } from '@mui/lab';
+import { gql, useLazyQuery } from '@apollo/client';
+import { amountFormatter } from '@/utils/numberFormatters';
 
 const TerraConnectIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -28,12 +30,23 @@ const TerraConnectIcon = () => (
   </svg>
 );
 
+const QUERY = gql`
+    query GetMyPylonStake($terraWallet: String!) {
+        myPylonStake(terraWallet: $terraWallet) {
+            amount
+        }
+    }
+`;
+
 const WalletConnect = () => {
   const theme = useTheme();
 
   const ref = useRef<any>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
   const [copied, setCopied] = useState<string | null>(null);
+  const [myWalletAddress, setMyWalletAddress] = useState(null);
+  const [getMyPylonStake, { data:myStake }] = useLazyQuery(QUERY);
+
   const {
     status,
     //network,
@@ -50,8 +63,23 @@ const WalletConnect = () => {
     if (status !== WalletStatus.INITIALIZING) {
       setOpen(false);
     }
+    status === WalletStatus.WALLET_CONNECTED &&
+    setMyWalletAddress(wallets[0].terraAddress);
   }, [status]);
+  useEffect(() => {
+    myWalletAddress &&
+    getMyPylonStake({
+      variables: {
+        terraWallet: myWalletAddress
+      }
+    });
+  }, [myWalletAddress]);
 
+  useEffect(() => {
+  if(myStake) {
+    console.log(myStake);
+  }
+  }, [myStake]);
   const handleOpen = (): void => {
     setOpen(true);
   };
@@ -84,6 +112,11 @@ const WalletConnect = () => {
           {isConnected
             ? stringMiddleTruncate(wallets[0].terraAddress, 24)
             : 'Connect to Terra Station'}
+          <br/>
+          {myStake
+            ? `${amountFormatter(myStake.myPylonStake.amount)} $MINE staked`
+            : ''
+          }
         </LoadingButton>
       </Box>
 
