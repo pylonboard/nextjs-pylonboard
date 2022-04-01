@@ -130,7 +130,7 @@ function MyGatewayPoolsList({ sortBy }) {
                       walletAddress: myWalletAddress
                     })}
                     totalDepositAmount={
-                      totalDepositAmount - Math.abs(totalWithdrawnAmount)
+                      Math.max(totalDepositAmount - Math.abs(totalWithdrawnAmount), 0)
                     }
                     poolProgress={{ startedAt, claimAt, withdrawAt }}
                     {...rest}
