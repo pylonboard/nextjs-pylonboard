@@ -11,6 +11,10 @@ export const enum GatewayPoolsEnum {
   GALACTIC_PUNKS = 'GALACTIC_PUNKS',
   VALKYRIE = 'VALKYRIE',
   LOOP = 'LOOP',
+  ARTS = 'ARTS',
+  WCOIN = 'WCOIN',
+  LUNA_BULLS = 'LUNA_BULLS',
+  TERRA_BOTS = 'TERRA_BOTS',
 }
 
 export const enum GatewayPoolsSortBy {

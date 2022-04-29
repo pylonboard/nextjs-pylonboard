@@ -67,6 +67,26 @@ const pools: Pool[] = [
     text: 'MINE',
     logo: '/static/images/pools/mine.png',
   },
+  {
+    value: GatewayPoolsEnum['ARTS'],
+    text: 'Arts',
+    logo: '/static/images/pools/arts.png',
+  },
+  {
+    value: GatewayPoolsEnum['WCOIN'],
+    text: 'Willish',
+    logo: '/static/images/pools/wcoin.png',
+  },
+  {
+    value: GatewayPoolsEnum['LUNA_BULLS'],
+    text: 'Luna Bulls',
+    logo: '/static/images/pools/luna_bulls.png',
+  },
+  {
+    value: GatewayPoolsEnum['TERRA_BOTS'],
+    text: 'Terra Bots',
+    logo: '/static/images/pools/terra_bots.png',
+  },
 ];
 
 export const poolsByIdentifier = pools.reduce(
