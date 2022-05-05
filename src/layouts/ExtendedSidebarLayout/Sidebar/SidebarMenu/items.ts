@@ -26,9 +26,8 @@ const menuItems: MenuItems[] = [
         link: '/dashboards/my-gateway-pools',
       },
       {
-        name: 'Airdrops (coming soon)',
-        link: '',
-        disabled: true,
+        name: 'My Airdrops',
+        link: '/dashboards/my-airdrops',
       },
     ]
   },
